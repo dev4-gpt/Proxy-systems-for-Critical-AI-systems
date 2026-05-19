@@ -1,4 +1,85 @@
 <#
+MetaMatch 2.0 - "Apply all recommended updates" patch set
+=========================================================
+
+This script is an in-place updater. It overwrites specific repo files with improved versions and creates timestamped .bak backups.
+
+WHAT THIS UPDATER CHANGES
+-----------------------------------
+1) Get-AnchorMatches.ps1
+   - Adds a run_manifest.json written next to ranked_matches.csv so every run is self-describing (params, weights, counts, git commit).
+   - Adds explainability columns to ranked_matches.csv (ScoreBreakdownJson, TopSignals, WhyQualified, and penalty components).
+   - Separates retrieval confidence (QueryCoverage) from the similarity score by default (prevents "how we found it" from inflating similarity).
+     You can opt back in via -IncludeRetrievalSignalsInScore.
+   - Adds a lightweight cross-anchor "magnet" penalty (optional): downweight candidates that appear frequently across previous anchors.
+     Controlled by -CrossAnchorFreqPenaltyWeight (default 0 = off).
+   - Extends diversity guard options:
+       * -MaxPerOwner (existing) caps per owner in TopK
+       * -MaxPerOwnerPerSubdomain (new) caps per owner WITHIN a subdomain bucket (prevents one org dominating one niche)
+
+2) tools/summarize_runs.py
+   - Produces a stable cross-anchor frequency table keyed by CandidateRepo.
+     This supports magnet analysis and helps the penalty logic if you want to precompute.
+
+3) README.md (small update)
+   - Documents run_manifest.json, explainability fields, diversity knobs, and summarizer usage.
+
+USAGE
+-----
+From the repo root:
+  powershell -ExecutionPolicy Bypass -File .\Apply-MetaMatch2Updates.ps1
+
+NOTES
+-----
+- This script only touches files listed in $Targets.
+- Backups are created alongside each target file with a timestamp suffix.
+#>
+
+[CmdletBinding()]
+param(
+  [string]$RepoRoot = "."
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+function Write-FileUtf8NoBom {
+  param([Parameter(Mandatory=$true)][string]$Path, [Parameter(Mandatory=$true)][string]$Content)
+  $dir = Split-Path -Parent $Path
+  if ($dir -and -not (Test-Path $dir)) { New-Item -ItemType Directory -Path $dir -Force | Out-Null }
+  $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+  [System.IO.File]::WriteAllText((Resolve-Path -LiteralPath $Path), $Content, $utf8NoBom)
+}
+
+function Backup-IfExists {
+  param([Parameter(Mandatory=$true)][string]$Path, [Parameter(Mandatory=$true)][string]$Stamp)
+  if (Test-Path -LiteralPath $Path) {
+    Copy-Item -LiteralPath $Path -Destination "$Path.$Stamp.bak" -Force
+  }
+}
+
+function Find-RepoRoot {
+  param([string]$Start)
+  $p = Resolve-Path -LiteralPath $Start
+  while ($true) {
+    if (Test-Path (Join-Path $p "Get-AnchorMatches.ps1")) { return $p }
+    $parent = Split-Path -Parent $p
+    if (-not $parent -or $parent -eq $p) { break }
+    $p = $parent
+  }
+  throw "Could not find repo root (expected Get-AnchorMatches.ps1). Pass -RepoRoot to this updater."
+}
+
+$root = Find-RepoRoot -Start $RepoRoot
+$stamp = (Get-Date).ToString("yyyyMMdd_HHmmss")
+Write-Host "Repo root: $root" -ForegroundColor Cyan
+
+# -----------------------------
+# Updated file contents
+# -----------------------------
+
+$GetAnchorMatchesContent = @'
+<#
 .SYNOPSIS
   Find up to TopK repositories that may match a single anchor repository.
 
@@ -727,3 +808,193 @@ Write-Host ""
 Write-Host "Final match count: $(@($final).Count)" -ForegroundColor Green
 Write-Host "Qualified above threshold: $(@($qualified).Count)" -ForegroundColor Green
 if (@($final).Count -lt $TopK) { Write-Host "WARNING: Only $(@($final).Count) matches were available after filtering." -ForegroundColor Yellow }
+'@
+
+$SummarizeRunsPy = @'
+#!/usr/bin/env python3
+"""
+MetaMatch 2.0 - Cross-anchor run summarizer
+
+Why this exists
+---------------
+When you run multiple anchors, some candidates act like "magnets" (they appear in many anchors).
+This script aggregates ranked_matches.csv across runs/manual-ml-py/** and writes a stable set of summaries
+to runs/_summaries/. These summaries help you:
+  - see top-k per anchor,
+  - detect recurring candidates across anchors,
+  - build optional diversity penalties.
+
+Usage:
+  python tools/summarize_runs.py --runs-dir runs/manual-ml-py --topk 10
+"""
+
+from __future__ import annotations
+import argparse
+import csv
+import json
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
+
+
+def read_csv(path: Path) -> List[dict]:
+    with path.open("r", encoding="utf-8", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def write_csv(path: Path, rows: List[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not rows:
+        path.write_text("", encoding="utf-8")
+        return
+    fieldnames = list(rows[0].keys())
+    with path.open("w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w.writeheader()
+        w.writerows(rows)
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--runs-dir", default="runs/manual-ml-py", help="Root directory containing per-anchor run folders")
+    ap.add_argument("--topk", type=int, default=10, help="Top-K rows to keep per anchor for topk outputs")
+    ap.add_argument("--out-dir", default="runs/_summaries", help="Where to write summary files")
+    args = ap.parse_args()
+
+    runs_dir = Path(args.runs_dir)
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    ranked_files = sorted(runs_dir.rglob("ranked_matches.csv"))
+
+    all_rows: List[dict] = []
+    topk_rows: List[dict] = []
+    freq: Dict[str, int] = {}
+
+    for rf in ranked_files:
+        try:
+            rows = read_csv(rf)
+        except Exception:
+            continue
+
+        # Determine anchor from file content (preferred) or folder name (fallback)
+        anchor_name = None
+        if rows and rows[0].get("AnchorRepo"):
+            anchor_name = rows[0]["AnchorRepo"]
+        else:
+            anchor_name = rf.parent.name
+
+        # Sort by score descending if present
+        def score_val(r: dict) -> float:
+            try:
+                return float(r.get("Score", "0") or "0")
+            except Exception:
+                return 0.0
+
+        rows_sorted = sorted(rows, key=score_val, reverse=True)
+
+        for r in rows_sorted:
+            r2 = dict(r)
+            r2["_anchor_folder"] = rf.parent.name
+            r2["_anchor"] = anchor_name
+            all_rows.append(r2)
+
+            cand = r.get("CandidateRepo") or r.get("Candidate") or r.get("candidate_repo") or ""
+            cand = cand.strip()
+            if cand:
+                freq[cand] = freq.get(cand, 0) + 1
+
+        for r in rows_sorted[: args.topk]:
+            r2 = dict(r)
+            r2["_anchor_folder"] = rf.parent.name
+            r2["_anchor"] = anchor_name
+            topk_rows.append(r2)
+
+    write_csv(out_dir / "ranked_matches_all.csv", all_rows)
+    write_csv(out_dir / f"top{args.topk}_per_anchor.csv", topk_rows)
+
+    # Stable frequency table keyed by CandidateRepo (used by optional cross-anchor penalty)
+    freq_rows = [{"CandidateRepo": k, "Frequency": v} for k, v in sorted(freq.items(), key=lambda kv: (-kv[1], kv[0]))]
+    write_csv(out_dir / f"candidate_frequency_top{args.topk}.csv", freq_rows)
+
+    # Collect manifests if present
+    manifest_files = sorted(runs_dir.rglob("run_manifest.json"))
+    jsonl_path = out_dir / "run_manifests_all.jsonl"
+    with jsonl_path.open("w", encoding="utf-8") as f:
+        for mf in manifest_files:
+            try:
+                data = json.loads(mf.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            data["_path"] = str(mf)
+            f.write(json.dumps(data) + "\n")
+
+    print(f"Wrote summaries to: {out_dir}")
+    print(f"Anchors found: {len(set([r.get('_anchor_folder','') for r in all_rows]))}")
+    print(f"Total rows: {len(all_rows)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+'@
+
+$ReadmeAppend = @'
+
+## MetaMatch 2.0 run artifacts (recommended)
+Each per-anchor run folder now includes:
+- `ranked_matches.csv` (all scored candidates with diagnostics + explainability columns)
+- `30_Matches.csv` (Top-K final selection)
+- `run_manifest.json` (parameters, weights, counts, and outputs for reproducibility)
+
+### New diversity / reliability knobs
+- Retrieval signals are excluded from similarity scoring by default:
+  - Use `-IncludeRetrievalSignalsInScore` to include QueryCoverage in Score.
+- Optional cross-anchor "magnet" penalty:
+  - `-CrossAnchorFreqPenaltyWeight 25` (example) to gently downweight candidates that appear often across prior anchors.
+- Diversity caps:
+  - `-MaxPerOwner 3` (global owner cap)
+  - `-MaxPerOwnerPerSubdomain 2` (owner cap within a subdomain bucket)
+
+### Cross-anchor summaries
+After you have multiple anchors under `runs/manual-ml-py`, generate summaries:
+```bash
+python tools/summarize_runs.py --runs-dir runs/manual-ml-py --topk 10
+```
+Outputs are written to `runs/_summaries/`.
+'@
+
+# Targets to update
+$Targets = @(
+  @{ Path = (Join-Path $root "Get-AnchorMatches.ps1"); Content = $GetAnchorMatchesContent },
+  @{ Path = (Join-Path $root "tools/summarize_runs.py"); Content = $SummarizeRunsPy }
+)
+
+# README update: append a section if not already present
+$readmePath = Join-Path $root "README.md"
+if (Test-Path -LiteralPath $readmePath) {
+  $readme = Get-Content -LiteralPath $readmePath -Raw
+  if ($readme -notmatch "MetaMatch 2\.0 run artifacts") {
+    $Targets += @{ Path = $readmePath; Content = ($readme.TrimEnd() + $ReadmeAppend + "`r`n") }
+  }
+} else {
+  $Targets += @{ Path = $readmePath; Content = ("# MetaMatch 2.0`r`n" + $ReadmeAppend + "`r`n") }
+}
+
+# Apply updates with backups
+foreach ($t in $Targets) {
+  $p = [string]$t.Path
+  Backup-IfExists -Path $p -Stamp $stamp
+  if (-not (Test-Path -LiteralPath (Split-Path -Parent $p))) {
+    New-Item -ItemType Directory -Path (Split-Path -Parent $p) -Force | Out-Null
+  }
+  # Ensure Resolve-Path works when file doesn't exist yet
+  if (-not (Test-Path -LiteralPath $p)) {
+    # create empty file first
+    New-Item -ItemType File -Path $p -Force | Out-Null
+  }
+  Write-FileUtf8NoBom -Path $p -Content ([string]$t.Content)
+  Write-Host "Updated: $p" -ForegroundColor Green
+}
+
+Write-Host "`nAll updates applied. Backups created with: .$stamp.bak" -ForegroundColor Cyan
