@@ -98,9 +98,9 @@ param(
 
     [string]$CrossAnchorRunsDir = "runs/manual-ml-py",
 
-    [double]$CrossAnchorFreqPenaltyWeight = 0.0,
+    [double]$CrossAnchorFreqPenaltyWeight = 150.0,
 
-    [int]$MaxPerOwner = 3,
+    [int]$MaxPerOwner = 2,
 
     [int]$MaxPerOwnerPerSubdomain = 2,
 
