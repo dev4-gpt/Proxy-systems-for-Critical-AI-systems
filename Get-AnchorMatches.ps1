@@ -36,7 +36,7 @@ KEY METAIMPROVEMENTS (MetaMatch 2.0)
   Minimum stars for candidate repos. Defaults to 50.
 
 .PARAMETER MinimumScore
-  Minimum weighted similarity score to qualify. Defaults to 900.
+  Minimum weighted similarity score to qualify. Defaults to 700.
 
 .PARAMETER IncludeRetrievalSignalsInScore
   If set, QueryCoverage contributes to Score. Default is off (recommended) to avoid retrieval artifacts.
@@ -47,7 +47,7 @@ KEY METAIMPROVEMENTS (MetaMatch 2.0)
 
 .PARAMETER CrossAnchorFreqPenaltyWeight
   Optional penalty weight applied to frequent candidates across prior anchors.
-  Default 0 (off). When enabled, the score is reduced by:
+  Default 100. Set to 0 to disable. When enabled, the score is reduced by:
       weight * log10(1 + frequency)
   This is a light-touch "magnet repo" guard to improve diversity across anchors.
 
@@ -92,17 +92,17 @@ param(
 
     [int]$MinimumStars = 50,
 
-    [int]$MinimumScore = 900,
+    [int]$MinimumScore = 700,
 
     [switch]$IncludeRetrievalSignalsInScore,
 
     [string]$CrossAnchorRunsDir = "runs/manual-ml-py",
 
-    [double]$CrossAnchorFreqPenaltyWeight = 150.0,
+    [double]$CrossAnchorFreqPenaltyWeight = 30.0,
 
     [int]$MaxPerOwner = 2,
 
-    [int]$MaxPerOwnerPerSubdomain = 2,
+    [int]$MaxPerOwnerPerSubdomain = 1,
 
     [switch]$DisableDiversityGuard,
 
@@ -547,8 +547,8 @@ $scored = foreach ($cand in $enriched) {
         Score                   = $parts.Score
         ScoreBase               = $parts.ScoreBase
         PenaltyCrossAnchorFreq  = $parts.PenaltyCrossAnchorFreq
-        PenaltyRetrieval        = (if ($IncludeRetrievalSignalsInScore) { 0.0 } else { [math]::Round($ScoreWeights.QueryCoverage * $parts.QueryCoverage, 2) })
-        PenaltyNotes            = (if ($IncludeRetrievalSignalsInScore) { "" } else { "QueryCoverage excluded from Score (recommended)." })
+        PenaltyRetrieval        = $(if ($IncludeRetrievalSignalsInScore) { 0.0 } else { [math]::Round($ScoreWeights.QueryCoverage * $parts.QueryCoverage, 2) })
+        PenaltyNotes            = $(if ($IncludeRetrievalSignalsInScore) { "" } else { "QueryCoverage excluded from Score (recommended)." })
 
         Qualified               = ($parts.Score -ge $MinimumScore)
 
@@ -580,11 +580,15 @@ $diversityEnabled = (-not $DisableDiversityGuard) -and ($MaxPerOwner -gt 0 -or $
 
 function Select-WithCaps {
     param(
-        [Parameter(Mandatory=$true)][object[]]$Items,
+        [Parameter(Mandatory=$true)]
+        [AllowEmptyCollection()]
+        [object[]]$Items,
         [Parameter(Mandatory=$true)][int]$TopK,
         [int]$MaxPerOwner,
         [int]$MaxPerOwnerPerSubdomain
     )
+
+    if (@($Items).Count -eq 0) { return @() }
 
     $countsOwner = @{}
     $countsOwnerSub = @{}
@@ -619,7 +623,7 @@ function Select-WithCaps {
 
 $final = [System.Collections.Generic.List[object]]::new()
 
-if ($diversityEnabled) {
+if ($diversityEnabled -and @($qualified).Count -gt 0) {
     $seed = Select-WithCaps -Items $qualified -TopK $TopK -MaxPerOwner $MaxPerOwner -MaxPerOwnerPerSubdomain $MaxPerOwnerPerSubdomain
     foreach ($item in $seed) { $final.Add($item) | Out-Null }
 
@@ -630,18 +634,28 @@ if ($diversityEnabled) {
         foreach ($item in $fill) { $final.Add($item) | Out-Null }
     }
 } else {
-    foreach ($item in ($qualified | Select-Object -First $TopK)) { $final.Add($item) | Out-Null }
+    foreach ($item in $qualified) {
+        if (@($final).Count -ge $TopK) { break }
+        $final.Add($item) | Out-Null
+    }
 }
 
 if ($AllowFallbackFill -and @($final).Count -lt $TopK) {
     $needed = $TopK - @($final).Count
     $existingRepos = @($final | ForEach-Object { $_.CandidateRepo })
-    $fallback = @($scored | Where-Object { ($existingRepos -notcontains $_.CandidateRepo) } | Select-Object -First $needed)
-    foreach ($item in $fallback) { $final.Add($item) | Out-Null }
+    foreach ($item in $scored) {
+        if (@($final).Count -ge $TopK) { break }
+        if ($existingRepos -contains $item.CandidateRepo) { continue }
+        $final.Add($item) | Out-Null
+        $existingRepos += $item.CandidateRepo
+    }
 }
 
 $rank = 1
-foreach ($item in $final) { $item.Rank = $rank; $rank++ }
+foreach ($item in $final) {
+    $item | Add-Member -NotePropertyName Rank -NotePropertyValue $rank -Force
+    $rank++
+}
 
 # Output paths
 $anchorPath = Join-Path $OutputDir "anchor_repo.json"

@@ -1,7 +1,6 @@
 CandidateRepo,Frequency
 Lightning-AI/pytorch-lightning,18
 d2l-ai/d2l-zh,18
-deepspeedai/DeepSpeed,18
 explosion/spaCy,18
 microsoft/qlib,18
 ray-project/ray,18
@@ -12,6 +11,7 @@ JaidedAI/EasyOCR,17
 babysor/MockingBird,17
 coqui-ai/TTS,17
 deepfakes/faceswap,17
+deepspeedai/DeepSpeed,17
 hpcaitech/ColossalAI,17
 keras-team/keras,17
 streamlit/streamlit,17
@@ -31,14 +31,12 @@ ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects
 huggingface/datasets,14
 huggingface/diffusers,14
 onnx/onnx,14
-ZhuLinsen/daily_stock_analysis,13
 eugeneyan/applied-ml,13
 microsoft/AI-For-Beginners,13
 Avik-Jain/100-Days-Of-ML-Code,12
 BVLC/caffe,12
 CMU-Perceptual-Computing-Lab/openpose,12
 Significant-Gravitas/AutoGPT,12
-ZuzooVn/machine-learning-for-software-engineers,12
 camel-ai/camel,12
 google-ai-edge/mediapipe,12
 lukas-blecher/LaTeX-OCR,12
@@ -47,6 +45,7 @@ mli/paper-reading,12
 naptha/tesseract.js,12
 openai/CLIP,12
 opencv/opencv,12
+plotly/dash,12
 sinaptik-ai/pandas-ai,12
 tensorflow/tensorflow,12
 D4Vinci/Scrapling,11
@@ -59,19 +58,17 @@ sansan0/TrendRadar,11
 serengil/deepface,11
 zhayujie/CowAgent,11
 HKUDS/nanobot,10
+ZhuLinsen/daily_stock_analysis,10
 deezer/spleeter,10
 hacksider/Deep-Live-Cam,10
 hiyouga/LlamaFactory,10
 khoj-ai/khoj,10
 mage-ai/mage-ai,10
-plotly/dash,10
 pyg-team/pytorch_geometric,10
 scikit-learn/scikit-learn,10
 Fosowl/agenticSeek,9
-JuliusBrussee/caveman,9
 OpenHands/OpenHands,9
 QuivrHQ/quivr,9
-deepseek-ai/DeepSeek-OCR,9
 github/spec-kit,9
 langchain-ai/langchain,9
 mem0ai/mem0,9
@@ -86,11 +83,11 @@ Alibaba-NLP/DeepResearch,8
 Comfy-Org/ComfyUI,8
 LAION-AI/Open-Assistant,8
 OlafenwaMoses/ImageAI,8
-PrefectHQ/prefect,8
 Pythagora-io/gpt-pilot,8
 SYSTRAN/faster-whisper,8
 XingangPan/DragGAN,8
 ageitgey/face_recognition,8
+agno-agi/agno,8
 akfamily/akshare,8
 apache/airflow,8
 arc53/DocsGPT,8
@@ -101,6 +98,7 @@ docling-project/docling,8
 google/magika,8
 great-expectations/great_expectations,8
 harry0703/MoneyPrinterTurbo,8
+infiniflow/ragflow,8
 ipython/ipython,8
 langchain-ai/deepagents,8
 langchain-ai/langgraph,8
@@ -113,6 +111,7 @@ treeverse/dvc,8
 usestrix/strix,8
 Data-Centric-AI-Community/fg-data-profiling,7
 OpenBB-finance/OpenBB,7
+PrefectHQ/prefect,7
 RVC-Boss/GPT-SoVITS,7
 ShangtongZhang/reinforcement-learning-an-introduction,7
 TauricResearch/TradingAgents,7
@@ -120,7 +119,6 @@ The-Pocket/PocketFlow,7
 TransformerOptimus/SuperAGI,7
 VectifyAI/PageIndex,7
 autogluon/autogluon,7
-deepseek-ai/DeepSeek-Coder,7
 deepseek-ai/DeepSeek-V3,7
 jingyaogong/minimind,7
 lucidrains/PaLM-rlhf-pytorch,7
@@ -133,13 +131,14 @@ pycaret/pycaret,7
 reflex-dev/reflex,7
 sktime/sktime,7
 spotDL/spotify-downloader,7
+unslothai/unsloth,7
 vaexio/vaex,7
 vllm-project/vllm,7
 wandb/wandb,7
 yzhao062/pyod,7
 AstrBotDevs/AstrBot,6
+K-Dense-AI/scientific-agent-skills,6
 PaddlePaddle/PaddleOCR,6
-agno-agi/agno,6
 alirezamika/autoscraper,6
 camel-ai/owl,6
 cleanlab/cleanlab,6
@@ -151,11 +150,13 @@ flwrlabs/flower,6
 hpcaitech/Open-Sora,6
 letta-ai/letta,6
 lucidrains/DALLE2-pytorch,6
-mindsdb/mindsdb,6
+mindsdb/minds-platform,6
 modin-project/modin,6
 onyx-dot-app/onyx,6
 pymupdf/PyMuPDF,6
+rohitg00/ai-engineering-from-scratch,6
 scrapy/scrapy,6
+shareAI-lab/learn-claude-code,6
 stanfordnlp/stanza,6
 statsmodels/statsmodels,6
 tensorlayer/TensorLayer,6
@@ -167,10 +168,13 @@ yt-dlp/yt-dlp,6
 BerriAI/litellm,5
 FoundationAgents/MetaGPT,5
 HKUDS/LightRAG,5
+JuliusBrussee/caveman,5
 RayVentura/ShortGPT,5
 SciPhi-AI/R2R,5
 aliasrobotics/cai,5
+anthropics/financial-services,5
 chatchat-space/Langchain-Chatchat,5
+deepseek-ai/DeepSeek-OCR,5
 encode/django-rest-framework,5
 eosphoros-ai/DB-GPT,5
 fishaudio/fish-speech,5
@@ -178,7 +182,6 @@ getsentry/sentry,5
 google-deepmind/sonnet,5
 google/langextract,5
 guofei9987/scikit-opt,5
-infiniflow/ragflow,5
 jingyaogong/minimind-v,5
 kornia/kornia,5
 kyegomez/swarms,5
@@ -187,15 +190,14 @@ lucidrains/imagen-pytorch,5
 nebuly-ai/optimate,5
 nextlevelbuilder/ui-ux-pro-max-skill,5
 ranaroussi/yfinance,5
-rohitg00/ai-engineering-from-scratch,5
 safishamsi/graphify,5
 searxng/searxng,5
 sgl-project/sglang,5
 stanford-oval/storm,5
-unslothai/unsloth,5
 2noise/ChatTTS,4
 Avaiga/taipy,4
 Ebazhanov/linkedin-skill-assessments-quizzes,4
+Evil0ctal/Douyin_TikTok_Download_API,4
 HKUDS/DeepTutor,4
 ItzCrazyKns/Vane,4
 Lightning-AI/litgpt,4
@@ -205,16 +207,15 @@ SimplifyJobs/Summer2026-Internships,4
 Textualize/rich,4
 WenjieDu/PyPOTS,4
 Zeyi-Lin/HivisionIDPhotos,4
-affaan-m/everything-claude-code,4
+affaan-m/ECC,4
 aimhubio/aim,4
 alan-turing-institute/CleverCSV,4
 anthropics/skills,4
-apachecn/ailearning,4
-asgeirtj/system_prompts_leaks,4
 biolab/orange3,4
 browser-use/browser-use,4
 certbot/certbot,4
 chubin/cheat.sh,4
+continuedev/continue,4
 emmabostian/developer-portfolios,4
 firecrawl/firecrawl,4
 huggingface/open-r1,4
@@ -233,10 +234,8 @@ rtk-ai/rtk,4
 run-llama/llama_index,4
 sepandhaghighi/pycm,4
 shadowsocks/shadowsocks,4
-shareAI-lab/learn-claude-code,4
 sherlock-project/sherlock,4
 sqlmapproject/sqlmap,4
-stitionai/devika,4
 swisskyrepo/PayloadsAllTheThings,4
 tirth8205/code-review-graph,4
 unclecode/crawl4ai,4
@@ -246,11 +245,11 @@ ytdl-org/youtube-dl,4
 666ghj/BettaFish,3
 BlinkDL/RWKV-LM,3
 Fincept-Corporation/FinceptTerminal,3
-K-Dense-AI/scientific-agent-skills,3
 Netflix/metaflow,3
 OpenBMB/ChatDev,3
 Textualize/textual,3
 Vonng/ddia,3
+airbytehq/airbyte,3
 apple/ml-stable-diffusion,3
 bentoml/BentoML,3
 bentoml/OpenLLM,3
@@ -258,8 +257,8 @@ binary-husky/gpt_academic,3
 ccxt/ccxt,3
 charlax/professional-programming,3
 clovaai/donut,3
-cvat-ai/cvat,3
 ddbourgin/numpy-ml,3
+deepseek-ai/DeepSeek-Coder,3
 django/django,3
 eriklindernoren/PyTorch-GAN,3
 faif/python-patterns,3
@@ -286,8 +285,8 @@ pytorch/vision,3
 run-llama/rags,3
 scikit-learn-contrib/imbalanced-learn,3
 stanfordnlp/dspy,3
+stitionai/devika,3
 uxlfoundation/scikit-learn-intelex,3
-xerrors/Yuxi,3
 zai-org/Open-AutoGLM,3
 1adrianb/face-alignment,2
 521xueweihan/HelloGitHub,2
@@ -313,6 +312,7 @@ GoogleCloudPlatform/public-datasets-pipelines,2
 HKUDS/OpenHarness,2
 HKUDS/RAG-Anything,2
 Hironsan/BossSensor,2
+Imbad0202/academic-research-skills,2
 JohnYan2017/SmartCharts,2
 JosephLai241/URS,2
 K0lb3/UnityPy,2
@@ -327,11 +327,11 @@ Minqi824/ADBench,2
 NVIDIA/TensorRT-LLM,2
 NVIDIA/warp,2
 NannyML/nannyml,2
-OpenBMB/MiniCPM-o,2
 OpenBMB/VoxCPM,2
 OpenNMT/OpenNMT-py,2
 OpenRLHF/OpenRLHF,2
 OpenSPG/KAG,2
+OpenSenseNova/SenseNova-Skills,2
 PDFMathTranslate/PDFMathTranslate,2
 PKU-YuanGroup/Open-Sora-Plan,2
 PaddlePaddle/PaddleDetection,2
@@ -351,6 +351,7 @@ SFTtech/openage,2
 STVIR/pysot,2
 SpiderClub/weibospider,2
 TheFourGreatErrors/alpha-rptr,2
+Tracer-Cloud/opensre,2
 Upsonic/Upsonic,2
 Vision-CAIR/MiniGPT-4,2
 WZBSocialScienceCenter/pdftabextract,2
@@ -362,8 +363,8 @@ agilescientific/welly,2
 aidlearning/AidLearning-FrameWork,2
 ail-project/ail-framework,2
 aiming-lab/SimpleMem,2
+aipoch/medical-research-skills,2
 airbnb/knowledge-repo,2
-airbytehq/airbyte,2
 allenai/olmocr,2
 alpacahq/alpaca-mcp-server,2
 alpacahq/alpaca-py,2
@@ -371,12 +372,12 @@ annoviko/pyclustering,2
 ansible/ansible,2
 anthropics/claude-plugins-official,2
 apache/tvm,2
+apachecn/ailearning,2
 apachecn/python_data_analysis_and_mining_action,2
 apify/crawlee-python,2
 argosopentech/argos-translate,2
 arogozhnikov/einops,2
 asavinov/intelligent-trading-bot,2
-augurlabs/augur,2
 aws/aws-sam-cli,2
 bellingcat/octosuite,2
 bmoscon/cryptofeed,2
@@ -392,6 +393,7 @@ comet-ml/opik,2
 commaai/openpilot,2
 constverum/Quantdom,2
 couler-proj/couler,2
+cvat-ai/cvat,2
 danielgatis/rembg,2
 datajuicer/data-juicer,2
 datapane/datapane,2
@@ -406,6 +408,7 @@ dortania/OpenCore-Legacy-Patcher,2
 dottxt-ai/outlines,2
 edtechre/pybroker,2
 electricitymaps/electricitymaps-contrib,2
+emcie-co/parlant,2
 espnet/espnet,2
 evilsocket/opensnitch,2
 fabston/TradingView-Webhook-Bot,2
@@ -421,13 +424,11 @@ graphdeco-inria/gaussian-splatting,2
 gyli/PyWaffle,2
 has2k1/plotnine,2
 hi-primus/optimus,2
-hindupuravinash/the-gan-zoo,2
 hiroi-sora/Umi-OCR,2
 hoangsonww/End-to-End-Data-Pipeline,2
 horovod/horovod,2
 huggingface/pytorch-image-models,2
 hyperspy/hyperspy,2
-insightglacier/Shiro_exploit,2
 iusztinpaul/energy-forecasting,2
 ivopetiz/algotrading,2
 jacobgil/pytorch-grad-cam,2
@@ -436,9 +437,7 @@ jessevig/bertviz,2
 jundot/omlx,2
 justinzm/gopup,2
 karpathy/autoresearch,2
-karpathy/build-nanogpt,2
 keyu-tian/SparK,2
-kivy/kivy,2
 kk7nc/RMDL,2
 kyegomez/OpenMythos,2
 langflow-ai/langflow,2
@@ -508,7 +507,6 @@ sanic-org/sanic,2
 scikit-tda/kepler-mapper,2
 sebastianruder/NLP-progress,2
 secretflow/secretflow,2
-sentient-agi/ROMA,2
 serengil/chefboost,2
 sergioburdisso/pyss3,2
 skrub-data/skrub,2
@@ -527,7 +525,6 @@ tinygrad/tinygrad,2
 tommyod/Efficient-Apriori,2
 trustedsec/social-engineer-toolkit,2
 tryolabs/norfair,2
-tukuaiai/tradecat,2
 unytics/bigfunctions,2
 vibrantlabsai/ragas,2
 virattt/ai-hedge-fund,2
@@ -571,6 +568,7 @@ Aastha2104/Parkinson-Disease-Prediction,1
 AccumulateMore/CV,1
 Ackee-Blockchain/wake,1
 AdrianBZG/LLM-distributed-finetune,1
+AgentEra/Agently,1
 AgentOps-AI/agentops,1
 AirtestProject/Airtest,1
 AkiRusProd/numpy-nn-model,1
@@ -578,6 +576,7 @@ AlexIoannides/pyspark-example-project,1
 AlexsLemonade/refinebio,1
 AminHP/gym-mtsim,1
 Amm1rr/WebAI-to-API,1
+Andyyyy64/whichllm,1
 ArturSepp/QuantInvestStrats,1
 Atarity/deploy-your-own-saas,1
 AvdLee/SwiftUI-Agent-Skill,1
@@ -644,14 +643,12 @@ Epodonios/v2ray-configs,1
 EricSteinberger/PokerRL,1
 ErlichLiu/DeepClaude,1
 EternalFeather/Chatbot-Training-Corpus,1
-Evil0ctal/Douyin_TikTok_Download_API,1
 FLming/CRNN.tf2,1
 Farama-Foundation/Gymnasium,1
 FinanceData/FinanceDataReader,1
 Finnhub-Stock-API/finnhub-python,1
 FlagOpen/FlagEmbedding,1
 Flame-Code-VLM/Flame-Code-VLM,1
-Forethought-Technologies/AutoChain,1
 FreedomIntelligence/OpenClaw-Medical-Skills,1
 FreedomIntelligence/TextClassificationBenchmark,1
 FudanDISC/DISC-FinLLM,1
@@ -667,7 +664,7 @@ Galileo-Galilei/kedro-mlflow,1
 Games-and-Simulations/sc-docker,1
 Gbox4/tstock,1
 GeeeekExplorer/nano-vllm,1
-Genesis-Embodied-AI/Genesis,1
+Genesis-Embodied-AI/genesis-world,1
 Giskard-AI/giskard-oss,1
 GlassyWing/text-detection-ocr,1
 GoogleCloudPlatform/PerfKitBenchmarker,1
@@ -679,6 +676,7 @@ GuanYixuan/pyJianYingDraft,1
 Gumpest/YOLOv5-Multibackbone-Compression,1
 HA6Bots/TikTok-Compilation-Video-Generator,1
 HA6Bots/Twitch-Clips-Compilation-Generator-TCCG-,1
+HKUDS/AI-Trader,1
 HKUDS/Vibe-Trading,1
 HackerPoet/PySpace,1
 Haohao-end/openagent,1
@@ -732,7 +730,6 @@ Lasagne/Lasagne,1
 Layout-Parser/layout-parser,1
 LeanModels/DFloat11,1
 LeoYeAI/openclaw-master-skills,1
-LiberAI/NSpM,1
 Lightning-AI/lit-llama,1
 Linaom1214/TensorRT-For-YOLO-Series,1
 Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB,1
@@ -742,7 +739,6 @@ Ma-Lab-Berkeley/CRATE,1
 MagerValp/AutoDMG,1
 Maluuba/GeNeVA,1
 Maluuba/nlg-eval,1
-MarCmcbri1982/KawaiiGPT,1
 MarwanDebbiche/post-tuto-deployment,1
 MatrixTM/MHDDoS,1
 MattMoony/figaro,1
@@ -775,6 +771,7 @@ NVIDIA/pix2pixHD,1
 NVIDIA/vid2vid,1
 NVlabs/FoundationPose,1
 NVlabs/FoundationStereo,1
+NVlabs/Sana,1
 NVlabs/neuralangelo,1
 NVlabs/storm,1
 NathanDuran/Switchboard-Corpus,1
@@ -785,6 +782,7 @@ NourozR/Stock-Price-Prediction-LSTM,1
 OWASP/mastg,1
 Oldpan/Pytorch-Memory-Utils,1
 Oneflow-Inc/libai,1
+OpenBMB/MiniCPM-o,1
 OpenBMB/UltraRAG,1
 OpenCSGs/llm-inference,1
 OpenDriveLab/AgiBot-World,1
@@ -909,6 +907,7 @@ WongKinYiu/yolov9,1
 Wookai/paper-tips-and-tricks,1
 X-PLUG/ChatPLUG,1
 X-PLUG/mPLUG-Owl,1
+Xiangyue-Zhang/auto-deep-researcher-24x7,1
 Xiaoccer/MobileFaceNet_Pytorch,1
 Xirider/finetune-gpt2xl,1
 XuehaiPan/nvitop,1
@@ -954,6 +953,7 @@ aledipa/Free-GPT4-WEB-API,1
 aleju/imgaug,1
 alibaba/EasyParallelLibrary,1
 alibaba/tidevice,1
+alicevision/Meshroom,1
 allenai/RL4LMs,1
 allenai/dont-stop-pretraining,1
 allenai/olmoearth_pretrain,1
@@ -972,7 +972,6 @@ andfanilo/streamlit-echarts,1
 andreax79/airflow-code-editor,1
 andri27-ts/Reinforcement-Learning,1
 ankurchavda/streamify,1
-anthropics/financial-services,1
 antoinelame/GazeTracking,1
 antonior92/ecg-age-prediction,1
 aoguai/LiYing,1
@@ -1019,7 +1018,6 @@ bbfamily/abu,1
 behnamyazdan/ecommerce_realtime_data_pipeline,1
 belangeo/pyo,1
 bfirsh/loom,1
-bigcode-project/bigcodebench,1
 bigscience-workshop/Megatron-DeepSpeed,1
 bigscience-workshop/petals,1
 binance/binance-connector-python,1
@@ -1131,6 +1129,7 @@ deepset-ai/haystack,1
 derronqi/yolov7-face,1
 derronqi/yolov8-face,1
 descriptinc/descript-audio-codec,1
+dev-fYnn/Winget-Repo,1
 devilbox/vhost-gen,1
 devoxi/lttb-py,1
 devshawn/kafka-shell,1
@@ -1151,7 +1150,6 @@ dogukannulu/kafka_spark_structured_streaming,1
 doronz88/pymobiledevice3,1
 dot-agent/nextpy,1
 dpkp/kafka-python,1
-drdoctr/doctr,1
 dreamsdk/dreamsdk,1
 dreamzero0/dreamzero,1
 dsaidgovsg/airflow-pipeline,1
@@ -1181,7 +1179,6 @@ fabfuel/ecs-deploy,1
 fabric-bolt/fabric-bolt,1
 fabriziosalmi/patterns,1
 fake-name/IntraArchiveDeduplicator,1
-fal-ai/flashpack,1
 fancompute/legume,1
 fastapi-practices/fastapi-best-architecture,1
 fastapi-users/fastapi-users,1
@@ -1201,6 +1198,7 @@ flairNLP/flair,1
 flaport/sax,1
 flashinfer-ai/flashinfer,1
 fluiddyn/transonic,1
+fluxions-ai/vui,1
 flyteorg/flyte,1
 fmilthaler/FinQuant,1
 foolwood/SiamMask,1
@@ -1246,7 +1244,6 @@ google/tf-quant-finance,1
 google/tunix,1
 google/yapf,1
 gprMax/gprMax,1
-gpt-open/rag-gpt,1
 gpustack/gpustack,1
 graphistry/pygraphistry,1
 great-expectations/airflow-provider-great-expectations,1
@@ -1266,6 +1263,7 @@ hellonlp/classifier-multi-label,1
 helmholtz-analytics/heat,1
 hgmzhn/manga-translator-ui,1
 hhzrd/BEFAQ,1
+hindupuravinash/the-gan-zoo,1
 hirokatsukataoka16/FractalDB-Pretrained-ResNet-PyTorch,1
 hiyouga/EasyR1,1
 hkchengrex/MMAudio,1
@@ -1308,11 +1306,11 @@ ikergarcia1996/Easy-Translate,1
 ikostrikov/pytorch-a2c-ppo-acktr-gail,1
 ildoonet/cutmix,1
 ilovin/lstm_ctc_ocr,1
-imoneoi/openchat,1
 index-tts/index-tts,1
 inducer/pycuda,1
 inducer/pyopencl,1
 infocusp/tf_cnnvis,1
+insightglacier/Shiro_exploit,1
 isaiahbjork/Auto-GPT-MetaTrader-Plugin,1
 iscyy/ultralyticsPro,1
 israel-dryer/ttkbootstrap,1
@@ -1366,6 +1364,7 @@ kadirnar/segment-anything-video,1
 kaiyuyue/torchshard,1
 kakaobrain/fast-autoaugment,1
 kalaspuff/tomodachi,1
+kalil0321/ats-scrapers,1
 kamo-naoyuki/pytorch_convolutional_rnn,1
 karolpiczak/ESC-50,1
 karpathy/nanoGPT,1
@@ -1373,6 +1372,7 @@ karpathy/nanochat,1
 kaszperro/slick-dnn,1
 katanaml/sparrow,1
 kelvinau/crypto-arbitrage,1
+keon/seq2seq,1
 keras-rl/keras-rl,1
 kernc/backtesting.py,1
 keunwoochoi/kapre,1
@@ -1381,6 +1381,7 @@ kingoflolz/mesh-transformer-jax,1
 kiritbasu/Fake-Apache-Log-Generator,1
 kislyuk/yq,1
 kivy/buildozer,1
+kivy/kivy,1
 kivy/kivy-ios,1
 kivy/plyer,1
 kivymd/KivyMD,1
@@ -1401,6 +1402,7 @@ l294265421/alpaca-rlhf,1
 lakevision-project/lakevision,1
 lambdaclass/options_portfolio_backtester,1
 lance-format/lance,1
+langchain-ai/open_deep_research,1
 lanl/pyxDamerauLevenshtein,1
 lawlite19/MachineLearning_Python,1
 lbryio/lbry-sdk,1
@@ -1414,6 +1416,7 @@ liamdugan/raid,1
 liangwq/Chatglm_lora_multi-gpu,1
 liangyuwang/Tiny-DeepSpeed,1
 librosa/librosa,1
+lightseekorg/tokenspeed,1
 linkedin/kafka-tools,1
 linsomniac/spotify_to_ytmusic,1
 liuxu77/LargeST,1
@@ -1426,7 +1429,6 @@ lmbxmu/HRank,1
 lnbits/lnbits,1
 localminimum/QANet,1
 long2ice/asyncmy,1
-louisoutin/yolov5_torchserve,1
 lovelyyoshino/Shadowsocks-Hosts-or-V2ray,1
 lsdefine/GenericAgent,1
 lss233/kirara-ai,1
@@ -1495,6 +1497,7 @@ mikel-brostrom/boxmot,1
 miloyip/game-programmer,1
 mimoo/Diffie-Hellman_Backdoor,1
 mims-harvard/TFC-pretraining,1
+mindsdb/mindsdb,1
 mindspore-lab/mindocr,1
 mit-han-lab/gan-compression,1
 mit-han-lab/hardware-aware-transformers,1
@@ -1540,7 +1543,6 @@ neeru1207/AI_Sudoku,1
 nerfstudio-project/nerfstudio,1
 nesquena/hermes-webui,1
 net00-1/SW-DLT,1
-netease-youdao/EmotiVoice,1
 netinvent/npbackup,1
 netscaler/netscaler-adc-metrics-exporter,1
 nickliqian/cnn_captcha,1
@@ -1556,6 +1558,7 @@ nnaisense/evotorch,1
 nneonneo/iOS-SOCKS-Server,1
 norse/norse,1
 notAI-tech/NudeNet,1
+notlikeDev/CCPlugins,1
 nottelabs/notte,1
 novioleo/Savior,1
 nuglifeleoji/Options-Analytics-Agent,1
@@ -1634,8 +1637,10 @@ princewen/tensorflow_practice,1
 probonopd/irdb,1
 prs-eth/Marigold,1
 prudhvi-reddy-m/BlackScholes,1
+psmarter/mini-infer,1
 pydantic/pydantic,1
 pyeve/cerberus,1
+pyinfra-dev/pyinfra,1
 pypa/pipenv,1
 pypa/virtualenv,1
 pypr/pysph,1
@@ -1652,11 +1657,11 @@ qdrant/fastembed,1
 qdrant/qdrant,1
 qmhedging/poboquant,1
 qqwweee/keras-yolo3,1
+qualcomm/aimet,1
 quantopian/empyrical,1
 quantopian/zipline,1
 quantsbin/Quantsbin,1
 qubole/afctl,1
-quic/aimet,1
 rackspace/runway,1
 rafael-fuente/Python-Raytracer,1
 rajkumardusad/MyServer,1
@@ -1665,6 +1670,7 @@ randyzwitch/streamlit-folium,1
 rany2/edge-tts,1
 rasterio/rasterio,1
 ratibor78/geostat,1
+raullenchai/Rapid-MLX,1
 rawandahmad698/PyChatGPT,1
 raysect/source,1
 rballester/tntorch,1
@@ -1824,6 +1830,8 @@ truera/trulens,1
 truthofmatthew/persian-license-plate-recognition,1
 tsurumeso/vocal-remover,1
 ttrouill/complex,1
+tukuaiai/tradecat,1
+tukuaiai/tradecat-public,1
 tulip-control/dd,1
 turningpoint-ai/VisualThinker-R1-Zero,1
 tvst/st-annotated-text,1
@@ -1884,6 +1892,7 @@ wzdnzd/harvester,1
 x011/SecretPixel,1
 xark-argo/argo,1
 xbpeng/MimicKit,1
+xerrors/Yuxi,1
 xingyizhou/CenterTrack,1
 xinntao/facexlib,1
 xmu-xiaoma666/External-Attention-pytorch,1
