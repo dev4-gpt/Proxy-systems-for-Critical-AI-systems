@@ -8,6 +8,7 @@ roboflow/supervision,18,ranked_matches_full_pool
 AUTOMATIC1111/stable-diffusion-webui,17,ranked_matches_full_pool
 CorentinJ/Real-Time-Voice-Cloning,17,ranked_matches_full_pool
 JaidedAI/EasyOCR,17,ranked_matches_full_pool
+asgeirtj/system_prompts_leaks,17,ranked_matches_full_pool
 babysor/MockingBird,17,ranked_matches_full_pool
 coqui-ai/TTS,17,ranked_matches_full_pool
 deepfakes/faceswap,17,ranked_matches_full_pool
@@ -33,6 +34,7 @@ huggingface/diffusers,14,ranked_matches_full_pool
 onnx/onnx,14,ranked_matches_full_pool
 eugeneyan/applied-ml,13,ranked_matches_full_pool
 microsoft/AI-For-Beginners,13,ranked_matches_full_pool
+plotly/dash,13,ranked_matches_full_pool
 Avik-Jain/100-Days-Of-ML-Code,12,ranked_matches_full_pool
 BVLC/caffe,12,ranked_matches_full_pool
 CMU-Perceptual-Computing-Lab/openpose,12,ranked_matches_full_pool
@@ -45,7 +47,6 @@ mli/paper-reading,12,ranked_matches_full_pool
 naptha/tesseract.js,12,ranked_matches_full_pool
 openai/CLIP,12,ranked_matches_full_pool
 opencv/opencv,12,ranked_matches_full_pool
-plotly/dash,12,ranked_matches_full_pool
 sinaptik-ai/pandas-ai,12,ranked_matches_full_pool
 tensorflow/tensorflow,12,ranked_matches_full_pool
 D4Vinci/Scrapling,11,ranked_matches_full_pool
@@ -58,7 +59,6 @@ sansan0/TrendRadar,11,ranked_matches_full_pool
 serengil/deepface,11,ranked_matches_full_pool
 zhayujie/CowAgent,11,ranked_matches_full_pool
 HKUDS/nanobot,10,ranked_matches_full_pool
-ZhuLinsen/daily_stock_analysis,10,ranked_matches_full_pool
 deezer/spleeter,10,ranked_matches_full_pool
 hacksider/Deep-Live-Cam,10,ranked_matches_full_pool
 hiyouga/LlamaFactory,10,ranked_matches_full_pool
@@ -69,7 +69,9 @@ scikit-learn/scikit-learn,10,ranked_matches_full_pool
 Fosowl/agenticSeek,9,ranked_matches_full_pool
 OpenHands/OpenHands,9,ranked_matches_full_pool
 QuivrHQ/quivr,9,ranked_matches_full_pool
+ZhuLinsen/daily_stock_analysis,9,ranked_matches_full_pool
 github/spec-kit,9,ranked_matches_full_pool
+infiniflow/ragflow,9,ranked_matches_full_pool
 langchain-ai/langchain,9,ranked_matches_full_pool
 mem0ai/mem0,9,ranked_matches_full_pool
 microsoft/JARVIS,9,ranked_matches_full_pool
@@ -98,7 +100,6 @@ docling-project/docling,8,ranked_matches_full_pool
 google/magika,8,ranked_matches_full_pool
 great-expectations/great_expectations,8,ranked_matches_full_pool
 harry0703/MoneyPrinterTurbo,8,ranked_matches_full_pool
-infiniflow/ragflow,8,ranked_matches_full_pool
 ipython/ipython,8,ranked_matches_full_pool
 langchain-ai/deepagents,8,ranked_matches_full_pool
 langchain-ai/langgraph,8,ranked_matches_full_pool
@@ -125,6 +126,7 @@ lucidrains/PaLM-rlhf-pytorch,7,ranked_matches_full_pool
 lucidrains/vit-pytorch,7,ranked_matches_full_pool
 ludwig-ai/ludwig,7,ranked_matches_full_pool
 matplotlib/matplotlib,7,ranked_matches_full_pool
+mindsdb/minds-platform,7,ranked_matches_full_pool
 mvanhorn/last30days-skill,7,ranked_matches_full_pool
 mwaskom/seaborn,7,ranked_matches_full_pool
 pycaret/pycaret,7,ranked_matches_full_pool
@@ -150,7 +152,6 @@ flwrlabs/flower,6,ranked_matches_full_pool
 hpcaitech/Open-Sora,6,ranked_matches_full_pool
 letta-ai/letta,6,ranked_matches_full_pool
 lucidrains/DALLE2-pytorch,6,ranked_matches_full_pool
-mindsdb/minds-platform,6,ranked_matches_full_pool
 modin-project/modin,6,ranked_matches_full_pool
 onyx-dot-app/onyx,6,ranked_matches_full_pool
 pymupdf/PyMuPDF,6,ranked_matches_full_pool
@@ -168,7 +169,6 @@ yt-dlp/yt-dlp,6,ranked_matches_full_pool
 BerriAI/litellm,5,ranked_matches_full_pool
 FoundationAgents/MetaGPT,5,ranked_matches_full_pool
 HKUDS/LightRAG,5,ranked_matches_full_pool
-JuliusBrussee/caveman,5,ranked_matches_full_pool
 RayVentura/ShortGPT,5,ranked_matches_full_pool
 SciPhi-AI/R2R,5,ranked_matches_full_pool
 aliasrobotics/cai,5,ranked_matches_full_pool
@@ -200,6 +200,7 @@ Ebazhanov/linkedin-skill-assessments-quizzes,4,ranked_matches_full_pool
 Evil0ctal/Douyin_TikTok_Download_API,4,ranked_matches_full_pool
 HKUDS/DeepTutor,4,ranked_matches_full_pool
 ItzCrazyKns/Vane,4,ranked_matches_full_pool
+JuliusBrussee/caveman,4,ranked_matches_full_pool
 Lightning-AI/litgpt,4,ranked_matches_full_pool
 Mintplex-Labs/anything-llm,4,ranked_matches_full_pool
 ScrapeGraphAI/Scrapegraph-ai,4,ranked_matches_full_pool
@@ -215,7 +216,6 @@ biolab/orange3,4,ranked_matches_full_pool
 browser-use/browser-use,4,ranked_matches_full_pool
 certbot/certbot,4,ranked_matches_full_pool
 chubin/cheat.sh,4,ranked_matches_full_pool
-continuedev/continue,4,ranked_matches_full_pool
 emmabostian/developer-portfolios,4,ranked_matches_full_pool
 firecrawl/firecrawl,4,ranked_matches_full_pool
 huggingface/open-r1,4,ranked_matches_full_pool
@@ -298,6 +298,7 @@ Aider-AI/aider,2,ranked_matches_full_pool
 Anjok07/ultimatevocalremovergui,2,ranked_matches_full_pool
 AsyncFuncAI/deepwiki-open,2,ranked_matches_full_pool
 CIRCL/AIL-framework,2,ranked_matches_full_pool
+Canner/WrenAI,2,ranked_matches_full_pool
 Chainlit/chainlit,2,ranked_matches_full_pool
 ContextLab/hypertools,2,ranked_matches_full_pool
 CryptoSignal/Crypto-Signal,2,ranked_matches_full_pool
@@ -319,7 +320,6 @@ K0lb3/UnityPy,2,ranked_matches_full_pool
 Kanaries/pygwalker,2,ranked_matches_full_pool
 Kitware/trame,2,ranked_matches_full_pool
 LibreTranslate/LibreTranslate,2,ranked_matches_full_pool
-Lumiwealth/lumibot,2,ranked_matches_full_pool
 MAC-AutoML/MindPipe,2,ranked_matches_full_pool
 MVIG-SJTU/AlphaPose,2,ranked_matches_full_pool
 MaartenGr/BERTopic,2,ranked_matches_full_pool
@@ -362,6 +362,7 @@ agentscope-ai/agentscope,2,ranked_matches_full_pool
 agilescientific/welly,2,ranked_matches_full_pool
 aidlearning/AidLearning-FrameWork,2,ranked_matches_full_pool
 ail-project/ail-framework,2,ranked_matches_full_pool
+aiming-lab/AutoResearchClaw,2,ranked_matches_full_pool
 aiming-lab/SimpleMem,2,ranked_matches_full_pool
 aipoch/medical-research-skills,2,ranked_matches_full_pool
 airbnb/knowledge-repo,2,ranked_matches_full_pool
@@ -419,7 +420,6 @@ fuqiuai/lihang_algorithms,2,ranked_matches_full_pool
 getredash/redash,2,ranked_matches_full_pool
 getzep/graphiti,2,ranked_matches_full_pool
 glato/emerge,2,ranked_matches_full_pool
-google-deepmind/graph_nets,2,ranked_matches_full_pool
 graphdeco-inria/gaussian-splatting,2,ranked_matches_full_pool
 gyli/PyWaffle,2,ranked_matches_full_pool
 has2k1/plotnine,2,ranked_matches_full_pool
@@ -440,6 +440,7 @@ karpathy/autoresearch,2,ranked_matches_full_pool
 keyu-tian/SparK,2,ranked_matches_full_pool
 kk7nc/RMDL,2,ranked_matches_full_pool
 kyegomez/OpenMythos,2,ranked_matches_full_pool
+langchain-ai/open_deep_research,2,ranked_matches_full_pool
 langflow-ai/langflow,2,ranked_matches_full_pool
 laramies/theHarvester,2,ranked_matches_full_pool
 lastmile-ai/mcp-agent,2,ranked_matches_full_pool
@@ -468,7 +469,6 @@ myshell-ai/OpenVoice,2,ranked_matches_full_pool
 ndleah/python-mini-project,2,ranked_matches_full_pool
 netbox-community/netbox,2,ranked_matches_full_pool
 neuml/txtai,2,ranked_matches_full_pool
-newren/git-filter-repo,2,ranked_matches_full_pool
 nidhaloff/igel,2,ranked_matches_full_pool
 nlpxucan/WizardLM,2,ranked_matches_full_pool
 nodejs/node-gyp,2,ranked_matches_full_pool
@@ -525,6 +525,7 @@ tinygrad/tinygrad,2,ranked_matches_full_pool
 tommyod/Efficient-Apriori,2,ranked_matches_full_pool
 trustedsec/social-engineer-toolkit,2,ranked_matches_full_pool
 tryolabs/norfair,2,ranked_matches_full_pool
+tukuaiai/tradecat-public,2,ranked_matches_full_pool
 unytics/bigfunctions,2,ranked_matches_full_pool
 vibrantlabsai/ragas,2,ranked_matches_full_pool
 virattt/ai-hedge-fund,2,ranked_matches_full_pool
@@ -716,7 +717,6 @@ Jon-Becker/prediction-market-analysis,1,ranked_matches_full_pool
 JoshuaC215/agent-service-toolkit,1,ranked_matches_full_pool
 Jrohy/multi-v2ray,1,ranked_matches_full_pool
 Junpliu/ConDigSum,1,ranked_matches_full_pool
-Justi1980/Dawn-Validator-BOT,1,ranked_matches_full_pool
 KaiyangZhou/deep-person-reid,1,ranked_matches_full_pool
 KarhouTam/FL-bench,1,ranked_matches_full_pool
 KeKsBoTer/c3dgs,1,ranked_matches_full_pool
@@ -733,6 +733,7 @@ LeoYeAI/openclaw-master-skills,1,ranked_matches_full_pool
 Lightning-AI/lit-llama,1,ranked_matches_full_pool
 Linaom1214/TensorRT-For-YOLO-Series,1,ranked_matches_full_pool
 Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB,1,ranked_matches_full_pool
+Lumiwealth/lumibot,1,ranked_matches_full_pool
 MLT-OSS/open-assistant-api,1,ranked_matches_full_pool
 MPolaris/onnx2tflite,1,ranked_matches_full_pool
 Ma-Lab-Berkeley/CRATE,1,ranked_matches_full_pool
@@ -782,7 +783,6 @@ NourozR/Stock-Price-Prediction-LSTM,1,ranked_matches_full_pool
 OWASP/mastg,1,ranked_matches_full_pool
 Oldpan/Pytorch-Memory-Utils,1,ranked_matches_full_pool
 Oneflow-Inc/libai,1,ranked_matches_full_pool
-OpenBMB/MiniCPM-o,1,ranked_matches_full_pool
 OpenBMB/UltraRAG,1,ranked_matches_full_pool
 OpenCSGs/llm-inference,1,ranked_matches_full_pool
 OpenDriveLab/AgiBot-World,1,ranked_matches_full_pool
@@ -811,7 +811,6 @@ PeterH0323/Smart_Construction,1,ranked_matches_full_pool
 PeterL1n/BackgroundMattingV2,1,ranked_matches_full_pool
 PeterL1n/RobustVideoMatting,1,ranked_matches_full_pool
 Picovoice/picollm,1,ranked_matches_full_pool
-PolyPulse-Analytics/hyperliquid-trading-bot,1,ranked_matches_full_pool
 PolymathicAI/multiple_physics_pretraining,1,ranked_matches_full_pool
 PromtEngineer/localGPT,1,ranked_matches_full_pool
 PufferAI/PufferLib,1,ranked_matches_full_pool
@@ -1043,6 +1042,7 @@ boyac/pyOptionPricing,1,ranked_matches_full_pool
 brade31919/SRGAN-tensorflow,1,ranked_matches_full_pool
 braincrew-lab/langgraph-mcp-agents,1,ranked_matches_full_pool
 brightmart/text_classification,1,ranked_matches_full_pool
+brokermr810/QuantDinger,1,ranked_matches_full_pool
 brthor/docker-push-ssh,1,ranked_matches_full_pool
 bryzgaloff/airflow-clickhouse-plugin,1,ranked_matches_full_pool
 bubbliiiing/yolov5-pytorch,1,ranked_matches_full_pool
@@ -1402,7 +1402,6 @@ l294265421/alpaca-rlhf,1,ranked_matches_full_pool
 lakevision-project/lakevision,1,ranked_matches_full_pool
 lambdaclass/options_portfolio_backtester,1,ranked_matches_full_pool
 lance-format/lance,1,ranked_matches_full_pool
-langchain-ai/open_deep_research,1,ranked_matches_full_pool
 lanl/pyxDamerauLevenshtein,1,ranked_matches_full_pool
 lawlite19/MachineLearning_Python,1,ranked_matches_full_pool
 lbryio/lbry-sdk,1,ranked_matches_full_pool
@@ -1497,7 +1496,6 @@ mikel-brostrom/boxmot,1,ranked_matches_full_pool
 miloyip/game-programmer,1,ranked_matches_full_pool
 mimoo/Diffie-Hellman_Backdoor,1,ranked_matches_full_pool
 mims-harvard/TFC-pretraining,1,ranked_matches_full_pool
-mindsdb/mindsdb,1,ranked_matches_full_pool
 mindspore-lab/mindocr,1,ranked_matches_full_pool
 mit-han-lab/gan-compression,1,ranked_matches_full_pool
 mit-han-lab/hardware-aware-transformers,1,ranked_matches_full_pool
@@ -1593,7 +1591,6 @@ openai/spinningup,1,ranked_matches_full_pool
 openai/swarm,1,ranked_matches_full_pool
 openai/tiktoken,1,ranked_matches_full_pool
 opendatalab/PDF-Extract-Kit,1,ranked_matches_full_pool
-opendilab/DI-engine,1,ranked_matches_full_pool
 opengeos/leafmap,1,ranked_matches_full_pool
 opengeos/streamlit-geospatial,1,ranked_matches_full_pool
 opengeospatial/geoparquet,1,ranked_matches_full_pool
@@ -1693,6 +1690,7 @@ robertmartin8/MachineLearningStocks,1,ranked_matches_full_pool
 robmsmt/KerasDeepSpeech,1,ranked_matches_full_pool
 roboflow/rf-detr,1,ranked_matches_full_pool
 roboflow/sports,1,ranked_matches_full_pool
+roboninecom/SO-ARM100-101-Parallel-Gripper,1,ranked_matches_full_pool
 rochacbruno/rust-python-example,1,ranked_matches_full_pool
 rohitg00/kubectl-mcp-server,1,ranked_matches_full_pool
 romanz/amodem,1,ranked_matches_full_pool
@@ -1764,7 +1762,6 @@ spesmilo/electrum,1,ranked_matches_full_pool
 sreenivasdoosa/sdoosa-algo-trade-python,1,ranked_matches_full_pool
 srvk/how2-dataset,1,ranked_matches_full_pool
 stanford-oval/genienlp,1,ranked_matches_full_pool
-stanfordnlp/CoreNLP,1,ranked_matches_full_pool
 stanleylsx/llms_tool,1,ranked_matches_full_pool
 stasel/WebRTC,1,ranked_matches_full_pool
 stefan-jansen/machine-learning-for-trading,1,ranked_matches_full_pool
@@ -1830,8 +1827,6 @@ truera/trulens,1,ranked_matches_full_pool
 truthofmatthew/persian-license-plate-recognition,1,ranked_matches_full_pool
 tsurumeso/vocal-remover,1,ranked_matches_full_pool
 ttrouill/complex,1,ranked_matches_full_pool
-tukuaiai/tradecat,1,ranked_matches_full_pool
-tukuaiai/tradecat-public,1,ranked_matches_full_pool
 tulip-control/dd,1,ranked_matches_full_pool
 turningpoint-ai/VisualThinker-R1-Zero,1,ranked_matches_full_pool
 tvst/st-annotated-text,1,ranked_matches_full_pool
@@ -1915,6 +1910,7 @@ yanshengjia/ml-road,1,ranked_matches_full_pool
 yaron4u/EnigmaCracker,1,ranked_matches_full_pool
 yasinkuyu/binance-trader,1,ranked_matches_full_pool
 ycm-core/YouCompleteMe,1,ranked_matches_full_pool
+yeahrb/CEX-Option-Futures-Crypto-Quant-Algorithm-Trading-Bot,1,ranked_matches_full_pool
 yenchenlin/DeepLearningFlappyBird,1,ranked_matches_full_pool
 yeyupiaoling/VoiceprintRecognition-PaddlePaddle,1,ranked_matches_full_pool
 yeyupiaoling/VoiceprintRecognition-Pytorch,1,ranked_matches_full_pool

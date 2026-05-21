@@ -1,0 +1,59 @@
+{
+  "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
+  "utc_timestamp": "2026-05-21T16:21:13.7806500Z",
+  "git_commit": "39bd55be2889ae202bd7211150425c7d5c629c12",
+  "anchor": {
+    "full_name": "sebastianruder/NLP-progress",
+    "url": "https://github.com/sebastianruder/NLP-progress",
+    "owner": "sebastianruder",
+    "language": "Python",
+    "stars": 22965,
+    "topics": [
+      "dialogue",
+      "machine-learning",
+      "machine-translation",
+      "named-entity-recognition",
+      "natural-language-processing",
+      "nlp-tasks"
+    ]
+  },
+  "params": {
+    "TopK": 30,
+    "MaxSearchPerQuery": 50,
+    "MinimumStars": 50,
+    "MinimumScore": 700,
+    "IncludeRetrievalSignalsInScore": false,
+    "CrossAnchorRunsDir": "runs/manual-ml-py",
+    "CrossAnchorFreqPenaltyWeight": 55.0,
+    "MaxPerOwner": 2,
+    "MaxPerOwnerPerSubdomain": 1,
+    "DisableDiversityGuard": false,
+    "AllowSameOwner": false,
+    "AllowForks": false,
+    "AllowArchived": false,
+    "AllowFallbackFill": true
+  },
+  "weights": {
+    "SubdomainMatch": 225.0,
+    "LexicalJaccard": 650.0,
+    "RecencySimilarity": 125.0,
+    "QueryCoverage": 150.0,
+    "TopicJaccard": 900.0,
+    "StarSimilarity": 175.0,
+    "LanguageMatch": 250.0
+  },
+  "counts": {
+    "search_queries": 6,
+    "candidate_pool": 248,
+    "enriched": 226,
+    "scored": 226,
+    "qualified": 20,
+    "final": 30
+  },
+  "outputs": {
+    "anchor_repo_json": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/sebastianruder-NLP-progress/anchor_repo.json",
+    "candidate_repos_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/sebastianruder-NLP-progress/candidate_repos.csv",
+    "ranked_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/sebastianruder-NLP-progress/ranked_matches.csv",
+    "final_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/sebastianruder-NLP-progress/30_Matches.csv"
+  }
+}
