@@ -1,13 +1,13 @@
 {
   "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
-  "utc_timestamp": "2026-05-20T21:49:20.6472960Z",
-  "git_commit": "fc96cdeab05ad9c511daf5f09de1b171ec58dc7f",
+  "utc_timestamp": "2026-05-21T16:09:26.1480540Z",
+  "git_commit": "39bd55be2889ae202bd7211150425c7d5c629c12",
   "anchor": {
     "full_name": "deepspeedai/DeepSpeed",
     "url": "https://github.com/deepspeedai/DeepSpeed",
     "owner": "deepspeedai",
     "language": "Python",
-    "stars": 42370,
+    "stars": 42385,
     "topics": [
       "billion-parameters",
       "compression",
@@ -31,7 +31,7 @@
     "MinimumScore": 700,
     "IncludeRetrievalSignalsInScore": false,
     "CrossAnchorRunsDir": "runs/manual-ml-py",
-    "CrossAnchorFreqPenaltyWeight": 30.0,
+    "CrossAnchorFreqPenaltyWeight": 55.0,
     "MaxPerOwner": 2,
     "MaxPerOwnerPerSubdomain": 1,
     "DisableDiversityGuard": false,
@@ -41,19 +41,19 @@
     "AllowFallbackFill": true
   },
   "weights": {
+    "SubdomainMatch": 225.0,
+    "LexicalJaccard": 650.0,
     "RecencySimilarity": 125.0,
     "QueryCoverage": 150.0,
     "TopicJaccard": 900.0,
-    "SubdomainMatch": 225.0,
-    "LexicalJaccard": 650.0,
-    "LanguageMatch": 250.0,
-    "StarSimilarity": 175.0
+    "StarSimilarity": 175.0,
+    "LanguageMatch": 250.0
   },
   "counts": {
     "search_queries": 6,
-    "candidate_pool": 176,
-    "enriched": 156,
-    "scored": 156,
+    "candidate_pool": 177,
+    "enriched": 157,
+    "scored": 157,
     "qualified": 33,
     "final": 30
   },

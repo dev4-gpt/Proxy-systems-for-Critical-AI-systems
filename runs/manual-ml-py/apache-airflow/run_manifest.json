@@ -1,13 +1,13 @@
 {
   "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
-  "utc_timestamp": "2026-05-20T16:15:35.1992800Z",
-  "git_commit": "fc96cdeab05ad9c511daf5f09de1b171ec58dc7f",
+  "utc_timestamp": "2026-05-21T15:43:39.9518140Z",
+  "git_commit": "39bd55be2889ae202bd7211150425c7d5c629c12",
   "anchor": {
     "full_name": "apache/airflow",
     "url": "https://github.com/apache/airflow",
     "owner": "apache",
     "language": "Python",
-    "stars": 45466,
+    "stars": 45478,
     "topics": [
       "airflow",
       "apache",
@@ -38,7 +38,7 @@
     "MinimumScore": 700,
     "IncludeRetrievalSignalsInScore": false,
     "CrossAnchorRunsDir": "runs/manual-ml-py",
-    "CrossAnchorFreqPenaltyWeight": 30.0,
+    "CrossAnchorFreqPenaltyWeight": 55.0,
     "MaxPerOwner": 2,
     "MaxPerOwnerPerSubdomain": 1,
     "DisableDiversityGuard": false,
@@ -48,13 +48,13 @@
     "AllowFallbackFill": true
   },
   "weights": {
-    "TopicJaccard": 900.0,
-    "QueryCoverage": 150.0,
-    "RecencySimilarity": 125.0,
-    "StarSimilarity": 175.0,
-    "LanguageMatch": 250.0,
+    "SubdomainMatch": 225.0,
     "LexicalJaccard": 650.0,
-    "SubdomainMatch": 225.0
+    "RecencySimilarity": 125.0,
+    "QueryCoverage": 150.0,
+    "TopicJaccard": 900.0,
+    "StarSimilarity": 175.0,
+    "LanguageMatch": 250.0
   },
   "counts": {
     "search_queries": 6,

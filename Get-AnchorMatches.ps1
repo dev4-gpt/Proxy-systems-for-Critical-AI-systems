@@ -47,7 +47,7 @@ KEY METAIMPROVEMENTS (MetaMatch 2.0)
 
 .PARAMETER CrossAnchorFreqPenaltyWeight
   Optional penalty weight applied to frequent candidates across prior anchors.
-  Default 100. Set to 0 to disable. When enabled, the score is reduced by:
+  Default 55. Set to 0 to disable. When enabled, the score is reduced by:
       weight * log10(1 + frequency)
   This is a light-touch "magnet repo" guard to improve diversity across anchors.
 
@@ -98,7 +98,7 @@ param(
 
     [string]$CrossAnchorRunsDir = "runs/manual-ml-py",
 
-    [double]$CrossAnchorFreqPenaltyWeight = 30.0,
+    [double]$CrossAnchorFreqPenaltyWeight = 55.0,
 
     [int]$MaxPerOwner = 2,
 

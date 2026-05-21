@@ -1,0 +1,12 @@
+{
+  "description": "Default MetaMatch hyperparameters (mirrors Get-AnchorMatches.ps1 param defaults). Recorded in each run_manifest.json.",
+  "MinimumScore": 700,
+  "CrossAnchorFreqPenaltyWeight": 55,
+  "MaxPerOwner": 2,
+  "MaxPerOwnerPerSubdomain": 1,
+  "TopK": 30,
+  "MinimumStars": 50,
+  "MaxSearchPerQuery": 50,
+  "AllowFallbackFill": true,
+  "IncludeRetrievalSignalsInScore": false
+}

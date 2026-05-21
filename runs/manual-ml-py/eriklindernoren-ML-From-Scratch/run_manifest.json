@@ -1,13 +1,13 @@
 {
   "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
-  "utc_timestamp": "2026-05-20T21:51:54.2110700Z",
-  "git_commit": "fc96cdeab05ad9c511daf5f09de1b171ec58dc7f",
+  "utc_timestamp": "2026-05-21T16:12:14.5666800Z",
+  "git_commit": "39bd55be2889ae202bd7211150425c7d5c629c12",
   "anchor": {
     "full_name": "eriklindernoren/ML-From-Scratch",
     "url": "https://github.com/eriklindernoren/ML-From-Scratch",
     "owner": "eriklindernoren",
     "language": "Python",
-    "stars": 31508,
+    "stars": 31512,
     "topics": [
       "data-mining",
       "data-science",
@@ -25,7 +25,7 @@
     "MinimumScore": 700,
     "IncludeRetrievalSignalsInScore": false,
     "CrossAnchorRunsDir": "runs/manual-ml-py",
-    "CrossAnchorFreqPenaltyWeight": 30.0,
+    "CrossAnchorFreqPenaltyWeight": 55.0,
     "MaxPerOwner": 2,
     "MaxPerOwnerPerSubdomain": 1,
     "DisableDiversityGuard": false,
@@ -35,20 +35,20 @@
     "AllowFallbackFill": true
   },
   "weights": {
+    "SubdomainMatch": 225.0,
     "LexicalJaccard": 650.0,
     "RecencySimilarity": 125.0,
-    "SubdomainMatch": 225.0,
     "QueryCoverage": 150.0,
-    "LanguageMatch": 250.0,
+    "TopicJaccard": 900.0,
     "StarSimilarity": 175.0,
-    "TopicJaccard": 900.0
+    "LanguageMatch": 250.0
   },
   "counts": {
     "search_queries": 6,
-    "candidate_pool": 218,
-    "enriched": 184,
-    "scored": 184,
-    "qualified": 58,
+    "candidate_pool": 219,
+    "enriched": 185,
+    "scored": 185,
+    "qualified": 55,
     "final": 30
   },
   "outputs": {

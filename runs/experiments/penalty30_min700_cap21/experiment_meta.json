@@ -1,0 +1,6 @@
+{
+  "experiment_id": "penalty30_min700_cap21",
+  "description": "Run 1 baseline: CrossAnchorFreqPenaltyWeight=30, MinimumScore=700, MaxPerOwner=2, MaxPerOwnerPerSubdomain=1",
+  "archived_at": "2026-05-21T00:00:00Z",
+  "note": "Manually archived via cp before automated archive_experiment.py"
+}

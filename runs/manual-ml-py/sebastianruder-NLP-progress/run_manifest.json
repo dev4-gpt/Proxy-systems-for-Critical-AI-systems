@@ -1,13 +1,13 @@
 {
   "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
-  "utc_timestamp": "2026-05-20T22:03:20.7804840Z",
-  "git_commit": "fc96cdeab05ad9c511daf5f09de1b171ec58dc7f",
+  "utc_timestamp": "2026-05-21T16:21:13.7806500Z",
+  "git_commit": "39bd55be2889ae202bd7211150425c7d5c629c12",
   "anchor": {
     "full_name": "sebastianruder/NLP-progress",
     "url": "https://github.com/sebastianruder/NLP-progress",
     "owner": "sebastianruder",
     "language": "Python",
-    "stars": 22967,
+    "stars": 22965,
     "topics": [
       "dialogue",
       "machine-learning",
@@ -24,7 +24,7 @@
     "MinimumScore": 700,
     "IncludeRetrievalSignalsInScore": false,
     "CrossAnchorRunsDir": "runs/manual-ml-py",
-    "CrossAnchorFreqPenaltyWeight": 30.0,
+    "CrossAnchorFreqPenaltyWeight": 55.0,
     "MaxPerOwner": 2,
     "MaxPerOwnerPerSubdomain": 1,
     "DisableDiversityGuard": false,
@@ -34,13 +34,13 @@
     "AllowFallbackFill": true
   },
   "weights": {
-    "LanguageMatch": 250.0,
-    "RecencySimilarity": 125.0,
-    "StarSimilarity": 175.0,
     "SubdomainMatch": 225.0,
-    "QueryCoverage": 150.0,
     "LexicalJaccard": 650.0,
-    "TopicJaccard": 900.0
+    "RecencySimilarity": 125.0,
+    "QueryCoverage": 150.0,
+    "TopicJaccard": 900.0,
+    "StarSimilarity": 175.0,
+    "LanguageMatch": 250.0
   },
   "counts": {
     "search_queries": 6,

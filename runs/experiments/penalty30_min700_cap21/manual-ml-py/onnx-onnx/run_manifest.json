@@ -1,0 +1,66 @@
+{
+  "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
+  "utc_timestamp": "2026-05-20T22:17:33.2468920Z",
+  "git_commit": "fc96cdeab05ad9c511daf5f09de1b171ec58dc7f",
+  "anchor": {
+    "full_name": "onnx/onnx",
+    "url": "https://github.com/onnx/onnx",
+    "owner": "onnx",
+    "language": "Python",
+    "stars": 20857,
+    "topics": [
+      "ai",
+      "artificial-intelligence",
+      "deep-learning",
+      "deep-neural-networks",
+      "dnn",
+      "keras",
+      "machine-learning",
+      "ml",
+      "neural-network",
+      "onnx",
+      "pytorch",
+      "scikit-learn",
+      "tensorflow"
+    ]
+  },
+  "params": {
+    "TopK": 30,
+    "MaxSearchPerQuery": 50,
+    "MinimumStars": 50,
+    "MinimumScore": 700,
+    "IncludeRetrievalSignalsInScore": false,
+    "CrossAnchorRunsDir": "runs/manual-ml-py",
+    "CrossAnchorFreqPenaltyWeight": 30.0,
+    "MaxPerOwner": 2,
+    "MaxPerOwnerPerSubdomain": 1,
+    "DisableDiversityGuard": false,
+    "AllowSameOwner": false,
+    "AllowForks": false,
+    "AllowArchived": false,
+    "AllowFallbackFill": true
+  },
+  "weights": {
+    "LexicalJaccard": 650.0,
+    "QueryCoverage": 150.0,
+    "TopicJaccard": 900.0,
+    "RecencySimilarity": 125.0,
+    "SubdomainMatch": 225.0,
+    "StarSimilarity": 175.0,
+    "LanguageMatch": 250.0
+  },
+  "counts": {
+    "search_queries": 6,
+    "candidate_pool": 206,
+    "enriched": 187,
+    "scored": 187,
+    "qualified": 44,
+    "final": 30
+  },
+  "outputs": {
+    "anchor_repo_json": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/onnx-onnx/anchor_repo.json",
+    "candidate_repos_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/onnx-onnx/candidate_repos.csv",
+    "ranked_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/onnx-onnx/ranked_matches.csv",
+    "final_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/onnx-onnx/30_Matches.csv"
+  }
+}

@@ -3,15 +3,12 @@
   Run Get-AnchorMatches.ps1 for every anchor in recommended_anchors_top.csv.
 
 .EXAMPLE
-  # Baseline (script defaults: penalty off, MinimumScore 900, etc.)
+  # Uses Get-AnchorMatches.ps1 defaults (MinimumScore 700, penalty 55, owner caps 2/1)
   pwsh ./Run-RecommendedAnchorMatches.ps1
 
 .EXAMPLE
-  # same flags on every anchor
-  pwsh ./Run-RecommendedAnchorMatches.ps1 `
-    -CrossAnchorFreqPenaltyWeight 100 `
-    -MaxPerOwner 2 `
-    -MaxPerOwnerPerSubdomain 1
+  # Override penalty for all anchors
+  pwsh ./Run-RecommendedAnchorMatches.ps1 -CrossAnchorFreqPenaltyWeight 60
 
 .EXAMPLE
   pwsh ./Run-RecommendedAnchorMatches.ps1 -SkipExisting -MaxAnchors 3

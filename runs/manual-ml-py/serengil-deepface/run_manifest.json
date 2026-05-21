@@ -1,13 +1,13 @@
 {
   "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
-  "utc_timestamp": "2026-05-20T22:06:04.4292670Z",
-  "git_commit": "fc96cdeab05ad9c511daf5f09de1b171ec58dc7f",
+  "utc_timestamp": "2026-05-21T16:23:12.5397220Z",
+  "git_commit": "39bd55be2889ae202bd7211150425c7d5c629c12",
   "anchor": {
     "full_name": "serengil/deepface",
     "url": "https://github.com/serengil/deepface",
     "owner": "serengil",
     "language": "Python",
-    "stars": 22802,
+    "stars": 22806,
     "topics": [
       "age-prediction",
       "arcface",
@@ -35,7 +35,7 @@
     "MinimumScore": 700,
     "IncludeRetrievalSignalsInScore": false,
     "CrossAnchorRunsDir": "runs/manual-ml-py",
-    "CrossAnchorFreqPenaltyWeight": 30.0,
+    "CrossAnchorFreqPenaltyWeight": 55.0,
     "MaxPerOwner": 2,
     "MaxPerOwnerPerSubdomain": 1,
     "DisableDiversityGuard": false,
@@ -45,20 +45,20 @@
     "AllowFallbackFill": true
   },
   "weights": {
-    "QueryCoverage": 150.0,
-    "LexicalJaccard": 650.0,
-    "TopicJaccard": 900.0,
-    "LanguageMatch": 250.0,
     "SubdomainMatch": 225.0,
+    "LexicalJaccard": 650.0,
+    "RecencySimilarity": 125.0,
+    "QueryCoverage": 150.0,
+    "TopicJaccard": 900.0,
     "StarSimilarity": 175.0,
-    "RecencySimilarity": 125.0
+    "LanguageMatch": 250.0
   },
   "counts": {
     "search_queries": 6,
-    "candidate_pool": 177,
-    "enriched": 160,
-    "scored": 160,
-    "qualified": 44,
+    "candidate_pool": 178,
+    "enriched": 161,
+    "scored": 161,
+    "qualified": 43,
     "final": 30
   },
   "outputs": {
