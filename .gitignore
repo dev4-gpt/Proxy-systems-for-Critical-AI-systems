@@ -24,6 +24,10 @@ TestHarness_NEEDSTOKEN.ps1
 results_plots/
 analysis/
 
+# MetaMatch: live run outputs (regenerated every pipeline run; commit snapshots under runs/experiments/)
+runs/manual-ml-py/
+runs/_summaries/
+
 # Local-only notes and drafts (never commit — if Git still tracks them, run:
 #   git rm -r --cached analysis/ INSTRUCTIONS.md linkedin_post.txt
 INSTRUCTIONS.md
