@@ -1,0 +1,73 @@
+{
+  "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
+  "utc_timestamp": "2026-05-21T18:32:13.0263650Z",
+  "git_commit": "26522c5c5acbc7ae42158aea0743aeebaf283667",
+  "anchor": {
+    "full_name": "ray-project/ray",
+    "url": "https://github.com/ray-project/ray",
+    "owner": "ray-project",
+    "language": "Python",
+    "stars": 42623,
+    "topics": [
+      "data-science",
+      "deep-learning",
+      "deployment",
+      "distributed",
+      "hyperparameter-optimization",
+      "hyperparameter-search",
+      "large-language-models",
+      "llm",
+      "llm-inference",
+      "llm-serving",
+      "machine-learning",
+      "optimization",
+      "parallel",
+      "python",
+      "pytorch",
+      "ray",
+      "reinforcement-learning",
+      "rllib",
+      "serving",
+      "tensorflow"
+    ]
+  },
+  "params": {
+    "TopK": 30,
+    "MaxSearchPerQuery": 50,
+    "MinimumStars": 50,
+    "MinimumScore": 700,
+    "IncludeRetrievalSignalsInScore": false,
+    "CrossAnchorRunsDir": "runs/manual-ml-py",
+    "CrossAnchorFreqPenaltyWeight": 75.0,
+    "MaxPerOwner": 2,
+    "MaxPerOwnerPerSubdomain": 1,
+    "DisableDiversityGuard": false,
+    "AllowSameOwner": false,
+    "AllowForks": false,
+    "AllowArchived": false,
+    "AllowFallbackFill": true
+  },
+  "weights": {
+    "SubdomainMatch": 225.0,
+    "QueryCoverage": 150.0,
+    "StarSimilarity": 175.0,
+    "TopicJaccard": 900.0,
+    "RecencySimilarity": 125.0,
+    "LanguageMatch": 250.0,
+    "LexicalJaccard": 650.0
+  },
+  "counts": {
+    "search_queries": 6,
+    "candidate_pool": 257,
+    "enriched": 233,
+    "scored": 233,
+    "qualified": 57,
+    "final": 30
+  },
+  "outputs": {
+    "anchor_repo_json": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/ray-project-ray/anchor_repo.json",
+    "candidate_repos_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/ray-project-ray/candidate_repos.csv",
+    "ranked_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/ray-project-ray/ranked_matches.csv",
+    "final_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/ray-project-ray/30_Matches.csv"
+  }
+}

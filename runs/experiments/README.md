@@ -15,34 +15,89 @@ Each subfolder is a **frozen snapshot** of one tuning run (hyperparameters + all
 
 ## Naming convention
 
-`penalty{W}_min{SCORE}_cap{owner}{sub}`
+`penalty{W}_min{SCORE}_cap{owner}{sub}` — e.g. `cap21` = MaxPerOwner **2**, MaxPerOwnerPerSubdomain **1**.
 
-Example: `penalty55_min700_cap21` → penalty weight **55**, MinimumScore **700**, MaxPerOwner **2**, MaxPerOwnerPerSubdomain **1**.
+Suffix `_nofallback` = `AllowFallbackFill` disabled.
 
-## Compare two runs
+## Experiment matrix
+
+| Status | experiment_id | Penalty | MinScore | MaxOwner | MaxSub | Fallback | Notes |
+|--------|---------------|---------|----------|----------|--------|----------|-------|
+| done | `penalty30_min700_cap21` | 30 | 700 | 2 | 1 | on | Baseline |
+| done | `penalty55_min700_cap21` | 55 | 700 | 2 | 1 | on | Improved Weak 8→5 |
+| done | `penalty75_min700_cap21` | 75 | 700 | 2 | 1 | on | Higher penalty |
+| **winner** | `penalty100_min700_cap21` | 100 | 700 | 2 | 1 | on | Best top-5 + Weak; applied as default |
+| done | `penalty55_min750_cap21` | 55 | 750 | 2 | 1 | on | No gain vs 55 |
+| done | `penalty55_min700_cap11` | 55 | 700 | 1 | 1 | on | No gain vs 55 |
+| done | `penalty55_min700_cap21_nofallback` | 55 | 700 | 2 | 1 | off | Minor Lightning drop only |
+
+See [EXPERIMENT_LOG.md](EXPERIMENT_LOG.md) for run dates and outcomes.
+
+## Commands (from repo root)
+
+From **bash**, use colon syntax for numeric params (e.g. `-CrossAnchorFreqPenaltyWeight:75`). From **pwsh** directly, space syntax works.
+
+```powershell
+# Run 1
+pwsh ./Run-MetaMatchPipeline.ps1 -CrossAnchorFreqPenaltyWeight:75 `
+  -ArchiveAsExperiment penalty75_min700_cap21 `
+  -CompareWith penalty55_min700_cap21,penalty30_min700_cap21
+
+# Run 2
+pwsh ./Run-MetaMatchPipeline.ps1 -CrossAnchorFreqPenaltyWeight:100 `
+  -ArchiveAsExperiment penalty100_min700_cap21 `
+  -CompareWith penalty55_min700_cap21,penalty30_min700_cap21
+
+# Run 3
+pwsh ./Run-MetaMatchPipeline.ps1 -MinimumScore:750 `
+  -ArchiveAsExperiment penalty55_min750_cap21 `
+  -CompareWith penalty55_min700_cap21,penalty30_min700_cap21
+
+# Run 4
+pwsh ./Run-MetaMatchPipeline.ps1 -MaxPerOwner:1 `
+  -ArchiveAsExperiment penalty55_min700_cap11 `
+  -CompareWith penalty55_min700_cap21,penalty30_min700_cap21
+
+# Run 5
+pwsh ./Run-MetaMatchPipeline.ps1 -NoFallbackFill `
+  -ArchiveAsExperiment penalty55_min700_cap21_nofallback `
+  -CompareWith penalty55_min700_cap21,penalty30_min700_cap21
+```
+
+Or run the full sweep script (uses `-ExperimentPreset` for reliable tuning from bash):
+
+```bash
+bash runs/experiments/run_hyperparam_sweep.sh
+```
+
+Presets: `penalty75`, `penalty100`, `min750`, `cap11`, `nofallback`.
+
+## Compare experiments
 
 ```bash
 python3 tools/compare_experiments.py \
-  --experiments penalty30_min700_cap21 penalty55_min700_cap21
+  --experiments penalty30_min700_cap21 penalty55_min700_cap21 penalty75_min700_cap21
 ```
 
-Writes in this folder:
+Outputs in this folder:
 
-- `experiment_comparison_summary.csv` — one row per experiment (Good/OK/Weak counts, key magnet frequencies)
-- `anchor_comparison_by_experiment.csv` — each anchor × experiment
-- `magnet_comparison_final30.csv` — side-by-side magnet counts + delta
+- `experiment_comparison_summary.csv` — one row per experiment
+- `anchor_comparison_by_experiment.csv` — per anchor × experiment
+- `magnet_comparison_final30.csv` — magnet frequencies + delta
 
-## Pipeline (match + summarize + archive + compare)
+## Pick winner (after sweep)
 
 ```bash
-pwsh ./Run-MetaMatchPipeline.ps1 \
-  -ArchiveAsExperiment penalty55_min700_cap21 \
-  -CompareWith penalty30_min700_cap21
+python3 tools/pick_experiment_winner.py
 ```
 
-Requires `gh auth login` first.
+## Optimization metrics (in order)
+
+1. **TotalMagnetsInTop5** (lower is better)
+2. **MagnetFinal30** counts for Lightning / Keras / Streamlit (lower is better)
+3. **Weak** count (lower is better); guardrail: most anchors still have ~30 `30_Matches.csv` rows
 
 ## Live vs archive
 
 - `runs/_summaries/` — **current** run (overwritten by pipeline)
-- `runs/experiments/<id>/` — **saved** run (never overwritten unless you re-archive same id)
+- `runs/experiments/<id>/` — **saved** run

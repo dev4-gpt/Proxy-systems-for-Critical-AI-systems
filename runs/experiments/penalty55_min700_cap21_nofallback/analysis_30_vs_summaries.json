@@ -1,0 +1,1022 @@
+[
+  {
+    "anchor": "JaidedAI/EasyOCR",
+    "folder": "JaidedAI-EasyOCR",
+    "ranked_n": 218,
+    "top5_30": [
+      "Lightning-AI/pytorch-lightning",
+      "keras-team/keras",
+      "roboflow/supervision",
+      "eriklindernoren/ML-From-Scratch",
+      "Hironsan/BossSensor"
+    ],
+    "top10_30": [
+      "Lightning-AI/pytorch-lightning",
+      "keras-team/keras",
+      "roboflow/supervision",
+      "eriklindernoren/ML-From-Scratch",
+      "Hironsan/BossSensor",
+      "piskvorky/gensim",
+      "CorentinJ/Real-Time-Voice-Cloning",
+      "streamlit/streamlit",
+      "abdulfatir/twitter-sentiment-analysis",
+      "d2l-ai/d2l-zh"
+    ],
+    "top10_summary": [
+      "Lightning-AI/pytorch-lightning",
+      "keras-team/keras",
+      "roboflow/supervision",
+      "eriklindernoren/ML-From-Scratch",
+      "Hironsan/BossSensor",
+      "piskvorky/gensim",
+      "CorentinJ/Real-Time-Voice-Cloning",
+      "streamlit/streamlit",
+      "abdulfatir/twitter-sentiment-analysis",
+      "d2l-ai/d2l-zh"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 4,
+    "mag_top10": 6,
+    "mag_top30": 11,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 31.48,
+    "top5_freq": [
+      18,
+      17,
+      18,
+      16,
+      2
+    ],
+    "rating": "Weak"
+  },
+  {
+    "anchor": "Lightning-AI/pytorch-lightning",
+    "folder": "Lightning-AI-pytorch-lightning",
+    "ranked_n": 209,
+    "top5_30": [
+      "keras-team/keras",
+      "stanfordnlp/stanza",
+      "unit8co/darts",
+      "kornia/kornia",
+      "streamlit/streamlit"
+    ],
+    "top10_30": [
+      "keras-team/keras",
+      "stanfordnlp/stanza",
+      "unit8co/darts",
+      "kornia/kornia",
+      "streamlit/streamlit",
+      "explosion/spaCy",
+      "recommenders-team/recommenders",
+      "onnx/onnx",
+      "google-deepmind/sonnet",
+      "babysor/MockingBird"
+    ],
+    "top10_summary": [
+      "keras-team/keras",
+      "stanfordnlp/stanza",
+      "unit8co/darts",
+      "kornia/kornia",
+      "streamlit/streamlit",
+      "explosion/spaCy",
+      "recommenders-team/recommenders",
+      "onnx/onnx",
+      "google-deepmind/sonnet",
+      "babysor/MockingBird"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 2,
+    "mag_top10": 4,
+    "mag_top30": 10,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 28.29,
+    "top5_freq": [
+      17,
+      6,
+      6,
+      5,
+      17
+    ],
+    "rating": "OK"
+  },
+  {
+    "anchor": "OpenBB-finance/OpenBB",
+    "folder": "OpenBB-finance-OpenBB",
+    "ranked_n": 231,
+    "top5_30": [
+      "ValueCell-ai/valuecell",
+      "agno-agi/agno",
+      "quantsbin/Quantsbin",
+      "langchain-ai/deepagents",
+      "Michalos88/Quant-Projects"
+    ],
+    "top10_30": [
+      "ValueCell-ai/valuecell",
+      "agno-agi/agno",
+      "quantsbin/Quantsbin",
+      "langchain-ai/deepagents",
+      "Michalos88/Quant-Projects",
+      "zai-org/Open-AutoGLM",
+      "camel-ai/owl",
+      "binance/binance-skills-hub",
+      "cuemacro/finmarketpy",
+      "openai/baselines"
+    ],
+    "top10_summary": [
+      "ValueCell-ai/valuecell",
+      "agno-agi/agno",
+      "quantsbin/Quantsbin",
+      "langchain-ai/deepagents",
+      "Michalos88/Quant-Projects",
+      "zai-org/Open-AutoGLM",
+      "camel-ai/owl",
+      "binance/binance-skills-hub",
+      "cuemacro/finmarketpy",
+      "openai/baselines"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 0,
+    "mag_top10": 0,
+    "mag_top30": 1,
+    "qualified_in_30": 2,
+    "avg_penalty_top5": 0.0,
+    "top5_freq": [
+      1,
+      8,
+      1,
+      8,
+      1
+    ],
+    "rating": "Weak"
+  },
+  {
+    "anchor": "apache/airflow",
+    "folder": "apache-airflow",
+    "ranked_n": 185,
+    "top5_30": [
+      "dagster-io/dagster",
+      "Avaiga/taipy",
+      "feast-dev/feast",
+      "kedro-org/kedro",
+      "ansible/ansible"
+    ],
+    "top10_30": [
+      "dagster-io/dagster",
+      "Avaiga/taipy",
+      "feast-dev/feast",
+      "kedro-org/kedro",
+      "ansible/ansible",
+      "abhishek-ch/around-dataengineering",
+      "san089/goodreads_etl_pipeline",
+      "couler-proj/couler",
+      "great-expectations/great_expectations",
+      "mara/mara-pipelines"
+    ],
+    "top10_summary": [
+      "dagster-io/dagster",
+      "Avaiga/taipy",
+      "feast-dev/feast",
+      "kedro-org/kedro",
+      "ansible/ansible",
+      "abhishek-ch/around-dataengineering",
+      "san089/goodreads_etl_pipeline",
+      "couler-proj/couler",
+      "great-expectations/great_expectations",
+      "mara/mara-pipelines"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 0,
+    "mag_top10": 0,
+    "mag_top30": 2,
+    "qualified_in_30": 15,
+    "avg_penalty_top5": 13.7,
+    "top5_freq": [
+      8,
+      4,
+      1,
+      3,
+      2
+    ],
+    "rating": "Good"
+  },
+  {
+    "anchor": "bbfamily/abu",
+    "folder": "bbfamily-abu",
+    "ranked_n": 177,
+    "top5_30": [
+      "zvtvz/zvt",
+      "shashankvemuri/Finance",
+      "asavinov/intelligent-trading-bot",
+      "ranaroussi/quantstats",
+      "mwaskom/seaborn"
+    ],
+    "top10_30": [
+      "zvtvz/zvt",
+      "shashankvemuri/Finance",
+      "asavinov/intelligent-trading-bot",
+      "ranaroussi/quantstats",
+      "mwaskom/seaborn",
+      "RomelTorres/alpha_vantage",
+      "coding-kitties/investing-algorithm-framework",
+      "CryptoSignal/Crypto-Signal",
+      "edtechre/pybroker",
+      "akfamily/akshare"
+    ],
+    "top10_summary": [
+      "zvtvz/zvt",
+      "shashankvemuri/Finance",
+      "asavinov/intelligent-trading-bot",
+      "ranaroussi/quantstats",
+      "mwaskom/seaborn",
+      "RomelTorres/alpha_vantage",
+      "coding-kitties/investing-algorithm-framework",
+      "CryptoSignal/Crypto-Signal",
+      "edtechre/pybroker",
+      "akfamily/akshare"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 0,
+    "mag_top10": 0,
+    "mag_top30": 2,
+    "qualified_in_30": 20,
+    "avg_penalty_top5": 6.88,
+    "top5_freq": [
+      1,
+      1,
+      2,
+      1,
+      7
+    ],
+    "rating": "Good"
+  },
+  {
+    "anchor": "deepspeedai/DeepSpeed",
+    "folder": "deepspeedai-DeepSpeed",
+    "ranked_n": 156,
+    "top5_30": [
+      "hpcaitech/ColossalAI",
+      "Lightning-AI/pytorch-lightning",
+      "InterDigitalInc/CompressAI",
+      "alibaba/EasyParallelLibrary",
+      "keras-team/keras"
+    ],
+    "top10_30": [
+      "hpcaitech/ColossalAI",
+      "Lightning-AI/pytorch-lightning",
+      "InterDigitalInc/CompressAI",
+      "alibaba/EasyParallelLibrary",
+      "keras-team/keras",
+      "pytorch/pytorch",
+      "ultralytics/yolov5",
+      "babysor/MockingBird",
+      "TencentARC/GFPGAN",
+      "JaidedAI/EasyOCR"
+    ],
+    "top10_summary": [
+      "hpcaitech/ColossalAI",
+      "Lightning-AI/pytorch-lightning",
+      "InterDigitalInc/CompressAI",
+      "alibaba/EasyParallelLibrary",
+      "keras-team/keras",
+      "pytorch/pytorch",
+      "ultralytics/yolov5",
+      "babysor/MockingBird",
+      "TencentARC/GFPGAN",
+      "JaidedAI/EasyOCR"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 2,
+    "mag_top10": 3,
+    "mag_top30": 11,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 22.3,
+    "top5_freq": [
+      17,
+      18,
+      1,
+      1,
+      17
+    ],
+    "rating": "OK"
+  },
+  {
+    "anchor": "eriklindernoren/ML-From-Scratch",
+    "folder": "eriklindernoren-ML-From-Scratch",
+    "ranked_n": 184,
+    "top5_30": [
+      "Lightning-AI/pytorch-lightning",
+      "tflearn/tflearn",
+      "unit8co/darts",
+      "streamlit/streamlit",
+      "keras-team/keras"
+    ],
+    "top10_30": [
+      "Lightning-AI/pytorch-lightning",
+      "tflearn/tflearn",
+      "unit8co/darts",
+      "streamlit/streamlit",
+      "keras-team/keras",
+      "mdbloice/Augmentor",
+      "JaidedAI/EasyOCR",
+      "gradio-app/gradio",
+      "yzhao062/pyod",
+      "piskvorky/gensim"
+    ],
+    "top10_summary": [
+      "Lightning-AI/pytorch-lightning",
+      "tflearn/tflearn",
+      "unit8co/darts",
+      "streamlit/streamlit",
+      "keras-team/keras",
+      "mdbloice/Augmentor",
+      "JaidedAI/EasyOCR",
+      "gradio-app/gradio",
+      "yzhao062/pyod",
+      "piskvorky/gensim"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 3,
+    "mag_top10": 4,
+    "mag_top30": 9,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 31.63,
+    "top5_freq": [
+      18,
+      6,
+      6,
+      17,
+      17
+    ],
+    "rating": "Weak"
+  },
+  {
+    "anchor": "explosion/spaCy",
+    "folder": "explosion-spacy",
+    "ranked_n": 192,
+    "top5_30": [
+      "Lightning-AI/pytorch-lightning",
+      "stanfordnlp/stanza",
+      "keras-team/keras",
+      "recommenders-team/recommenders",
+      "kornia/kornia"
+    ],
+    "top10_30": [
+      "Lightning-AI/pytorch-lightning",
+      "stanfordnlp/stanza",
+      "keras-team/keras",
+      "recommenders-team/recommenders",
+      "kornia/kornia",
+      "google-deepmind/sonnet",
+      "onnx/onnx",
+      "streamlit/streamlit",
+      "d2l-ai/d2l-zh",
+      "pytorch/pytorch"
+    ],
+    "top10_summary": [
+      "Lightning-AI/pytorch-lightning",
+      "stanfordnlp/stanza",
+      "keras-team/keras",
+      "recommenders-team/recommenders",
+      "kornia/kornia",
+      "google-deepmind/sonnet",
+      "onnx/onnx",
+      "streamlit/streamlit",
+      "d2l-ai/d2l-zh",
+      "pytorch/pytorch"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 3,
+    "mag_top10": 6,
+    "mag_top30": 11,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 30.83,
+    "top5_freq": [
+      18,
+      6,
+      17,
+      15,
+      5
+    ],
+    "rating": "Weak"
+  },
+  {
+    "anchor": "gradio-app/gradio",
+    "folder": "gradio-app-gradio",
+    "ranked_n": 221,
+    "top5_30": [
+      "streamlit/streamlit",
+      "Lightning-AI/pytorch-lightning",
+      "keras-team/keras",
+      "unit8co/darts",
+      "eriklindernoren/ML-From-Scratch"
+    ],
+    "top10_30": [
+      "streamlit/streamlit",
+      "Lightning-AI/pytorch-lightning",
+      "keras-team/keras",
+      "unit8co/darts",
+      "eriklindernoren/ML-From-Scratch",
+      "explosion/spaCy",
+      "Data-Centric-AI-Community/fg-data-profiling",
+      "d2l-ai/d2l-zh",
+      "tflearn/tflearn",
+      "pytorch/pytorch"
+    ],
+    "top10_summary": [
+      "streamlit/streamlit",
+      "Lightning-AI/pytorch-lightning",
+      "keras-team/keras",
+      "unit8co/darts",
+      "eriklindernoren/ML-From-Scratch",
+      "explosion/spaCy",
+      "Data-Centric-AI-Community/fg-data-profiling",
+      "d2l-ai/d2l-zh",
+      "tflearn/tflearn",
+      "pytorch/pytorch"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 4,
+    "mag_top10": 7,
+    "mag_top30": 11,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 34.19,
+    "top5_freq": [
+      17,
+      18,
+      17,
+      6,
+      16
+    ],
+    "rating": "Weak"
+  },
+  {
+    "anchor": "huggingface/datasets",
+    "folder": "huggingface-datasets",
+    "ranked_n": 211,
+    "top5_30": [
+      "Lightning-AI/litgpt",
+      "ludwig-ai/ludwig",
+      "rohitg00/ai-engineering-from-scratch",
+      "arc53/DocsGPT",
+      "deeppavlov/DeepPavlov"
+    ],
+    "top10_30": [
+      "Lightning-AI/litgpt",
+      "ludwig-ai/ludwig",
+      "rohitg00/ai-engineering-from-scratch",
+      "arc53/DocsGPT",
+      "deeppavlov/DeepPavlov",
+      "mlfoundations/open_clip",
+      "jacobgil/pytorch-grad-cam",
+      "nebuly-ai/optimate",
+      "ray-project/ray",
+      "camel-ai/camel"
+    ],
+    "top10_summary": [
+      "Lightning-AI/litgpt",
+      "ludwig-ai/ludwig",
+      "rohitg00/ai-engineering-from-scratch",
+      "arc53/DocsGPT",
+      "deeppavlov/DeepPavlov",
+      "mlfoundations/open_clip",
+      "jacobgil/pytorch-grad-cam",
+      "nebuly-ai/optimate",
+      "ray-project/ray",
+      "camel-ai/camel"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 0,
+    "mag_top10": 1,
+    "mag_top30": 1,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 23.44,
+    "top5_freq": [
+      4,
+      7,
+      6,
+      8,
+      6
+    ],
+    "rating": "Good"
+  },
+  {
+    "anchor": "huggingface/transformers",
+    "folder": "huggingface-transformers",
+    "ranked_n": 227,
+    "top5_30": [
+      "sgl-project/sglang",
+      "vllm-project/vllm",
+      "hiyouga/LlamaFactory",
+      "arc53/DocsGPT",
+      "jessevig/bertviz"
+    ],
+    "top10_30": [
+      "sgl-project/sglang",
+      "vllm-project/vllm",
+      "hiyouga/LlamaFactory",
+      "arc53/DocsGPT",
+      "jessevig/bertviz",
+      "jadore801120/attention-is-all-you-need-pytorch",
+      "unslothai/unsloth",
+      "ray-project/ray",
+      "GradientHQ/parallax",
+      "browser-use/browser-use"
+    ],
+    "top10_summary": [
+      "sgl-project/sglang",
+      "vllm-project/vllm",
+      "hiyouga/LlamaFactory",
+      "arc53/DocsGPT",
+      "jessevig/bertviz",
+      "jadore801120/attention-is-all-you-need-pytorch",
+      "unslothai/unsloth",
+      "ray-project/ray",
+      "GradientHQ/parallax",
+      "browser-use/browser-use"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 0,
+    "mag_top10": 1,
+    "mag_top30": 1,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 22.49,
+    "top5_freq": [
+      5,
+      7,
+      10,
+      8,
+      2
+    ],
+    "rating": "Good"
+  },
+  {
+    "anchor": "jina-ai/serve",
+    "folder": "jina-ai-serve",
+    "ranked_n": 192,
+    "top5_30": [
+      "bentoml/BentoML",
+      "Netflix/metaflow",
+      "huggingface/datasets",
+      "rohitg00/ai-engineering-from-scratch",
+      "lukas-blecher/LaTeX-OCR"
+    ],
+    "top10_30": [
+      "bentoml/BentoML",
+      "Netflix/metaflow",
+      "huggingface/datasets",
+      "rohitg00/ai-engineering-from-scratch",
+      "lukas-blecher/LaTeX-OCR",
+      "langchain-ai/langgraph",
+      "microsoft/JARVIS",
+      "SYSTRAN/faster-whisper",
+      "usestrix/strix",
+      "QuivrHQ/quivr"
+    ],
+    "top10_summary": [
+      "bentoml/BentoML",
+      "Netflix/metaflow",
+      "huggingface/datasets",
+      "rohitg00/ai-engineering-from-scratch",
+      "lukas-blecher/LaTeX-OCR",
+      "langchain-ai/langgraph",
+      "microsoft/JARVIS",
+      "SYSTRAN/faster-whisper",
+      "usestrix/strix",
+      "QuivrHQ/quivr"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 0,
+    "mag_top10": 0,
+    "mag_top30": 1,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 23.74,
+    "top5_freq": [
+      3,
+      3,
+      14,
+      6,
+      12
+    ],
+    "rating": "Good"
+  },
+  {
+    "anchor": "onnx/onnx",
+    "folder": "onnx-onnx",
+    "ranked_n": 187,
+    "top5_30": [
+      "Lightning-AI/pytorch-lightning",
+      "google-deepmind/sonnet",
+      "kornia/kornia",
+      "flwrlabs/flower",
+      "ultralytics/yolov5"
+    ],
+    "top10_30": [
+      "Lightning-AI/pytorch-lightning",
+      "google-deepmind/sonnet",
+      "kornia/kornia",
+      "flwrlabs/flower",
+      "ultralytics/yolov5",
+      "keras-team/keras",
+      "stanfordnlp/stanza",
+      "explosion/spaCy",
+      "google/magika",
+      "babysor/MockingBird"
+    ],
+    "top10_summary": [
+      "Lightning-AI/pytorch-lightning",
+      "google-deepmind/sonnet",
+      "kornia/kornia",
+      "flwrlabs/flower",
+      "ultralytics/yolov5",
+      "keras-team/keras",
+      "stanfordnlp/stanza",
+      "explosion/spaCy",
+      "google/magika",
+      "babysor/MockingBird"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 1,
+    "mag_top10": 3,
+    "mag_top30": 9,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 27.81,
+    "top5_freq": [
+      18,
+      5,
+      5,
+      6,
+      16
+    ],
+    "rating": "Good"
+  },
+  {
+    "anchor": "pytorch/pytorch",
+    "folder": "pytorch-pytorch",
+    "ranked_n": 192,
+    "top5_30": [
+      "chainer/chainer",
+      "norse/norse",
+      "leptonai/leptonai",
+      "pranftw/neograd",
+      "oreilly-japan/deep-learning-from-scratch-3"
+    ],
+    "top10_30": [
+      "chainer/chainer",
+      "norse/norse",
+      "leptonai/leptonai",
+      "pranftw/neograd",
+      "oreilly-japan/deep-learning-from-scratch-3",
+      "d2l-ai/d2l-zh",
+      "keras-team/keras",
+      "Lightning-AI/pytorch-lightning",
+      "streamlit/streamlit",
+      "triton-inference-server/server"
+    ],
+    "top10_summary": [
+      "chainer/chainer",
+      "norse/norse",
+      "leptonai/leptonai",
+      "pranftw/neograd",
+      "oreilly-japan/deep-learning-from-scratch-3",
+      "d2l-ai/d2l-zh",
+      "keras-team/keras",
+      "Lightning-AI/pytorch-lightning",
+      "streamlit/streamlit",
+      "triton-inference-server/server"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 0,
+    "mag_top10": 4,
+    "mag_top30": 10,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 0.0,
+    "top5_freq": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rating": "Good"
+  },
+  {
+    "anchor": "ray-project/ray",
+    "folder": "ray-project-ray",
+    "ranked_n": 233,
+    "top5_30": [
+      "huggingface/datasets",
+      "google/langextract",
+      "ludwig-ai/ludwig",
+      "lukas-blecher/LaTeX-OCR",
+      "HKUDS/LightRAG"
+    ],
+    "top10_30": [
+      "huggingface/datasets",
+      "google/langextract",
+      "ludwig-ai/ludwig",
+      "lukas-blecher/LaTeX-OCR",
+      "HKUDS/LightRAG",
+      "microsoft/JARVIS",
+      "MemPalace/mempalace",
+      "shareAI-lab/learn-claude-code",
+      "2noise/ChatTTS",
+      "NVIDIA/TensorRT-LLM"
+    ],
+    "top10_summary": [
+      "huggingface/transformers",
+      "huggingface/datasets",
+      "google/langextract",
+      "ludwig-ai/ludwig",
+      "lukas-blecher/LaTeX-OCR",
+      "HKUDS/LightRAG",
+      "microsoft/JARVIS",
+      "MemPalace/mempalace",
+      "shareAI-lab/learn-claude-code",
+      "2noise/ChatTTS"
+    ],
+    "overlap_30_vs_summary_top10": 9,
+    "overlap_30_vs_ranked_top10": 9,
+    "mag_top5": 0,
+    "mag_top10": 0,
+    "mag_top30": 0,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 26.81,
+    "top5_freq": [
+      14,
+      5,
+      7,
+      12,
+      5
+    ],
+    "rating": "Good"
+  },
+  {
+    "anchor": "recommenders-team/recommenders",
+    "folder": "recommenders-team-recommenders",
+    "ranked_n": 214,
+    "top5_30": [
+      "Lightning-AI/pytorch-lightning",
+      "explosion/spaCy",
+      "unit8co/darts",
+      "streamlit/streamlit",
+      "kornia/kornia"
+    ],
+    "top10_30": [
+      "Lightning-AI/pytorch-lightning",
+      "explosion/spaCy",
+      "unit8co/darts",
+      "streamlit/streamlit",
+      "kornia/kornia",
+      "onnx/onnx",
+      "voxel51/fiftyone",
+      "Data-Centric-AI-Community/fg-data-profiling",
+      "stanfordnlp/stanza",
+      "keras-team/keras"
+    ],
+    "top10_summary": [
+      "Lightning-AI/pytorch-lightning",
+      "explosion/spaCy",
+      "unit8co/darts",
+      "streamlit/streamlit",
+      "kornia/kornia",
+      "onnx/onnx",
+      "voxel51/fiftyone",
+      "Data-Centric-AI-Community/fg-data-profiling",
+      "stanfordnlp/stanza",
+      "keras-team/keras"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 3,
+    "mag_top10": 4,
+    "mag_top30": 10,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 31.31,
+    "top5_freq": [
+      18,
+      18,
+      6,
+      17,
+      5
+    ],
+    "rating": "Weak"
+  },
+  {
+    "anchor": "sebastianruder/NLP-progress",
+    "folder": "sebastianruder-NLP-progress",
+    "ranked_n": 226,
+    "top5_30": [
+      "nltk/nltk",
+      "jasonwu0731/trade-dst",
+      "hankcs/HanLP",
+      "budzianowski/multiwoz",
+      "Maluuba/nlg-eval"
+    ],
+    "top10_30": [
+      "nltk/nltk",
+      "jasonwu0731/trade-dst",
+      "hankcs/HanLP",
+      "budzianowski/multiwoz",
+      "Maluuba/nlg-eval",
+      "sloria/TextBlob",
+      "shawnwun/NNDIAL",
+      "DA-southampton/NLP_ability",
+      "flairNLP/flair",
+      "CLUEbenchmark/CLUEDatasetSearch"
+    ],
+    "top10_summary": [
+      "nltk/nltk",
+      "jasonwu0731/trade-dst",
+      "hankcs/HanLP",
+      "budzianowski/multiwoz",
+      "Maluuba/nlg-eval",
+      "sloria/TextBlob",
+      "shawnwun/NNDIAL",
+      "DA-southampton/NLP_ability",
+      "flairNLP/flair",
+      "jasonwu0731/ToD-BERT"
+    ],
+    "overlap_30_vs_summary_top10": 9,
+    "overlap_30_vs_ranked_top10": 9,
+    "mag_top5": 0,
+    "mag_top10": 0,
+    "mag_top30": 1,
+    "qualified_in_30": 20,
+    "avg_penalty_top5": 0.0,
+    "top5_freq": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "rating": "Good"
+  },
+  {
+    "anchor": "serengil/deepface",
+    "folder": "serengil-deepface",
+    "ranked_n": 160,
+    "top5_30": [
+      "Lightning-AI/pytorch-lightning",
+      "streamlit/streamlit",
+      "deepinsight/insightface",
+      "recommenders-team/recommenders",
+      "keras-team/keras"
+    ],
+    "top10_30": [
+      "Lightning-AI/pytorch-lightning",
+      "streamlit/streamlit",
+      "deepinsight/insightface",
+      "recommenders-team/recommenders",
+      "keras-team/keras",
+      "JaidedAI/EasyOCR",
+      "Zeyi-Lin/HivisionIDPhotos",
+      "d2l-ai/d2l-zh",
+      "gradio-app/gradio",
+      "explosion/spaCy"
+    ],
+    "top10_summary": [
+      "Lightning-AI/pytorch-lightning",
+      "streamlit/streamlit",
+      "deepinsight/insightface",
+      "recommenders-team/recommenders",
+      "keras-team/keras",
+      "JaidedAI/EasyOCR",
+      "Zeyi-Lin/HivisionIDPhotos",
+      "d2l-ai/d2l-zh",
+      "gradio-app/gradio",
+      "explosion/spaCy"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 4,
+    "mag_top10": 7,
+    "mag_top30": 12,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 31.16,
+    "top5_freq": [
+      18,
+      17,
+      2,
+      15,
+      17
+    ],
+    "rating": "Weak"
+  },
+  {
+    "anchor": "streamlit/streamlit",
+    "folder": "streamlit-streamlit",
+    "ranked_n": 211,
+    "top5_30": [
+      "gradio-app/gradio",
+      "Lightning-AI/pytorch-lightning",
+      "keras-team/keras",
+      "unit8co/darts",
+      "eriklindernoren/ML-From-Scratch"
+    ],
+    "top10_30": [
+      "gradio-app/gradio",
+      "Lightning-AI/pytorch-lightning",
+      "keras-team/keras",
+      "unit8co/darts",
+      "eriklindernoren/ML-From-Scratch",
+      "tflearn/tflearn",
+      "d2l-ai/d2l-zh",
+      "voxel51/fiftyone",
+      "pytorch/pytorch",
+      "scikit-learn/scikit-learn"
+    ],
+    "top10_summary": [
+      "gradio-app/gradio",
+      "Lightning-AI/pytorch-lightning",
+      "keras-team/keras",
+      "unit8co/darts",
+      "eriklindernoren/ML-From-Scratch",
+      "tflearn/tflearn",
+      "d2l-ai/d2l-zh",
+      "voxel51/fiftyone",
+      "pytorch/pytorch",
+      "scikit-learn/scikit-learn"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 4,
+    "mag_top10": 7,
+    "mag_top30": 12,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 34.03,
+    "top5_freq": [
+      16,
+      18,
+      17,
+      6,
+      16
+    ],
+    "rating": "Weak"
+  },
+  {
+    "anchor": "ultralytics/yolov5",
+    "folder": "ultralytics-yolov5",
+    "ranked_n": 205,
+    "top5_30": [
+      "Megvii-BaseDetection/YOLOX",
+      "WangQvQ/YOLOMagic",
+      "tinyvision/DAMO-YOLO",
+      "ayooshkathuria/pytorch-yolo-v3",
+      "onnx/onnx"
+    ],
+    "top10_30": [
+      "Megvii-BaseDetection/YOLOX",
+      "WangQvQ/YOLOMagic",
+      "tinyvision/DAMO-YOLO",
+      "ayooshkathuria/pytorch-yolo-v3",
+      "onnx/onnx",
+      "open-mmlab/mmyolo",
+      "roboflow/supervision",
+      "keras-team/keras",
+      "PeterH0323/Smart_Construction",
+      "Lightning-AI/pytorch-lightning"
+    ],
+    "top10_summary": [
+      "Megvii-BaseDetection/YOLOX",
+      "WangQvQ/YOLOMagic",
+      "tinyvision/DAMO-YOLO",
+      "ayooshkathuria/pytorch-yolo-v3",
+      "onnx/onnx",
+      "open-mmlab/mmyolo",
+      "roboflow/supervision",
+      "keras-team/keras",
+      "PeterH0323/Smart_Construction",
+      "Lightning-AI/pytorch-lightning"
+    ],
+    "overlap_30_vs_summary_top10": 10,
+    "overlap_30_vs_ranked_top10": 10,
+    "mag_top5": 0,
+    "mag_top10": 3,
+    "mag_top30": 8,
+    "qualified_in_30": 30,
+    "avg_penalty_top5": 6.88,
+    "top5_freq": [
+      1,
+      1,
+      1,
+      1,
+      14
+    ],
+    "rating": "Good"
+  }
+]

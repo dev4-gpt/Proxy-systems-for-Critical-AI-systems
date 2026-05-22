@@ -1,0 +1,7 @@
+{
+  "experiment_id": "penalty100_min700_cap21",
+  "description": "penalty=100",
+  "archived_at": "2026-05-21T20:53:54.086125+00:00",
+  "source_summaries": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/_summaries",
+  "source_manual_ml_py": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py"
+}

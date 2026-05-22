@@ -1,3 +1,8 @@
 experiment_id,description,archived_at,MinimumScore,CrossAnchorFreqPenaltyWeight,MaxPerOwner,MaxPerOwnerPerSubdomain,AnchorsEvaluated,Good,OK,Weak,TotalMagnetsInTop5,MagnetFinal30_pytorch-lightning,MagnetFinal30_keras,MagnetFinal30_streamlit,MagnetFinal30_gradio,MagnetFinal30_spaCy,MagnetFinal30_d2l-zh
 penalty30_min700_cap21,"Run 1 baseline: CrossAnchorFreqPenaltyWeight=30, MinimumScore=700, MaxPerOwner=2, MaxPerOwnerPerSubdomain=1",2026-05-21T00:00:00Z,700,30.0,2,1,20,10,2,8,30,12,12,12,9,11,11
 penalty55_min700_cap21,MetaMatch run archived after pipeline (see run_hyperparams.csv in folder),2026-05-21T16:36:01.683196+00:00,700,55.0,2,1,20,11,4,5,26,12,12,12,9,10,10
+penalty75_min700_cap21,penalty=75,2026-05-21T20:00:51.500982+00:00,700,75.0,2,1,20,12,6,2,19,10,10,11,6,8,8
+penalty100_min700_cap21,penalty=100,2026-05-21T20:53:54.086125+00:00,700,100.0,2,1,20,14,4,2,18,11,12,10,8,9,9
+penalty55_min750_cap21,minScore=750,2026-05-21T21:49:26.422839+00:00,750,55.0,2,1,20,11,4,5,26,12,12,12,9,10,10
+penalty55_min700_cap11,maxOwner=1,2026-05-21T22:42:49.644761+00:00,700,55.0,1,1,20,11,4,5,26,12,12,12,9,10,10
+penalty55_min700_cap21_nofallback,fallback=off,2026-05-21T23:38:02.094992+00:00,700,55.0,2,1,20,11,4,5,26,11,12,11,9,10,10

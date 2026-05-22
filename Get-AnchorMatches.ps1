@@ -98,7 +98,7 @@ param(
 
     [string]$CrossAnchorRunsDir = "runs/manual-ml-py",
 
-    [double]$CrossAnchorFreqPenaltyWeight = 55.0,
+    [double]$CrossAnchorFreqPenaltyWeight = 100.0,
 
     [int]$MaxPerOwner = 2,
 
@@ -151,13 +151,51 @@ function Get-Json {
     return $Text | ConvertFrom-Json
 }
 
+function Wait-GhRateLimit {
+    param([string]$Resource = "search")
+    try {
+        $raw = & gh api rate_limit 2>&1
+        if ($LASTEXITCODE -ne 0) { Start-Sleep -Seconds 60; return }
+        $limits = Get-Json -Text $raw
+        $res = $limits.resources.$Resource
+        if ($res.remaining -gt 2) { return }
+        $now = [int][DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
+        $wait = [math]::Max(5, [int]$res.reset - $now + 3)
+        Write-Host "  GitHub $Resource rate low (remaining=$($res.remaining)); sleeping ${wait}s..." -ForegroundColor Yellow
+        Start-Sleep -Seconds $wait
+    }
+    catch {
+        Start-Sleep -Seconds 60
+    }
+}
+
 function Invoke-GhApi {
-    param([string]$Path, [hashtable]$Fields = @{})
+    param(
+        [string]$Path,
+        [hashtable]$Fields = @{},
+        [switch]$NoThrottle
+    )
     $args = @("api", "-X", "GET", $Path)
     foreach ($key in $Fields.Keys) { $args += @("-f", "$key=$($Fields[$key])") }
-    $raw = & gh @args 2>&1
-    if ($LASTEXITCODE -ne 0) { throw "gh api failed for path '$Path': $raw" }
-    return Get-Json -Text $raw
+
+    $maxAttempts = 12
+    for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+        if (-not $NoThrottle -and $Path -eq "search/repositories") {
+            Wait-GhRateLimit -Resource "search"
+        }
+        $raw = & gh @args 2>&1
+        if ($LASTEXITCODE -eq 0) { return Get-Json -Text $raw }
+
+        $msg = [string]$raw
+        if ($msg -match 'rate limit|403' -and $attempt -lt $maxAttempts) {
+            Write-Host "  gh api rate limited ($Path); retry $attempt/$maxAttempts" -ForegroundColor Yellow
+            if ($Path -eq "search/repositories") { Wait-GhRateLimit -Resource "search" }
+            else { Wait-GhRateLimit -Resource "core" }
+            continue
+        }
+        throw "gh api failed for path '$Path': $raw"
+    }
+    throw "gh api failed for path '$Path' after $maxAttempts attempts"
 }
 
 function Get-RepoDetails {
@@ -182,6 +220,13 @@ function Get-RepoDetails {
 function Search-Repositories {
     param([string]$Query, [int]$PerPage = 50)
     Write-Host "Searching: $Query" -ForegroundColor Gray
+    # GitHub search API: 30 requests/minute for authenticated users.
+    $prevSearch = Get-Variable -Name LastGhSearchUtc -Scope Script -ErrorAction SilentlyContinue
+    if ($null -ne $prevSearch -and $null -ne $prevSearch.Value) {
+        $gap = ([datetime]::UtcNow - $prevSearch.Value).TotalSeconds
+        if ($gap -lt 2.1) { Start-Sleep -Seconds (2.1 - $gap) }
+    }
+    Set-Variable -Name LastGhSearchUtc -Scope Script -Value ([datetime]::UtcNow)
     $resp = Invoke-GhApi -Path "search/repositories" -Fields @{ q=$Query; sort="stars"; order="desc"; per_page=$PerPage }
     $items = @($resp.items)
     Write-Host "  Found $(@($items).Count) repositories." -ForegroundColor Green

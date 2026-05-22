@@ -1,0 +1,67 @@
+{
+  "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
+  "utc_timestamp": "2026-05-21T21:18:04.6948740Z",
+  "git_commit": "26522c5c5acbc7ae42158aea0743aeebaf283667",
+  "anchor": {
+    "full_name": "gradio-app/gradio",
+    "url": "https://github.com/gradio-app/gradio",
+    "owner": "gradio-app",
+    "language": "Python",
+    "stars": 42648,
+    "topics": [
+      "data-analysis",
+      "data-science",
+      "data-visualization",
+      "deep-learning",
+      "deploy",
+      "gradio",
+      "gradio-interface",
+      "interface",
+      "machine-learning",
+      "models",
+      "python",
+      "python-notebook",
+      "ui",
+      "ui-components"
+    ]
+  },
+  "params": {
+    "TopK": 30,
+    "MaxSearchPerQuery": 50,
+    "MinimumStars": 50,
+    "MinimumScore": 750,
+    "IncludeRetrievalSignalsInScore": false,
+    "CrossAnchorRunsDir": "runs/manual-ml-py",
+    "CrossAnchorFreqPenaltyWeight": 55.0,
+    "MaxPerOwner": 2,
+    "MaxPerOwnerPerSubdomain": 1,
+    "DisableDiversityGuard": false,
+    "AllowSameOwner": false,
+    "AllowForks": false,
+    "AllowArchived": false,
+    "AllowFallbackFill": true
+  },
+  "weights": {
+    "StarSimilarity": 175.0,
+    "LanguageMatch": 250.0,
+    "TopicJaccard": 900.0,
+    "LexicalJaccard": 650.0,
+    "QueryCoverage": 150.0,
+    "RecencySimilarity": 125.0,
+    "SubdomainMatch": 225.0
+  },
+  "counts": {
+    "search_queries": 6,
+    "candidate_pool": 242,
+    "enriched": 222,
+    "scored": 222,
+    "qualified": 30,
+    "final": 30
+  },
+  "outputs": {
+    "anchor_repo_json": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/gradio-app-gradio/anchor_repo.json",
+    "candidate_repos_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/gradio-app-gradio/candidate_repos.csv",
+    "ranked_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/gradio-app-gradio/ranked_matches.csv",
+    "final_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/gradio-app-gradio/30_Matches.csv"
+  }
+}

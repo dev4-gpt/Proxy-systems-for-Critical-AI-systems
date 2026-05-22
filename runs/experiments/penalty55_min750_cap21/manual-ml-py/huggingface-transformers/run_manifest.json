@@ -1,0 +1,72 @@
+{
+  "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
+  "utc_timestamp": "2026-05-21T21:02:09.3397040Z",
+  "git_commit": "26522c5c5acbc7ae42158aea0743aeebaf283667",
+  "anchor": {
+    "full_name": "huggingface/transformers",
+    "url": "https://github.com/huggingface/transformers",
+    "owner": "huggingface",
+    "language": "Python",
+    "stars": 160848,
+    "topics": [
+      "audio",
+      "deep-learning",
+      "deepseek",
+      "gemma",
+      "glm",
+      "hacktoberfest",
+      "llm",
+      "machine-learning",
+      "model-hub",
+      "natural-language-processing",
+      "nlp",
+      "pretrained-models",
+      "python",
+      "pytorch",
+      "pytorch-transformers",
+      "qwen",
+      "speech-recognition",
+      "transformer",
+      "vlm"
+    ]
+  },
+  "params": {
+    "TopK": 30,
+    "MaxSearchPerQuery": 50,
+    "MinimumStars": 50,
+    "MinimumScore": 750,
+    "IncludeRetrievalSignalsInScore": false,
+    "CrossAnchorRunsDir": "runs/manual-ml-py",
+    "CrossAnchorFreqPenaltyWeight": 55.0,
+    "MaxPerOwner": 2,
+    "MaxPerOwnerPerSubdomain": 1,
+    "DisableDiversityGuard": false,
+    "AllowSameOwner": false,
+    "AllowForks": false,
+    "AllowArchived": false,
+    "AllowFallbackFill": true
+  },
+  "weights": {
+    "StarSimilarity": 175.0,
+    "LanguageMatch": 250.0,
+    "TopicJaccard": 900.0,
+    "LexicalJaccard": 650.0,
+    "QueryCoverage": 150.0,
+    "RecencySimilarity": 125.0,
+    "SubdomainMatch": 225.0
+  },
+  "counts": {
+    "search_queries": 6,
+    "candidate_pool": 251,
+    "enriched": 227,
+    "scored": 227,
+    "qualified": 25,
+    "final": 30
+  },
+  "outputs": {
+    "anchor_repo_json": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/huggingface-transformers/anchor_repo.json",
+    "candidate_repos_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/huggingface-transformers/candidate_repos.csv",
+    "ranked_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/huggingface-transformers/ranked_matches.csv",
+    "final_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/huggingface-transformers/30_Matches.csv"
+  }
+}
