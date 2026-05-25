@@ -1,0 +1,101 @@
+AnchorRepo,_anchor_folder,Rank,CandidateRepo,IsMagnet,Score,Qualified,PenaltyCrossAnchorFreq,FrequencyInFinal30AcrossAnchors,Description
+JaidedAI/EasyOCR,JaidedAI-EasyOCR,1,abdulfatir/twitter-sentiment-analysis,False,854.79,True,0,1,"Sentiment analysis on tweets using Naive Bayes, SVM, CNN, LSTM, etc."
+JaidedAI/EasyOCR,JaidedAI-EasyOCR,2,GabrielDornelles/pytorch-ocr,False,825,True,0,1,"Simple Pytorch framework to train OCRs. Supports CRNNs, Attention, CTC and Cross Entropy Loss."
+JaidedAI/EasyOCR,JaidedAI-EasyOCR,3,Hironsan/BossSensor,False,822.35,True,52.68,1,Hide screen when boss is approaching.
+JaidedAI/EasyOCR,JaidedAI-EasyOCR,4,frgfm/torch-cam,False,822.1,True,0,1,"Class activation maps for your PyTorch models (CAM, Grad-CAM, Grad-CAM++, Smooth Grad-CAM++, Score-CAM, SS-CAM, IS-CAM, XGrad-CAM, Layer-CAM)"
+JaidedAI/EasyOCR,JaidedAI-EasyOCR,5,open-mmlab/mmocr,False,821.6,True,0,1,"OpenMMLab Text Detection, Recognition and Understanding Toolbox"
+Lightning-AI/pytorch-lightning,Lightning-AI-pytorch-lightning,1,keras-team/keras,True,982.26,True,215.33,10,Deep Learning for humans
+Lightning-AI/pytorch-lightning,Lightning-AI-pytorch-lightning,2,stanfordnlp/stanza,False,961.21,True,136.18,4,"Stanford NLP Python library for tokenization, sentence segmentation, NER, and parsing of many human languages"
+Lightning-AI/pytorch-lightning,Lightning-AI-pytorch-lightning,3,kornia/kornia,False,960.01,True,122.32,4,🐍 Geometric Computer Vision Library for Spatial AI
+Lightning-AI/pytorch-lightning,Lightning-AI-pytorch-lightning,4,unit8co/darts,False,953.25,True,136.18,5,A python library for user-friendly forecasting and anomaly detection on time series.
+Lightning-AI/pytorch-lightning,Lightning-AI-pytorch-lightning,5,google-deepmind/sonnet,False,909.18,True,122.32,4,TensorFlow-based neural network library
+OpenBB-finance/OpenBB,OpenBB-finance-OpenBB,1,ValueCell-ai/valuecell,False,929.75,True,0,1,"ValueCell is a community-driven, multi-agent platform for financial applications."
+OpenBB-finance/OpenBB,OpenBB-finance-OpenBB,2,brokermr810/QuantDinger,False,846,True,0,1,"AI quantitative trading platform for crypto, stocks, and forex with backtesting, live trading, market data, and multi-agent research.vibe-trading ,trading-agents,ai-trader,ai-trading"
+OpenBB-finance/OpenBB,OpenBB-finance-OpenBB,3,quantsbin/Quantsbin,False,825,True,0,1,Quantitative Finance tools
+OpenBB-finance/OpenBB,OpenBB-finance-OpenBB,4,Michalos88/Quant-Projects,False,768.75,True,0,1,Implementations of Leading Algorithms in Quantitative Finance 
+OpenBB-finance/OpenBB,OpenBB-finance-OpenBB,5,binance/binance-skills-hub,False,728.77,True,0,1,Binance Skills Hub is an open skills marketplace that gives AI agents native access to crypto
+apache/airflow,apache-airflow,1,dagster-io/dagster,False,988.68,True,158.04,1,"An orchestration platform for the development, production, and observation of data assets."
+apache/airflow,apache-airflow,2,feast-dev/feast,False,884.13,True,0,1,The Open Source Feature Store for AI/ML
+apache/airflow,apache-airflow,3,Avaiga/taipy,False,827.79,True,105.36,1,Turns Data and AI algorithms into production-ready web applications in no time.
+apache/airflow,apache-airflow,4,abhishek-ch/around-dataengineering,False,785.09,True,0,1,A Data Engineering & Machine Learning Knowledge Hub
+apache/airflow,apache-airflow,5,san089/goodreads_etl_pipeline,False,774.17,True,0,1,"An end-to-end GoodReads Data Pipeline for Building Data Lake, Data Warehouse and Analytics Platform."
+bbfamily/abu,bbfamily-abu,1,zvtvz/zvt,False,908.31,True,0,1,modular quant framework.
+bbfamily/abu,bbfamily-abu,2,shashankvemuri/Finance,False,907.82,True,0,1,"150+ quantitative finance Python programs to help you gather, manipulate, and analyze stock market data"
+bbfamily/abu,bbfamily-abu,3,ranaroussi/quantstats,False,883.72,True,0,1,"Portfolio analytics for quants, written in Python"
+bbfamily/abu,bbfamily-abu,4,asavinov/intelligent-trading-bot,False,846.03,True,52.68,1,Intelligent Trading Bot: Automatically generating signals and trading based on machine learning and feature engineering
+bbfamily/abu,bbfamily-abu,5,coding-kitties/investing-algorithm-framework,False,845.89,True,0,1,"Framework for developing, backtesting, and deploying automated trading algorithms and trading bots."
+deepspeedai/DeepSpeed,deepspeedai-DeepSpeed,1,InterDigitalInc/CompressAI,False,875.11,True,0,1,A PyTorch library and evaluation platform for end-to-end compression research
+deepspeedai/DeepSpeed,deepspeedai-DeepSpeed,2,alibaba/EasyParallelLibrary,False,875,True,0,1,Easy Parallel Library (EPL) is a general and efficient deep learning framework for distributed model training.
+deepspeedai/DeepSpeed,deepspeedai-DeepSpeed,3,qualcomm/aimet,False,797.83,True,0,1,AIMET is a library that provides advanced quantization and compression techniques for trained neural network models.
+deepspeedai/DeepSpeed,deepspeedai-DeepSpeed,4,hpcaitech/ColossalAI,False,783.77,True,215.33,2,"Making large AI models cheaper, faster and more accessible"
+deepspeedai/DeepSpeed,deepspeedai-DeepSpeed,5,tensorflow/compression,False,771.51,True,0,1,Data compression in TensorFlow
+eriklindernoren/ML-From-Scratch,eriklindernoren-ML-From-Scratch,1,mdbloice/Augmentor,False,906.07,True,0,1,Image augmentation library in Python for machine learning.
+eriklindernoren/ML-From-Scratch,eriklindernoren-ML-From-Scratch,2,tflearn/tflearn,False,863.57,True,136.18,5,Deep learning library featuring a higher-level API for TensorFlow.
+eriklindernoren/ML-From-Scratch,eriklindernoren-ML-From-Scratch,3,aleju/imgaug,False,840.85,True,0,1,Image augmentation for machine learning experiments.
+eriklindernoren/ML-From-Scratch,eriklindernoren-ML-From-Scratch,4,unit8co/darts,False,838.26,True,136.18,5,A python library for user-friendly forecasting and anomaly detection on time series.
+eriklindernoren/ML-From-Scratch,eriklindernoren-ML-From-Scratch,5,Lightning-AI/pytorch-lightning,True,800.34,True,219.67,10,"Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes."
+explosion/spaCy,explosion-spacy,1,stanfordnlp/stanza,False,898.33,True,136.18,4,"Stanford NLP Python library for tokenization, sentence segmentation, NER, and parsing of many human languages"
+explosion/spaCy,explosion-spacy,2,Lightning-AI/pytorch-lightning,True,852.44,True,219.67,10,"Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes."
+explosion/spaCy,explosion-spacy,3,kornia/kornia,False,806.62,True,122.32,4,🐍 Geometric Computer Vision Library for Spatial AI
+explosion/spaCy,explosion-spacy,4,google-deepmind/sonnet,False,806.3,True,122.32,4,TensorFlow-based neural network library
+explosion/spaCy,explosion-spacy,5,keras-team/keras,True,760.14,True,215.33,10,Deep Learning for humans
+gradio-app/gradio,gradio-app-gradio,1,streamlit/streamlit,True,895.41,True,215.33,8,Streamlit — A faster way to build and share data apps.
+gradio-app/gradio,gradio-app-gradio,2,unit8co/darts,False,793.06,True,136.18,5,A python library for user-friendly forecasting and anomaly detection on time series.
+gradio-app/gradio,gradio-app-gradio,3,NannyML/nannyml,False,788.57,True,52.68,2,nannyml: post-deployment data science in python
+gradio-app/gradio,gradio-app-gradio,4,1adrianb/face-alignment,False,756.33,True,52.68,1,:fire: 2D and 3D Face alignment library build using pytorch 
+gradio-app/gradio,gradio-app-gradio,5,Lightning-AI/pytorch-lightning,True,755.14,True,219.67,10,"Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes."
+huggingface/datasets,huggingface-datasets,1,Lightning-AI/litgpt,False,841.04,True,105.36,1,"20+ high-performance LLMs with recipes to pretrain, finetune and deploy at scale."
+huggingface/datasets,huggingface-datasets,2,jacobgil/pytorch-grad-cam,False,826.76,True,52.68,2,"Advanced AI Explainability for computer vision.  Support for CNNs, Vision Transformers, Classification, Object detection, Segmentation, Image similarity and more."
+huggingface/datasets,huggingface-datasets,3,mlfoundations/open_clip,False,803.3,True,83.5,1,An open source implementation of CLIP.
+huggingface/datasets,huggingface-datasets,4,katanaml/sparrow,False,802.52,True,0,1,"Structured data extraction and instruction calling with ML, LLM and Vision LLM"
+huggingface/datasets,huggingface-datasets,5,rohitg00/ai-engineering-from-scratch,False,795.42,True,147.89,2,Learn it. Build it. Ship it for others.
+huggingface/transformers,huggingface-transformers,1,GradientHQ/parallax,False,817.24,True,0,1,Parallax is a distributed model serving framework that lets you build your own AI cluster anywhere
+huggingface/transformers,huggingface-transformers,2,hiyouga/EasyR1,False,799.25,True,0,1,"EasyR1: An Efficient, Scalable, Multi-Modality RL Training Framework based on veRL"
+huggingface/transformers,huggingface-transformers,3,jessevig/bertviz,False,788.59,True,52.68,1,BertViz: Visualize Attention in Transformer Models
+huggingface/transformers,huggingface-transformers,4,speechbrain/speechbrain,False,777.8,True,0,1,A PyTorch-based Speech Toolkit
+huggingface/transformers,huggingface-transformers,5,Tencent/AngelSlim,False,766.67,True,0,1,"Model compression toolkit engineered for enhanced usability, comprehensiveness, and efficiency."
+jina-ai/serve,jina-ai-serve,1,bentoml/BentoML,False,842.48,True,83.5,1,"The easiest way to serve AI apps and models - Build Model Inference APIs, Job queues, LLM apps, Multi-model pipelines, and more!"
+jina-ai/serve,jina-ai-serve,2,Netflix/metaflow,False,790.75,True,83.5,1,"Build, Manage and Deploy AI/ML Systems"
+jina-ai/serve,jina-ai-serve,3,PrefectHQ/fastmcp,False,716.79,True,52.68,1,"🚀 The fast, Pythonic way to build MCP servers and clients."
+jina-ai/serve,jina-ai-serve,4,agentscope-ai/agentscope,False,716.44,True,52.68,1,"Build and run agents you can see, understand and trust."
+jina-ai/serve,jina-ai-serve,5,emcie-co/parlant,False,715.1,True,52.68,1,"Build reliable customer-facing AI agents with Parlant: an interaction control harness optimized for controlled, consistent, and predictable LLM interactions."
+onnx/onnx,onnx-onnx,1,google-deepmind/sonnet,False,881.53,True,122.32,4,TensorFlow-based neural network library
+onnx/onnx,onnx-onnx,2,kornia/kornia,False,865.9,True,122.32,4,🐍 Geometric Computer Vision Library for Spatial AI
+onnx/onnx,onnx-onnx,3,Lightning-AI/pytorch-lightning,True,840.12,True,219.67,10,"Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes."
+onnx/onnx,onnx-onnx,4,flwrlabs/flower,False,839.14,True,136.18,4,Flower: A Friendly Federated AI Framework
+onnx/onnx,onnx-onnx,5,stanfordnlp/stanza,False,790.89,True,136.18,4,"Stanford NLP Python library for tokenization, sentence segmentation, NER, and parsing of many human languages"
+pytorch/pytorch,pytorch-pytorch,1,chainer/chainer,False,1082.89,True,0,1,A flexible framework of neural networks for deep learning
+pytorch/pytorch,pytorch-pytorch,2,norse/norse,False,1050,True,0,1,Deep learning with spiking neural networks (SNNs) in PyTorch.
+pytorch/pytorch,pytorch-pytorch,3,pranftw/neograd,False,1015.38,True,0,1,A deep learning framework created from scratch with Python and NumPy
+pytorch/pytorch,pytorch-pytorch,4,leptonai/leptonai,False,999.15,True,0,1,A Pythonic framework to simplify AI service building
+pytorch/pytorch,pytorch-pytorch,5,oreilly-japan/deep-learning-from-scratch-3,False,960,True,0,1,"『ゼロから作る Deep Learning ❸』(O'Reilly Japan, 2020)"
+ray-project/ray,ray-project-ray,1,torchpipe/torchpipe,False,773.08,True,0,1,Serving Inside Pytorch
+ray-project/ray,ray-project-ray,2,ELS-RD/transformer-deploy,False,769.62,True,0,1,"Efficient, scalable and enterprise-grade CPU/GPU inference server for 🤗 Hugging Face transformer models 🚀"
+ray-project/ray,ray-project-ray,3,NVIDIA/TensorRT-LLM,False,757.46,True,52.68,1,TensorRT LLM provides users with an easy-to-use Python API to define Large Language Models (LLMs) and supports state-of-the-art optimizations to perform inference efficiently on NVIDIA GPUs. TensorRT 
+ray-project/ray,ray-project-ray,4,curiousily/Deploy-BERT-for-Sentiment-Analysis-with-FastAPI,False,750,True,0,1,"Deploy BERT for Sentiment Analysis as REST API using FastAPI, Transformers by Hugging Face and PyTorch"
+ray-project/ray,ray-project-ray,5,google/langextract,False,743.23,True,122.32,2,A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.
+recommenders-team/recommenders,recommenders-team-recommenders,1,Lightning-AI/pytorch-lightning,True,841.62,True,219.67,10,"Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes."
+recommenders-team/recommenders,recommenders-team-recommenders,2,unit8co/darts,False,786.96,True,136.18,5,A python library for user-friendly forecasting and anomaly detection on time series.
+recommenders-team/recommenders,recommenders-team-recommenders,3,kornia/kornia,False,777.56,True,122.32,4,🐍 Geometric Computer Vision Library for Spatial AI
+recommenders-team/recommenders,recommenders-team-recommenders,4,google-deepmind/sonnet,False,765,True,122.32,4,TensorFlow-based neural network library
+recommenders-team/recommenders,recommenders-team-recommenders,5,stanfordnlp/stanza,False,756.44,True,136.18,4,"Stanford NLP Python library for tokenization, sentence segmentation, NER, and parsing of many human languages"
+sebastianruder/NLP-progress,sebastianruder-NLP-progress,1,nltk/nltk,False,957.85,True,0,1,NLTK Source
+sebastianruder/NLP-progress,sebastianruder-NLP-progress,2,jasonwu0731/trade-dst,False,920.52,True,0,1,"Source code for transferable dialogue state generator (TRADE, Wu et al., 2019). https://arxiv.org/abs/1905.08743 "
+sebastianruder/NLP-progress,sebastianruder-NLP-progress,3,hankcs/HanLP,False,907.58,True,0,1,"Natural Language Processing for the next decade. Tokenization, Part-of-Speech Tagging, Named Entity Recognition, Syntactic & Semantic Dependency Parsing, Document Classification"
+sebastianruder/NLP-progress,sebastianruder-NLP-progress,4,budzianowski/multiwoz,False,899.3,True,0,1,"Source code for end-to-end dialogue model from the MultiWOZ paper (Budzianowski et al. 2018, EMNLP)"
+sebastianruder/NLP-progress,sebastianruder-NLP-progress,5,Maluuba/nlg-eval,False,865.47,True,0,1,Evaluation code for various unsupervised automated metrics for Natural Language Generation.
+serengil/deepface,serengil-deepface,1,deepinsight/insightface,False,785.5,True,52.68,2,State-of-the-art 2D and 3D Face Analysis Project
+serengil/deepface,serengil-deepface,2,RangiLyu/nanodet,False,754.58,True,0,1,NanoDet-Plus⚡Super fast and lightweight anchor-free object detection model. 🔥Only 980 KB(int8) / 1.8MB (fp16) and run 97FPS on cellphone🔥
+serengil/deepface,serengil-deepface,3,Lasagne/Lasagne,False,752.52,True,0,1,Lightweight library to build and train neural networks in Theano
+serengil/deepface,serengil-deepface,4,wujiyang/Face_Pytorch,False,739.15,True,0,1,"face recognition algorithms  in pytorch framework, including arcface, cosface, sphereface and so on"
+serengil/deepface,serengil-deepface,5,Zeyi-Lin/HivisionIDPhotos,False,733.36,True,105.36,1,⚡️HivisionIDPhotos: a lightweight and efficient AI ID photos tools. 一个轻量级的AI证件照制作算法。
+streamlit/streamlit,streamlit-streamlit,1,unit8co/darts,False,906.8,True,136.18,5,A python library for user-friendly forecasting and anomaly detection on time series.
+streamlit/streamlit,streamlit-streamlit,2,gradio-app/gradio,True,900.01,True,210.72,5,"Build and share delightful machine learning apps, all in Python. 🌟 Star to support our work!"
+streamlit/streamlit,streamlit-streamlit,3,Lightning-AI/pytorch-lightning,True,868.88,True,219.67,10,"Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes."
+streamlit/streamlit,streamlit-streamlit,4,keras-team/keras,True,845.98,True,215.33,10,Deep Learning for humans
+streamlit/streamlit,streamlit-streamlit,5,NannyML/nannyml,False,843.65,True,52.68,2,nannyml: post-deployment data science in python
+ultralytics/yolov5,ultralytics-yolov5,1,Megvii-BaseDetection/YOLOX,False,1010.31,True,0,1,"YOLOX is a high-performance anchor-free YOLO, exceeding yolov3~v5 with MegEngine, ONNX, TensorRT, ncnn, and OpenVINO supported. Documentation: https://yolox.readthedocs.io/"
+ultralytics/yolov5,ultralytics-yolov5,2,WangQvQ/YOLOMagic,False,1000,True,0,1,"YOLO Magic🪄 is an extension based on Ultralytics' YOLOv5, designed to provide more powerful functionality and simpler operations for visual tasks."
+ultralytics/yolov5,ultralytics-yolov5,3,tinyvision/DAMO-YOLO,False,982.54,True,0,1,"DAMO-YOLO: a fast and accurate object detection method with some new techs, including NAS backbones, efficient RepGFPN, ZeroHead, AlignedOTA, and distillation enhancement."
+ultralytics/yolov5,ultralytics-yolov5,4,ayooshkathuria/pytorch-yolo-v3,False,943.56,True,0,1,A PyTorch implementation of the YOLO v3 object detection algorithm
+ultralytics/yolov5,ultralytics-yolov5,5,open-mmlab/mmyolo,False,893.09,True,0,1,"OpenMMLab YOLO series toolbox and benchmark. Implemented RTMDet, RTMDet-Rotated,YOLOv5, YOLOv6, YOLOv7, YOLOv8,YOLOX, PPYOLOE, etc."

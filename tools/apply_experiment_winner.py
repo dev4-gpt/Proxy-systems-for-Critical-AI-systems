@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply winning hyperparameters to Get-AnchorMatches.ps1 and metamatch_hyperparams.json."""
+"""Apply winning hyperparameters only if result beats penalty100_min700_cap21."""
 
 from __future__ import annotations
 
@@ -8,42 +8,38 @@ import json
 import re
 from pathlib import Path
 
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from metamatch_experiment_score import beats_row, row_by_id, score_row
+
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY = ROOT / "runs" / "experiments" / "experiment_comparison_summary.csv"
 MATCHER = ROOT / "Get-AnchorMatches.ps1"
 HYPER = ROOT / "metamatch_hyperparams.json"
-BASELINE = "penalty55_min700_cap21"
+CHAMPION = "penalty100_min700_cap21"
 
 
-def score_row(row: dict, baseline_weak: int) -> tuple:
-    weak = int(float(row.get("Weak") or 99))
-    if weak > baseline_weak + 1:
-        return (9999, 9999, 9999, row.get("experiment_id", ""))
-    return (
-        int(float(row.get("TotalMagnetsInTop5") or 9999)),
-        sum(int(float(row.get(k) or 0)) for k in row if k.startswith("MagnetFinal30_")),
-        weak,
-        row.get("experiment_id", ""),
-    )
-
-
-def pick_winner(rows: list[dict]) -> dict:
-    baseline_weak = 5
-    for r in rows:
-        if r.get("experiment_id") == BASELINE:
-            baseline_weak = int(float(r.get("Weak") or 5))
-            break
-    candidates = [r for r in rows if r.get("experiment_id") != "penalty30_min700_cap21"]
-    return sorted(candidates, key=lambda r: score_row(r, baseline_weak))[0]
+def pick_apply_row(rows: list[dict]) -> tuple[dict, bool]:
+    champion = row_by_id(rows, CHAMPION)
+    if not champion:
+        ranked = sorted(rows, key=lambda r: score_row(r, 99))
+        return ranked[0], True
+    champ_weak = int(float(champion.get("Weak") or 2))
+    ranked = sorted(rows, key=lambda r: score_row(r, champ_weak + 1))
+    best = ranked[0]
+    if beats_row(best, champion, champ_weak + 1):
+        return best, True
+    return champion, False
 
 
 def patch_ps1(w: dict) -> None:
     text = MATCHER.read_text(encoding="utf-8")
-    penalty = float(w.get("CrossAnchorFreqPenaltyWeight") or 55)
+    penalty = float(w.get("CrossAnchorFreqPenaltyWeight") or 100)
     minimum = int(float(w.get("MinimumScore") or 700))
     max_owner = int(float(w.get("MaxPerOwner") or 2))
     max_sub = int(float(w.get("MaxPerOwnerPerSubdomain") or 1))
-    allow_fallback = "penalty55_min700_cap21_nofallback" not in w.get("experiment_id", "")
+    allow_fallback = "nofallback" not in w.get("experiment_id", "")
 
     text = re.sub(
         r"(\[double\]\$CrossAnchorFreqPenaltyWeight\s*=\s*)[\d.]+",
@@ -78,14 +74,16 @@ def patch_ps1(w: dict) -> None:
     MATCHER.write_text(text, encoding="utf-8")
 
 
-def write_json(w: dict) -> None:
+def write_json(w: dict, beats: bool) -> None:
     payload = {
-        "CrossAnchorFreqPenaltyWeight": float(w.get("CrossAnchorFreqPenaltyWeight") or 55),
+        "CrossAnchorFreqPenaltyWeight": float(w.get("CrossAnchorFreqPenaltyWeight") or 100),
         "MinimumScore": int(float(w.get("MinimumScore") or 700)),
         "MaxPerOwner": int(float(w.get("MaxPerOwner") or 2)),
         "MaxPerOwnerPerSubdomain": int(float(w.get("MaxPerOwnerPerSubdomain") or 1)),
-        "AllowFallbackFill": "penalty55_min700_cap21_nofallback" not in w.get("experiment_id", ""),
+        "AllowFallbackFill": "nofallback" not in w.get("experiment_id", ""),
         "winner_experiment_id": w.get("experiment_id"),
+        "beats_champion_penalty100_min700_cap21": beats,
+        "champion_experiment_id": CHAMPION,
     }
     HYPER.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
 
@@ -95,10 +93,11 @@ def main() -> int:
         print(f"Missing {SUMMARY}")
         return 1
     rows = list(csv.DictReader(SUMMARY.open(encoding="utf-8")))
-    winner = pick_winner(rows)
-    patch_ps1(winner)
-    write_json(winner)
-    print(f"Applied winner {winner.get('experiment_id')} to {MATCHER.name} and {HYPER.name}")
+    apply_row, beats = pick_apply_row(rows)
+    patch_ps1(apply_row)
+    write_json(apply_row, beats)
+    note = "beat" if beats else "did not beat"
+    print(f"Applied {apply_row.get('experiment_id')} ({note} {CHAMPION})")
     return 0
 
 

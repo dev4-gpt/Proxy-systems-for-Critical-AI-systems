@@ -1,0 +1,4 @@
+{"experiment_id": "penalty110_min700_cap11", "penalty": 110, "min_score": 700, "max_owner": 1, "max_sub": 1, "started": "2026-05-22T18:07:34.529878+00:00", "finished": "2026-05-22T19:08:01.569586+00:00", "exit_code": 0}
+{"experiment_id": "penalty110_min700_cap12", "penalty": 110, "min_score": 700, "max_owner": 1, "max_sub": 2, "started": "2026-05-22T19:08:01.609502+00:00", "finished": "2026-05-22T20:03:25.554141+00:00", "exit_code": 0}
+{"experiment_id": "penalty110_min700_cap21", "penalty": 110, "min_score": 700, "max_owner": 2, "max_sub": 1, "started": "2026-05-22T20:03:25.582584+00:00", "finished": "2026-05-22T21:03:51.215289+00:00", "exit_code": 0}
+{"experiment_id": "penalty110_min700_cap22", "penalty": 110, "min_score": 700, "max_owner": 2, "max_sub": 2, "started": "2026-05-22T21:03:51.234489+00:00", "finished": "2026-05-22T22:01:22.469356+00:00", "exit_code": 0}

@@ -72,6 +72,29 @@ bash runs/experiments/run_hyperparam_sweep.sh
 
 Presets: `penalty75`, `penalty100`, `min750`, `cap11`, `nofallback`.
 
+## Phase-2 grid (penalty 110–200 × min 700/750/800 × caps)
+
+60 combinations. Champion to beat: **`penalty100_min700_cap21`**.
+
+```bash
+python3 tools/run_metamatch_grid.py          # all 60 runs (~50+ hours)
+python3 tools/run_metamatch_grid.py --dry-run
+python3 tools/run_metamatch_grid.py --only penalty150_min700_cap21
+python3 tools/run_metamatch_grid.py --finalize-only   # after partial grid
+```
+
+Progress: `runs/experiments/grid_phase2_progress.jsonl`  
+Background: `bash runs/experiments/run_grid_phase2.sh`
+
+**Restart in tmux (recommended — attach anytime):**
+
+```bash
+bash runs/experiments/run_grid_phase2_tmux.sh          # stop old jobs + start
+tmux attach -t metamatch-grid                         # live view (Ctrl+B D to detach)
+bash runs/experiments/run_grid_phase2_tmux.sh stop    # kill grid + tmux
+tail -f runs/experiments/grid_phase2_tmux.log
+```
+
 ## Compare experiments
 
 ```bash

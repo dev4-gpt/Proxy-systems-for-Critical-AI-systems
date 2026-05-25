@@ -1,55 +1,36 @@
 #!/usr/bin/env python3
 """
-Pick best experiment from runs/experiments/*/anchor_evaluation.csv archives.
-Writes runs/experiments/WINNER.md and prints recommendation.
+Pick best experiment; write runs/experiments/WINNER.md.
+Includes all archived runs. Notes whether winner beats champion (penalty100_min700_cap21).
 """
 
 from __future__ import annotations
 
 import csv
-import json
 from pathlib import Path
+
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from metamatch_experiment_score import (
+    beats_row,
+    hub_final30,
+    int_val,
+    magnet_final30_sum,
+    row_by_id,
+    score_row,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 EXP_ROOT = ROOT / "runs" / "experiments"
 SUMMARY = EXP_ROOT / "experiment_comparison_summary.csv"
-BASELINE = "penalty55_min700_cap21"
-GUARD_MAX_WEAK = 6  # must not be worse than penalty55 by more than 1
+CHAMPION = "penalty100_min700_cap21"
+CHAMPION_WEAK_CAP = 3  # allow at most champion Weak + 1
 
 
 def read_csv(path: Path) -> list[dict]:
     with path.open(encoding="utf-8") as f:
         return list(csv.DictReader(f))
-
-
-def int_val(row: dict, key: str, default: int = 0) -> int:
-    try:
-        return int(float(row.get(key) or default))
-    except (TypeError, ValueError):
-        return default
-
-
-def float_val(row: dict, key: str, default: float = 0.0) -> float:
-    try:
-        return float(row.get(key) or default)
-    except (TypeError, ValueError):
-        return default
-
-
-def magnet_final30_sum(row: dict) -> int:
-    keys = [k for k in row if k.startswith("MagnetFinal30_")]
-    return sum(int_val(row, k) for k in keys)
-
-
-def score_row(row: dict, baseline_weak: int) -> tuple:
-    """Lower is better for sorting (we negate for max)."""
-    weak = int_val(row, "Weak")
-    if weak > baseline_weak + 1:
-        return (9999, 9999, 9999, row.get("experiment_id", ""))
-    mtop5 = int_val(row, "TotalMagnetsInTop5")
-    m30 = magnet_final30_sum(row)
-    weak_pen = weak
-    return (mtop5, m30, weak_pen, row.get("experiment_id", ""))
 
 
 def main() -> int:
@@ -58,65 +39,84 @@ def main() -> int:
         return 1
 
     rows = read_csv(SUMMARY)
-    baseline_weak = 5
-    for r in rows:
-        if r.get("experiment_id") == BASELINE:
-            baseline_weak = int_val(r, "Weak", 5)
-            break
+    champion = row_by_id(rows, CHAMPION)
+    champ_weak = int_val(champion, "Weak", 2) if champion else 2
+    max_weak = champ_weak + 1
 
-    candidates = [r for r in rows if r.get("experiment_id") != "penalty30_min700_cap21"]
-    if not candidates:
-        print("No candidate experiments.")
-        return 1
-
-    ranked = sorted(candidates, key=lambda r: score_row(r, baseline_weak))
+    ranked = sorted(rows, key=lambda r: score_row(r, max_weak))
     winner = ranked[0]
+    beats_champion = bool(champion and beats_row(winner, champion, max_weak))
 
     lines = [
-        "# MetaMatch sweep winner",
+        "# MetaMatch experiment winner",
         "",
-        f"**Recommended experiment:** `{winner.get('experiment_id')}`",
-        "",
-        "## Scorecard (lower is better)",
-        "",
-        "| experiment_id | TotalMagnetsInTop5 | Weak | Good | OK | Lightning final30 | Keras | Streamlit |",
-        "|---------------|-------------------|------|------|-----|-------------------|-------|-----------|",
+        f"**Champion (prior best):** `{CHAMPION}`",
     ]
-    for r in ranked:
+    if champion:
         lines.append(
-            f"| {r.get('experiment_id')} | {r.get('TotalMagnetsInTop5')} | {r.get('Weak')} | "
-            f"{r.get('Good')} | {r.get('OK')} | {r.get('MagnetFinal30_pytorch-lightning', '')} | "
-            f"{r.get('MagnetFinal30_keras', '')} | {r.get('MagnetFinal30_streamlit', '')} |"
+            f"- TotalMagnetsInTop5={champion.get('TotalMagnetsInTop5')}, "
+            f"Weak={champion.get('Weak')}, "
+            f"final30 magnet sum={magnet_final30_sum(champion)}"
         )
-
-    w = winner
     lines.extend([
         "",
-        "## Suggested defaults for Get-AnchorMatches.ps1",
+        f"**Best in comparison table:** `{winner.get('experiment_id')}`",
+        f"**Beats champion:** {'yes' if beats_champion else 'no'}",
         "",
-        f"- CrossAnchorFreqPenaltyWeight: {w.get('CrossAnchorFreqPenaltyWeight', '55')}",
-        f"- MinimumScore: {w.get('MinimumScore', '700')}",
-        f"- MaxPerOwner: {w.get('MaxPerOwner', '2')}",
-        f"- MaxPerOwnerPerSubdomain: {w.get('MaxPerOwnerPerSubdomain', '1')}",
+        "## Full scorecard (lower is better)",
+        "",
+        "| experiment_id | penalty | min | cap | Top5 mag | Weak | Good | OK | L/K/S f30 | f30 sum |",
+        "|---------------|---------|-----|-----|----------|------|------|-----|-----------|---------|",
+    ])
+    for r in ranked:
+        cap = f"{int_val(r, 'MaxPerOwner')}/{int_val(r, 'MaxPerOwnerPerSubdomain')}"
+        l, k, s = hub_final30(r)
+        mark = ""
+        if r.get("experiment_id") == CHAMPION:
+            mark = " (champion)"
+        elif r.get("experiment_id") == winner.get("experiment_id") and beats_champion:
+            mark = " **"
+        lines.append(
+            f"| {r.get('experiment_id')}{mark} | {r.get('CrossAnchorFreqPenaltyWeight', '')} | "
+            f"{r.get('MinimumScore', '')} | {cap} | {r.get('TotalMagnetsInTop5', '')} | "
+            f"{r.get('Weak', '')} | {r.get('Good', '')} | {r.get('OK', '')} | "
+            f"{l}/{k}/{s} | {magnet_final30_sum(r)} |"
+        )
+
+    apply_id = winner.get("experiment_id") if beats_champion else CHAMPION
+    apply_row = row_by_id(rows, apply_id) or winner
+    lines.extend([
+        "",
+        "## Recommended defaults for Get-AnchorMatches.ps1",
+        "",
+        f"Use: **`{apply_id}`**"
+        + (" (new grid winner)" if beats_champion else " (keep champion — grid did not beat it)"),
+        "",
+        f"- CrossAnchorFreqPenaltyWeight: {apply_row.get('CrossAnchorFreqPenaltyWeight', '100')}",
+        f"- MinimumScore: {apply_row.get('MinimumScore', '700')}",
+        f"- MaxPerOwner: {apply_row.get('MaxPerOwner', '2')}",
+        f"- MaxPerOwnerPerSubdomain: {apply_row.get('MaxPerOwnerPerSubdomain', '1')}",
+        "- AllowFallbackFill: true",
         "",
         "## Next phase",
         "",
     ])
-
-    lightning = int_val(w, "MagnetFinal30_pytorch-lightning", 12)
-    if lightning >= 12:
+    lightning = int_val(apply_row, "MagnetFinal30_pytorch-lightning", 12)
+    if lightning >= 11:
         lines.append(
-            "Top hubs (Lightning/Keras/Streamlit) still at 12/20 in final 30 — "
-            "consider anchor-specific GitHub queries for gradio, streamlit, EasyOCR."
+            "If Lightning/Keras/Streamlit stay high in final 30, tune per-anchor GitHub queries "
+            "(gradio, streamlit, EasyOCR) — penalty/min/caps alone may plateau."
         )
     else:
-        lines.append("Magnet final-30 counts improved vs penalty55; proceed to professor review / REDUX on Good anchors.")
+        lines.append("Proceed to professor review / REDUX on Good anchors.")
 
     out = EXP_ROOT / "WINNER.md"
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Wrote {out}")
-    print(f"Winner: {winner.get('experiment_id')} "
-          f"(TotalMagnetsInTop5={winner.get('TotalMagnetsInTop5')}, Weak={winner.get('Weak')})")
+    print(
+        f"Best: {winner.get('experiment_id')} (Top5={winner.get('TotalMagnetsInTop5')}, "
+        f"Weak={winner.get('Weak')}); beats {CHAMPION}: {beats_champion}"
+    )
     return 0
 
 
