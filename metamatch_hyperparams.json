@@ -1,10 +1,10 @@
 {
-  "CrossAnchorFreqPenaltyWeight": 200.0,
+  "CrossAnchorFreqPenaltyWeight": 300.0,
   "MinimumScore": 700,
   "MaxPerOwner": 2,
   "MaxPerOwnerPerSubdomain": 2,
   "AllowFallbackFill": true,
-  "winner_experiment_id": "penalty200_min700_cap22",
+  "winner_experiment_id": "penalty300_min700_cap22",
   "beats_champion_penalty100_min700_cap21": true,
   "champion_experiment_id": "penalty100_min700_cap21"
 }

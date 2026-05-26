@@ -1,0 +1,66 @@
+{
+  "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
+  "utc_timestamp": "2026-05-26T16:26:32.3907760Z",
+  "git_commit": "b56c91c20294db9d8854aafa4bb81cc0729c1313",
+  "anchor": {
+    "full_name": "deepspeedai/DeepSpeed",
+    "url": "https://github.com/deepspeedai/DeepSpeed",
+    "owner": "deepspeedai",
+    "language": "Python",
+    "stars": 42395,
+    "topics": [
+      "billion-parameters",
+      "compression",
+      "data-parallelism",
+      "deep-learning",
+      "gpu",
+      "inference",
+      "machine-learning",
+      "mixture-of-experts",
+      "model-parallelism",
+      "pipeline-parallelism",
+      "pytorch",
+      "trillion-parameters",
+      "zero"
+    ]
+  },
+  "params": {
+    "TopK": 30,
+    "MaxSearchPerQuery": 50,
+    "MinimumStars": 50,
+    "MinimumScore": 650,
+    "IncludeRetrievalSignalsInScore": false,
+    "CrossAnchorRunsDir": "runs/manual-ml-py",
+    "CrossAnchorFreqPenaltyWeight": 250.0,
+    "MaxPerOwner": 2,
+    "MaxPerOwnerPerSubdomain": 2,
+    "DisableDiversityGuard": false,
+    "AllowSameOwner": false,
+    "AllowForks": false,
+    "AllowArchived": false,
+    "AllowFallbackFill": true
+  },
+  "weights": {
+    "LexicalJaccard": 650.0,
+    "TopicJaccard": 900.0,
+    "SubdomainMatch": 225.0,
+    "LanguageMatch": 250.0,
+    "QueryCoverage": 150.0,
+    "RecencySimilarity": 125.0,
+    "StarSimilarity": 175.0
+  },
+  "counts": {
+    "search_queries": 6,
+    "candidate_pool": 177,
+    "enriched": 157,
+    "scored": 157,
+    "qualified": 18,
+    "final": 30
+  },
+  "outputs": {
+    "anchor_repo_json": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/deepspeedai-DeepSpeed/anchor_repo.json",
+    "candidate_repos_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/deepspeedai-DeepSpeed/candidate_repos.csv",
+    "ranked_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/deepspeedai-DeepSpeed/ranked_matches.csv",
+    "final_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/deepspeedai-DeepSpeed/30_Matches.csv"
+  }
+}

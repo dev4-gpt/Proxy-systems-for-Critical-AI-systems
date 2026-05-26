@@ -1,0 +1,70 @@
+{
+  "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
+  "utc_timestamp": "2026-05-25T23:30:12.1242520Z",
+  "git_commit": "b56c91c20294db9d8854aafa4bb81cc0729c1313",
+  "anchor": {
+    "full_name": "recommenders-team/recommenders",
+    "url": "https://github.com/recommenders-team/recommenders",
+    "owner": "recommenders-team",
+    "language": "Python",
+    "stars": 21717,
+    "topics": [
+      "ai",
+      "artificial-intelligence",
+      "data-science",
+      "deep-learning",
+      "jupyter-notebook",
+      "kubernetes",
+      "machine-learning",
+      "operationalization",
+      "python",
+      "ranking",
+      "rating",
+      "recommendation",
+      "recommendation-algorithm",
+      "recommendation-engine",
+      "recommendation-system",
+      "recommender",
+      "tutorial"
+    ]
+  },
+  "params": {
+    "TopK": 30,
+    "MaxSearchPerQuery": 50,
+    "MinimumStars": 50,
+    "MinimumScore": 700,
+    "IncludeRetrievalSignalsInScore": false,
+    "CrossAnchorRunsDir": "runs/manual-ml-py",
+    "CrossAnchorFreqPenaltyWeight": 250.0,
+    "MaxPerOwner": 2,
+    "MaxPerOwnerPerSubdomain": 2,
+    "DisableDiversityGuard": false,
+    "AllowSameOwner": false,
+    "AllowForks": false,
+    "AllowArchived": false,
+    "AllowFallbackFill": true
+  },
+  "weights": {
+    "SubdomainMatch": 225.0,
+    "QueryCoverage": 150.0,
+    "LexicalJaccard": 650.0,
+    "RecencySimilarity": 125.0,
+    "TopicJaccard": 900.0,
+    "StarSimilarity": 175.0,
+    "LanguageMatch": 250.0
+  },
+  "counts": {
+    "search_queries": 6,
+    "candidate_pool": 243,
+    "enriched": 215,
+    "scored": 215,
+    "qualified": 4,
+    "final": 30
+  },
+  "outputs": {
+    "anchor_repo_json": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/recommenders-team-recommenders/anchor_repo.json",
+    "candidate_repos_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/recommenders-team-recommenders/candidate_repos.csv",
+    "ranked_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/recommenders-team-recommenders/ranked_matches.csv",
+    "final_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/recommenders-team-recommenders/30_Matches.csv"
+  }
+}
