@@ -108,7 +108,10 @@ def main() -> int:
             "(gradio, streamlit, EasyOCR) — penalty/min/caps alone may plateau."
         )
     else:
-        lines.append("Proceed to professor review / REDUX on Good anchors.")
+        lines.append(
+            "Run REDUX similarity on the winning archive when proxy lists are stable "
+            "(see REDUX_REPRO.md)."
+        )
 
     out = EXP_ROOT / "WINNER.md"
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")

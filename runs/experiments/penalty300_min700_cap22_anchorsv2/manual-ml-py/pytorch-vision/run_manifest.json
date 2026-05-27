@@ -1,0 +1,58 @@
+{
+  "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
+  "utc_timestamp": "2026-05-27T07:44:39.8531210Z",
+  "git_commit": "330ca259d271422e2951ce462ceec5ce6925db5f",
+  "anchor": {
+    "full_name": "pytorch/vision",
+    "url": "https://github.com/pytorch/vision",
+    "owner": "pytorch",
+    "language": "Python",
+    "stars": 17697,
+    "topics": [
+      "computer-vision",
+      "machine-learning"
+    ]
+  },
+  "params": {
+    "TopK": 30,
+    "MaxSearchPerQuery": 50,
+    "MinimumStars": 50,
+    "MinimumScore": 700,
+    "IncludeRetrievalSignalsInScore": false,
+    "CrossAnchorRunsDir": "runs/manual-ml-py",
+    "CrossAnchorFreqPenaltyWeight": 300.0,
+    "MaxPerOwner": 2,
+    "MaxPerOwnerPerSubdomain": 2,
+    "DisableDiversityGuard": false,
+    "AllowSameOwner": false,
+    "AllowForks": false,
+    "AllowArchived": false,
+    "AllowFallbackFill": true,
+    "QueryOverridesPath": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/metamatch_anchor_query_overrides.json",
+    "MaxUnqualifiedInTopFive": 1,
+    "MaxUnqualifiedInFinal": 12
+  },
+  "weights": {
+    "LanguageMatch": 250.0,
+    "QueryCoverage": 150.0,
+    "LexicalJaccard": 650.0,
+    "StarSimilarity": 175.0,
+    "SubdomainMatch": 225.0,
+    "RecencySimilarity": 125.0,
+    "TopicJaccard": 900.0
+  },
+  "counts": {
+    "search_queries": 5,
+    "candidate_pool": 198,
+    "enriched": 180,
+    "scored": 180,
+    "qualified": 14,
+    "final": 26
+  },
+  "outputs": {
+    "anchor_repo_json": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/pytorch-vision/anchor_repo.json",
+    "candidate_repos_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/pytorch-vision/candidate_repos.csv",
+    "ranked_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/pytorch-vision/ranked_matches.csv",
+    "final_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/pytorch-vision/30_Matches.csv"
+  }
+}

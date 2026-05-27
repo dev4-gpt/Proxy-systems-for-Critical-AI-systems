@@ -73,6 +73,15 @@ KEY METAIMPROVEMENTS (MetaMatch 2.0)
 .PARAMETER AllowFallbackFill
   If fewer than TopK repos exceed MinimumScore, fill remaining slots from next best candidates. Default true.
 
+.PARAMETER QueryOverridesPath
+  JSON file with per-anchor search query overrides (default: metamatch_anchor_query_overrides.json next to this script).
+
+.PARAMETER MaxUnqualifiedInTopFive
+  When using fallback fill, cap unqualified repos in ranks 1-5. Default 1.
+
+.PARAMETER MaxUnqualifiedInFinal
+  When using fallback fill, cap total unqualified repos in the final TopK list. Default 12.
+
 .NOTES
   Requires:
     - gh CLI installed and authenticated
@@ -112,11 +121,65 @@ param(
 
     [switch]$AllowArchived,
 
-    [switch]$AllowFallbackFill = $true
+    [switch]$AllowFallbackFill = $true,
+
+    [string]$QueryOverridesPath = "",
+
+    [int]$MaxUnqualifiedInTopFive = 1,
+
+    [int]$MaxUnqualifiedInFinal = 12
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
+
+$script:AnchorQueryOverrides = @{}
+$defaultOverridesPath = Join-Path (Split-Path -Parent $MyInvocation.MyCommand.Path) "metamatch_anchor_query_overrides.json"
+$effectiveOverridesPath = if ($QueryOverridesPath) { $QueryOverridesPath } else { $defaultOverridesPath }
+if (Test-Path -LiteralPath $effectiveOverridesPath) {
+    try {
+        $overrideDoc = Get-Content -LiteralPath $effectiveOverridesPath -Raw | ConvertFrom-Json
+        if ($overrideDoc.anchors) {
+            foreach ($prop in $overrideDoc.anchors.PSObject.Properties) {
+                $script:AnchorQueryOverrides[$prop.Name.ToLowerInvariant()] = $prop.Value
+            }
+        }
+    }
+    catch {
+        Write-Warning "Could not load query overrides from ${effectiveOverridesPath}: $($_.Exception.Message)"
+    }
+}
+
+function Get-AnchorQueryOverride {
+    param([string]$AnchorFullName)
+    $key = $AnchorFullName.ToLowerInvariant()
+    if ($script:AnchorQueryOverrides.ContainsKey($key)) {
+        return $script:AnchorQueryOverrides[$key]
+    }
+    return $null
+}
+
+function Test-OverrideProperty {
+    param(
+        [object]$Override,
+        [string]$PropertyName
+    )
+    if (-not $Override) { return $false }
+    return $null -ne $Override.PSObject.Properties[$PropertyName]
+}
+
+function Get-OverrideStringList {
+    param(
+        [object]$Override,
+        [string]$PropertyName
+    )
+    if (-not (Test-OverrideProperty -Override $Override -PropertyName $PropertyName)) {
+        return @()
+    }
+    $val = $Override.PSObject.Properties[$PropertyName].Value
+    if ($null -eq $val) { return @() }
+    return @($val | Where-Object { $_ -and ([string]$_).Trim() })
+}
 
 # Scoring weights (tune here). Persisted to run_manifest.json for reproducibility.
 # NOTE: QueryCoverage is a retrieval-confidence signal; it is NOT part of similarity score by default.
@@ -280,14 +343,16 @@ function Get-Subdomain {
     param([string]$Description, [string[]]$Topics, [string]$Language)
     $text = ((@($Topics) -join " ") + " " + [string]$Description + " " + [string]$Language).ToLowerInvariant()
     $rules = [ordered]@{
+        "ui"              = @("streamlit","gradio","dash","panel","data-visualization","ui-components","data-app","data-apps","data-analysis")
         "llm"             = @("llm","gpt","transformer","instruction","rag","prompt","chatbot","language-model")
         "deep-learning"   = @("deep-learning","neural","cnn","rnn","torch","tensorflow","keras")
         "computer-vision" = @("computer-vision","image","vision","detection","segmentation","ocr","opencv")
-        "nlp"             = @("nlp","natural-language","tokenization","embedding","summarization","translation")
+        "nlp"             = @("nlp","natural-language","tokenization","embedding","summarization","translation","spacy")
         "mlops"           = @("mlops","pipeline","orchestration","serving","deployment","tracking","experiment")
         "editor"          = @("editor","ide","code-editor","text-editor","syntax-highlighting","lsp","language-server")
         "data-science"    = @("data-science","notebook","analysis","feature-engineering","pandas","sklearn")
         "reinforcement"   = @("reinforcement","rl","policy","agent","gym")
+        "recommender"     = @("recommender","recommendation-system","collaborative-filtering","ranking-system")
     }
     foreach ($key in $rules.Keys) {
         foreach ($needle in $rules[$key]) { if ($text -like "*$needle*") { return $key } }
@@ -297,31 +362,88 @@ function Get-Subdomain {
 
 function New-SearchQueriesFromAnchor {
     param([object]$Anchor)
+    $override = Get-AnchorQueryOverride -AnchorFullName $Anchor.FullName
+    $replaceQueries = Get-OverrideStringList -Override $override -PropertyName 'replaceQueries'
+    if (@($replaceQueries).Count -gt 0) {
+        return @($replaceQueries | Select-Object -Unique)
+    }
+
     $queries = [System.Collections.Generic.List[string]]::new()
     $topicList = @($Anchor.Topics | Where-Object { $_ -and $_.Trim() } | Select-Object -First 5)
     $lang = [string]$Anchor.Language
     $nameTokens = Get-TextTokens -Text ([string]$Anchor.Name -replace '[-_]', ' ')
     $descTokens = Get-TextTokens -Text ([string]$Anchor.Description)
 
-    if (@($topicList).Count -gt 0 -and $lang) { $queries.Add(("topic:{0} language:{1} stars:>={2}" -f $topicList[0], $lang, $MinimumStars)) }
+    $skipTopics = @(
+        Get-OverrideStringList -Override $override -PropertyName 'skipTopicQueries' |
+            ForEach-Object { $_.ToLowerInvariant() }
+    )
+
+    if (@($topicList).Count -gt 0 -and $lang) {
+        $firstTopic = [string]$topicList[0]
+        if ($skipTopics -notcontains $firstTopic.ToLowerInvariant()) {
+            $queries.Add(("topic:{0} language:{1} stars:>={2}" -f $firstTopic, $lang, $MinimumStars))
+        }
+    }
     foreach ($t in ($topicList | Select-Object -First 3)) {
+        if ($skipTopics -contains $t.ToLowerInvariant()) { continue }
         if ($lang) { $queries.Add(("topic:{0} language:{1} stars:>={2}" -f $t, $lang, $MinimumStars)) }
         else { $queries.Add(("topic:{0} stars:>={1}" -f $t, $MinimumStars)) }
     }
     if (@($descTokens).Count -gt 0 -and $lang) { $queries.Add(("{0} language:{1} stars:>={2}" -f $descTokens[0], $lang, $MinimumStars)) }
     if (@($nameTokens).Count -gt 0 -and $lang) { $queries.Add(("{0} language:{1} stars:>={2}" -f $nameTokens[0], $lang, $MinimumStars)) }
 
+    $skipSubdomainQueries = @(Get-OverrideStringList -Override $override -PropertyName 'skipSubdomainQueries')
+
     $sub = Get-Subdomain -Description $Anchor.Description -Topics $Anchor.Topics -Language $Anchor.Language
     switch ($sub) {
-        "llm"             { $queries.Add("topic:llm stars:>=100") }
-        "deep-learning"   { $queries.Add("topic:deep-learning stars:>=100") }
-        "computer-vision" { $queries.Add("topic:computer-vision stars:>=100") }
-        "nlp"             { $queries.Add("topic:nlp stars:>=100") }
-        "mlops"           { $queries.Add("topic:mlops stars:>=100") }
-        "editor"          { $queries.Add("topic:editor stars:>=100") }
-        "data-science"    { $queries.Add("topic:data-science stars:>=100") }
-        "reinforcement"   { $queries.Add("reinforcement learning stars:>=100") }
+        "ui" {
+            if ($lang) {
+                $queries.Add(("topic:streamlit language:{0} stars:>={1}" -f $lang, $MinimumStars))
+                $queries.Add(("topic:gradio language:{0} stars:>={1}" -f $lang, $MinimumStars))
+                $queries.Add(("topic:data-visualization language:{0} stars:>={1}" -f $lang, $MinimumStars))
+            }
+            else {
+                $queries.Add("topic:streamlit stars:>=100")
+                $queries.Add("topic:gradio stars:>=100")
+            }
+        }
+        "llm" {
+            if ($skipSubdomainQueries -notcontains "llm") { $queries.Add("topic:llm stars:>=100") }
+        }
+        "deep-learning" {
+            if ($skipSubdomainQueries -notcontains "deep-learning") { $queries.Add("topic:deep-learning stars:>=100") }
+        }
+        "computer-vision" {
+            if ($skipSubdomainQueries -notcontains "computer-vision") { $queries.Add("topic:computer-vision stars:>=100") }
+        }
+        "nlp" {
+            if ($skipSubdomainQueries -notcontains "nlp") { $queries.Add("topic:nlp stars:>=100") }
+        }
+        "mlops" {
+            if ($skipSubdomainQueries -notcontains "mlops") { $queries.Add("topic:mlops stars:>=100") }
+        }
+        "editor" {
+            if ($skipSubdomainQueries -notcontains "editor") { $queries.Add("topic:editor stars:>=100") }
+        }
+        "data-science" {
+            if ($skipSubdomainQueries -notcontains "data-science") { $queries.Add("topic:data-science stars:>=100") }
+        }
+        "reinforcement" {
+            if ($skipSubdomainQueries -notcontains "reinforcement") { $queries.Add("reinforcement learning stars:>=100") }
+        }
+        "recommender" {
+            if ($skipSubdomainQueries -notcontains "recommender") {
+                $queries.Add("topic:recommender-system stars:>=100")
+                $queries.Add("topic:recommendation stars:>=100")
+            }
+        }
     }
+
+    foreach ($q in (Get-OverrideStringList -Override $override -PropertyName 'extraQueries')) {
+        $queries.Add($q.Trim())
+    }
+
     return @($queries | Where-Object { $_ -and $_.Trim() } | Select-Object -Unique)
 }
 
@@ -691,8 +813,19 @@ if ($AllowFallbackFill -and @($final).Count -lt $TopK) {
     foreach ($item in $scored) {
         if (@($final).Count -ge $TopK) { break }
         if ($existingRepos -contains $item.CandidateRepo) { continue }
+        if (-not $item.Qualified) {
+            $unqualTotal = @($final | Where-Object { -not $_.Qualified }).Count
+            if ($MaxUnqualifiedInFinal -gt 0 -and $unqualTotal -ge $MaxUnqualifiedInFinal) { continue }
+            if ($MaxUnqualifiedInTopFive -gt 0 -and @($final).Count -lt 5) {
+                $unqualTop5 = @($final | Where-Object { -not $_.Qualified }).Count
+                if ($unqualTop5 -ge $MaxUnqualifiedInTopFive) { continue }
+            }
+        }
         $final.Add($item) | Out-Null
         $existingRepos += $item.CandidateRepo
+    }
+    if (@($final).Count -lt $TopK) {
+        Write-Warning ("Fallback fill capped: only {0}/{1} matches (MaxUnqualifiedInFinal={2}, MaxUnqualifiedInTopFive={3})." -f @($final).Count, $TopK, $MaxUnqualifiedInFinal, $MaxUnqualifiedInTopFive)
     }
 }
 
@@ -754,6 +887,9 @@ $manifest = [ordered]@{
         AllowForks = [bool]$AllowForks
         AllowArchived = [bool]$AllowArchived
         AllowFallbackFill = [bool]$AllowFallbackFill
+        QueryOverridesPath = $effectiveOverridesPath
+        MaxUnqualifiedInTopFive = $MaxUnqualifiedInTopFive
+        MaxUnqualifiedInFinal = $MaxUnqualifiedInFinal
     }
     weights = $ScoreWeights
     counts = [ordered]@{

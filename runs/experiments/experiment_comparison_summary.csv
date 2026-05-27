@@ -14,6 +14,8 @@ penalty250_min650_cap22,"penalty=250, minScore=650, maxOwner=2, maxOwnerSub=2",2
 penalty250_min700_cap22,"penalty=250, minScore=700, maxOwner=2, maxOwnerSub=2",2026-05-25T23:36:21.631827+00:00,700,250.0,2,2,20,18,2,0,8,8,8,5,4,5,3
 penalty275_min700_cap22,"penalty=275, minScore=700, maxOwner=2, maxOwnerSub=2",2026-05-26T15:03:47.573160+00:00,700,275.0,2,2,20,20,0,0,6,7,8,5,3,4,3
 penalty300_min700_cap22,"penalty=300, minScore=700, maxOwner=2, maxOwnerSub=2",2026-05-26T15:59:11.504603+00:00,700,300.0,2,2,20,20,0,0,5,7,8,5,2,3,2
+penalty300_min700_cap22_anchorsv2,"penalty=300, minScore=700, maxOwner=2, maxOwnerSub=2",2026-05-27T08:04:24.123187+00:00,700,300.0,2,2,24,24,0,0,0,2,2,2,1,1,0
+penalty300_min700_cap22_queryv2,"penalty=300, minScore=700, maxOwner=2, maxOwnerSub=2",2026-05-27T07:02:52.297278+00:00,700,300.0,2,2,20,20,0,0,0,2,2,1,1,1,0
 penalty30_min700_cap21,"Run 1 baseline: CrossAnchorFreqPenaltyWeight=30, MinimumScore=700, MaxPerOwner=2, MaxPerOwnerPerSubdomain=1",2026-05-21T00:00:00Z,700,30.0,2,1,20,10,2,8,30,12,12,12,9,11,11
 penalty55_min700_cap11,maxOwner=1,2026-05-21T22:42:49.644761+00:00,700,55.0,1,1,20,11,4,5,26,12,12,12,9,10,10
 penalty55_min700_cap21,MetaMatch run archived after pipeline (see run_hyperparams.csv in folder),2026-05-21T16:36:01.683196+00:00,700,55.0,2,1,20,11,4,5,26,12,12,12,9,10,10

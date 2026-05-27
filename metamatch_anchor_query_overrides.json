@@ -1,0 +1,50 @@
+{
+  "anchors": {
+    "streamlit/streamlit": {
+      "skipTopicQueries": ["deep-learning", "machine-learning", "artificial-intelligence"],
+      "skipSubdomainQueries": ["deep-learning", "llm"],
+      "extraQueries": [
+        "topic:streamlit language:Python stars:>=50",
+        "topic:data-visualization language:Python stars:>=50",
+        "topic:data-analysis language:Python stars:>=50"
+      ]
+    },
+    "gradio-app/gradio": {
+      "skipTopicQueries": ["deep-learning", "machine-learning", "artificial-intelligence"],
+      "skipSubdomainQueries": ["deep-learning", "llm"],
+      "extraQueries": [
+        "topic:gradio language:Python stars:>=50",
+        "topic:data-visualization language:Python stars:>=50",
+        "topic:ui-components language:Python stars:>=50"
+      ]
+    },
+    "explosion/spacy": {
+      "skipTopicQueries": ["deep-learning", "machine-learning", "artificial-intelligence", "ai"],
+      "skipSubdomainQueries": ["deep-learning", "llm"],
+      "extraQueries": [
+        "topic:nlp language:Python stars:>=50",
+        "topic:spacy language:Python stars:>=50",
+        "topic:natural-language-processing language:Python stars:>=50"
+      ]
+    },
+    "recommenders-team/recommenders": {
+      "skipTopicQueries": ["deep-learning", "machine-learning", "artificial-intelligence"],
+      "skipSubdomainQueries": ["deep-learning", "llm"],
+      "extraQueries": [
+        "topic:recommender-system language:Python stars:>=50",
+        "topic:recommendation language:Python stars:>=50",
+        "topic:recommendation-system language:Python stars:>=50",
+        "collaborative filtering language:Python stars:>=50"
+      ]
+    },
+    "onnx/onnx": {
+      "skipTopicQueries": ["deep-learning", "machine-learning", "keras"],
+      "skipSubdomainQueries": ["deep-learning", "llm"],
+      "extraQueries": [
+        "topic:onnx language:Python stars:>=50",
+        "topic:model-conversion language:Python stars:>=50",
+        "ONNX language:Python stars:>=50"
+      ]
+    }
+  }
+}

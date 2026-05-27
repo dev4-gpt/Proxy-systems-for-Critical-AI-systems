@@ -26,12 +26,13 @@ Suffix `_nofallback` = `AllowFallbackFill` disabled.
 | done | `penalty30_min700_cap21` | 30 | 700 | 2 | 1 | on | Baseline |
 | done | `penalty55_min700_cap21` | 55 | 700 | 2 | 1 | on | Improved Weak 8→5 |
 | done | `penalty75_min700_cap21` | 75 | 700 | 2 | 1 | on | Higher penalty |
-| **winner** | `penalty100_min700_cap21` | 100 | 700 | 2 | 1 | on | Best top-5 + Weak; applied as default |
+| done | `penalty100_min700_cap21` | 100 | 700 | 2 | 1 | on | Early grid champion |
+| **winner** | `penalty300_min700_cap22_queryv2` | 300 | 700 | 2 | 2 | on | See [WINNER.md](WINNER.md) |
 | done | `penalty55_min750_cap21` | 55 | 750 | 2 | 1 | on | No gain vs 55 |
 | done | `penalty55_min700_cap11` | 55 | 700 | 1 | 1 | on | No gain vs 55 |
 | done | `penalty55_min700_cap21_nofallback` | 55 | 700 | 2 | 1 | off | Minor Lightning drop only |
 
-See [EXPERIMENT_LOG.md](EXPERIMENT_LOG.md) for run dates and outcomes.
+See [EXPERIMENT_LOG.md](EXPERIMENT_LOG.md) for run dates and outcomes. Phase 2 query tuning: [PHASE2_NOTES.md](PHASE2_NOTES.md).
 
 ## Commands (from repo root)
 

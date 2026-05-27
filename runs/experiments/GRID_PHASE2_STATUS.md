@@ -1,6 +1,6 @@
-# Phase-2 grid — stopped early (user request)
+# Phase-2 grid — stopped early
 
-**Stopped at:** 2026-05-22 (after run 4 of 60 completed; run 5 aborted if in progress)
+**Stopped:** 2026-05-22 (after run 4 of 60 completed; run 5 aborted if in progress)
 
 ## Progress
 
@@ -24,7 +24,7 @@ All four reported **Good=15, OK=3, Weak=2, Lightning final30=11** at archive tim
 
 ## Stopped before / during
 
-- **Next queued:** `penalty110_min750_cap11` (penalty=110, min=750, cap=1/1) — stopped per request; do not use partial `runs/manual-ml-py` for this config without re-running.
+- **Next queued:** `penalty110_min750_cap11` (penalty=110, min=750, cap=1/1) — grid halted here; do not use partial `runs/manual-ml-py` for this config without re-running.
 
 ## Partial result vs champion
 

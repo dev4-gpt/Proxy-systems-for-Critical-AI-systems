@@ -1,0 +1,20 @@
+{
+  "FullName": "scikit-learn/scikit-learn",
+  "Name": "scikit-learn",
+  "Url": "https://github.com/scikit-learn/scikit-learn",
+  "Description": "scikit-learn: machine learning in Python",
+  "Topics": [
+    "data-analysis",
+    "data-science",
+    "machine-learning",
+    "python",
+    "statistics"
+  ],
+  "Language": "Python",
+  "Stars": 66181,
+  "Fork": false,
+  "Archived": false,
+  "CreatedAt": "2010-08-17T09:43:38Z",
+  "UpdatedAt": "2026-05-27T06:17:24Z",
+  "Owner": "scikit-learn"
+}

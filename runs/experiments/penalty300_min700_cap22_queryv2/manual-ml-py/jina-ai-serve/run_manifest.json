@@ -1,0 +1,76 @@
+{
+  "tool": "MetaMatch 2.0 (Get-AnchorMatches.ps1)",
+  "utc_timestamp": "2026-05-27T06:53:48.0538540Z",
+  "git_commit": "330ca259d271422e2951ce462ceec5ce6925db5f",
+  "anchor": {
+    "full_name": "jina-ai/serve",
+    "url": "https://github.com/jina-ai/serve",
+    "owner": "jina-ai",
+    "language": "Python",
+    "stars": 21866,
+    "topics": [
+      "cloud-native",
+      "cncf",
+      "deep-learning",
+      "docker",
+      "fastapi",
+      "framework",
+      "generative-ai",
+      "grpc",
+      "jaeger",
+      "kubernetes",
+      "llmops",
+      "machine-learning",
+      "microservice",
+      "mlops",
+      "multimodal",
+      "neural-search",
+      "opentelemetry",
+      "orchestration",
+      "pipeline",
+      "prometheus"
+    ]
+  },
+  "params": {
+    "TopK": 30,
+    "MaxSearchPerQuery": 50,
+    "MinimumStars": 50,
+    "MinimumScore": 700,
+    "IncludeRetrievalSignalsInScore": false,
+    "CrossAnchorRunsDir": "runs/manual-ml-py",
+    "CrossAnchorFreqPenaltyWeight": 300.0,
+    "MaxPerOwner": 2,
+    "MaxPerOwnerPerSubdomain": 2,
+    "DisableDiversityGuard": false,
+    "AllowSameOwner": false,
+    "AllowForks": false,
+    "AllowArchived": false,
+    "AllowFallbackFill": true,
+    "QueryOverridesPath": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/metamatch_anchor_query_overrides.json",
+    "MaxUnqualifiedInTopFive": 1,
+    "MaxUnqualifiedInFinal": 12
+  },
+  "weights": {
+    "LexicalJaccard": 650.0,
+    "RecencySimilarity": 125.0,
+    "TopicJaccard": 900.0,
+    "SubdomainMatch": 225.0,
+    "QueryCoverage": 150.0,
+    "StarSimilarity": 175.0,
+    "LanguageMatch": 250.0
+  },
+  "counts": {
+    "search_queries": 6,
+    "candidate_pool": 210,
+    "enriched": 192,
+    "scored": 192,
+    "qualified": 4,
+    "final": 16
+  },
+  "outputs": {
+    "anchor_repo_json": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/jina-ai-serve/anchor_repo.json",
+    "candidate_repos_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/jina-ai-serve/candidate_repos.csv",
+    "ranked_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/jina-ai-serve/ranked_matches.csv",
+    "final_matches_csv": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py/jina-ai-serve/30_Matches.csv"
+  }
+}

@@ -13,6 +13,6 @@ Compared runs that **only differ** in `MaxPerOwner` / `MaxPerOwnerPerSubdomain` 
 
 At **penalty=150, min=700**, only **cap22** was run (winner on Top5 magnets vs penalty100).
 
-**Recommendation for new runs:** use **cap 2/2** (consistent with current winner). No extra cap-only run unless a new (penalty, min) pair looks cap-sensitive.
+**Default for new runs:** cap **2/2** (matches current winner). Skip cap-only sweeps unless a new (penalty, min) pair looks cap-sensitive.
 
 Untested cap at min700 we have **not** tried at high penalty: **cap11 (1/1)** at penalty 175 — only add if batch-3 results are flat and you want one more probe.

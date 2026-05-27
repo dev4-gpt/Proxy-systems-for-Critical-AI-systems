@@ -20,9 +20,9 @@ Each `manual-ml-py/<anchor-folder>/` contains:
 
 Seeing many files under `manual-ml-py` is normal (20 anchors × 7 files ≈ 140 files, plus a few root CSVs).
 
-## What to share with your professor
+## Sharing frozen results
 
-Point them to **`runs/experiments/`** (e.g. `penalty30_min700_cap21`, `penalty55_min700_cap21`) and the comparison CSVs at `runs/experiments/*.csv` — not the live `manual-ml-py/` folder.
+Use **`runs/experiments/`** (current winner: `penalty300_min700_cap22_queryv2`) and comparison CSVs at `runs/experiments/*.csv` — not the live `manual-ml-py/` folder, which is overwritten on each run.
 
 ## After each tuning run
 

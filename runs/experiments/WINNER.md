@@ -3,14 +3,16 @@
 **Champion (prior best):** `penalty100_min700_cap21`
 - TotalMagnetsInTop5=18, Weak=2, final30 magnet sum=59
 
-**Best in comparison table:** `penalty300_min700_cap22`
+**Best in comparison table:** `penalty300_min700_cap22_queryv2`
 **Beats champion:** yes
 
 ## Full scorecard (lower is better)
 
 | experiment_id | penalty | min | cap | Top5 mag | Weak | Good | OK | L/K/S f30 | f30 sum |
 |---------------|---------|-----|-----|----------|------|------|-----|-----------|---------|
-| penalty300_min700_cap22 ** | 300.0 | 700 | 2/2 | 5 | 0 | 20 | 0 | 7/8/5 | 27 |
+| penalty300_min700_cap22_queryv2 ** | 300.0 | 700 | 2/2 | 0 | 0 | 20 | 0 | 2/2/1 | 7 |
+| penalty300_min700_cap22_anchorsv2 | 300.0 | 700 | 2/2 | 0 | 0 | 24 | 0 | 2/2/2 | 8 |
+| penalty300_min700_cap22 | 300.0 | 700 | 2/2 | 5 | 0 | 20 | 0 | 7/8/5 | 27 |
 | penalty275_min700_cap22 | 275.0 | 700 | 2/2 | 6 | 0 | 20 | 0 | 7/8/5 | 30 |
 | penalty250_min650_cap22 | 250.0 | 650 | 2/2 | 8 | 0 | 18 | 2 | 8/8/5 | 33 |
 | penalty250_min700_cap22 | 250.0 | 700 | 2/2 | 8 | 0 | 18 | 2 | 8/8/5 | 33 |
@@ -34,7 +36,7 @@
 
 ## Recommended defaults for Get-AnchorMatches.ps1
 
-Use: **`penalty300_min700_cap22`** (new grid winner)
+Use: **`penalty300_min700_cap22_queryv2`** (new grid winner)
 
 - CrossAnchorFreqPenaltyWeight: 300.0
 - MinimumScore: 700
@@ -42,6 +44,6 @@ Use: **`penalty300_min700_cap22`** (new grid winner)
 - MaxPerOwnerPerSubdomain: 2
 - AllowFallbackFill: true
 
-## Next phase
+## Next step
 
-Proceed to professor review / REDUX on Good anchors.
+Run REDUX similarity on `penalty300_min700_cap22_queryv2` (see `REDUX_REPRO.md`).

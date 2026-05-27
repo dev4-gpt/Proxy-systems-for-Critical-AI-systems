@@ -1,0 +1,5715 @@
+[
+  {
+    "FullName": "stanfordnlp/stanza",
+    "Name": "stanza",
+    "Url": "https://github.com/stanfordnlp/stanza",
+    "Description": "Stanford NLP Python library for tokenization, sentence segmentation, NER, and parsing of many human languages",
+    "Topics": [
+      "artificial-intelligence",
+      "corenlp",
+      "deep-learning",
+      "machine-learning",
+      "named-entity-recognition",
+      "natural-language-processing",
+      "nlp",
+      "python",
+      "pytorch",
+      "universal-dependencies"
+    ],
+    "Language": "Python",
+    "Stars": 7803,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-09-26T08:00:56Z",
+    "UpdatedAt": "2026-05-25T16:56:52Z",
+    "Owner": "stanfordnlp",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "AlexanderLutsenko/nobuco",
+    "Name": "nobuco",
+    "Url": "https://github.com/AlexanderLutsenko/nobuco",
+    "Description": "Pytorch to Keras/Tensorflow/TFLite conversion made intuitive",
+    "Topics": [
+      "conversion",
+      "converter",
+      "deep-learning",
+      "keras",
+      "machine-learning",
+      "model-conversion",
+      "model-converter",
+      "pytorch",
+      "tensorflow",
+      "tensorflow-js",
+      "tensorflow-lite",
+      "tfjs",
+      "tflite"
+    ],
+    "Language": "Python",
+    "Stars": 344,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-04-05T13:26:18Z",
+    "UpdatedAt": "2026-05-07T22:45:34Z",
+    "Owner": "AlexanderLutsenko",
+    "SourceQueries": [
+      "topic:model-conversion language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "langchain-ai/open_deep_research",
+    "Name": "open_deep_research",
+    "Url": "https://github.com/langchain-ai/open_deep_research",
+    "Description": "",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 11507,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-11-20T17:37:22Z",
+    "UpdatedAt": "2026-05-27T07:25:21Z",
+    "Owner": "langchain-ai",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "deepseek-ai/DeepSeek-OCR",
+    "Name": "DeepSeek-OCR",
+    "Url": "https://github.com/deepseek-ai/DeepSeek-OCR",
+    "Description": "Contexts Optical Compression",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 23182,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-10-17T06:14:27Z",
+    "UpdatedAt": "2026-05-27T07:08:18Z",
+    "Owner": "deepseek-ai",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "evilsocket/opensnitch",
+    "Name": "opensnitch",
+    "Url": "https://github.com/evilsocket/opensnitch",
+    "Description": "OpenSnitch is a GNU/Linux interactive application firewall inspired by Little Snitch.",
+    "Topics": [
+      "application-firewall",
+      "data-breach",
+      "firewall",
+      "linux",
+      "networking",
+      "security"
+    ],
+    "Language": "Python",
+    "Stars": 13689,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-04-16T14:02:50Z",
+    "UpdatedAt": "2026-05-26T22:53:59Z",
+    "Owner": "evilsocket",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Lightning-AI/litgpt",
+    "Name": "litgpt",
+    "Url": "https://github.com/Lightning-AI/litgpt",
+    "Description": "20+ high-performance LLMs with recipes to pretrain, finetune and deploy at scale.",
+    "Topics": [
+      "ai",
+      "artificial-intelligence",
+      "deep-learning",
+      "large-language-models",
+      "llm",
+      "llm-inference",
+      "llms"
+    ],
+    "Language": "Python",
+    "Stars": 13387,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-05-04T17:46:11Z",
+    "UpdatedAt": "2026-05-27T01:54:43Z",
+    "Owner": "Lightning-AI",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "cunjian/pytorch_face_landmark",
+    "Name": "pytorch_face_landmark",
+    "Url": "https://github.com/cunjian/pytorch_face_landmark",
+    "Description": "Fast and accurate face landmark detection library using PyTorch; Support 68-point semi-frontal and 39-point profile landmark detection; Support both coordinate-based and heatmap-based inference; Up to 100 FPS landmark inference speed with SOTA face detector on CPU.",
+    "Topics": [
+      "face-alignment",
+      "face-landmark-detection",
+      "onnx",
+      "openvino",
+      "pytorch-face-landmark"
+    ],
+    "Language": "Python",
+    "Stars": 919,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-02-02T22:42:57Z",
+    "UpdatedAt": "2026-05-27T06:00:18Z",
+    "Owner": "cunjian",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "DeepVAC/deepvac",
+    "Name": "deepvac",
+    "Url": "https://github.com/DeepVAC/deepvac",
+    "Description": "PyTorch Project Specification.",
+    "Topics": [
+      "amp",
+      "coreml",
+      "ddp",
+      "deepvac",
+      "ncnn",
+      "onnx",
+      "python",
+      "pytorch",
+      "quantization",
+      "tensorboard",
+      "tensorrt",
+      "torchscript"
+    ],
+    "Language": "Python",
+    "Stars": 681,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-07-17T11:17:33Z",
+    "UpdatedAt": "2026-05-19T02:03:27Z",
+    "Owner": "DeepVAC",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "microsoft/VibeVoice",
+    "Name": "VibeVoice",
+    "Url": "https://github.com/microsoft/VibeVoice",
+    "Description": "Open-Source Frontier Voice AI",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 47458,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-08-25T13:24:01Z",
+    "UpdatedAt": "2026-05-27T07:24:18Z",
+    "Owner": "microsoft",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "jundot/omlx",
+    "Name": "omlx",
+    "Url": "https://github.com/jundot/omlx",
+    "Description": "LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar",
+    "Topics": [
+      "apple-silicon",
+      "inference-server",
+      "llm",
+      "macos",
+      "mlx",
+      "openai-api"
+    ],
+    "Language": "Python",
+    "Stars": 15265,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2026-02-13T14:13:27Z",
+    "UpdatedAt": "2026-05-27T07:50:14Z",
+    "Owner": "jundot",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "ShangtongZhang/reinforcement-learning-an-introduction",
+    "Name": "reinforcement-learning-an-introduction",
+    "Url": "https://github.com/ShangtongZhang/reinforcement-learning-an-introduction",
+    "Description": "Python Implementation of Reinforcement Learning: An Introduction",
+    "Topics": [
+      "artificial-intelligence",
+      "reinforcement-learning"
+    ],
+    "Language": "Python",
+    "Stars": 14667,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2016-09-13T16:24:05Z",
+    "UpdatedAt": "2026-05-27T06:18:59Z",
+    "Owner": "ShangtongZhang",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "lm-sys/FastChat",
+    "Name": "FastChat",
+    "Url": "https://github.com/lm-sys/FastChat",
+    "Description": "An open platform for training, serving, and evaluating large language models. Release repo for Vicuna and Chatbot Arena.",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 39486,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-03-19T00:18:02Z",
+    "UpdatedAt": "2026-05-26T17:33:25Z",
+    "Owner": "lm-sys",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "zulip/zulip",
+    "Name": "zulip",
+    "Url": "https://github.com/zulip/zulip",
+    "Description": "Zulip server and web application. Open-source team chat that helps teams stay productive and focused.",
+    "Topics": [
+      "apache",
+      "chat",
+      "collaboration",
+      "electron",
+      "foss",
+      "free",
+      "javascript",
+      "python",
+      "python3",
+      "react-native",
+      "slack",
+      "zulip"
+    ],
+    "Language": "Python",
+    "Stars": 25279,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2015-09-25T16:37:25Z",
+    "UpdatedAt": "2026-05-27T07:57:40Z",
+    "Owner": "zulip",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "langchain-ai/langgraph",
+    "Name": "langgraph",
+    "Url": "https://github.com/langchain-ai/langgraph",
+    "Description": "Build resilient agents.",
+    "Topics": [
+      "agents",
+      "ai",
+      "ai-agents",
+      "chatgpt",
+      "deepagents",
+      "enterprise",
+      "framework",
+      "gemini",
+      "generative-ai",
+      "langchain",
+      "langgraph",
+      "llm",
+      "multiagent",
+      "open-source",
+      "openai",
+      "pydantic",
+      "python",
+      "rag"
+    ],
+    "Language": "Python",
+    "Stars": 33099,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-08-09T18:33:12Z",
+    "UpdatedAt": "2026-05-27T07:42:19Z",
+    "Owner": "langchain-ai",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "LAION-AI/Open-Assistant",
+    "Name": "Open-Assistant",
+    "Url": "https://github.com/LAION-AI/Open-Assistant",
+    "Description": "OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.",
+    "Topics": [
+      "ai",
+      "assistant",
+      "chatgpt",
+      "discord-bot",
+      "language-model",
+      "machine-learning",
+      "nextjs",
+      "python",
+      "rlhf"
+    ],
+    "Language": "Python",
+    "Stars": 37410,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-12-13T05:24:17Z",
+    "UpdatedAt": "2026-05-26T22:51:16Z",
+    "Owner": "LAION-AI",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "SFTtech/openage",
+    "Name": "openage",
+    "Url": "https://github.com/SFTtech/openage",
+    "Description": "Clone of the Age of Empires II engine 🚀 ",
+    "Topics": [
+      "age-of-empires",
+      "c-plus-plus",
+      "cmake",
+      "cpp",
+      "cpp20",
+      "engine",
+      "entity-component-system",
+      "game",
+      "game-development",
+      "game-engine",
+      "hacktoberfest",
+      "linux",
+      "multiplayer",
+      "nyan",
+      "openage",
+      "opengl",
+      "python",
+      "qt",
+      "rts-engine"
+    ],
+    "Language": "Python",
+    "Stars": 14223,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2013-11-03T22:35:23Z",
+    "UpdatedAt": "2026-05-27T00:49:17Z",
+    "Owner": "SFTtech",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "RQLuo/MixTeX-Latex-OCR",
+    "Name": "MixTeX-Latex-OCR",
+    "Url": "https://github.com/RQLuo/MixTeX-Latex-OCR",
+    "Description": "MixTeX multimodal LaTeX, ZhEn, and, Table OCR. It performs efficient CPU-based inference in a local offline on Windows.",
+    "Topics": [
+      "computer-vision",
+      "deep-learning",
+      "latex",
+      "machine-learning",
+      "ocr",
+      "onnx",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 1622,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-07-27T16:48:07Z",
+    "UpdatedAt": "2026-05-27T00:10:47Z",
+    "Owner": "RQLuo",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "hacksider/Deep-Live-Cam",
+    "Name": "Deep-Live-Cam",
+    "Url": "https://github.com/hacksider/Deep-Live-Cam",
+    "Description": "real time face swap and one-click video deepfake with only a single image",
+    "Topics": [
+      "ai",
+      "ai-deep-fake",
+      "ai-face",
+      "ai-webcam",
+      "artificial-intelligence",
+      "deep-fake",
+      "deepfake",
+      "deepfake-webcam",
+      "faceswap",
+      "fake-webcam",
+      "gan",
+      "real-time-deepfake",
+      "realtime",
+      "realtime-deepfake",
+      "realtime-face-changer",
+      "video-deepfake",
+      "webcam",
+      "webcamera"
+    ],
+    "Language": "Python",
+    "Stars": 93381,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-09-24T13:19:31Z",
+    "UpdatedAt": "2026-05-27T07:55:42Z",
+    "Owner": "hacksider",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "JaidedAI/EasyOCR",
+    "Name": "EasyOCR",
+    "Url": "https://github.com/JaidedAI/EasyOCR",
+    "Description": "Ready-to-use OCR with 80+ supported languages and all popular writing scripts including Latin, Chinese, Arabic, Devanagari, Cyrillic and etc.",
+    "Topics": [
+      "cnn",
+      "crnn",
+      "data-mining",
+      "deep-learning",
+      "easyocr",
+      "image-processing",
+      "information-retrieval",
+      "lstm",
+      "machine-learning",
+      "ocr",
+      "optical-character-recognition",
+      "python",
+      "pytorch",
+      "scene-text",
+      "scene-text-recognition"
+    ],
+    "Language": "Python",
+    "Stars": 29521,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-03-14T11:46:39Z",
+    "UpdatedAt": "2026-05-27T06:22:59Z",
+    "Owner": "JaidedAI",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "mlfoundations/open_clip",
+    "Name": "open_clip",
+    "Url": "https://github.com/mlfoundations/open_clip",
+    "Description": "An open source implementation of CLIP.",
+    "Topics": [
+      "computer-vision",
+      "contrastive-loss",
+      "deep-learning",
+      "language-model",
+      "multi-modal-learning",
+      "pretrained-models",
+      "pytorch",
+      "zero-shot-classification"
+    ],
+    "Language": "Python",
+    "Stars": 13867,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-07-28T23:24:39Z",
+    "UpdatedAt": "2026-05-27T06:48:28Z",
+    "Owner": "mlfoundations",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "khoj-ai/khoj",
+    "Name": "khoj",
+    "Url": "https://github.com/khoj-ai/khoj",
+    "Description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or local LLM into your personal, autonomous AI (gpt, claude, gemini, llama, qwen, mistral). Get started - free.",
+    "Topics": [
+      "agent",
+      "ai",
+      "assistant",
+      "chat",
+      "chatgpt",
+      "emacs",
+      "image-generation",
+      "llama3",
+      "llamacpp",
+      "llm",
+      "obsidian",
+      "obsidian-md",
+      "offline-llm",
+      "productivity",
+      "rag",
+      "research",
+      "self-hosted",
+      "semantic-search",
+      "stt",
+      "whatsapp-ai"
+    ],
+    "Language": "Python",
+    "Stars": 34726,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-08-16T01:48:44Z",
+    "UpdatedAt": "2026-05-27T07:06:24Z",
+    "Owner": "khoj-ai",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "lucasjinreal/yolov7_d2",
+    "Name": "yolov7_d2",
+    "Url": "https://github.com/lucasjinreal/yolov7_d2",
+    "Description": "🔥🔥🔥🔥 (Earlier YOLOv7 not official one) YOLO with Transformers and Instance Segmentation, with TensorRT acceleration! 🔥🔥🔥",
+    "Topics": [
+      "detection",
+      "detextron2",
+      "detr",
+      "face",
+      "instance-segmentation",
+      "object-detection",
+      "onnx",
+      "tensorrt",
+      "transformers",
+      "yolo",
+      "yolov6",
+      "yolov7",
+      "yolox"
+    ],
+    "Language": "Python",
+    "Stars": 3111,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-06-23T11:35:35Z",
+    "UpdatedAt": "2026-05-26T20:30:57Z",
+    "Owner": "lucasjinreal",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "AsuharietYgvar/AppleNeuralHash2ONNX",
+    "Name": "AppleNeuralHash2ONNX",
+    "Url": "https://github.com/AsuharietYgvar/AppleNeuralHash2ONNX",
+    "Description": "Convert Apple NeuralHash model for CSAM Detection to ONNX.",
+    "Topics": [
+      "apple",
+      "machine-learning",
+      "neuralhash",
+      "reverse-engineering"
+    ],
+    "Language": "Python",
+    "Stars": 1535,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-08-15T19:52:47Z",
+    "UpdatedAt": "2026-05-23T15:27:34Z",
+    "Owner": "AsuharietYgvar",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "netbox-community/netbox",
+    "Name": "netbox",
+    "Url": "https://github.com/netbox-community/netbox",
+    "Description": "The premier source of truth powering network automation. Open source under Apache 2. Try NetBox Cloud free: https://netboxlabs.com/products/free-netbox-cloud/",
+    "Topics": [
+      "cabling",
+      "dcim",
+      "django",
+      "infrastructure-management",
+      "ipam",
+      "netbox",
+      "network",
+      "network-automation",
+      "python",
+      "sot",
+      "sysadmin"
+    ],
+    "Language": "Python",
+    "Stars": 20687,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2016-02-29T14:15:46Z",
+    "UpdatedAt": "2026-05-27T06:29:09Z",
+    "Owner": "netbox-community",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "mem0ai/mem0",
+    "Name": "mem0",
+    "Url": "https://github.com/mem0ai/mem0",
+    "Description": "Universal memory layer for AI Agents",
+    "Topics": [
+      "agents",
+      "ai",
+      "ai-agents",
+      "application",
+      "chatbots",
+      "chatgpt",
+      "genai",
+      "llm",
+      "long-term-memory",
+      "memory",
+      "memory-management",
+      "python",
+      "rag",
+      "state-management"
+    ],
+    "Language": "Python",
+    "Stars": 56848,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-06-20T08:58:36Z",
+    "UpdatedAt": "2026-05-27T07:50:38Z",
+    "Owner": "mem0ai",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "resemble-ai/chatterbox",
+    "Name": "chatterbox",
+    "Url": "https://github.com/resemble-ai/chatterbox",
+    "Description": "SoTA open-source TTS",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 24869,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-04-23T08:16:38Z",
+    "UpdatedAt": "2026-05-27T07:10:03Z",
+    "Owner": "resemble-ai",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Vision-CAIR/MiniGPT-4",
+    "Name": "MiniGPT-4",
+    "Url": "https://github.com/Vision-CAIR/MiniGPT-4",
+    "Description": "Open-sourced codes for MiniGPT-4 and MiniGPT-v2 (https://minigpt-4.github.io, https://minigpt-v2.github.io/)",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 25705,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-04-15T22:17:09Z",
+    "UpdatedAt": "2026-05-26T23:41:19Z",
+    "Owner": "Vision-CAIR",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "ENOT-AutoDL/onnx2torch",
+    "Name": "onnx2torch",
+    "Url": "https://github.com/ENOT-AutoDL/onnx2torch",
+    "Description": "Convert ONNX models to PyTorch.",
+    "Topics": [
+      "convert",
+      "export",
+      "onnx",
+      "pytorch"
+    ],
+    "Language": "Python",
+    "Stars": 735,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-12-14T06:41:02Z",
+    "UpdatedAt": "2026-05-26T14:18:23Z",
+    "Owner": "ENOT-AutoDL",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "subframe7536/maple-font",
+    "Name": "maple-font",
+    "Url": "https://github.com/subframe7536/maple-font",
+    "Description": "Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font icons for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项",
+    "Topics": [
+      "coding-font",
+      "font",
+      "ligatures",
+      "monospace",
+      "monospace-font",
+      "opentype",
+      "programming-font",
+      "programming-ligatures",
+      "typeface",
+      "typography",
+      "variable-font"
+    ],
+    "Language": "Python",
+    "Stars": 26191,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-04-08T15:51:22Z",
+    "UpdatedAt": "2026-05-27T07:59:01Z",
+    "Owner": "subframe7536",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "langchain-ai/langchain",
+    "Name": "langchain",
+    "Url": "https://github.com/langchain-ai/langchain",
+    "Description": "The agent engineering platform.",
+    "Topics": [
+      "agents",
+      "ai",
+      "ai-agents",
+      "anthropic",
+      "chatgpt",
+      "deepagents",
+      "enterprise",
+      "framework",
+      "gemini",
+      "generative-ai",
+      "langchain",
+      "langgraph",
+      "llm",
+      "multiagent",
+      "open-source",
+      "openai",
+      "pydantic",
+      "python",
+      "rag",
+      "typescript"
+    ],
+    "Language": "Python",
+    "Stars": 137746,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-10-17T02:58:36Z",
+    "UpdatedAt": "2026-05-27T07:57:37Z",
+    "Owner": "langchain-ai",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "PINTO0309/PINTO_model_zoo",
+    "Name": "PINTO_model_zoo",
+    "Url": "https://github.com/PINTO0309/PINTO_model_zoo",
+    "Description": "A repository for storing models that have been inter-converted between various frameworks. Supported frameworks are TensorFlow, PyTorch, ONNX, OpenVINO, TFJS, TFTRT, TensorFlowLite (Float32/16/INT8), EdgeTPU, CoreML.",
+    "Topics": [
+      "caffe",
+      "computer-vision",
+      "coreml",
+      "edgetpu",
+      "keras",
+      "mediapipe",
+      "model",
+      "model-zoo",
+      "models",
+      "onnx",
+      "openvino",
+      "pretrained-models",
+      "pytorch",
+      "tensorflow",
+      "tensorflow-lite",
+      "tensorflowjs",
+      "tf-trt",
+      "tfjs",
+      "tflite",
+      "tflite-models"
+    ],
+    "Language": "Python",
+    "Stars": 4336,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2019-12-11T13:02:40Z",
+    "UpdatedAt": "2026-05-27T07:39:53Z",
+    "Owner": "PINTO0309",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "openai/gpt-oss",
+    "Name": "gpt-oss",
+    "Url": "https://github.com/openai/gpt-oss",
+    "Description": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 20120,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-06-23T16:43:33Z",
+    "UpdatedAt": "2026-05-27T07:34:23Z",
+    "Owner": "openai",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "home-assistant/core",
+    "Name": "core",
+    "Url": "https://github.com/home-assistant/core",
+    "Description": ":house_with_garden: Open source home automation that puts local control and privacy first.",
+    "Topics": [
+      "asyncio",
+      "hacktoberfest",
+      "home-automation",
+      "internet-of-things",
+      "iot",
+      "mqtt",
+      "python",
+      "raspberry-pi"
+    ],
+    "Language": "Python",
+    "Stars": 87336,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2013-09-17T07:29:48Z",
+    "UpdatedAt": "2026-05-27T07:20:39Z",
+    "Owner": "home-assistant",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "apple/coremltools",
+    "Name": "coremltools",
+    "Url": "https://github.com/apple/coremltools",
+    "Description": "Core ML tools contain supporting tools for Core ML model conversion, editing, and validation.",
+    "Topics": [
+      "coreml",
+      "coremltools",
+      "machine-learning",
+      "model-conversion",
+      "model-converter",
+      "pytorch",
+      "tensorflow"
+    ],
+    "Language": "Python",
+    "Stars": 5268,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-06-30T07:39:02Z",
+    "UpdatedAt": "2026-05-27T03:53:25Z",
+    "Owner": "apple",
+    "SourceQueries": [
+      "topic:model-conversion language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "PaddlePaddle/PaddleOCR",
+    "Name": "PaddleOCR",
+    "Url": "https://github.com/PaddlePaddle/PaddleOCR",
+    "Description": "Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports 100+ languages.",
+    "Topics": [
+      "ai4science",
+      "chineseocr",
+      "document-parsing",
+      "document-translation",
+      "kie",
+      "ocr",
+      "paddleocr-vl",
+      "pdf-extractor-rag",
+      "pdf-parser",
+      "pdf2markdown",
+      "pp-ocr",
+      "pp-structure",
+      "rag"
+    ],
+    "Language": "Python",
+    "Stars": 78622,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-05-08T10:38:16Z",
+    "UpdatedAt": "2026-05-27T07:59:24Z",
+    "Owner": "PaddlePaddle",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "hpcaitech/ColossalAI",
+    "Name": "ColossalAI",
+    "Url": "https://github.com/hpcaitech/ColossalAI",
+    "Description": "Making large AI models cheaper, faster and more accessible",
+    "Topics": [
+      "ai",
+      "big-model",
+      "data-parallelism",
+      "deep-learning",
+      "distributed-computing",
+      "foundation-models",
+      "heterogeneous-training",
+      "hpc",
+      "inference",
+      "large-scale",
+      "model-parallelism",
+      "pipeline-parallelism"
+    ],
+    "Language": "Python",
+    "Stars": 41383,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-10-28T16:19:44Z",
+    "UpdatedAt": "2026-05-27T03:06:21Z",
+    "Owner": "hpcaitech",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "SthPhoenix/InsightFace-REST",
+    "Name": "InsightFace-REST",
+    "Url": "https://github.com/SthPhoenix/InsightFace-REST",
+    "Description": "InsightFace REST API for easy deployment of face recognition services with TensorRT in Docker.",
+    "Topics": [
+      "adaface",
+      "arcface",
+      "centerface",
+      "docker",
+      "face-detection",
+      "face-recognition",
+      "fastapi",
+      "fp16",
+      "gpu",
+      "insightface",
+      "mask-detection",
+      "onnx",
+      "retinaface",
+      "scrfd",
+      "tensorrt",
+      "tensorrt-conversion",
+      "yolov5-face"
+    ],
+    "Language": "Python",
+    "Stars": 617,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2019-08-15T14:55:43Z",
+    "UpdatedAt": "2026-05-20T09:11:38Z",
+    "Owner": "SthPhoenix",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "dottxt-ai/outlines",
+    "Name": "outlines",
+    "Url": "https://github.com/dottxt-ai/outlines",
+    "Description": "Structured Outputs",
+    "Topics": [
+      "cfg",
+      "generative-ai",
+      "json",
+      "llms",
+      "prompt-engineering",
+      "regex",
+      "structured-generation",
+      "symbolic-ai"
+    ],
+    "Language": "Python",
+    "Stars": 13896,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-03-17T16:01:18Z",
+    "UpdatedAt": "2026-05-26T22:12:52Z",
+    "Owner": "dottxt-ai",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "XingangPan/DragGAN",
+    "Name": "DragGAN",
+    "Url": "https://github.com/XingangPan/DragGAN",
+    "Description": "Official Code for DragGAN (SIGGRAPH 2023)",
+    "Topics": [
+      "artificial-intelligence",
+      "generative-adversarial-network",
+      "generative-models",
+      "image-manipulation"
+    ],
+    "Language": "Python",
+    "Stars": 35850,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-05-18T10:08:02Z",
+    "UpdatedAt": "2026-05-27T06:05:09Z",
+    "Owner": "XingangPan",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "letta-ai/letta",
+    "Name": "letta",
+    "Url": "https://github.com/letta-ai/letta",
+    "Description": "Letta is the platform for building stateful agents: AI with advanced memory that can learn and self-improve over time.",
+    "Topics": [
+      "ai",
+      "ai-agents",
+      "llm",
+      "llm-agent"
+    ],
+    "Language": "Python",
+    "Stars": 22982,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-10-11T07:38:37Z",
+    "UpdatedAt": "2026-05-27T07:45:07Z",
+    "Owner": "letta-ai",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "QuivrHQ/quivr",
+    "Name": "quivr",
+    "Url": "https://github.com/QuivrHQ/quivr",
+    "Description": "Opiniated RAG for integrating GenAI in your apps 🧠   Focus on your product rather than the RAG. Easy integration in existing products with customisation!  Any LLM: GPT4, Groq, Llama. Any Vectorstore: PGVector, Faiss. Any Files. Anyway you want.",
+    "Topics": [
+      "ai",
+      "api",
+      "chatbot",
+      "chatgpt",
+      "database",
+      "docker",
+      "framework",
+      "frontend",
+      "groq",
+      "html",
+      "javascript",
+      "llm",
+      "openai",
+      "postgresql",
+      "privacy",
+      "rag",
+      "react",
+      "security",
+      "typescript",
+      "vector"
+    ],
+    "Language": "Python",
+    "Stars": 39163,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-05-12T23:53:30Z",
+    "UpdatedAt": "2026-05-27T07:44:20Z",
+    "Owner": "QuivrHQ",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "myshell-ai/OpenVoice",
+    "Name": "OpenVoice",
+    "Url": "https://github.com/myshell-ai/OpenVoice",
+    "Description": "Instant voice cloning by MIT and MyShell. Audio foundation model.",
+    "Topics": [
+      "text-to-speech",
+      "tts",
+      "voice-clone",
+      "zero-shot-tts"
+    ],
+    "Language": "Python",
+    "Stars": 36572,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-11-29T12:17:01Z",
+    "UpdatedAt": "2026-05-27T03:48:23Z",
+    "Owner": "myshell-ai",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "PKU-YuanGroup/Open-Sora-Plan",
+    "Name": "Open-Sora-Plan",
+    "Url": "https://github.com/PKU-YuanGroup/Open-Sora-Plan",
+    "Description": "This project aim to reproduce Sora (Open AI T2V model), we wish the open source community contribute to this project.",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 12160,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-02-20T14:01:03Z",
+    "UpdatedAt": "2026-05-27T06:29:30Z",
+    "Owner": "PKU-YuanGroup",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "vietanhdev/anylabeling",
+    "Name": "anylabeling",
+    "Url": "https://github.com/vietanhdev/anylabeling",
+    "Description": "Effortless AI-assisted data labeling with AI support from YOLO, Segment Anything (SAM+SAM2/2.1+SAM3), MobileSAM!!",
+    "Topics": [
+      "auto-labeling",
+      "computer-vision",
+      "labeling",
+      "labeling-tool",
+      "mobilesam",
+      "onnx",
+      "sam2",
+      "segment-anything",
+      "segment-anything-2",
+      "yolo",
+      "yolov8"
+    ],
+    "Language": "Python",
+    "Stars": 3363,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-04-08T18:48:43Z",
+    "UpdatedAt": "2026-05-27T02:33:11Z",
+    "Owner": "vietanhdev",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "dortania/OpenCore-Legacy-Patcher",
+    "Name": "OpenCore-Legacy-Patcher",
+    "Url": "https://github.com/dortania/OpenCore-Legacy-Patcher",
+    "Description": "Experience macOS just like before",
+    "Topics": [
+      "big-sur",
+      "macos",
+      "opencore",
+      "patcher"
+    ],
+    "Language": "Python",
+    "Stars": 17485,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-11-24T01:54:56Z",
+    "UpdatedAt": "2026-05-27T06:59:36Z",
+    "Owner": "dortania",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "jingyaogong/minimind-v",
+    "Name": "minimind-v",
+    "Url": "https://github.com/jingyaogong/minimind-v",
+    "Description": "👀「大模型」2小时从0训练65M参数的视觉多模态VLM！Train a 65M-parameter VLM from scratch in just 2h! ",
+    "Topics": [
+      "artificial-intelligence",
+      "chatgpt",
+      "vision-language-model"
+    ],
+    "Language": "Python",
+    "Stars": 8016,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-09-11T05:53:54Z",
+    "UpdatedAt": "2026-05-27T07:42:49Z",
+    "Owner": "jingyaogong",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "OlafenwaMoses/ImageAI",
+    "Name": "ImageAI",
+    "Url": "https://github.com/OlafenwaMoses/ImageAI",
+    "Description": "A python library built to empower developers to build applications and systems  with self-contained Computer Vision capabilities",
+    "Topics": [
+      "ai-practice-recommendations",
+      "algorithm",
+      "artificial-intelligence",
+      "artificial-neural-networks",
+      "densenet",
+      "detection",
+      "gpu",
+      "image-prediction",
+      "image-recognition",
+      "imageai",
+      "inceptionv3",
+      "machine-learning",
+      "object-detection",
+      "offline-capable",
+      "prediction",
+      "python",
+      "python3",
+      "squeezenet",
+      "video"
+    ],
+    "Language": "Python",
+    "Stars": 8876,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2018-03-19T23:12:33Z",
+    "UpdatedAt": "2026-05-26T07:13:55Z",
+    "Owner": "OlafenwaMoses",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "jingsongliujing/OnnxOCR",
+    "Name": "OnnxOCR",
+    "Url": "https://github.com/jingsongliujing/OnnxOCR",
+    "Description": "基于PaddleOCR重构，并且脱离PaddlePaddle深度学习训练框架的轻量级OCR，推理速度超快   ——  A lightweight OCR system based on PaddleOCR, decoupled from the PaddlePaddle deep learning training framework, with ultra-fast inference speed.",
+    "Topics": [
+      "document-layout-analysis",
+      "general-ocr",
+      "license-plate-recognition",
+      "ocr",
+      "onnx-models",
+      "onnxocr",
+      "onnxruntime",
+      "structured-ocr",
+      "tablerecognition"
+    ],
+    "Language": "Python",
+    "Stars": 1787,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-07-08T16:49:59Z",
+    "UpdatedAt": "2026-05-27T06:22:41Z",
+    "Owner": "jingsongliujing",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "xai-org/grok-1",
+    "Name": "grok-1",
+    "Url": "https://github.com/xai-org/grok-1",
+    "Description": "Grok open release",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 51691,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-03-17T08:53:38Z",
+    "UpdatedAt": "2026-05-27T07:14:19Z",
+    "Owner": "xai-org",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "sinaptik-ai/pandas-ai",
+    "Name": "pandas-ai",
+    "Url": "https://github.com/sinaptik-ai/pandas-ai",
+    "Description": "Chat with your database or your datalake (SQL, CSV, parquet). PandasAI makes data analysis conversational using LLMs and RAG.",
+    "Topics": [
+      "ai",
+      "csv",
+      "data",
+      "data-analysis",
+      "data-science",
+      "data-visualization",
+      "database",
+      "datalake",
+      "gpt-4",
+      "llm",
+      "pandas",
+      "sql",
+      "text-to-sql"
+    ],
+    "Language": "Python",
+    "Stars": 23553,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-04-22T12:58:01Z",
+    "UpdatedAt": "2026-05-27T01:03:57Z",
+    "Owner": "sinaptik-ai",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "wangerzi/3d-model-convert-to-gltf",
+    "Name": "3d-model-convert-to-gltf",
+    "Url": "https://github.com/wangerzi/3d-model-convert-to-gltf",
+    "Description": "Convert 3d model (STL/IGES/STEP/OBJ/FBX) to gltf and compression",
+    "Topics": [
+      "3d",
+      "compression",
+      "docker-environment",
+      "glb",
+      "gltf",
+      "iges-models",
+      "model-conversion"
+    ],
+    "Language": "Python",
+    "Stars": 307,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-03-09T12:20:06Z",
+    "UpdatedAt": "2026-05-22T11:22:45Z",
+    "Owner": "wangerzi",
+    "SourceQueries": [
+      "topic:model-conversion language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "lucidrains/denoising-diffusion-pytorch",
+    "Name": "denoising-diffusion-pytorch",
+    "Url": "https://github.com/lucidrains/denoising-diffusion-pytorch",
+    "Description": "Implementation of Denoising Diffusion Probabilistic Model in Pytorch",
+    "Topics": [
+      "artificial-intelligence",
+      "deep-learning",
+      "generative-model",
+      "score-matching"
+    ],
+    "Language": "Python",
+    "Stars": 10570,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-08-26T02:22:10Z",
+    "UpdatedAt": "2026-05-27T07:07:02Z",
+    "Owner": "lucidrains",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "OpenBB-finance/OpenBB",
+    "Name": "OpenBB",
+    "Url": "https://github.com/OpenBB-finance/OpenBB",
+    "Description": "Financial data platform for analysts, quants and AI agents.",
+    "Topics": [
+      "ai",
+      "crypto",
+      "derivatives",
+      "economics",
+      "equity",
+      "finance",
+      "fixed-income",
+      "machine-learning",
+      "openbb",
+      "options",
+      "python",
+      "quantitative-finance",
+      "stocks"
+    ],
+    "Language": "Python",
+    "Stars": 68141,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-12-20T10:46:38Z",
+    "UpdatedAt": "2026-05-27T07:03:43Z",
+    "Owner": "OpenBB-finance",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "anthropics/claude-plugins-official",
+    "Name": "claude-plugins-official",
+    "Url": "https://github.com/anthropics/claude-plugins-official",
+    "Description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+    "Topics": [
+      "claude-code",
+      "mcp",
+      "skills"
+    ],
+    "Language": "Python",
+    "Stars": 28087,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-11-20T18:36:20Z",
+    "UpdatedAt": "2026-05-27T07:59:23Z",
+    "Owner": "anthropics",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Megvii-BaseDetection/YOLOX",
+    "Name": "YOLOX",
+    "Url": "https://github.com/Megvii-BaseDetection/YOLOX",
+    "Description": "YOLOX is a high-performance anchor-free YOLO, exceeding yolov3~v5 with MegEngine, ONNX, TensorRT, ncnn, and OpenVINO supported. Documentation: https://yolox.readthedocs.io/",
+    "Topics": [
+      "deep-learning",
+      "megengine",
+      "ncnn",
+      "object-detection",
+      "onnx",
+      "openvino",
+      "pytorch",
+      "tensorrt",
+      "yolo",
+      "yolov3",
+      "yolox"
+    ],
+    "Language": "Python",
+    "Stars": 10468,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-07-17T02:01:45Z",
+    "UpdatedAt": "2026-05-26T15:55:55Z",
+    "Owner": "Megvii-BaseDetection",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "mage-ai/mage-ai",
+    "Name": "mage-ai",
+    "Url": "https://github.com/mage-ai/mage-ai",
+    "Description": "🧙 Build, run, and manage data pipelines for integrating and transforming data.",
+    "Topics": [
+      "artificial-intelligence",
+      "data",
+      "data-engineering",
+      "data-integration",
+      "data-pipelines",
+      "data-science",
+      "dbt",
+      "elt",
+      "etl",
+      "machine-learning",
+      "orchestration",
+      "pipeline",
+      "pipelines",
+      "python",
+      "reverse-etl",
+      "spark",
+      "sql",
+      "transformation"
+    ],
+    "Language": "Python",
+    "Stars": 8736,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-05-16T22:11:39Z",
+    "UpdatedAt": "2026-05-25T13:29:20Z",
+    "Owner": "mage-ai",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "xorbitsai/inference",
+    "Name": "inference",
+    "Url": "https://github.com/xorbitsai/inference",
+    "Description": "Swap GPT for any LLM by changing a single line of code. Xinference lets you run open-source, speech, and multimodal models on cloud, on-prem, or your laptop — all through one unified, production-ready inference API.",
+    "Topics": [
+      "artificial-intelligence",
+      "chatglm",
+      "deployment",
+      "flan-t5",
+      "gemma",
+      "ggml",
+      "glm4",
+      "inference",
+      "llama",
+      "llama3",
+      "llamacpp",
+      "llm",
+      "machine-learning",
+      "mistral",
+      "openai-api",
+      "pytorch",
+      "qwen",
+      "vllm",
+      "whisper",
+      "wizardlm"
+    ],
+    "Language": "Python",
+    "Stars": 9314,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-06-14T07:05:04Z",
+    "UpdatedAt": "2026-05-27T04:10:03Z",
+    "Owner": "xorbitsai",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "intel/neural-compressor",
+    "Name": "neural-compressor",
+    "Url": "https://github.com/intel/neural-compressor",
+    "Description": "SOTA low-bit LLM quantization (INT8/FP8/MXFP8/INT4/MXFP4/NVFP4) & sparsity; leading model compression techniques on PyTorch, TensorFlow, and ONNX Runtime",
+    "Topics": [
+      "auto-tuning",
+      "awq",
+      "fp4",
+      "gptq",
+      "int4",
+      "int8",
+      "knowledge-distillation",
+      "large-language-models",
+      "low-precision",
+      "mxformat",
+      "post-training-quantization",
+      "pruning",
+      "quantization",
+      "quantization-aware-training",
+      "smoothquant",
+      "sparsegpt",
+      "sparsity"
+    ],
+    "Language": "Python",
+    "Stars": 2645,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-07-21T23:49:56Z",
+    "UpdatedAt": "2026-05-26T22:10:57Z",
+    "Owner": "intel",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "plotly/dash",
+    "Name": "dash",
+    "Url": "https://github.com/plotly/dash",
+    "Description": "Data Apps & Dashboards for Python. No JavaScript Required.",
+    "Topics": [
+      "ai",
+      "bioinformatics",
+      "charting",
+      "dash",
+      "dashboards",
+      "data-science",
+      "data-visualization",
+      "finance",
+      "flask",
+      "gui-framework",
+      "jupyter",
+      "plotly",
+      "plotly-dash",
+      "productivity",
+      "python",
+      "react",
+      "technical-computing",
+      "web-app"
+    ],
+    "Language": "Python",
+    "Stars": 24217,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2015-04-10T01:53:08Z",
+    "UpdatedAt": "2026-05-27T06:47:17Z",
+    "Owner": "plotly",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "fastmachinelearning/hls4ml",
+    "Name": "hls4ml",
+    "Url": "https://github.com/fastmachinelearning/hls4ml",
+    "Description": "Machine learning on FPGAs using HLS",
+    "Topics": [
+      "fpga",
+      "hls",
+      "intel-hls",
+      "keras",
+      "machine-learning",
+      "neural-network",
+      "onnx",
+      "python",
+      "pytorch",
+      "vivado",
+      "vivado-hls"
+    ],
+    "Language": "Python",
+    "Stars": 1997,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-10-25T21:43:56Z",
+    "UpdatedAt": "2026-05-27T07:41:01Z",
+    "Owner": "fastmachinelearning",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "VoltaML/voltaML",
+    "Name": "voltaML",
+    "Url": "https://github.com/VoltaML/voltaML",
+    "Description": "⚡VoltaML is a lightweight library to convert and run your ML/DL deep learning models in high performance inference runtimes like TensorRT, TorchScript, ONNX and TVM.",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 1178,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-06-11T12:58:24Z",
+    "UpdatedAt": "2026-05-15T23:13:49Z",
+    "Owner": "VoltaML",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "ultralytics/yolov3",
+    "Name": "yolov3",
+    "Url": "https://github.com/ultralytics/yolov3",
+    "Description": "YOLOv3 in PyTorch > ONNX > CoreML > TFLite",
+    "Topics": [
+      "deep-learning",
+      "machine-learning",
+      "object-detection",
+      "ultralytics",
+      "yolo",
+      "yolov3",
+      "yolov5"
+    ],
+    "Language": "Python",
+    "Stars": 10568,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2018-08-26T08:57:20Z",
+    "UpdatedAt": "2026-05-27T03:43:57Z",
+    "Owner": "ultralytics",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "oobabooga/textgen",
+    "Name": "textgen",
+    "Url": "https://github.com/oobabooga/textgen",
+    "Description": "Open-source desktop app for local LLMs. Text, vision, tool-calling, OpenAI/Anthropic-compatible API. 100% private.",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 47226,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-12-21T04:17:37Z",
+    "UpdatedAt": "2026-05-27T06:13:13Z",
+    "Owner": "oobabooga",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "voldemortX/pytorch-auto-drive",
+    "Name": "pytorch-auto-drive",
+    "Url": "https://github.com/voldemortX/pytorch-auto-drive",
+    "Description": "PytorchAutoDrive: Segmentation models (ERFNet, ENet, DeepLab, FCN...) and Lane detection models (SCNN, RESA, LSTR, LaneATT, BézierLaneNet...) based on PyTorch with fast training, visualization, benchmarking & deployment help",
+    "Topics": [
+      "apex",
+      "cityscapes",
+      "culane",
+      "deeplab",
+      "erfnet",
+      "fcn",
+      "gtav",
+      "lane-detection",
+      "lstr",
+      "mobilenet",
+      "onnx",
+      "pascal-voc",
+      "pytorch",
+      "resa",
+      "scnn",
+      "semantic-segmentation",
+      "tensorboard",
+      "tensorrt",
+      "tusimple"
+    ],
+    "Language": "Python",
+    "Stars": 949,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2019-12-14T06:54:31Z",
+    "UpdatedAt": "2026-05-26T08:16:29Z",
+    "Owner": "voldemortX",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "gmalivenko/pytorch2keras",
+    "Name": "pytorch2keras",
+    "Url": "https://github.com/gmalivenko/pytorch2keras",
+    "Description": "PyTorch to Keras model convertor",
+    "Topics": [
+      "converter",
+      "darts",
+      "deep-learning",
+      "deep-learning-models",
+      "densenet",
+      "imagenet",
+      "keras",
+      "keras-model-convertor",
+      "keras-models",
+      "keras-neural-networks",
+      "keras-tensorflow",
+      "machinelearning",
+      "models-converter",
+      "onnx",
+      "pytorch",
+      "pytorch-models",
+      "resnet",
+      "tensorflow",
+      "tensorflow-models",
+      "tensorflowjs"
+    ],
+    "Language": "Python",
+    "Stars": 862,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-11-16T20:21:43Z",
+    "UpdatedAt": "2026-01-27T13:13:12Z",
+    "Owner": "gmalivenko",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Significant-Gravitas/AutoGPT",
+    "Name": "AutoGPT",
+    "Url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "Description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "Topics": [
+      "agentic-ai",
+      "agents",
+      "ai",
+      "artificial-intelligence",
+      "autonomous-agents",
+      "claude",
+      "gpt",
+      "llama-api",
+      "llm",
+      "openai",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 184577,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-03-16T09:21:07Z",
+    "UpdatedAt": "2026-05-27T07:52:59Z",
+    "Owner": "Significant-Gravitas",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "qfgaohao/pytorch-ssd",
+    "Name": "pytorch-ssd",
+    "Url": "https://github.com/qfgaohao/pytorch-ssd",
+    "Description": "MobileNetV1, MobileNetV2, VGG based SSD/SSD-lite implementation in Pytorch 1.0 / Pytorch 0.4. Out-of-box support for retraining on Open Images dataset. ONNX and Caffe2 support. Experiment Ideas like CoordConv.",
+    "Topics": [
+      "object-detection",
+      "open-images",
+      "pytorch",
+      "ssd"
+    ],
+    "Language": "Python",
+    "Stars": 1429,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2018-05-18T04:56:09Z",
+    "UpdatedAt": "2026-05-23T14:01:16Z",
+    "Owner": "qfgaohao",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "hiyouga/LlamaFactory",
+    "Name": "LlamaFactory",
+    "Url": "https://github.com/hiyouga/LlamaFactory",
+    "Description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
+    "Topics": [
+      "agent",
+      "ai",
+      "deepseek",
+      "fine-tuning",
+      "gemma",
+      "gpt",
+      "instruction-tuning",
+      "large-language-models",
+      "llama",
+      "llama3",
+      "llm",
+      "lora",
+      "moe",
+      "nlp",
+      "peft",
+      "qlora",
+      "quantization",
+      "qwen",
+      "rlhf",
+      "transformers"
+    ],
+    "Language": "Python",
+    "Stars": 71633,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-05-28T10:09:12Z",
+    "UpdatedAt": "2026-05-27T07:59:44Z",
+    "Owner": "hiyouga",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "usestrix/strix",
+    "Name": "strix",
+    "Url": "https://github.com/usestrix/strix",
+    "Description": "Open-source AI hackers to find and fix your app’s vulnerabilities.",
+    "Topics": [
+      "agents",
+      "artificial-intelligence",
+      "cybersecurity",
+      "generative-ai",
+      "llm",
+      "penetration-testing"
+    ],
+    "Language": "Python",
+    "Stars": 25632,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-08-05T21:28:30Z",
+    "UpdatedAt": "2026-05-27T06:42:46Z",
+    "Owner": "usestrix",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50",
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "onyx-dot-app/onyx",
+    "Name": "onyx",
+    "Url": "https://github.com/onyx-dot-app/onyx",
+    "Description": "Open Source AI Platform - AI Chat with advanced features that works with every LLM",
+    "Topics": [
+      "ai",
+      "ai-chat",
+      "chatgpt",
+      "chatui",
+      "enterprise-search",
+      "gen-ai",
+      "information-retrieval",
+      "llm",
+      "llm-ui",
+      "nextjs",
+      "python",
+      "rag",
+      "self-hosted",
+      "vector-search"
+    ],
+    "Language": "Python",
+    "Stars": 29828,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-04-27T06:04:01Z",
+    "UpdatedAt": "2026-05-27T07:59:04Z",
+    "Owner": "onyx-dot-app",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "RayVentura/ShortGPT",
+    "Name": "ShortGPT",
+    "Url": "https://github.com/RayVentura/ShortGPT",
+    "Description": "🚀🎬 ShortGPT - Experimental AI framework for youtube shorts / tiktok channel automation",
+    "Topics": [
+      "ai",
+      "artificial-intelligence",
+      "automation",
+      "autonomous-agents",
+      "content",
+      "gpt-4",
+      "openai",
+      "python",
+      "video",
+      "video-editing"
+    ],
+    "Language": "Python",
+    "Stars": 7364,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-06-27T19:25:33Z",
+    "UpdatedAt": "2026-05-27T01:00:13Z",
+    "Owner": "RayVentura",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "tinyvision/DAMO-YOLO",
+    "Name": "DAMO-YOLO",
+    "Url": "https://github.com/tinyvision/DAMO-YOLO",
+    "Description": "DAMO-YOLO: a fast and accurate object detection method with some new techs, including NAS backbones, efficient RepGFPN, ZeroHead, AlignedOTA, and distillation enhancement.",
+    "Topics": [
+      "damo-yolo",
+      "deep-learning",
+      "imagenet",
+      "nas",
+      "object-detection",
+      "onnx",
+      "pytorch",
+      "tensorrt",
+      "yolo",
+      "yolov5"
+    ],
+    "Language": "Python",
+    "Stars": 3167,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-11-27T14:22:54Z",
+    "UpdatedAt": "2026-05-27T02:35:42Z",
+    "Owner": "tinyvision",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "ufoym/deepo",
+    "Name": "deepo",
+    "Url": "https://github.com/ufoym/deepo",
+    "Description": "Setup and customize deep learning environment in seconds.",
+    "Topics": [
+      "caffe",
+      "caffe2",
+      "chainer",
+      "cntk",
+      "deep-learning",
+      "docker-image",
+      "dockerfile-generator",
+      "jupyter",
+      "keras",
+      "lasagne",
+      "mxnet",
+      "onnx",
+      "pytorch",
+      "sonnet",
+      "tensorflow",
+      "theano",
+      "torch"
+    ],
+    "Language": "Python",
+    "Stars": 6276,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-10-27T11:41:49Z",
+    "UpdatedAt": "2026-05-26T15:52:45Z",
+    "Owner": "ufoym",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "comet-ml/opik",
+    "Name": "opik",
+    "Url": "https://github.com/comet-ml/opik",
+    "Description": "Debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive tracing, automated evaluations, and production-ready dashboards.",
+    "Topics": [
+      "evaluation",
+      "hacktoberfest",
+      "hacktoberfest2025",
+      "langchain",
+      "llama-index",
+      "llm",
+      "llm-evaluation",
+      "llm-observability",
+      "llmops",
+      "open-source",
+      "openai",
+      "playground",
+      "prompt-engineering"
+    ],
+    "Language": "Python",
+    "Stars": 19382,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-05-10T12:57:13Z",
+    "UpdatedAt": "2026-05-27T06:36:05Z",
+    "Owner": "comet-ml",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "huggingface/optimum",
+    "Name": "optimum",
+    "Url": "https://github.com/huggingface/optimum",
+    "Description": "🚀 Accelerate inference and training of 🤗 Transformers, Diffusers, TIMM and Sentence Transformers with easy to use hardware optimization tools",
+    "Topics": [
+      "graphcore",
+      "habana",
+      "inference",
+      "intel",
+      "onnx",
+      "onnxruntime",
+      "optimization",
+      "pytorch",
+      "quantization",
+      "tflite",
+      "training",
+      "transformers"
+    ],
+    "Language": "Python",
+    "Stars": 3401,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-07-20T12:36:40Z",
+    "UpdatedAt": "2026-05-26T17:26:13Z",
+    "Owner": "huggingface",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "High-Logic/Genie-TTS",
+    "Name": "Genie-TTS",
+    "Url": "https://github.com/High-Logic/Genie-TTS",
+    "Description": "GPT-SoVITS ONNX Inference Engine & Model Converter",
+    "Topics": [
+      "gpt-sovits",
+      "text-to-speech",
+      "tts",
+      "vits",
+      "voice-clone",
+      "voice-cloning"
+    ],
+    "Language": "Python",
+    "Stars": 1560,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-08-25T11:30:09Z",
+    "UpdatedAt": "2026-05-27T03:51:59Z",
+    "Owner": "High-Logic",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "assafelovic/gpt-researcher",
+    "Name": "gpt-researcher",
+    "Url": "https://github.com/assafelovic/gpt-researcher",
+    "Description": "An autonomous agent that conducts deep research on any data using any LLM providers",
+    "Topics": [
+      "agent",
+      "ai",
+      "automation",
+      "deepresearch",
+      "llms",
+      "mcp",
+      "mcp-server",
+      "python",
+      "research",
+      "search",
+      "webscraping"
+    ],
+    "Language": "Python",
+    "Stars": 27334,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-05-12T10:33:54Z",
+    "UpdatedAt": "2026-05-27T07:20:48Z",
+    "Owner": "assafelovic",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "D4Vinci/Scrapling",
+    "Name": "Scrapling",
+    "Url": "https://github.com/D4Vinci/Scrapling",
+    "Description": "🕷️ An adaptive Web Scraping framework that handles everything from a single request to a full-scale crawl!",
+    "Topics": [
+      "ai",
+      "ai-scraping",
+      "automation",
+      "crawler",
+      "crawling",
+      "crawling-python",
+      "data",
+      "data-extraction",
+      "mcp",
+      "mcp-server",
+      "playwright",
+      "python",
+      "scraping",
+      "selectors",
+      "stealth",
+      "web-scraper",
+      "web-scraping",
+      "web-scraping-python",
+      "webscraping",
+      "xpath"
+    ],
+    "Language": "Python",
+    "Stars": 54411,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-10-13T20:29:53Z",
+    "UpdatedAt": "2026-05-27T08:00:46Z",
+    "Owner": "D4Vinci",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "allenai/olmocr",
+    "Name": "olmocr",
+    "Url": "https://github.com/allenai/olmocr",
+    "Description": "Toolkit for linearizing PDFs for LLM datasets/training",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 17356,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-09-17T14:53:40Z",
+    "UpdatedAt": "2026-05-27T03:55:26Z",
+    "Owner": "allenai",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "jingyaogong/minimind",
+    "Name": "minimind",
+    "Url": "https://github.com/jingyaogong/minimind",
+    "Description": "🧠「大模型」2小时完全从0训练64M的小参数LLM！Train a 64M-parameter LLM from scratch in just 2h!",
+    "Topics": [
+      "artificial-intelligence",
+      "large-language-model"
+    ],
+    "Language": "Python",
+    "Stars": 50664,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-07-27T04:34:12Z",
+    "UpdatedAt": "2026-05-27T07:47:18Z",
+    "Owner": "jingyaogong",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "huggingface/datasets",
+    "Name": "datasets",
+    "Url": "https://github.com/huggingface/datasets",
+    "Description": "🤗 The largest hub of ready-to-use datasets for AI models with fast, easy-to-use and efficient data manipulation tools",
+    "Topics": [
+      "ai",
+      "artificial-intelligence",
+      "computer-vision",
+      "dataset-hub",
+      "datasets",
+      "deep-learning",
+      "huggingface",
+      "llm",
+      "machine-learning",
+      "natural-language-processing",
+      "nlp",
+      "numpy",
+      "pandas",
+      "pytorch",
+      "speech",
+      "tensorflow"
+    ],
+    "Language": "Python",
+    "Stars": 21541,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-03-26T09:23:22Z",
+    "UpdatedAt": "2026-05-27T03:01:04Z",
+    "Owner": "huggingface",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "HKUDS/OpenHarness",
+    "Name": "OpenHarness",
+    "Url": "https://github.com/HKUDS/OpenHarness",
+    "Description": "\"OpenHarness: Open Agent Harness with a Built-in Personal Agent--Ohmo!\"",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 13173,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2026-04-01T15:37:13Z",
+    "UpdatedAt": "2026-05-27T07:43:11Z",
+    "Owner": "HKUDS",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "lucidrains/DALLE2-pytorch",
+    "Name": "DALLE2-pytorch",
+    "Url": "https://github.com/lucidrains/DALLE2-pytorch",
+    "Description": "Implementation of DALL-E 2, OpenAI's updated text-to-image synthesis neural network,  in Pytorch",
+    "Topics": [
+      "artificial-intelligence",
+      "deep-learning",
+      "text-to-image"
+    ],
+    "Language": "Python",
+    "Stars": 11315,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-04-07T04:14:08Z",
+    "UpdatedAt": "2026-05-25T19:18:25Z",
+    "Owner": "lucidrains",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "emilianavt/OpenSeeFace",
+    "Name": "OpenSeeFace",
+    "Url": "https://github.com/emilianavt/OpenSeeFace",
+    "Description": "Robust realtime face and facial landmark tracking on CPU with Unity integration",
+    "Topics": [
+      "cpu",
+      "csharp",
+      "depth-estimation",
+      "detection-model",
+      "face-detection",
+      "face-landmarks",
+      "face-tracking",
+      "landmark-model",
+      "mobilenetv3",
+      "onnx",
+      "onnxruntime",
+      "openseeface",
+      "python",
+      "pytorch",
+      "tracker",
+      "udp",
+      "unity",
+      "unity3d",
+      "virtual-youtuber",
+      "vtuber"
+    ],
+    "Language": "Python",
+    "Stars": 1892,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-01-01T12:49:35Z",
+    "UpdatedAt": "2026-05-26T20:50:23Z",
+    "Owner": "emilianavt",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "google/magika",
+    "Name": "magika",
+    "Url": "https://github.com/google/magika",
+    "Description": "Fast and accurate AI powered file content types detection ",
+    "Topics": [
+      "ai",
+      "deep-learning",
+      "filetype",
+      "keras-classification-models",
+      "keras-models",
+      "mime-types",
+      "onnx"
+    ],
+    "Language": "Python",
+    "Stars": 17053,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-08-22T09:36:55Z",
+    "UpdatedAt": "2026-05-27T07:34:43Z",
+    "Owner": "google",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "microsoft/Llama-2-Onnx",
+    "Name": "Llama-2-Onnx",
+    "Url": "https://github.com/microsoft/Llama-2-Onnx",
+    "Description": "",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 1027,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-07-17T21:01:49Z",
+    "UpdatedAt": "2026-03-20T11:45:22Z",
+    "Owner": "microsoft",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "optuna/optuna",
+    "Name": "optuna",
+    "Url": "https://github.com/optuna/optuna",
+    "Description": "A hyperparameter optimization framework",
+    "Topics": [
+      "distributed",
+      "hyperparameter-optimization",
+      "machine-learning",
+      "parallel",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 14251,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2018-02-21T06:12:56Z",
+    "UpdatedAt": "2026-05-27T07:48:02Z",
+    "Owner": "optuna",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "kornia/kornia",
+    "Name": "kornia",
+    "Url": "https://github.com/kornia/kornia",
+    "Description": "🐍 Geometric Computer Vision Library for Spatial AI",
+    "Topics": [
+      "artificial-intelligence",
+      "computer-vision",
+      "deep-learning",
+      "hacktoberfest",
+      "image-processing",
+      "machine-learning",
+      "neural-network",
+      "python",
+      "pytorch",
+      "robotics",
+      "spatial-ai"
+    ],
+    "Language": "Python",
+    "Stars": 11214,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2018-08-22T10:31:37Z",
+    "UpdatedAt": "2026-05-27T07:39:05Z",
+    "Owner": "kornia",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "facefusion/facefusion",
+    "Name": "facefusion",
+    "Url": "https://github.com/facefusion/facefusion",
+    "Description": "Industry leading face manipulation platform",
+    "Topics": [
+      "ai",
+      "deep-fake",
+      "deepfake",
+      "face-swap",
+      "faceswap",
+      "lip-sync",
+      "lipsync"
+    ],
+    "Language": "Python",
+    "Stars": 28424,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-08-17T19:59:55Z",
+    "UpdatedAt": "2026-05-27T07:17:52Z",
+    "Owner": "facefusion",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "kossisoroyce/timber",
+    "Name": "timber",
+    "Url": "https://github.com/kossisoroyce/timber",
+    "Description": "Ollama for classical ML models. AOT compiler that turns XGBoost, LightGBM, scikit-learn, CatBoost & ONNX models into native C99 inference code. One command to load, one command to serve. 336x faster than Python inference.",
+    "Topics": [
+      "c99",
+      "catboost",
+      "compiler",
+      "decision-trees",
+      "gradient-boosting",
+      "inference",
+      "lightgbm",
+      "machine-learning",
+      "mlops",
+      "model-serving",
+      "ollama",
+      "onnx",
+      "sklearn",
+      "xgboost"
+    ],
+    "Language": "Python",
+    "Stars": 681,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2026-02-27T23:27:36Z",
+    "UpdatedAt": "2026-05-23T16:33:36Z",
+    "Owner": "kossisoroyce",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "infiniflow/ragflow",
+    "Name": "ragflow",
+    "Url": "https://github.com/infiniflow/ragflow",
+    "Description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+    "Topics": [
+      "agentic-ai",
+      "agentic-retrieval",
+      "agentic-search",
+      "ai",
+      "ai-agents",
+      "context-engine",
+      "context-management",
+      "llm-apps",
+      "rag",
+      "retrieval-augmented-generation"
+    ],
+    "Language": "Python",
+    "Stars": 81340,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-12-12T06:13:13Z",
+    "UpdatedAt": "2026-05-27T07:54:17Z",
+    "Owner": "infiniflow",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "MPolaris/onnx2tflite",
+    "Name": "onnx2tflite",
+    "Url": "https://github.com/MPolaris/onnx2tflite",
+    "Description": "Tool for onnx->keras or onnx->tflite. Hope this tool can help you.",
+    "Topics": [
+      "deployment",
+      "onnx",
+      "onnx2keras",
+      "onnx2tensorflow",
+      "onnx2tflite",
+      "pytorch2tensorflow",
+      "quantization"
+    ],
+    "Language": "Python",
+    "Stars": 578,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-04-11T08:14:27Z",
+    "UpdatedAt": "2026-05-19T06:34:41Z",
+    "Owner": "MPolaris",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "crewAIInc/crewAI",
+    "Name": "crewAI",
+    "Url": "https://github.com/crewAIInc/crewAI",
+    "Description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.",
+    "Topics": [
+      "agents",
+      "ai",
+      "ai-agents",
+      "aiagentframework",
+      "llms"
+    ],
+    "Language": "Python",
+    "Stars": 52268,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-10-27T03:26:59Z",
+    "UpdatedAt": "2026-05-27T07:51:18Z",
+    "Owner": "crewAIInc",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "unclecode/crawl4ai",
+    "Name": "crawl4ai",
+    "Url": "https://github.com/unclecode/crawl4ai",
+    "Description": "🚀🤖 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 66481,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-05-09T09:48:50Z",
+    "UpdatedAt": "2026-05-27T07:51:06Z",
+    "Owner": "unclecode",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "PlayVoice/vits_chinese",
+    "Name": "vits_chinese",
+    "Url": "https://github.com/PlayVoice/vits_chinese",
+    "Description": "Best practice TTS based on BERT and VITS with some Natural Speech Features Of Microsoft; Support ONNX streaming out!",
+    "Topics": [
+      "aishell3",
+      "bert",
+      "bert-vits",
+      "bert-vits2",
+      "naturalspeech",
+      "tts",
+      "vits"
+    ],
+    "Language": "Python",
+    "Stars": 1233,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-09-27T03:39:50Z",
+    "UpdatedAt": "2026-05-25T13:29:35Z",
+    "Owner": "PlayVoice",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "qualcomm/ai-hub-models",
+    "Name": "ai-hub-models",
+    "Url": "https://github.com/qualcomm/ai-hub-models",
+    "Description": "Qualcomm® AI Hub Models is our collection of state-of-the-art machine learning models optimized for performance (latency, memory etc.) and ready to deploy on Qualcomm® devices.",
+    "Topics": [
+      "deeplearning",
+      "demos",
+      "inference",
+      "inference-api",
+      "inference-engine",
+      "machine-learning",
+      "machinelearning",
+      "onnx",
+      "pytorch",
+      "qnn",
+      "tensorflow-lite"
+    ],
+    "Language": "Python",
+    "Stars": 1056,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-12-20T18:41:48Z",
+    "UpdatedAt": "2026-05-27T06:03:50Z",
+    "Owner": "qualcomm",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "SunOner/sunone_aimbot",
+    "Name": "sunone_aimbot",
+    "Url": "https://github.com/SunOner/sunone_aimbot",
+    "Description": "Aim-bot based on AI for all FPS games",
+    "Topics": [
+      "ai",
+      "ai-aimbot",
+      "aimbot",
+      "cs2",
+      "deadlock",
+      "destiny2",
+      "detection",
+      "finals",
+      "fortnite",
+      "gpu",
+      "nvidia",
+      "onnx",
+      "pubg",
+      "python",
+      "tensorrt",
+      "ultralytics",
+      "warface",
+      "yolo12",
+      "yolov10",
+      "yolov8"
+    ],
+    "Language": "Python",
+    "Stars": 904,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-10-16T11:32:57Z",
+    "UpdatedAt": "2026-05-27T06:43:55Z",
+    "Owner": "SunOner",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Datalux/Osintgram",
+    "Name": "Osintgram",
+    "Url": "https://github.com/Datalux/Osintgram",
+    "Description": "Osintgram is a OSINT tool on Instagram. It offers an interactive shell to perform analysis on Instagram account of any users by its nickname",
+    "Topics": [
+      "analysis",
+      "hacking",
+      "information-gathering",
+      "instagram",
+      "instagram-account",
+      "instagram-api",
+      "nickname",
+      "osint",
+      "osint-python",
+      "penetration-testing",
+      "python",
+      "python3",
+      "tool"
+    ],
+    "Language": "Python",
+    "Stars": 12944,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2019-06-07T23:23:40Z",
+    "UpdatedAt": "2026-05-27T07:36:39Z",
+    "Owner": "Datalux",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "docling-project/docling",
+    "Name": "docling",
+    "Url": "https://github.com/docling-project/docling",
+    "Description": "Get your documents ready for gen AI",
+    "Topics": [
+      "ai",
+      "convert",
+      "document-parser",
+      "document-parsing",
+      "documents",
+      "docx",
+      "html",
+      "markdown",
+      "pdf",
+      "pdf-converter",
+      "pdf-to-json",
+      "pdf-to-text",
+      "pptx",
+      "tables",
+      "xlsx"
+    ],
+    "Language": "Python",
+    "Stars": 60436,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-07-09T07:50:26Z",
+    "UpdatedAt": "2026-05-27T07:53:15Z",
+    "Owner": "docling-project",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "521xueweihan/HelloGitHub",
+    "Name": "HelloGitHub",
+    "Url": "https://github.com/521xueweihan/HelloGitHub",
+    "Description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
+    "Topics": [
+      "awesome",
+      "github",
+      "hellogithub",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 158828,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2016-05-04T06:24:11Z",
+    "UpdatedAt": "2026-05-27T07:55:04Z",
+    "Owner": "521xueweihan",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "sansan0/TrendRadar",
+    "Name": "TrendRadar",
+    "Url": "https://github.com/sansan0/TrendRadar",
+    "Description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。",
+    "Topics": [
+      "ai",
+      "bark",
+      "data-analysis",
+      "docker",
+      "hot-news",
+      "llm",
+      "mail",
+      "mcp",
+      "mcp-server",
+      "news",
+      "ntfy",
+      "python",
+      "rss",
+      "trending-topics",
+      "wechat",
+      "wework"
+    ],
+    "Language": "Python",
+    "Stars": 58414,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-04-28T11:42:16Z",
+    "UpdatedAt": "2026-05-27T07:54:29Z",
+    "Owner": "sansan0",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Tianxiaomo/pytorch-YOLOv4",
+    "Name": "pytorch-YOLOv4",
+    "Url": "https://github.com/Tianxiaomo/pytorch-YOLOv4",
+    "Description": "PyTorch ,ONNX and TensorRT implementation of YOLOv4",
+    "Topics": [
+      "darknet2onnx",
+      "darknet2pytorch",
+      "onnx",
+      "pytorch",
+      "pytorch-yolov4",
+      "tensorrt",
+      "yolov3",
+      "yolov4",
+      "yolov4-tiny"
+    ],
+    "Language": "Python",
+    "Stars": 4529,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-04-25T10:11:33Z",
+    "UpdatedAt": "2026-05-27T06:22:26Z",
+    "Owner": "Tianxiaomo",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "openinterpreter/open-interpreter",
+    "Name": "open-interpreter",
+    "Url": "https://github.com/openinterpreter/open-interpreter",
+    "Description": "A natural language interface for computers",
+    "Topics": [
+      "chatgpt",
+      "gpt-4",
+      "interpreter",
+      "javascript",
+      "nodejs",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 63697,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-07-14T07:10:44Z",
+    "UpdatedAt": "2026-05-27T07:44:08Z",
+    "Owner": "openinterpreter",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "TransformerOptimus/SuperAGI",
+    "Name": "SuperAGI",
+    "Url": "https://github.com/TransformerOptimus/SuperAGI",
+    "Description": "<⚡️> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & run useful autonomous agents quickly and reliably.",
+    "Topics": [
+      "agents",
+      "agi",
+      "ai",
+      "artificial-general-intelligence",
+      "artificial-intelligence",
+      "autonomous-agents",
+      "gpt-4",
+      "hacktoberfest",
+      "llm",
+      "llmops",
+      "nextjs",
+      "openai",
+      "pinecone",
+      "python",
+      "superagi"
+    ],
+    "Language": "Python",
+    "Stars": 17535,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-05-13T08:55:24Z",
+    "UpdatedAt": "2026-05-27T07:19:57Z",
+    "Owner": "TransformerOptimus",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "PeterL1n/RobustVideoMatting",
+    "Name": "RobustVideoMatting",
+    "Url": "https://github.com/PeterL1n/RobustVideoMatting",
+    "Description": "Robust Video Matting in PyTorch, TensorFlow, TensorFlow.js, ONNX, CoreML!",
+    "Topics": [
+      "ai",
+      "computer-vision",
+      "deep-learning",
+      "machine-learning",
+      "matting"
+    ],
+    "Language": "Python",
+    "Stars": 9370,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-08-30T20:57:44Z",
+    "UpdatedAt": "2026-05-26T13:41:06Z",
+    "Owner": "PeterL1n",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "freqtrade/freqtrade",
+    "Name": "freqtrade",
+    "Url": "https://github.com/freqtrade/freqtrade",
+    "Description": "Free, open source crypto trading bot",
+    "Topics": [
+      "algorithmic-trading",
+      "bitcoin",
+      "cryptocurrencies",
+      "cryptocurrency",
+      "freqtrade",
+      "python",
+      "telegram-bot",
+      "trade",
+      "trading-bot"
+    ],
+    "Language": "Python",
+    "Stars": 50807,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-05-17T23:48:53Z",
+    "UpdatedAt": "2026-05-27T07:43:07Z",
+    "Owner": "freqtrade",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "camel-ai/camel",
+    "Name": "camel",
+    "Url": "https://github.com/camel-ai/camel",
+    "Description": "🐫 CAMEL: The first and the best multi-agent framework. Finding the Scaling Law of Agents. https://www.camel-ai.org",
+    "Topics": [
+      "agent",
+      "ai-societies",
+      "artificial-intelligence",
+      "communicative-ai",
+      "cooperative-ai",
+      "deep-learning",
+      "large-language-models",
+      "multi-agent-systems",
+      "natural-language-processing"
+    ],
+    "Language": "Python",
+    "Stars": 17065,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-03-17T21:41:54Z",
+    "UpdatedAt": "2026-05-27T07:50:59Z",
+    "Owner": "camel-ai",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "AsyncFuncAI/deepwiki-open",
+    "Name": "deepwiki-open",
+    "Url": "https://github.com/AsyncFuncAI/deepwiki-open",
+    "Description": "Open Source DeepWiki: AI-Powered Wiki Generator for GitHub/Gitlab/Bitbucket Repositories. Join the discord: https://discord.gg/gMwThUMeme",
+    "Topics": [
+      "ai",
+      "codex",
+      "gemini",
+      "github",
+      "grok-cli",
+      "ollama",
+      "open-source",
+      "openai",
+      "openrouter",
+      "self-hosted",
+      "wiki"
+    ],
+    "Language": "Python",
+    "Stars": 16584,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-04-30T06:01:29Z",
+    "UpdatedAt": "2026-05-27T07:40:27Z",
+    "Owner": "AsyncFuncAI",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "bentoml/OpenLLM",
+    "Name": "OpenLLM",
+    "Url": "https://github.com/bentoml/OpenLLM",
+    "Description": "Run any open-source LLMs, such as DeepSeek and Llama, as OpenAI compatible API endpoint in the cloud.",
+    "Topics": [
+      "bentoml",
+      "fine-tuning",
+      "llama",
+      "llama2",
+      "llama3-1",
+      "llama3-2",
+      "llama3-2-vision",
+      "llm",
+      "llm-inference",
+      "llm-ops",
+      "llm-serving",
+      "llmops",
+      "mistral",
+      "mlops",
+      "model-inference",
+      "open-source-llm",
+      "openllm",
+      "vicuna"
+    ],
+    "Language": "Python",
+    "Stars": 12335,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-04-19T00:27:52Z",
+    "UpdatedAt": "2026-05-27T06:42:33Z",
+    "Owner": "bentoml",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "rwightman/gen-efficientnet-pytorch",
+    "Name": "gen-efficientnet-pytorch",
+    "Url": "https://github.com/rwightman/gen-efficientnet-pytorch",
+    "Description": "Pretrained EfficientNet, EfficientNet-Lite, MixNet, MobileNetV3 / V2, MNASNet A1 and B1, FBNet, Single-Path NAS",
+    "Topics": [
+      "caffe2",
+      "efficientnet",
+      "fbnet",
+      "mnasnet",
+      "mobilenetv3",
+      "onnx",
+      "pretrained-models",
+      "pytorch"
+    ],
+    "Language": "Python",
+    "Stars": 1582,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2019-05-11T19:35:56Z",
+    "UpdatedAt": "2026-05-26T23:31:18Z",
+    "Owner": "rwightman",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "HKUDS/nanobot",
+    "Name": "nanobot",
+    "Url": "https://github.com/HKUDS/nanobot",
+    "Description": "Lightweight, open-source AI agent for your tools, chats, and workflows.",
+    "Topics": [
+      "ai",
+      "ai-agent",
+      "ai-agents",
+      "anthropic",
+      "chatgpt",
+      "claude",
+      "claude-code",
+      "codex",
+      "codex-cli",
+      "llm",
+      "nanobot",
+      "openai",
+      "openclaw"
+    ],
+    "Language": "Python",
+    "Stars": 43230,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2026-02-01T07:16:15Z",
+    "UpdatedAt": "2026-05-27T07:50:28Z",
+    "Owner": "HKUDS",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "1Panel-dev/MaxKB",
+    "Name": "MaxKB",
+    "Url": "https://github.com/1Panel-dev/MaxKB",
+    "Description": "🔥 MaxKB is an open-source platform for building enterprise-grade agents.  强大易用的开源企业级智能体平台。",
+    "Topics": [
+      "agent",
+      "agentic-ai",
+      "chatbot",
+      "deepseek-r1",
+      "knowledgebase",
+      "langchain",
+      "llama3",
+      "llm",
+      "maxkb",
+      "mcp-server",
+      "ollama",
+      "pgvector",
+      "qwen3",
+      "rag"
+    ],
+    "Language": "Python",
+    "Stars": 21073,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-09-14T02:05:12Z",
+    "UpdatedAt": "2026-05-27T07:49:20Z",
+    "Owner": "1Panel-dev",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "voxel51/fiftyone",
+    "Name": "fiftyone",
+    "Url": "https://github.com/voxel51/fiftyone",
+    "Description": "Refine high-quality datasets and visual AI models",
+    "Topics": [
+      "active-learning",
+      "artificial-intelligence",
+      "computer-vision",
+      "data-centric-ai",
+      "data-cleaning",
+      "data-curation",
+      "data-quality",
+      "data-science",
+      "deep-learning",
+      "developer-tools",
+      "image-classification",
+      "machine-learning",
+      "object-detection",
+      "python",
+      "unstructured-data",
+      "vector-search",
+      "visualization"
+    ],
+    "Language": "Python",
+    "Stars": 10734,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-04-22T13:43:28Z",
+    "UpdatedAt": "2026-05-27T08:00:28Z",
+    "Owner": "voxel51",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "zhayujie/CowAgent",
+    "Name": "CowAgent",
+    "Url": "https://github.com/zhayujie/CowAgent",
+    "Description": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, autonomously grows with memory and knowledge. Multi-model, multi-channel. Lightweight, extensible, one-line install (formerly chatgpt-on-wechat).",
+    "Topics": [
+      "ai",
+      "ai-agent",
+      "ai-agents",
+      "chatgpt-on-wechat",
+      "claude",
+      "claude-code",
+      "codex",
+      "cowagent",
+      "deepseek",
+      "harness",
+      "llm",
+      "mcp",
+      "multi-agent",
+      "openai",
+      "openclaw",
+      "skills"
+    ],
+    "Language": "Python",
+    "Stars": 44880,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-08-07T08:33:41Z",
+    "UpdatedAt": "2026-05-27T07:42:16Z",
+    "Owner": "zhayujie",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "666DZY666/micronet",
+    "Name": "micronet",
+    "Url": "https://github.com/666DZY666/micronet",
+    "Description": "micronet, a model compression and deploy lib. compression: 1、quantization: quantization-aware-training(QAT), High-Bit(>2b)(DoReFa/Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference)、Low-Bit(≤2b)/Ternary and Binary(TWN/BNN/XNOR-Net); post-training-quantization(PTQ), 8-bit(tensorrt); 2、 pruning: normal、regular and group convolutional channel pruning; 3、 group convolution structure; 4、batch-normalization fuse for quantization. deploy: tensorrt, fp32/fp16/int8(ptq-calibration)、op-adapt(upsample)、dynamic_shape",
+    "Topics": [
+      "batch-normalization-fuse",
+      "bnn",
+      "convolutional-networks",
+      "dorefa",
+      "group-convolution",
+      "integer-arithmetic-only",
+      "model-compression",
+      "network-in-network",
+      "network-slimming",
+      "neuromorphic-computing",
+      "onnx",
+      "post-training-quantization",
+      "pruning",
+      "pytorch",
+      "quantization",
+      "quantization-aware-training",
+      "tensorrt",
+      "tensorrt-int8-python",
+      "twn",
+      "xnor-net"
+    ],
+    "Language": "Python",
+    "Stars": 2270,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2019-12-04T15:56:29Z",
+    "UpdatedAt": "2026-05-26T15:06:14Z",
+    "Owner": "666DZY666",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "SciPhi-AI/R2R",
+    "Name": "R2R",
+    "Url": "https://github.com/SciPhi-AI/R2R",
+    "Description": "SoTA production-ready AI retrieval system. Agentic Retrieval-Augmented Generation (RAG) with a RESTful API.",
+    "Topics": [
+      "artificial-intelligence",
+      "large-language-models",
+      "python",
+      "question-answering",
+      "rag",
+      "retrieval-augmented-generation",
+      "retrieval-systems",
+      "search"
+    ],
+    "Language": "Python",
+    "Stars": 7856,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-02-12T03:24:27Z",
+    "UpdatedAt": "2026-05-27T03:52:13Z",
+    "Owner": "SciPhi-AI",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Aesthisia/LLMinator",
+    "Name": "LLMinator",
+    "Url": "https://github.com/Aesthisia/LLMinator",
+    "Description": "Gradio based tool to run opensource LLM models directly from Huggingface",
+    "Topics": [
+      "chatbot",
+      "cpu",
+      "cuda",
+      "gguf",
+      "gradio",
+      "huggingface",
+      "langchain",
+      "llama-cpp-python",
+      "llamacpp",
+      "llm",
+      "llm-inference",
+      "model-conversion",
+      "ollama",
+      "openai",
+      "opensource",
+      "python",
+      "safetensors",
+      "streaming",
+      "websockets-chat"
+    ],
+    "Language": "Python",
+    "Stars": 99,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-03-28T13:56:14Z",
+    "UpdatedAt": "2026-04-28T18:58:13Z",
+    "Owner": "Aesthisia",
+    "SourceQueries": [
+      "topic:model-conversion language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "camel-ai/owl",
+    "Name": "owl",
+    "Url": "https://github.com/camel-ai/owl",
+    "Description": "🦉 OWL: Optimized Workforce Learning for General Multi-Agent Assistance in Real-World Task Automation",
+    "Topics": [
+      "agent",
+      "artificial-intelligence",
+      "multi-agent-systems",
+      "task-automation",
+      "web-interaction"
+    ],
+    "Language": "Python",
+    "Stars": 19803,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-03-03T15:42:51Z",
+    "UpdatedAt": "2026-05-27T01:14:45Z",
+    "Owner": "camel-ai",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "zai-org/ChatGLM-6B",
+    "Name": "ChatGLM-6B",
+    "Url": "https://github.com/zai-org/ChatGLM-6B",
+    "Description": "ChatGLM-6B: An Open Bilingual Dialogue Language Model | 开源双语对话语言模型",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 41080,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-03-13T12:00:18Z",
+    "UpdatedAt": "2026-05-27T06:37:35Z",
+    "Owner": "zai-org",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "OpenPPL/ppq",
+    "Name": "ppq",
+    "Url": "https://github.com/OpenPPL/ppq",
+    "Description": "PPL Quantization Tool (PPQ) is a powerful offline neural network quantization tool.",
+    "Topics": [
+      "caffe",
+      "cuda",
+      "deep-learning",
+      "neural-network",
+      "onnx",
+      "open-source",
+      "pytorch",
+      "quantization"
+    ],
+    "Language": "Python",
+    "Stars": 1799,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-12-30T11:19:31Z",
+    "UpdatedAt": "2026-05-24T06:41:38Z",
+    "Owner": "OpenPPL",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Djdefrag/QualityScaler",
+    "Name": "QualityScaler",
+    "Url": "https://github.com/Djdefrag/QualityScaler",
+    "Description": "QualityScaler - image/video AI upscaler app",
+    "Topics": [
+      "amd",
+      "anime",
+      "compression-artifact-reduction",
+      "deep-learning",
+      "directx-12",
+      "gui-application",
+      "intel",
+      "manga",
+      "noise-reduction",
+      "nvidia",
+      "onnx",
+      "onnxruntime",
+      "opencv",
+      "python",
+      "python3",
+      "pytorch",
+      "super-resolution",
+      "video",
+      "video-processing",
+      "windows"
+    ],
+    "Language": "Python",
+    "Stars": 3078,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-04-03T14:42:56Z",
+    "UpdatedAt": "2026-05-26T01:35:49Z",
+    "Owner": "Djdefrag",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "jina-ai/clip-as-service",
+    "Name": "clip-as-service",
+    "Url": "https://github.com/jina-ai/clip-as-service",
+    "Description": "🏄 Scalable embedding, reasoning, ranking for images and sentences with CLIP",
+    "Topics": [
+      "bert",
+      "bert-as-service",
+      "clip-as-service",
+      "clip-model",
+      "cross-modal-retrieval",
+      "cross-modality",
+      "deep-learning",
+      "image2vec",
+      "multi-modality",
+      "neural-search",
+      "onnx",
+      "openai",
+      "pytorch",
+      "sentence-encoding",
+      "sentence2vec"
+    ],
+    "Language": "Python",
+    "Stars": 12832,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2018-11-12T10:48:50Z",
+    "UpdatedAt": "2026-05-24T17:36:19Z",
+    "Owner": "jina-ai",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "AstrBotDevs/AstrBot",
+    "Name": "AstrBot",
+    "Url": "https://github.com/AstrBotDevs/AstrBot",
+    "Description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
+    "Topics": [
+      "agent",
+      "ai",
+      "chatbot",
+      "chatgpt",
+      "discord",
+      "docker",
+      "gemini",
+      "gpt",
+      "llama",
+      "llm",
+      "mcp",
+      "openai",
+      "python",
+      "qq",
+      "qqbot",
+      "telegram"
+    ],
+    "Language": "Python",
+    "Stars": 33202,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-12-08T13:27:46Z",
+    "UpdatedAt": "2026-05-27T07:40:44Z",
+    "Owner": "AstrBotDevs",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "mindsdb/minds-platform",
+    "Name": "minds-platform",
+    "Url": "https://github.com/mindsdb/minds-platform",
+    "Description": "Platform dedicated to building an open foundation for applied Artificial Intelligence, designed for people seeking production-ready AI systems they can truly control, extend and deploy anywhere.",
+    "Topics": [
+      "agents",
+      "ai",
+      "analytics",
+      "artificial-inteligence",
+      "bigquery",
+      "business-intelligence",
+      "databases",
+      "hacktoberfest",
+      "llms",
+      "mcp",
+      "mssql",
+      "mysql",
+      "postgresql",
+      "rag"
+    ],
+    "Language": "Python",
+    "Stars": 39207,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2018-08-02T17:56:45Z",
+    "UpdatedAt": "2026-05-27T03:06:31Z",
+    "Owner": "mindsdb",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "google-deepmind/sonnet",
+    "Name": "sonnet",
+    "Url": "https://github.com/google-deepmind/sonnet",
+    "Description": "TensorFlow-based neural network library",
+    "Topics": [
+      "artificial-intelligence",
+      "deep-learning",
+      "machine-learning",
+      "neural-networks",
+      "tensorflow"
+    ],
+    "Language": "Python",
+    "Stars": 9917,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-04-03T11:34:35Z",
+    "UpdatedAt": "2026-05-25T10:56:31Z",
+    "Owner": "google-deepmind",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "unslothai/unsloth",
+    "Name": "unsloth",
+    "Url": "https://github.com/unslothai/unsloth",
+    "Description": "Unsloth Studio is a web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally.",
+    "Topics": [
+      "agent",
+      "deepseek",
+      "fine-tuning",
+      "gemma",
+      "gemma3",
+      "gpt-oss",
+      "llama",
+      "llama3",
+      "llm",
+      "llms",
+      "mistral",
+      "openai",
+      "qwen",
+      "reinforcement-learning",
+      "self-hosted",
+      "text-to-speech",
+      "tts",
+      "ui",
+      "unsloth"
+    ],
+    "Language": "Python",
+    "Stars": 65190,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-11-29T16:50:09Z",
+    "UpdatedAt": "2026-05-27T07:57:41Z",
+    "Owner": "unslothai",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "FoundationAgents/OpenManus",
+    "Name": "OpenManus",
+    "Url": "https://github.com/FoundationAgents/OpenManus",
+    "Description": "No fortress, purely open ground.  OpenManus is Coming.",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 56376,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-03-06T14:08:14Z",
+    "UpdatedAt": "2026-05-27T07:58:02Z",
+    "Owner": "FoundationAgents",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "NousResearch/hermes-agent",
+    "Name": "hermes-agent",
+    "Url": "https://github.com/NousResearch/hermes-agent",
+    "Description": "The agent that grows with you",
+    "Topics": [
+      "ai",
+      "ai-agent",
+      "ai-agents",
+      "anthropic",
+      "chatgpt",
+      "claude",
+      "claude-code",
+      "clawdbot",
+      "codex",
+      "hermes",
+      "hermes-agent",
+      "llm",
+      "moltbot",
+      "nous-research",
+      "openai",
+      "openclaw"
+    ],
+    "Language": "Python",
+    "Stars": 169317,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-07-22T22:22:28Z",
+    "UpdatedAt": "2026-05-27T08:00:18Z",
+    "Owner": "NousResearch",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "lucidrains/vit-pytorch",
+    "Name": "vit-pytorch",
+    "Url": "https://github.com/lucidrains/vit-pytorch",
+    "Description": "Implementation of Vision Transformer, a simple way to achieve SOTA in vision classification with only a single transformer encoder, in Pytorch",
+    "Topics": [
+      "artificial-intelligence",
+      "attention-mechanism",
+      "computer-vision",
+      "image-classification",
+      "transformers"
+    ],
+    "Language": "Python",
+    "Stars": 25208,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-10-03T22:47:24Z",
+    "UpdatedAt": "2026-05-27T03:06:27Z",
+    "Owner": "lucidrains",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "alirezamika/autoscraper",
+    "Name": "autoscraper",
+    "Url": "https://github.com/alirezamika/autoscraper",
+    "Description": "A Smart, Automatic, Fast and Lightweight Web Scraper for Python",
+    "Topics": [
+      "ai",
+      "artificial-intelligence",
+      "automation",
+      "crawler",
+      "machine-learning",
+      "python",
+      "scrape",
+      "scraper",
+      "scraping",
+      "web-scraping",
+      "webautomation",
+      "webscraping"
+    ],
+    "Language": "Python",
+    "Stars": 7178,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-08-31T12:02:19Z",
+    "UpdatedAt": "2026-05-27T06:09:44Z",
+    "Owner": "alirezamika",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "langchain-ai/deepagents",
+    "Name": "deepagents",
+    "Url": "https://github.com/langchain-ai/deepagents",
+    "Description": "The batteries-included agent harness.",
+    "Topics": [
+      "ai",
+      "deepagents",
+      "langchain",
+      "langgraph",
+      "python",
+      "typescript"
+    ],
+    "Language": "Python",
+    "Stars": 23406,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-07-27T23:07:53Z",
+    "UpdatedAt": "2026-05-27T07:54:18Z",
+    "Owner": "langchain-ai",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "huggingface/open-r1",
+    "Name": "open-r1",
+    "Url": "https://github.com/huggingface/open-r1",
+    "Description": "Fully open reproduction of DeepSeek-R1",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 26020,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-01-24T15:44:11Z",
+    "UpdatedAt": "2026-05-26T23:31:24Z",
+    "Owner": "huggingface",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "ultralytics/yolov5",
+    "Name": "yolov5",
+    "Url": "https://github.com/ultralytics/yolov5",
+    "Description": "YOLOv5 🚀 in PyTorch > ONNX > CoreML > TFLite",
+    "Topics": [
+      "coreml",
+      "deep-learning",
+      "ios",
+      "machine-learning",
+      "ml",
+      "object-detection",
+      "onnx",
+      "pytorch",
+      "tflite",
+      "ultralytics",
+      "yolo",
+      "yolov3",
+      "yolov5"
+    ],
+    "Language": "Python",
+    "Stars": 57446,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-05-18T03:45:11Z",
+    "UpdatedAt": "2026-05-27T06:50:41Z",
+    "Owner": "ultralytics",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "kyegomez/swarms",
+    "Name": "swarms",
+    "Url": "https://github.com/kyegomez/swarms",
+    "Description": "The Enterprise-Grade Production-Ready Multi-Agent Orchestration Framework. Website: https://swarms.ai",
+    "Topics": [
+      "agentic-ai",
+      "agentic-workflow",
+      "agents",
+      "ai",
+      "artificial-intelligence",
+      "chatgpt",
+      "claude-code",
+      "gpt4all",
+      "huggingface",
+      "langchain",
+      "langchain-python",
+      "machine-learning",
+      "multi-agent-systems",
+      "prompt-engineering",
+      "prompt-toolkit",
+      "prompting",
+      "swarms",
+      "tree-of-thoughts"
+    ],
+    "Language": "Python",
+    "Stars": 6749,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-05-11T01:09:00Z",
+    "UpdatedAt": "2026-05-27T07:32:27Z",
+    "Owner": "kyegomez",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "microsoft/Bringing-Old-Photos-Back-to-Life",
+    "Name": "Bringing-Old-Photos-Back-to-Life",
+    "Url": "https://github.com/microsoft/Bringing-Old-Photos-Back-to-Life",
+    "Description": "Bringing Old Photo Back to Life (CVPR 2020 oral)",
+    "Topics": [
+      "gans",
+      "generative-adversarial-network",
+      "image-manipulation",
+      "image-restoration",
+      "old-photo-restoration",
+      "photo-restoration",
+      "photos",
+      "pytorch"
+    ],
+    "Language": "Python",
+    "Stars": 15689,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-06-24T06:37:58Z",
+    "UpdatedAt": "2026-05-25T10:12:59Z",
+    "Owner": "microsoft",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "github/spec-kit",
+    "Name": "spec-kit",
+    "Url": "https://github.com/github/spec-kit",
+    "Description": "💫 Toolkit to help you get started with Spec-Driven Development",
+    "Topics": [
+      "ai",
+      "copilot",
+      "development",
+      "engineering",
+      "prd",
+      "spec",
+      "spec-driven"
+    ],
+    "Language": "Python",
+    "Stars": 106275,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-08-21T22:54:31Z",
+    "UpdatedAt": "2026-05-27T08:01:03Z",
+    "Owner": "github",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "harry0703/MoneyPrinterTurbo",
+    "Name": "MoneyPrinterTurbo",
+    "Url": "https://github.com/harry0703/MoneyPrinterTurbo",
+    "Description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+    "Topics": [
+      "ai",
+      "automation",
+      "chatgpt",
+      "moviepy",
+      "python",
+      "shortvideo",
+      "tiktok"
+    ],
+    "Language": "Python",
+    "Stars": 59997,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-03-11T02:57:34Z",
+    "UpdatedAt": "2026-05-27T08:01:21Z",
+    "Owner": "harry0703",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "TachibanaYoshino/AnimeGANv3",
+    "Name": "AnimeGANv3",
+    "Url": "https://github.com/TachibanaYoshino/AnimeGANv3",
+    "Description": "Use AnimeGANv3 to make your own animation works, including turning photos or videos into anime.",
+    "Topics": [
+      "animegan",
+      "animeganv2",
+      "animeganv3",
+      "colab",
+      "coreml",
+      "huggingface",
+      "onnx",
+      "tensorflow",
+      "tflite"
+    ],
+    "Language": "Python",
+    "Stars": 2012,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-12-16T06:53:39Z",
+    "UpdatedAt": "2026-05-24T01:25:41Z",
+    "Owner": "TachibanaYoshino",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "microsoft/MMdnn",
+    "Name": "MMdnn",
+    "Url": "https://github.com/microsoft/MMdnn",
+    "Description": "MMdnn is a set of tools to help users inter-operate among different deep learning frameworks. E.g. model conversion and visualization. Convert models between Caffe, Keras, MXNet, Tensorflow, CNTK, PyTorch Onnx and CoreML.",
+    "Topics": [
+      "caffe",
+      "cntk",
+      "coreml",
+      "darknet",
+      "keras",
+      "model-converter",
+      "mxnet",
+      "onnx",
+      "pytorch",
+      "tensorflow",
+      "visualization"
+    ],
+    "Language": "Python",
+    "Stars": 5807,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-08-16T08:03:52Z",
+    "UpdatedAt": "2026-05-26T15:52:37Z",
+    "Owner": "microsoft",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Lightning-AI/pytorch-lightning",
+    "Name": "pytorch-lightning",
+    "Url": "https://github.com/Lightning-AI/pytorch-lightning",
+    "Description": "Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes.",
+    "Topics": [
+      "ai",
+      "artificial-intelligence",
+      "data-science",
+      "deep-learning",
+      "machine-learning",
+      "python",
+      "pytorch"
+    ],
+    "Language": "Python",
+    "Stars": 31159,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2019-03-31T00:45:57Z",
+    "UpdatedAt": "2026-05-27T07:11:17Z",
+    "Owner": "Lightning-AI",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Ki6an/fastT5",
+    "Name": "fastT5",
+    "Url": "https://github.com/Ki6an/fastT5",
+    "Description": "⚡ boost inference speed of T5 models by 5x & reduce the model size by 3x.",
+    "Topics": [
+      "deep-learning",
+      "fast",
+      "fastt5",
+      "inference",
+      "inference-speed",
+      "nlp",
+      "onnx",
+      "onnxruntime",
+      "python",
+      "pytorch",
+      "quantization",
+      "quantized-onnx-models",
+      "question-answering",
+      "t5",
+      "transformer",
+      "translation"
+    ],
+    "Language": "Python",
+    "Stars": 588,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-03-11T08:46:42Z",
+    "UpdatedAt": "2026-04-21T02:45:20Z",
+    "Owner": "Ki6an",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "hpcaitech/Open-Sora",
+    "Name": "Open-Sora",
+    "Url": "https://github.com/hpcaitech/Open-Sora",
+    "Description": "Open-Sora: Democratizing Efficient Video Production for All",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 29021,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-02-20T03:01:34Z",
+    "UpdatedAt": "2026-05-27T03:35:31Z",
+    "Owner": "hpcaitech",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "PaddlePaddle/X2Paddle",
+    "Name": "X2Paddle",
+    "Url": "https://github.com/PaddlePaddle/X2Paddle",
+    "Description": "Deep learning model converter for PaddlePaddle. (『飞桨』深度学习模型转换工具)",
+    "Topics": [
+      "caffe",
+      "model-converter",
+      "onnx",
+      "paddlepaddle",
+      "pytorch",
+      "tensorflow",
+      "x2paddle-model-zoo"
+    ],
+    "Language": "Python",
+    "Stars": 771,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2019-01-09T05:46:03Z",
+    "UpdatedAt": "2026-05-25T12:11:14Z",
+    "Owner": "PaddlePaddle",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "cleardusk/3DDFA_V2",
+    "Name": "3DDFA_V2",
+    "Url": "https://github.com/cleardusk/3DDFA_V2",
+    "Description": "The official PyTorch implementation of Towards Fast, Accurate and Stable 3D Dense Face Alignment, ECCV 2020.",
+    "Topics": [
+      "3d",
+      "3d-face",
+      "3d-face-alignment",
+      "3d-landmarks",
+      "3dmm",
+      "alignment",
+      "computer-vision",
+      "eccv",
+      "eccv-2020",
+      "face-alignment",
+      "onnx",
+      "pytorch",
+      "single-image-reconstruction"
+    ],
+    "Language": "Python",
+    "Stars": 3134,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-08-25T09:25:30Z",
+    "UpdatedAt": "2026-05-21T03:44:08Z",
+    "Owner": "cleardusk",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "NeptuneHub/AudioMuse-AI",
+    "Name": "AudioMuse-AI",
+    "Url": "https://github.com/NeptuneHub/AudioMuse-AI",
+    "Description": "AudioMuse-AI is a self-hosted, Dockerized music playlist generator using sonic analysis to discover related tracks for Jellyfin, Navidrome, LMS, Lyrion, and Emby: no metadata or external APIs needed.",
+    "Topics": [
+      "clap",
+      "docker",
+      "emby",
+      "jellyfin",
+      "jellyfin-plugin",
+      "k3s",
+      "kubernetes",
+      "librosa",
+      "llm",
+      "lyrion",
+      "music",
+      "navidrome",
+      "ollama",
+      "onnx",
+      "open-source",
+      "open-source-project",
+      "playlist",
+      "self-hosted",
+      "smart-playlists",
+      "sonic-analysis"
+    ],
+    "Language": "Python",
+    "Stars": 1799,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-05-24T08:12:12Z",
+    "UpdatedAt": "2026-05-27T07:45:56Z",
+    "Owner": "NeptuneHub",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "open-webui/open-webui",
+    "Name": "open-webui",
+    "Url": "https://github.com/open-webui/open-webui",
+    "Description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+    "Topics": [
+      "ai",
+      "llm",
+      "llm-ui",
+      "llm-webui",
+      "llms",
+      "mcp",
+      "ollama",
+      "ollama-webui",
+      "open-webui",
+      "openai",
+      "openapi",
+      "rag",
+      "self-hosted",
+      "ui",
+      "webui"
+    ],
+    "Language": "Python",
+    "Stars": 138828,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-10-06T22:08:27Z",
+    "UpdatedAt": "2026-05-27T07:59:17Z",
+    "Owner": "open-webui",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "lucidrains/imagen-pytorch",
+    "Name": "imagen-pytorch",
+    "Url": "https://github.com/lucidrains/imagen-pytorch",
+    "Description": "Implementation of Imagen, Google's Text-to-Image Neural Network, in Pytorch",
+    "Topics": [
+      "artificial-intelligence",
+      "deep-learning",
+      "imagination-machine",
+      "text-to-image",
+      "text-to-video"
+    ],
+    "Language": "Python",
+    "Stars": 8406,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-05-23T22:06:13Z",
+    "UpdatedAt": "2026-05-25T07:01:43Z",
+    "Owner": "lucidrains",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "deeppavlov/DeepPavlov",
+    "Name": "DeepPavlov",
+    "Url": "https://github.com/deeppavlov/DeepPavlov",
+    "Description": "An open source library for deep learning end-to-end dialog systems and chatbots.",
+    "Topics": [
+      "ai",
+      "artificial-intelligence",
+      "bot",
+      "chatbot",
+      "chitchat",
+      "deep-learning",
+      "deep-neural-networks",
+      "dialogue-agents",
+      "dialogue-manager",
+      "dialogue-systems",
+      "entity-extraction",
+      "intent-classification",
+      "intent-detection",
+      "machine-learning",
+      "named-entity-recognition",
+      "nlp",
+      "nlp-machine-learning",
+      "question-answering",
+      "slot-filling",
+      "tensorflow"
+    ],
+    "Language": "Python",
+    "Stars": 6984,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-11-17T14:35:29Z",
+    "UpdatedAt": "2026-05-22T22:24:23Z",
+    "Owner": "deeppavlov",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Pythagora-io/gpt-pilot",
+    "Name": "gpt-pilot",
+    "Url": "https://github.com/Pythagora-io/gpt-pilot",
+    "Description": "The first real AI developer",
+    "Topics": [
+      "ai",
+      "codegen",
+      "coding-assistant",
+      "developer-tools",
+      "gpt-4",
+      "research-project"
+    ],
+    "Language": "Python",
+    "Stars": 33764,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-08-16T11:56:07Z",
+    "UpdatedAt": "2026-05-26T15:22:06Z",
+    "Owner": "Pythagora-io",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "mlflow/mlflow",
+    "Name": "mlflow",
+    "Url": "https://github.com/mlflow/mlflow",
+    "Description": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+    "Topics": [
+      "agentops",
+      "agents",
+      "ai",
+      "ai-governance",
+      "apache-spark",
+      "evaluation",
+      "langchain",
+      "llm-evaluation",
+      "llmops",
+      "machine-learning",
+      "ml",
+      "mlflow",
+      "mlops",
+      "model-management",
+      "observability",
+      "open-source",
+      "openai",
+      "prompt-engineering"
+    ],
+    "Language": "Python",
+    "Stars": 26137,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2018-06-05T16:05:58Z",
+    "UpdatedAt": "2026-05-27T07:58:18Z",
+    "Owner": "mlflow",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "openvinotoolkit/nncf",
+    "Name": "nncf",
+    "Url": "https://github.com/openvinotoolkit/nncf",
+    "Description": "Neural Network Compression Framework for enhanced OpenVINO™ inference",
+    "Topics": [
+      "bert",
+      "classification",
+      "compression",
+      "deep-learning",
+      "genai",
+      "llm",
+      "mixed-precision-training",
+      "nlp",
+      "object-detection",
+      "onnx",
+      "openvino",
+      "pruning",
+      "pytorch",
+      "quantization",
+      "quantization-aware-training",
+      "semantic-segmentation",
+      "sparsity",
+      "tensorflow",
+      "transformers"
+    ],
+    "Language": "Python",
+    "Stars": 1167,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-05-13T16:41:05Z",
+    "UpdatedAt": "2026-05-27T00:59:12Z",
+    "Owner": "openvinotoolkit",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "lucidrains/PaLM-rlhf-pytorch",
+    "Name": "PaLM-rlhf-pytorch",
+    "Url": "https://github.com/lucidrains/PaLM-rlhf-pytorch",
+    "Description": "Implementation of RLHF (Reinforcement Learning with Human Feedback) on top of the PaLM architecture. Basically ChatGPT but with PaLM",
+    "Topics": [
+      "artificial-intelligence",
+      "attention-mechanisms",
+      "deep-learning",
+      "human-feedback",
+      "reinforcement-learning",
+      "transformers"
+    ],
+    "Language": "Python",
+    "Stars": 7865,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-12-09T17:53:46Z",
+    "UpdatedAt": "2026-05-26T22:51:16Z",
+    "Owner": "lucidrains",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "minimaxir/big-list-of-naughty-strings",
+    "Name": "big-list-of-naughty-strings",
+    "Url": "https://github.com/minimaxir/big-list-of-naughty-strings",
+    "Description": "The Big List of Naughty Strings is a list of strings which have a high probability of causing issues when used as user-input data.",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 47642,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2015-08-08T20:57:20Z",
+    "UpdatedAt": "2026-05-26T23:54:07Z",
+    "Owner": "minimaxir",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "The-Pocket/PocketFlow",
+    "Name": "PocketFlow",
+    "Url": "https://github.com/The-Pocket/PocketFlow",
+    "Description": "Pocket Flow: 100-line LLM framework. Let Agents build Agents!",
+    "Topics": [
+      "agentic-ai",
+      "agentic-framework",
+      "agentic-workflow",
+      "agents",
+      "ai-framework",
+      "ai-frameworks",
+      "aiagent",
+      "aiagents",
+      "artificial-intelligence",
+      "flow-based-programming",
+      "flow-engineering",
+      "large-language-model",
+      "large-language-models",
+      "llm-agent",
+      "llm-framework",
+      "pocket-flow",
+      "pocketflow",
+      "retrieval-augmented-generation",
+      "workflow",
+      "workflow-orchestration"
+    ],
+    "Language": "Python",
+    "Stars": 10671,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-12-24T02:43:30Z",
+    "UpdatedAt": "2026-05-27T03:22:29Z",
+    "Owner": "The-Pocket",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "airbytehq/airbyte",
+    "Name": "airbyte",
+    "Url": "https://github.com/airbytehq/airbyte",
+    "Description": "Open-source data movement for ELT pipelines and AI agents — from APIs, databases & files to warehouses, lakes, and AI applications. Both self-hosted and Cloud.",
+    "Topics": [
+      "bigquery",
+      "change-data-capture",
+      "data",
+      "data-analysis",
+      "data-collection",
+      "data-engineering",
+      "data-integration",
+      "data-pipeline",
+      "elt",
+      "etl",
+      "java",
+      "mssql",
+      "mysql",
+      "pipeline",
+      "postgresql",
+      "python",
+      "redshift",
+      "s3",
+      "self-hosted",
+      "snowflake"
+    ],
+    "Language": "Python",
+    "Stars": 21342,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-07-27T23:55:54Z",
+    "UpdatedAt": "2026-05-27T06:57:57Z",
+    "Owner": "airbytehq",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Alibaba-NLP/DeepResearch",
+    "Name": "DeepResearch",
+    "Url": "https://github.com/Alibaba-NLP/DeepResearch",
+    "Description": "Tongyi Deep Research, the Leading Open-source Deep Research Agent",
+    "Topics": [
+      "agent",
+      "alibaba",
+      "artificial-intelligence",
+      "deep-research",
+      "deepresearch",
+      "information-seeking",
+      "llm",
+      "tongyi",
+      "web-agent"
+    ],
+    "Language": "Python",
+    "Stars": 18967,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-01-09T11:07:35Z",
+    "UpdatedAt": "2026-05-27T05:48:57Z",
+    "Owner": "Alibaba-NLP",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "frappe/erpnext",
+    "Name": "erpnext",
+    "Url": "https://github.com/frappe/erpnext",
+    "Description": "Free and Open Source Enterprise Resource Planning (ERP)",
+    "Topics": [
+      "accounting",
+      "asset-management",
+      "crm",
+      "distribution",
+      "erp",
+      "erpnext",
+      "frappe",
+      "healthcare",
+      "hrms",
+      "manufacturing",
+      "point-of-sale",
+      "procurement",
+      "project-management",
+      "python",
+      "retail",
+      "support"
+    ],
+    "Language": "Python",
+    "Stars": 35015,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2011-06-08T08:20:56Z",
+    "UpdatedAt": "2026-05-27T08:00:27Z",
+    "Owner": "frappe",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "openai/openai-python",
+    "Name": "openai-python",
+    "Url": "https://github.com/openai/openai-python",
+    "Description": "The official Python library for the OpenAI API",
+    "Topics": [
+      "openai",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 30822,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-10-25T23:23:54Z",
+    "UpdatedAt": "2026-05-27T01:07:46Z",
+    "Owner": "openai",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "OpenHands/OpenHands",
+    "Name": "OpenHands",
+    "Url": "https://github.com/OpenHands/OpenHands",
+    "Description": "🙌 OpenHands: AI-Driven Development",
+    "Topics": [
+      "agent",
+      "artificial-intelligence",
+      "chatgpt",
+      "claude-ai",
+      "cli",
+      "developer-tools",
+      "gpt",
+      "llm",
+      "openai"
+    ],
+    "Language": "Python",
+    "Stars": 75007,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-03-13T03:33:31Z",
+    "UpdatedAt": "2026-05-27T07:59:17Z",
+    "Owner": "OpenHands",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50",
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "microsoft/autogen",
+    "Name": "autogen",
+    "Url": "https://github.com/microsoft/autogen",
+    "Description": "A programming framework for agentic AI",
+    "Topics": [
+      "agentic",
+      "agentic-agi",
+      "agents",
+      "ai",
+      "autogen",
+      "autogen-ecosystem",
+      "chatgpt",
+      "framework",
+      "llm-agent",
+      "llm-framework"
+    ],
+    "Language": "Python",
+    "Stars": 58441,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-08-18T11:43:45Z",
+    "UpdatedAt": "2026-05-27T07:46:31Z",
+    "Owner": "microsoft",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "AUTOMATIC1111/stable-diffusion-webui",
+    "Name": "stable-diffusion-webui",
+    "Url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+    "Description": "Stable Diffusion web UI",
+    "Topics": [
+      "ai",
+      "ai-art",
+      "deep-learning",
+      "diffusion",
+      "gradio",
+      "image-generation",
+      "image2image",
+      "img2img",
+      "pytorch",
+      "stable-diffusion",
+      "text2image",
+      "torch",
+      "txt2img",
+      "unstable",
+      "upscaling",
+      "web"
+    ],
+    "Language": "Python",
+    "Stars": 163292,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-08-22T14:05:26Z",
+    "UpdatedAt": "2026-05-27T07:44:20Z",
+    "Owner": "AUTOMATIC1111",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "bobeff/open-source-games",
+    "Name": "open-source-games",
+    "Url": "https://github.com/bobeff/open-source-games",
+    "Description": "A list of open source games.",
+    "Topics": [
+      "awesome-list",
+      "games",
+      "open-source"
+    ],
+    "Language": "Python",
+    "Stars": 12832,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-09-15T21:35:29Z",
+    "UpdatedAt": "2026-05-27T07:58:07Z",
+    "Owner": "bobeff",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "odoo/odoo",
+    "Name": "odoo",
+    "Url": "https://github.com/odoo/odoo",
+    "Description": "Odoo. Open Source Apps To Grow Your Business.",
+    "Topics": [
+      "apps",
+      "business",
+      "erp",
+      "management",
+      "odoo",
+      "odoo-apps",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 51679,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2014-05-13T15:38:58Z",
+    "UpdatedAt": "2026-05-27T06:25:37Z",
+    "Owner": "odoo",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "open-mmlab/mmdeploy",
+    "Name": "mmdeploy",
+    "Url": "https://github.com/open-mmlab/mmdeploy",
+    "Description": "OpenMMLab Model Deployment Framework",
+    "Topics": [
+      "computer-vision",
+      "deep-learning",
+      "deployment",
+      "mmdetection",
+      "mmsegmentation",
+      "model-converter",
+      "ncnn",
+      "onnx",
+      "onnxruntime",
+      "openvino",
+      "pplnn",
+      "pytorch",
+      "sdk",
+      "tensorrt"
+    ],
+    "Language": "Python",
+    "Stars": 3126,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-12-24T13:04:44Z",
+    "UpdatedAt": "2026-05-26T15:03:57Z",
+    "Owner": "open-mmlab",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "ocrmypdf/OCRmyPDF",
+    "Name": "OCRmyPDF",
+    "Url": "https://github.com/ocrmypdf/OCRmyPDF",
+    "Description": "OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched",
+    "Topics": [
+      "image-processing",
+      "ocr",
+      "pdf",
+      "python",
+      "tesseract"
+    ],
+    "Language": "Python",
+    "Stars": 33720,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2013-12-20T08:26:28Z",
+    "UpdatedAt": "2026-05-27T06:39:31Z",
+    "Owner": "ocrmypdf",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "babysor/MockingBird",
+    "Name": "MockingBird",
+    "Url": "https://github.com/babysor/MockingBird",
+    "Description": "🚀Clone a voice in 5 seconds to generate arbitrary speech in real-time",
+    "Topics": [
+      "ai",
+      "deep-learning",
+      "pytorch",
+      "speech",
+      "text-to-speech",
+      "tts"
+    ],
+    "Language": "Python",
+    "Stars": 36906,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2021-08-07T03:53:39Z",
+    "UpdatedAt": "2026-05-27T07:49:16Z",
+    "Owner": "babysor",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "nebuly-ai/optimate",
+    "Name": "optimate",
+    "Url": "https://github.com/nebuly-ai/optimate",
+    "Description": "A collection of libraries to optimise AI model performances",
+    "Topics": [
+      "ai",
+      "analytics",
+      "artificial-intelligence",
+      "deeplearning",
+      "large-language-models",
+      "llm"
+    ],
+    "Language": "Python",
+    "Stars": 8341,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-02-12T17:17:14Z",
+    "UpdatedAt": "2026-05-25T05:08:43Z",
+    "Owner": "nebuly-ai",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "aliasrobotics/cai",
+    "Name": "cai",
+    "Url": "https://github.com/aliasrobotics/cai",
+    "Description": "Cybersecurity AI (CAI), the framework for AI Security",
+    "Topics": [
+      "artificial-intelligence",
+      "cybersecurity",
+      "framework",
+      "generative-ai",
+      "llm",
+      "pentesting"
+    ],
+    "Language": "Python",
+    "Stars": 8759,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-03-31T08:56:05Z",
+    "UpdatedAt": "2026-05-27T06:38:25Z",
+    "Owner": "aliasrobotics",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "snakers4/silero-vad",
+    "Name": "silero-vad",
+    "Url": "https://github.com/snakers4/silero-vad",
+    "Description": "Silero VAD: pre-trained enterprise-grade Voice Activity Detector",
+    "Topics": [
+      "onnx",
+      "onnx-runtime",
+      "onnxruntime",
+      "pytorch",
+      "speech",
+      "speech-processing",
+      "vad",
+      "voice-activity-detection",
+      "voice-commands",
+      "voice-control",
+      "voice-detection",
+      "voice-recognition"
+    ],
+    "Language": "Python",
+    "Stars": 9160,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-11-23T09:54:16Z",
+    "UpdatedAt": "2026-05-27T06:47:58Z",
+    "Owner": "snakers4",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "fishaudio/fish-speech",
+    "Name": "fish-speech",
+    "Url": "https://github.com/fishaudio/fish-speech",
+    "Description": "SOTA Open Source TTS",
+    "Topics": [
+      "llama",
+      "transformer",
+      "tts",
+      "valle",
+      "vits",
+      "vqgan",
+      "vqvae"
+    ],
+    "Language": "Python",
+    "Stars": 30539,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-10-10T03:16:51Z",
+    "UpdatedAt": "2026-05-27T07:54:21Z",
+    "Owner": "fishaudio",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "MemPalace/mempalace",
+    "Name": "mempalace",
+    "Url": "https://github.com/MemPalace/mempalace",
+    "Description": "The best-benchmarked open-source AI memory system. And it's free.",
+    "Topics": [
+      "ai",
+      "chromadb",
+      "llm",
+      "mcp",
+      "memory",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 52895,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2026-04-05T01:12:07Z",
+    "UpdatedAt": "2026-05-27T07:15:50Z",
+    "Owner": "MemPalace",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "commaai/openpilot",
+    "Name": "openpilot",
+    "Url": "https://github.com/commaai/openpilot",
+    "Description": "openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.",
+    "Topics": [
+      "advanced-driver-assistance-systems",
+      "driver-assistance-systems",
+      "robotics"
+    ],
+    "Language": "Python",
+    "Stars": 61136,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2016-11-24T01:33:30Z",
+    "UpdatedAt": "2026-05-27T07:48:38Z",
+    "Owner": "commaai",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "zai-org/Open-AutoGLM",
+    "Name": "Open-AutoGLM",
+    "Url": "https://github.com/zai-org/Open-AutoGLM",
+    "Description": "An Open Phone Agent Model & Framework. Unlocking the AI Phone for Everyone",
+    "Topics": [
+      "agent",
+      "phone-use-agent"
+    ],
+    "Language": "Python",
+    "Stars": 25369,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-12-08T09:23:44Z",
+    "UpdatedAt": "2026-05-27T07:36:28Z",
+    "Owner": "zai-org",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "tensorlayer/TensorLayer",
+    "Name": "TensorLayer",
+    "Url": "https://github.com/tensorlayer/TensorLayer",
+    "Description": "Deep Learning and Reinforcement Learning Library for Scientists and Engineers ",
+    "Topics": [
+      "a3c",
+      "artificial-intelligence",
+      "chatbot",
+      "deep-learning",
+      "dqn",
+      "gan",
+      "google",
+      "imagenet",
+      "neural-network",
+      "object-detection",
+      "python",
+      "reinforcement-learning",
+      "tensorflow",
+      "tensorflow-tutorial",
+      "tensorflow-tutorials",
+      "tensorlayer"
+    ],
+    "Language": "Python",
+    "Stars": 7389,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2016-06-07T15:55:16Z",
+    "UpdatedAt": "2026-05-26T07:29:29Z",
+    "Owner": "tensorlayer",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "kyegomez/OpenMythos",
+    "Name": "OpenMythos",
+    "Url": "https://github.com/kyegomez/OpenMythos",
+    "Description": "A theoretical reconstruction of the Claude Mythos architecture, built from first principles using the available research literature.",
+    "Topics": [
+      "ai",
+      "anthropic",
+      "attention",
+      "claude",
+      "claude-ai",
+      "claude-code",
+      "claude-code-plugin",
+      "claude-mythos",
+      "claude-sonnet",
+      "deepmind",
+      "gpt-5",
+      "gpt-7",
+      "jax",
+      "looped-transformers",
+      "ml",
+      "pytorch",
+      "sonnet",
+      "torch"
+    ],
+    "Language": "Python",
+    "Stars": 13403,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2026-04-18T12:57:52Z",
+    "UpdatedAt": "2026-05-27T06:42:21Z",
+    "Owner": "kyegomez",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "llmware-ai/llmware",
+    "Name": "llmware",
+    "Url": "https://github.com/llmware-ai/llmware",
+    "Description": "Unified framework for building enterprise RAG pipelines with small, specialized models",
+    "Topics": [
+      "agents",
+      "generative-ai-tools",
+      "llamacpp",
+      "llm",
+      "onnx",
+      "openvino",
+      "parsing",
+      "retrieval-augmented-generation",
+      "small-specialized-models"
+    ],
+    "Language": "Python",
+    "Stars": 14855,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-09-29T15:19:06Z",
+    "UpdatedAt": "2026-05-27T06:33:03Z",
+    "Owner": "llmware-ai",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "oraios/serena",
+    "Name": "serena",
+    "Url": "https://github.com/oraios/serena",
+    "Description": "A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent",
+    "Topics": [
+      "agent",
+      "ai",
+      "ai-coding",
+      "claude",
+      "claude-code",
+      "codex",
+      "ide",
+      "jetbrains",
+      "language-server",
+      "mcp-server",
+      "programming",
+      "vibe-coding"
+    ],
+    "Language": "Python",
+    "Stars": 24663,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-03-23T22:35:24Z",
+    "UpdatedAt": "2026-05-27T07:58:43Z",
+    "Owner": "oraios",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Physical-Intelligence/openpi",
+    "Name": "openpi",
+    "Url": "https://github.com/Physical-Intelligence/openpi",
+    "Description": "",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 12025,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-10-21T15:23:28Z",
+    "UpdatedAt": "2026-05-27T08:00:14Z",
+    "Owner": "Physical-Intelligence",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "zhiqwang/yolort",
+    "Name": "yolort",
+    "Url": "https://github.com/zhiqwang/yolort",
+    "Description": "yolort is a runtime stack for yolov5 on specialized accelerators such as tensorrt, libtorch, onnxruntime, tvm and ncnn.",
+    "Topics": [
+      "deployment",
+      "detection",
+      "graghsurgeon",
+      "inference",
+      "jit",
+      "libtorch",
+      "lightning",
+      "ncnn",
+      "nms",
+      "onnx",
+      "onnxruntime",
+      "pytorch",
+      "tensorrt",
+      "torchscript",
+      "trt",
+      "tvm",
+      "visualization",
+      "yolo",
+      "yolort",
+      "yolov5"
+    ],
+    "Language": "Python",
+    "Stars": 730,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-08-14T11:31:00Z",
+    "UpdatedAt": "2026-04-16T22:17:45Z",
+    "Owner": "zhiqwang",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "explosion/spaCy",
+    "Name": "spaCy",
+    "Url": "https://github.com/explosion/spaCy",
+    "Description": "💫 Industrial-strength Natural Language Processing (NLP) in Python",
+    "Topics": [
+      "ai",
+      "artificial-intelligence",
+      "cython",
+      "data-science",
+      "deep-learning",
+      "entity-linking",
+      "machine-learning",
+      "named-entity-recognition",
+      "natural-language-processing",
+      "neural-network",
+      "neural-networks",
+      "nlp",
+      "nlp-library",
+      "python",
+      "spacy",
+      "text-classification",
+      "tokenization"
+    ],
+    "Language": "Python",
+    "Stars": 33612,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2014-07-03T15:15:40Z",
+    "UpdatedAt": "2026-05-26T11:13:55Z",
+    "Owner": "explosion",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Cinnamon/kotaemon",
+    "Name": "kotaemon",
+    "Url": "https://github.com/Cinnamon/kotaemon",
+    "Description": "An open-source RAG-based tool for chatting with your documents.",
+    "Topics": [
+      "chatbot",
+      "llms",
+      "open-source",
+      "rag"
+    ],
+    "Language": "Python",
+    "Stars": 25396,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-03-25T08:16:42Z",
+    "UpdatedAt": "2026-05-27T07:57:40Z",
+    "Owner": "Cinnamon",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "agno-agi/agno",
+    "Name": "agno",
+    "Url": "https://github.com/agno-agi/agno",
+    "Description": "Build, run, and manage agent platforms.",
+    "Topics": [
+      "agents",
+      "ai",
+      "ai-agents",
+      "developer-tools",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 40370,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-05-04T15:23:02Z",
+    "UpdatedAt": "2026-05-27T04:55:20Z",
+    "Owner": "agno-agi",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "thewh1teagle/kokoro-onnx",
+    "Name": "kokoro-onnx",
+    "Url": "https://github.com/thewh1teagle/kokoro-onnx",
+    "Description": "TTS with kokoro and onnx runtime",
+    "Topics": [
+      "kokoro",
+      "onnxruntime",
+      "python",
+      "tts"
+    ],
+    "Language": "Python",
+    "Stars": 2565,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-01-03T14:59:41Z",
+    "UpdatedAt": "2026-05-27T06:25:56Z",
+    "Owner": "thewh1teagle",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "hiroi-sora/Umi-OCR",
+    "Name": "Umi-OCR",
+    "Url": "https://github.com/hiroi-sora/Umi-OCR",
+    "Description": "OCR software, free and offline. 开源、免费的离线OCR软件。支持截屏/批量导入图片，PDF文档识别，排除水印/页眉页脚，扫描/生成二维码。内置多国语言库。",
+    "Topics": [
+      "ocr",
+      "ocr-python",
+      "paddleocr",
+      "qml",
+      "qt",
+      "screenshot",
+      "umi-ocr"
+    ],
+    "Language": "Python",
+    "Stars": 44521,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-03-28T04:01:46Z",
+    "UpdatedAt": "2026-05-27T07:56:02Z",
+    "Owner": "hiroi-sora",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "0x4m4/hexstrike-ai",
+    "Name": "hexstrike-ai",
+    "Url": "https://github.com/0x4m4/hexstrike-ai",
+    "Description": "HexStrike AI MCP Agents is an advanced MCP server that lets AI agents (Claude, GPT, Copilot, etc.) autonomously run 150+ cybersecurity tools for automated pentesting, vulnerability discovery, bug bounty automation, and security research. Seamlessly bridge LLMs with real-world offensive security capabilities.",
+    "Topics": [
+      "0x4m4",
+      "ai",
+      "ai-agents",
+      "ai-cybersecurity",
+      "ai-hacking",
+      "ai-penetration-testing",
+      "ai-security-tool",
+      "artificial-intelligence",
+      "ctf-tools",
+      "generative-ai",
+      "hexstrike",
+      "kali-linux",
+      "kali-tools",
+      "llm",
+      "llm-integration",
+      "mcp",
+      "mcp-server",
+      "mcp-tools",
+      "pentesting",
+      "pentesting-tools"
+    ],
+    "Language": "Python",
+    "Stars": 8961,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-07-10T17:53:18Z",
+    "UpdatedAt": "2026-05-27T07:13:16Z",
+    "Owner": "0x4m4",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "recommenders-team/recommenders",
+    "Name": "recommenders",
+    "Url": "https://github.com/recommenders-team/recommenders",
+    "Description": "Best Practices on Recommendation Systems",
+    "Topics": [
+      "ai",
+      "artificial-intelligence",
+      "data-science",
+      "deep-learning",
+      "jupyter-notebook",
+      "kubernetes",
+      "machine-learning",
+      "operationalization",
+      "python",
+      "ranking",
+      "rating",
+      "recommendation",
+      "recommendation-algorithm",
+      "recommendation-engine",
+      "recommendation-system",
+      "recommender",
+      "tutorial"
+    ],
+    "Language": "Python",
+    "Stars": 21718,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2018-09-19T10:06:07Z",
+    "UpdatedAt": "2026-05-27T02:07:12Z",
+    "Owner": "recommenders-team",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "HKUDS/DeepTutor",
+    "Name": "DeepTutor",
+    "Url": "https://github.com/HKUDS/DeepTutor",
+    "Description": "DeepTutor -- Agent-native, Open-sourced Personalized Tutoring. https://deeptutor.info/.",
+    "Topics": [
+      "ai-agents",
+      "ai-tutor",
+      "clawdbot",
+      "cli-tool",
+      "deepresearch",
+      "interactive-learning",
+      "large-language-models",
+      "multi-agent-systems",
+      "rag"
+    ],
+    "Language": "Python",
+    "Stars": 24333,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-12-28T15:35:54Z",
+    "UpdatedAt": "2026-05-27T07:19:28Z",
+    "Owner": "HKUDS",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "flwrlabs/flower",
+    "Name": "flower",
+    "Url": "https://github.com/flwrlabs/flower",
+    "Description": "Flower: A Friendly Federated AI Framework",
+    "Topics": [
+      "ai",
+      "android",
+      "artificial-intelligence",
+      "cpp",
+      "deep-learning",
+      "federated-analytics",
+      "federated-learning",
+      "federated-learning-framework",
+      "fleet-intelligence",
+      "fleet-learning",
+      "flower",
+      "framework",
+      "grpc",
+      "ios",
+      "machine-learning",
+      "python",
+      "pytorch",
+      "raspberry-pi",
+      "scikit-learn",
+      "tensorflow"
+    ],
+    "Language": "Python",
+    "Stars": 6916,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-02-17T11:51:29Z",
+    "UpdatedAt": "2026-05-27T07:54:25Z",
+    "Owner": "flwrlabs",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "VectifyAI/PageIndex",
+    "Name": "PageIndex",
+    "Url": "https://github.com/VectifyAI/PageIndex",
+    "Description": "📑 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
+    "Topics": [
+      "agentic-ai",
+      "agents",
+      "ai",
+      "ai-agents",
+      "context-engineering",
+      "information-retrieval",
+      "llm",
+      "rag",
+      "reasoning",
+      "retrieval",
+      "retrieval-augmented-generation",
+      "vector-database"
+    ],
+    "Language": "Python",
+    "Stars": 32206,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-04-01T10:53:54Z",
+    "UpdatedAt": "2026-05-27T07:58:43Z",
+    "Owner": "VectifyAI",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "warmshao/FasterLivePortrait",
+    "Name": "FasterLivePortrait",
+    "Url": "https://github.com/warmshao/FasterLivePortrait",
+    "Description": "Bring portraits to life in Real Time！onnx/tensorrt support！实时肖像驱动！",
+    "Topics": [],
+    "Language": "Python",
+    "Stars": 1132,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2024-07-14T15:43:05Z",
+    "UpdatedAt": "2026-05-26T17:49:00Z",
+    "Owner": "warmshao",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Asabeneh/30-Days-Of-Python",
+    "Name": "30-Days-Of-Python",
+    "Url": "https://github.com/Asabeneh/30-Days-Of-Python",
+    "Description": "The 30 Days of Python programming challenge is a step-by-step guide to learn the Python programming language in 30 days. This challenge may take more than 100 days. Follow your own pace. These videos may help too: https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw",
+    "Topics": [
+      "30-days-of-python",
+      "data",
+      "data-science",
+      "database",
+      "flask",
+      "fullstack",
+      "github",
+      "heroku",
+      "matplotlib",
+      "ml",
+      "mongodb",
+      "numpy",
+      "pandas",
+      "python",
+      "python3"
+    ],
+    "Language": "Python",
+    "Stars": 63193,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2019-11-19T17:24:16Z",
+    "UpdatedAt": "2026-05-27T07:55:52Z",
+    "Owner": "Asabeneh",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "volcengine/OpenViking",
+    "Name": "OpenViking",
+    "Url": "https://github.com/volcengine/OpenViking",
+    "Description": "OpenViking is an open-source context database designed specifically for AI Agents(such as openclaw). OpenViking unifies the management of context (memory, resources, and skills) that Agents need through a file system paradigm, enabling hierarchical context delivery and self-evolving.",
+    "Topics": [
+      "agent",
+      "agentic-rag",
+      "ai-agents",
+      "clawbot",
+      "context-database",
+      "context-engineering",
+      "filesystem",
+      "llm",
+      "memory",
+      "openclaw",
+      "opencode",
+      "rag",
+      "skill"
+    ],
+    "Language": "Python",
+    "Stars": 24752,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2026-01-05T07:11:17Z",
+    "UpdatedAt": "2026-05-27T08:01:37Z",
+    "Owner": "volcengine",
+    "SourceQueries": [
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "openai/openai-agents-python",
+    "Name": "openai-agents-python",
+    "Url": "https://github.com/openai/openai-agents-python",
+    "Description": "A lightweight, powerful framework for multi-agent workflows",
+    "Topics": [
+      "agents",
+      "ai",
+      "framework",
+      "harness",
+      "llm",
+      "openai",
+      "python"
+    ],
+    "Language": "Python",
+    "Stars": 26689,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-03-11T03:42:36Z",
+    "UpdatedAt": "2026-05-27T07:54:54Z",
+    "Owner": "openai",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50",
+      "open language:Python stars:>=50",
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "roboflow/inference",
+    "Name": "inference",
+    "Url": "https://github.com/roboflow/inference",
+    "Description": "Turn any computer or edge device into a command center for your computer vision projects.",
+    "Topics": [
+      "agents",
+      "classification",
+      "computer-vision",
+      "deployment",
+      "docker",
+      "inference",
+      "inference-api",
+      "inference-server",
+      "instance-segmentation",
+      "jetson",
+      "machine-learning",
+      "object-detection",
+      "onnx",
+      "python",
+      "tensorrt",
+      "vit",
+      "yolo11",
+      "yolov12",
+      "yolov5",
+      "yolov8"
+    ],
+    "Language": "Python",
+    "Stars": 2289,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-07-31T17:00:40Z",
+    "UpdatedAt": "2026-05-27T05:40:59Z",
+    "Owner": "roboflow",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "PINTO0309/onnx2tf",
+    "Name": "onnx2tf",
+    "Url": "https://github.com/PINTO0309/onnx2tf",
+    "Description": "A tool for converting ONNX files to LiteRT/TFLite/TensorFlow, PyTorch native code (nn.Module), TorchScript (.pt), state_dict (.pt), Exported Program (.pt2), and Dynamo ONNX. It also supports direct conversion from LiteRT to PyTorch.",
+    "Topics": [
+      "android",
+      "coreml",
+      "deep-learning",
+      "docker",
+      "keras",
+      "litert",
+      "lstm",
+      "machine-learning",
+      "model-converter",
+      "models",
+      "onnx",
+      "pytorch",
+      "quantization",
+      "tensorflow",
+      "tensorflow-lite",
+      "tfjs",
+      "tflite",
+      "torchscript",
+      "transformer"
+    ],
+    "Language": "Python",
+    "Stars": 961,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2022-09-27T00:06:32Z",
+    "UpdatedAt": "2026-05-26T04:47:38Z",
+    "Owner": "PINTO0309",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50",
+      "ONNX language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "jumpserver/jumpserver",
+    "Name": "jumpserver",
+    "Url": "https://github.com/jumpserver/jumpserver",
+    "Description": "JumpServer is an open-source Privileged Access Management (PAM) platform that provides DevOps and IT teams with on-demand and secure access to SSH, RDP, Kubernetes, Database and RemoteApp endpoints through a web browser.",
+    "Topics": [
+      "bastion-host",
+      "cyberark",
+      "django",
+      "jumpserver",
+      "pam",
+      "python",
+      "ssh-server",
+      "teleport",
+      "terminal"
+    ],
+    "Language": "Python",
+    "Stars": 30503,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2014-07-04T03:54:59Z",
+    "UpdatedAt": "2026-05-27T04:48:01Z",
+    "Owner": "jumpserver",
+    "SourceQueries": [
+      "open language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "lukas-blecher/LaTeX-OCR",
+    "Name": "LaTeX-OCR",
+    "Url": "https://github.com/lukas-blecher/LaTeX-OCR",
+    "Description": "pix2tex: Using a ViT to convert images of equations into LaTeX code.",
+    "Topics": [
+      "dataset",
+      "deep-learning",
+      "im2latex",
+      "im2markup",
+      "im2text",
+      "image-processing",
+      "image2text",
+      "latex",
+      "latex-ocr",
+      "machine-learning",
+      "math-ocr",
+      "ocr",
+      "python",
+      "pytorch",
+      "transformer",
+      "vision-transformer",
+      "vit"
+    ],
+    "Language": "Python",
+    "Stars": 16416,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-12-11T16:35:13Z",
+    "UpdatedAt": "2026-05-27T06:24:37Z",
+    "Owner": "lukas-blecher",
+    "SourceQueries": [
+      "o language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Fosowl/agenticSeek",
+    "Name": "agenticSeek",
+    "Url": "https://github.com/Fosowl/agenticSeek",
+    "Description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)",
+    "Topics": [
+      "agentic-ai",
+      "agents",
+      "ai",
+      "autonomous-agents",
+      "deepseek-r1",
+      "llm",
+      "llm-agents",
+      "voice-assistant"
+    ],
+    "Language": "Python",
+    "Stars": 26425,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2025-02-19T18:03:06Z",
+    "UpdatedAt": "2026-05-27T07:17:15Z",
+    "Owner": "Fosowl",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "Comfy-Org/ComfyUI",
+    "Name": "ComfyUI",
+    "Url": "https://github.com/Comfy-Org/ComfyUI",
+    "Description": "The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+    "Topics": [
+      "ai",
+      "comfy",
+      "comfyui",
+      "python",
+      "pytorch",
+      "stable-diffusion"
+    ],
+    "Language": "Python",
+    "Stars": 114593,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-01-17T03:15:56Z",
+    "UpdatedAt": "2026-05-27T07:56:51Z",
+    "Owner": "Comfy-Org",
+    "SourceQueries": [
+      "topic:ai language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "breizhn/DTLN",
+    "Name": "DTLN",
+    "Url": "https://github.com/breizhn/DTLN",
+    "Description": "Tensorflow 2.x implementation of the DTLN real time speech denoising model. With TF-lite, ONNX and real-time audio processing support.",
+    "Topics": [
+      "audio",
+      "audio-processing",
+      "deep-learning",
+      "dns-challenge",
+      "dtln-model",
+      "keras",
+      "noise-reduction",
+      "noise-suppression",
+      "onnx",
+      "raspberry-pi",
+      "real-time-audio",
+      "speech-denoising",
+      "speech-enhancement",
+      "speech-processing",
+      "tensorflow",
+      "tf-lite"
+    ],
+    "Language": "Python",
+    "Stars": 717,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2020-05-11T11:57:33Z",
+    "UpdatedAt": "2026-05-25T02:53:05Z",
+    "Owner": "breizhn",
+    "SourceQueries": [
+      "topic:onnx language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "guofei9987/scikit-opt",
+    "Name": "scikit-opt",
+    "Url": "https://github.com/guofei9987/scikit-opt",
+    "Description": "Genetic Algorithm, Particle Swarm Optimization, Simulated Annealing, Ant Colony Optimization Algorithm,Immune Algorithm, Artificial Fish Swarm Algorithm, Differential Evolution and TSP(Traveling salesman) ",
+    "Topics": [
+      "ant-colony-algorithm",
+      "artificial-intelligence",
+      "fish-swarms",
+      "genetic-algorithm",
+      "heuristic-algorithms",
+      "immune",
+      "immune-algorithm",
+      "optimization",
+      "particle-swarm-optimization",
+      "pso",
+      "simulated-annealing",
+      "travelling-salesman-problem",
+      "tsp"
+    ],
+    "Language": "Python",
+    "Stars": 6574,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2017-12-05T10:20:41Z",
+    "UpdatedAt": "2026-05-27T05:46:43Z",
+    "Owner": "guofei9987",
+    "SourceQueries": [
+      "topic:artificial-intelligence language:Python stars:>=50"
+    ]
+  },
+  {
+    "FullName": "RapidAI/TableStructureRec",
+    "Name": "TableStructureRec",
+    "Url": "https://github.com/RapidAI/TableStructureRec",
+    "Description": "整理目前开源的最优表格识别模型，完善前后处理，模型转换为ONNX |  Organize the currently open-source optimal table recognition models, improve pre-processing and post-processing, and convert the models to ONNX.",
+    "Topics": [
+      "ocr",
+      "structure",
+      "table",
+      "table-recognition"
+    ],
+    "Language": "Python",
+    "Stars": 951,
+    "Fork": false,
+    "Archived": false,
+    "CreatedAt": "2023-11-11T08:37:11Z",
+    "UpdatedAt": "2026-05-27T02:40:15Z",
+    "Owner": "RapidAI",
+    "SourceQueries": [
+      "ONNX language:Python stars:>=50"
+    ]
+  }
+]

@@ -4,7 +4,7 @@
   "MaxPerOwner": 2,
   "MaxPerOwnerPerSubdomain": 2,
   "AllowFallbackFill": true,
-  "winner_experiment_id": "penalty300_min700_cap22",
+  "winner_experiment_id": "penalty300_min700_cap22_queryv2",
   "beats_champion_penalty100_min700_cap21": true,
   "champion_experiment_id": "penalty100_min700_cap21"
 }
