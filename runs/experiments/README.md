@@ -68,14 +68,14 @@ pwsh ./Run-MetaMatchPipeline.ps1 -NoFallbackFill `
 Or run the full sweep script (uses `-ExperimentPreset` for reliable tuning from bash):
 
 ```bash
-bash runs/experiments/run_hyperparam_sweep.sh
+bash runs/experiments/scripts/run_hyperparam_sweep.sh
 ```
 
 Presets: `penalty75`, `penalty100`, `min750`, `cap11`, `nofallback`.
 
 ## Phase-2 grid (penalty 110–200 × min 700/750/800 × caps)
 
-60 combinations. Champion to beat: **`penalty100_min700_cap21`**.
+60 combinations (grid stopped early; see [GRID_PHASE2_STATUS.md](GRID_PHASE2_STATUS.md)). Historical baseline: **`penalty100_min700_cap21`**. **Current winner:** **`penalty300_min700_cap22_queryv2`** ([WINNER.md](WINNER.md), `metamatch_hyperparams.json`).
 
 ```bash
 python3 tools/run_metamatch_grid.py          # all 60 runs (~50+ hours)
@@ -85,16 +85,25 @@ python3 tools/run_metamatch_grid.py --finalize-only   # after partial grid
 ```
 
 Progress: `runs/experiments/grid_phase2_progress.jsonl`  
-Background: `bash runs/experiments/run_grid_phase2.sh`
+Background: `bash runs/experiments/scripts/run_grid_phase2.sh`
 
 **Restart in tmux (recommended — attach anytime):**
 
 ```bash
-bash runs/experiments/run_grid_phase2_tmux.sh          # stop old jobs + start
+bash runs/experiments/scripts/run_grid_phase2_tmux.sh          # stop old jobs + start
 tmux attach -t metamatch-grid                         # live view (Ctrl+B D to detach)
-bash runs/experiments/run_grid_phase2_tmux.sh stop    # kill grid + tmux
+bash runs/experiments/scripts/run_grid_phase2_tmux.sh stop    # kill grid + tmux
 tail -f runs/experiments/grid_phase2_tmux.log
 ```
+
+## Bash runners
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/run_hyperparam_sweep.sh` | Early penalty 75–100 / cap / fallback sweep |
+| `scripts/run_grid_phase2*.sh` | 60-cell grid (tmux optional) |
+| `scripts/run_targeted_batch*.sh` | Targeted penalty/min batches |
+| `scripts/run_phase2.sh` | Query v2 + alternate anchors (`queryv2`, `anchorsv2`) |
 
 ## Compare experiments
 

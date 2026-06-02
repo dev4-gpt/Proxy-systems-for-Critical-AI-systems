@@ -198,10 +198,22 @@ If `sentence-transformers` is missing, optional embedding cells degrade graceful
 | Path | Purpose |
 |------|---------|
 | `proxytool.ipynb` | Canonical research pipeline |
-| `scripts/proxy_doc_analyzer.py` | Taxonomy/PDF-oriented analysis helper |
-| `assets/` | Paper-related PDFs, figures (`figure1.png`â€“`figure3.png`), supporting docs |
+| `scripts/` | Python helpers (REDUX patches, projected-pair pipeline, repro benchmark) |
+| `assets/` | Paper-related PDFs, figures, harness PS1 |
+| `tools/` | MetaMatch Python utilities (`summarize_runs.py`, `compare_experiments.py`, grid runner) |
+| `runs/experiments/` | Committed frozen MetaMatch archives + comparison CSVs |
+| `runs/experiments/scripts/` | Bash experiment runners (invoke from repo root) |
+| `runs/manual-ml-py/`, `runs/_summaries/` | Live pipeline outputs (gitignored) |
 | `results_plots/` | Curated or regenerated plots (may be gitignored locally) |
 | `validation_results.csv` | Tabular evaluation summaries |
+
+**MetaMatch winner:** `penalty300_min700_cap22_queryv2` (`metamatch_hyperparams.json`, `runs/experiments/WINNER.md`).
+
+```powershell
+pwsh ./Run-MetaMatchPipeline.ps1 -SummarizeOnly   # re-summarize live runs only
+pwsh ./Run-MetaMatchPipeline.ps1 -CrossAnchorFreqPenaltyWeight:300 -MinimumScore:700 `
+  -MaxPerOwner:2 -MaxPerOwnerPerSubdomain:2 -ArchiveAsExperiment my_id
+```
 
 ---
 
@@ -218,8 +230,11 @@ If `sentence-transformers` is missing, optional embedding cells degrade graceful
 ## Collaboration
 
 If you work on **safety evaluation**, **test strategy**, or **AI governance under source constraints**, feedback and collaboration ideas are welcome. Use the repoâ€™s Issues/Discussions if enabled, or reach out directly.
-## MetaMatch 2.0 run artifacts (recommended)
-Each per-anchor run folder now includes:
+## MetaMatch 2.0 run artifacts
+
+**Defaults:** penalty 300, min score 700, owner caps 2/2 (`Get-AnchorMatches.ps1` / `metamatch_hyperparams.json`). Docs: `runs/experiments/README.md`, `runs/README.md`.
+
+Each per-anchor run folder includes:
 - `ranked_matches.csv` (all scored candidates with diagnostics + explainability columns)
 - `30_Matches.csv` (Top-K final selection)
 - `run_manifest.json` (parameters, weights, counts, and outputs for reproducibility)

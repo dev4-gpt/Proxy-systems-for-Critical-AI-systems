@@ -30,4 +30,6 @@ Use **`runs/experiments/`** (current winner: `penalty300_min700_cap22_queryv2`) 
 pwsh ./Run-MetaMatchPipeline.ps1 -ArchiveAsExperiment penalty75_min700_cap21 -CompareWith penalty55_min700_cap21
 ```
 
+Batch/bash runners live under `runs/experiments/scripts/` (see `runs/experiments/README.md`).
+
 Then commit only `runs/experiments/` (and any updated comparison CSVs at `runs/experiments/` root).

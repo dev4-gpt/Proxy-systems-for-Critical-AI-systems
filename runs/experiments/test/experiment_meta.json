@@ -1,7 +1,0 @@
-{
-  "experiment_id": "test",
-  "description": "MetaMatch pipeline (script defaults)",
-  "archived_at": "2026-05-21T18:11:38.989061+00:00",
-  "source_summaries": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/_summaries",
-  "source_manual_ml_py": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py"
-}
