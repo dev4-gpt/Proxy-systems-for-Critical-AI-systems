@@ -1,0 +1,6 @@
+anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
+JaidedAI/EasyOCR,https://github.com/JaidedAI/EasyOCR,abdulfatir/twitter-sentiment-analysis,https://github.com/abdulfatir/twitter-sentiment-analysis,1,854.77,95.47
+JaidedAI/EasyOCR,https://github.com/JaidedAI/EasyOCR,GabrielDornelles/pytorch-ocr,https://github.com/GabrielDornelles/pytorch-ocr,2,825,95.03
+JaidedAI/EasyOCR,https://github.com/JaidedAI/EasyOCR,frgfm/torch-cam,https://github.com/frgfm/torch-cam,3,822.06,94.6
+JaidedAI/EasyOCR,https://github.com/JaidedAI/EasyOCR,open-mmlab/mmocr,https://github.com/open-mmlab/mmocr,4,821.57,95.1
+JaidedAI/EasyOCR,https://github.com/JaidedAI/EasyOCR,filipradenovic/cnnimageretrieval-pytorch,https://github.com/filipradenovic/cnnimageretrieval-pytorch,5,820.47,95.27

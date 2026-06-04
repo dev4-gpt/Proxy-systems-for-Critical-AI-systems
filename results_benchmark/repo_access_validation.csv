@@ -1,0 +1,114 @@
+repo_url,pin,ls_remote_ok,clone_ok,git_log_ok,pin_found,pair_ids,details
+https://chromium.googlesource.com/v8/v8.git,refs/heads/main,False,False,False,False,mirror_v8,"fatal: unable to access 'https://chromium.googlesource.com/v8/v8.git/': CONNECT tunnel failed, response 403"
+https://github.com/v8/v8.git,refs/heads/main,True,False,False,True,mirror_v8,"32db030896203ea8d940bfcd2b4566c7a75e91fc	HEAD
+3a1ab8c626dfee28a5cafb6632b28e284c4cffb3	refs/branch-heads/0.1
+554479e0453f3ff3dc814dba686d8c7fbdf472c3	refs/branch-heads/0.3
+260cbc6daff7d06b16af64676c5b0de0350d4828	refs/branch-heads/1.1
+d5b64aa96fea013f58f53b114ed48a65311da25e	refs/branch-heads/1.2
+8f250407ee3af9bee4dd63309565a11b7ce07526	refs/branch-heads/1.3
+9a8cb2c0be476a447374746bc7eb95e47d9914c9	refs/branch-heads/10.0
+e5f13e0cd10e245d822f856d17b347c77ccc7593	refs/branch-heads/10.1
+fc08b999dfa"
+https://projects.blender.org/blender/blender.git,refs/heads/main,False,False,False,False,mirror_blender,"fatal: unable to access 'https://projects.blender.org/blender/blender.git/': CONNECT tunnel failed, response 403"
+https://github.com/blender/blender.git,refs/heads/main,True,False,False,True,mirror_blender,"e5fc656cdab0e682296f8dd024b942b548e788f4	HEAD
+9175d1d7e244f398c11b718408395638f5777169	refs/heads/asset-browser-frontend-split
+1325adfe69945ccc063ed9d9f499e8e116c10641	refs/heads/asset-shelf
+7501d4664889988ef9780e01e81b725b02469182	refs/heads/bevelv2
+dc30b7c88462b5578ffad461de34dfcac99a011a	refs/heads/blender-projects-basics
+cb886aba06d562ee629f2ee64f3692d008c68a35	refs/heads/blender-v2.93-release
+e016c21db1512164c882a7a96f62f900647da653	refs/heads/blender-v3.3-release
+543a70170ec452a260b18c3eb7"
+https://git.libreoffice.org/core,refs/heads/master,False,False,False,False,mirror_libreoffice,"fatal: unable to access 'https://git.libreoffice.org/core/': CONNECT tunnel failed, response 403"
+https://github.com/LibreOffice/core.git,refs/heads/master,True,False,False,True,mirror_libreoffice,"cdd9e37fec8cd3c641ad48926f1c4833fb46dc47	HEAD
+baeb5486c43d39b063371f91cfaae8efc2c8700b	refs/changes/00/1000/1
+c5fb3d3f110f652e3c4b3920f71b7f77c227028e	refs/changes/00/1000/meta
+dfbfb3c4d4cc7d7f519c197ef5cfa250c30b584b	refs/changes/00/10000/1
+5955e7d66d9b0e87f93fd9746a85bff132da9794	refs/changes/00/10000/2
+ae3baacef7926d9ce9ca4786176f404b7cf78cc1	refs/changes/00/10000/meta
+04ed040f7cf9a7d637eb887ea22e0948cd31494f	refs/changes/00/100100/1
+924341e2c73e28b92fb927f2a4b5494ded5f257a	refs/changes/00/10"
+https://chromium.googlesource.com/apps/libapps,refs/heads/main,False,False,False,False,mirror_libapps,"fatal: unable to access 'https://chromium.googlesource.com/apps/libapps/': CONNECT tunnel failed, response 403"
+https://github.com/libapps/libapps-mirror.git,refs/heads/main,True,False,False,True,mirror_libapps,"1181626ff13f0cefc7144fe1c609ef0369a17756	HEAD
+fece29910bcbe76ddb7e323347cd254a2a1705df	refs/heads/axiom
+cfec4314fd78962f24470a0ad64b0b4d983ecd51	refs/heads/chrome-app
+d565db93b1c437805b6daebb925bdf89083a63b6	refs/heads/chrome-nacl
+be0929e0cc82a72a52b65068881e9880d9144e45	refs/heads/chromeos-R86
+1181626ff13f0cefc7144fe1c609ef0369a17756	refs/heads/main
+fa7e994215b4cc3e2e9318b6621f17a27fe300e3	refs/heads/master
+8276a1d650f2cb7244cf17d077dd0490146410c0	refs/pull/1/head
+4d9bebaebfa7e0af044adb944107e1"
+https://gitlab.freedesktop.org/freetype/freetype.git,refs/heads/master,False,False,False,False,mirror_freetype,"fatal: unable to access 'https://gitlab.freedesktop.org/freetype/freetype.git/': CONNECT tunnel failed, response 403"
+https://github.com/freetype/freetype.git,refs/heads/master,True,False,False,True,mirror_freetype,"b08a2eb0dd37f4a6c886fa5b0ecf5b3e1d27aac7	HEAD
+d7f649f283763af099256eb2d5e326df601c3e76	refs/heads/1076-regression-ft_render_glyph-returns-error-when-trying-to-render-bitmap-otb-fonts
+ab950e18f4f9bf0ea2b4ba6bb9eb3379be3b1a2d	refs/heads/1100-sdf-improvements
+ee0f8213bee205fccc37b91ff67686097ecb8363	refs/heads/1100-sdf-precision-improvement
+f9b1871ded4df726ed962e5eae535c9918705a3d	refs/heads/2.6.5
+2014fd419a3f54b6fc9e01861d736f13416ab897	refs/heads/BRANCH-2-1-5
+9876e59533420b2027939be6943b2c6bc3af3"
+https://github.com/MariaDB/server.git,refs/heads/main,True,False,False,True,related_mariadb_mysql,"a06be0288f63f520aec95982cc6f872d26c4f23c	HEAD
+ad8b22f12258746089f8705b0a1e1fc678338790	refs/heads/1-10.5-mdev-34687-binlog-corruption-warning
+1356b77011df38af9b3c31a4fe57647aa281de8a	refs/heads/10-7.selectivity
+c2a7dffc573f311029ed4696fb5bd88e5efba752	refs/heads/10.0
+3c884684c126d0afe4241b85d2d4bf00249de6a7	refs/heads/10.0-galera
+da9081d14f2de7bb655cea5c9962f16e15f6f77d	refs/heads/10.1
+04d9a46c41b36b61057741abddf7840962e76893	refs/heads/10.10
+520fafd2806b571eff8404f4ba21e37a3bfb612c	refs/heads/1"
+https://github.com/mysql/mysql-server.git,refs/heads/trunk,True,False,False,True,related_mariadb_mysql,"447eb26e094b444a88c532028647e48228c3c04f	HEAD
+f7680e98b6bbe3500399fbad465d08a6b75d7a5c	refs/heads/5.7
+0a7df2e4693d8f10901a26034ae6257699356e30	refs/heads/8.0
+f9c88132a87a7d9e740e50bce2621999695bd3fe	refs/heads/8.4
+845d525d49c8027a4d0cdcc43372c96ba295c857	refs/heads/9.7
+84ef2cea3eedb542ab91ab051018cb0dc7d1596e	refs/heads/cluster-7.4
+9dcc40017ca5b5cb44494cc29b9b5e56ae5f99f8	refs/heads/cluster-7.5
+c9e25276afbde46940c4563430fe75390d5863e3	refs/heads/cluster-7.6
+447eb26e094b444a88c532028647e48228c3c0"
+https://github.com/apache/openoffice.git,refs/heads/trunk,True,False,False,True,related_libreoffice_openoffice,"4bb26738ff7ada5caefbfb03c42872fd9b2b6d18	HEAD
+ac58ea25d9ea6e57181d6047264340cdc75de79a	refs/heads/AOO34
+3c6fe4a39950fd2140ef965485fd1ca4718326fe	refs/heads/AOO400
+8e9dac8078ac9443c6fc641f4610d7989b472f1f	refs/heads/AOO401
+3c15b2dbc7d4ad50b4e1562b598fdf21d126178e	refs/heads/AOO410
+b1cdbd2c1b0c99b9e8c2ff5f17cc0127551a8f62	refs/heads/AOO4110
+bdb20b2a644caf8c6da0dc8ab59650662275bb96	refs/heads/AOO4111
+c24717f063e2ef90f0cad5bf4c02f1b7a1b20827	refs/heads/AOO413
+8676203b51b8436958e0147ec6a5d9c95fef2cb7"
+https://github.com/tensorflow/tensorflow.git,refs/heads/master,True,False,False,True,negative_tensorflow_django,"b80c24410cf2ea68a5732b35355b91d5cf679ca3	HEAD
+622c5eb5c66d106f0d7d0785d5c45aad018759d1	refs/heads/LakshmiKalaKadali-patch-3
+bf84bda7a94609110b6752ef5d6d84801a167575	refs/heads/LakshmiKalaKadali-patch-4
+cc8600047e94e3cba5c2ece81646b48bf3921dea	refs/heads/LakshmiKalaKadali-patch-5
+55c375f294deb3fd149c320c14f3fe1eb7347340	refs/heads/LakshmiKalaKadali-patch-7
+5a809c29718011bf277ac5e4ca444b1cc7cb0a26	refs/heads/TFCI-Debug-Mod
+ba8642626072dd32edfcbbc5cdd68e332b167e67	refs/heads/TFCI-Debug-part2
+71c362"
+https://github.com/django/django.git,refs/heads/main,True,False,False,True,negative_tensorflow_django,"4bbc27c8686f10f9556cef02dbfa9f5157fbcf56	HEAD
+4bbc27c8686f10f9556cef02dbfa9f5157fbcf56	refs/heads/main
+f87add967ec0aa644353cb7e1e1659ca9262f691	refs/heads/stable/5.2.x
+ac5a8991633d4b02a609df6570a0e8fc093d0ba4	refs/heads/stable/6.0.x
+ecc5182234546e712207a60a6109f70a9068a588	refs/heads/stable/6.1.x
+a7829f33349f0778d52c35615465b11e42e573b4	refs/pull/1/head
+f6996c2805b62c9cf4675f27f96b1e7a7fcfc264	refs/pull/1/merge
+5c3e88060e286ffa28092d7d6e49edde857053c7	refs/pull/10/head
+ee476f64d153f965a531d4e6d4"
+https://github.com/microsoft/vscode.git,refs/heads/main,True,False,False,True,negative_vscode_xgboost,"82b69222a0af57b165aeb9c52d972cacbdca666e	HEAD
+e7f30e38c5a4efafeec8ad52861eb772a9ee4dfb	refs/dev/mjbvz/1.71.1msrc
+e7f30e38c5a4efafeec8ad52861eb772a9ee4dfb	refs/dev/mjbvz/1.71msrc
+e7f30e38c5a4efafeec8ad52861eb772a9ee4dfb	refs/dev/mjbvz/1.71msrc-4
+e7f30e38c5a4efafeec8ad52861eb772a9ee4dfb	refs/dev/mjbvz/171msrc
+e7f30e38c5a4efafeec8ad52861eb772a9ee4dfb	refs/dev/mjbvz/171msrc-2
+f8edf625b8b5b7fd9717c31ec834c8e8a062f885	refs/heads/14e8d6503a1
+e28a92fc1fbe9de11eca2f8ad19899334bff8525	refs/heads/169
+29d98"
+https://github.com/dmlc/xgboost.git,refs/heads/master,True,False,False,True,negative_vscode_xgboost,"a6d7c3376e020c36efb78ec0cd4ce5eb6976ed73	HEAD
+c02a80c6475b5dac3ce396397ce289839d41db8c	refs/heads/copilot/add-agents-md-file
+d70c10cc0349b8ded8e4dadb2092cd4739dca537	refs/heads/dependabot/github_actions/github-actions-20989e708e
+8945dae81329df25702fe50cc52e5a106549865c	refs/heads/dependabot/maven/jvm-packages/scala.version-2.13.15
+10394314a175c5bb236c0b4049b1bf48e2856674	refs/heads/dependabot/maven/jvm-packages/xgboost4j-spark-gpu/spark.version.gpu-3.5.3
+068594c6828f0a95580d95156aca791f0b11e7c7	"
+https://github.com/Project-MONAI/MONAI.git,refs/heads/dev,True,False,False,True,uncertain_monai_tensorflow,"013bda0a03656415da763be9a2e61c1ef917d6bd	HEAD
+2a8578a0e2755266b087578710edf807fe38b3d1	refs/heads/auto-update-hash
+013bda0a03656415da763be9a2e61c1ef917d6bd	refs/heads/dev
+e1d179035608bc07c0876334e18e457a97784d43	refs/heads/gen-ai-dev
+298a8d6900d2eb4cd51b68676bb86a497701a412	refs/heads/geometric
+d18565fb3e4fd8c556707f91ac280a2dc3f681c1	refs/heads/main
+96bfda00c6bd290297f5e3514ea227c6be4d08b4	refs/heads/releasing/1.3.1
+59a7211070538586369afd4a01eca0a7fe2e742e	refs/heads/releasing/1.3.2
+46a5272196a"

@@ -6,6 +6,11 @@
 
 from proxytool_redux.benchmark import run_all_benchmarks
 from proxytool_redux.bootstrap import load_redux4_core, load_redux4_module
+from proxytool_redux.benchmark_metrics import (
+    compute_pair_classification_metrics,
+    compute_score_separation,
+    compute_topk_metrics,
+)
 from proxytool_redux.scoring import contrastive_adjust, rank_fraction, winsor_bounds
 
 __all__ = [
@@ -15,4 +20,7 @@ __all__ = [
     "load_redux4_core",
     "load_redux4_module",
     "run_all_benchmarks",
+    "compute_pair_classification_metrics",
+    "compute_score_separation",
+    "compute_topk_metrics",
 ]

@@ -1,0 +1,12 @@
+{
+  "generated_at_utc": "2026-06-03T23:37:02.503450+00:00",
+  "cwd": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant",
+  "github_token_present": false,
+  "gh_available": true,
+  "gh_authenticated": false,
+  "gh_status_excerpt": "github.com\n  X Failed to log in to github.com account dev4-gpt (keyring)\n  - Active account: true\n  - The token in keyring is invalid.\n  - To re-authenticate, run: gh auth login -h github.com\n  - To forget about this account, run: gh auth logout -h github.com -u dev4-gpt\n",
+  "benchmark_manifest_path": "configs/labeled_benchmark_pairs.json",
+  "benchmark_manifest_sha256": "c85d9d2011dfa748463a73e257391e5364cfb9dc53ceb8f2dff1e53ad569ae0e",
+  "hyperparams_path": "metamatch_hyperparams.json",
+  "hyperparams_sha256": "e5c736c70c35fccf94098b5f26b33ae96ae435b4a018fb6e386e46134b8066f4"
+}

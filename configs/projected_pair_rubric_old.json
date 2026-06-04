@@ -33,15 +33,13 @@
   },
   "thirty_pair_allocation": {
     "known_match": 10,
-    "known_related": 5,
     "known_non_match": 10,
-    "target_uncertain": 5
+    "target_uncertain": 10
   },
   "pilot_allocation": {
     "known_match": 3,
-    "known_related": 2,
     "known_non_match": 3,
-    "target_uncertain": 2
+    "target_uncertain": 4
   },
   "decision_thresholds": {
     "alpha": 0.05,

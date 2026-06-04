@@ -1,0 +1,6 @@
+anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
+onnx/onnx,https://github.com/onnx/onnx,fastmachinelearning/hls4ml,https://github.com/fastmachinelearning/hls4ml,1,922.63,96.37
+onnx/onnx,https://github.com/onnx/onnx,ufoym/deepo,https://github.com/ufoym/deepo,2,909.31,93.87
+onnx/onnx,https://github.com/onnx/onnx,OpenPPL/ppq,https://github.com/OpenPPL/ppq,3,893.6,95.62
+onnx/onnx,https://github.com/onnx/onnx,jina-ai/clip-as-service,https://github.com/jina-ai/clip-as-service,4,864.48,94.75
+onnx/onnx,https://github.com/onnx/onnx,google-deepmind/sonnet,https://github.com/google-deepmind/sonnet,5,860.7,94.87

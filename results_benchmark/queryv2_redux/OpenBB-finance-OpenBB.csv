@@ -1,0 +1,6 @@
+anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
+OpenBB-finance/OpenBB,https://github.com/OpenBB-finance/OpenBB,ValueCell-ai/valuecell,https://github.com/ValueCell-ai/valuecell,1,929.75,94.39
+OpenBB-finance/OpenBB,https://github.com/OpenBB-finance/OpenBB,brokermr810/QuantDinger,https://github.com/brokermr810/QuantDinger,2,847.13,93.82
+OpenBB-finance/OpenBB,https://github.com/OpenBB-finance/OpenBB,quantsbin/Quantsbin,https://github.com/quantsbin/Quantsbin,3,825,93.77
+OpenBB-finance/OpenBB,https://github.com/OpenBB-finance/OpenBB,Michalos88/Quant-Projects,https://github.com/Michalos88/Quant-Projects,4,768.75,92.7
+OpenBB-finance/OpenBB,https://github.com/OpenBB-finance/OpenBB,binance/binance-skills-hub,https://github.com/binance/binance-skills-hub,5,728.8,94.15

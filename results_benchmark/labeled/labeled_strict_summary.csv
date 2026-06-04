@@ -1,0 +1,5 @@
+method,threshold,precision,recall,f1,accuracy,true_positives,false_positives,true_negatives,false_negatives,positive_mean,negative_mean,mean_gap,positive_median,negative_median,median_gap,positive_count,negative_count
+metadata,50.0,1.0,1.0,1.0,1.0,5,0,2,0,94.4,6.245000000000001,88.155,96.32,6.245000000000001,90.07499999999999,5,2
+code_centric,50.0,1.0,1.0,1.0,1.0,5,0,2,0,100.0,14.67,85.33,100.0,14.67,85.33,5,2
+dynamic,50.0,0.8,0.8,0.8000000000000002,0.7142857142857143,4,1,1,1,78.5,50.0,28.5,92.5,50.0,42.5,5,2
+cross_language,50.0,1.0,1.0,1.0,1.0,5,0,2,0,100.0,21.835,78.16499999999999,100.0,21.835,78.16499999999999,5,2

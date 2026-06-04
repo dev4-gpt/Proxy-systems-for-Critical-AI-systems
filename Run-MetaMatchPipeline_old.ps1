@@ -93,19 +93,10 @@ if (-not $SummarizeOnly) {
     if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
         throw "GitHub CLI (gh) not found. Install and run: gh auth login"
     }
-
-    $githubTokenPresent = -not [string]::IsNullOrWhiteSpace($env:GITHUB_TOKEN)
-    if (-not $githubTokenPresent) {
-        throw "GITHUB_TOKEN is not set. Set it before running the full pipeline so benchmark and API-backed runs are reproducible."
-    }
-
     gh auth status 2>&1 | Out-Host
     if ($LASTEXITCODE -ne 0) {
         throw "gh not authenticated. Run: gh auth login -h github.com"
     }
-
-    python3 tools/write_run_manifest.py --output results_benchmark/run_manifest.json
-    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
     $batchParams = @{
         AnchorsCsv = $AnchorsCsv
@@ -125,10 +116,6 @@ if (-not $SummarizeOnly) {
 
 Write-Host "=== Step 2: Summarize + evaluation tables ===" -ForegroundColor Cyan
 python3 tools/summarize_runs.py --runs-dir $RunsDir --topk 10 --evaluate
-if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-
-Write-Host "=== Step 2b: Write/update run manifest ===" -ForegroundColor Cyan
-python3 tools/write_run_manifest.py --output results_benchmark/run_manifest.json
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 if ($ArchiveAsExperiment) {

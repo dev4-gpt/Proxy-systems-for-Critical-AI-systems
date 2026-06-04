@@ -1,0 +1,30 @@
+{
+  "archive": "runs/experiments/penalty300_min700_cap22_queryv2",
+  "pilot_only": false,
+  "top_k": 5,
+  "max_commits": 50,
+  "metadata_only": true,
+  "n_pair_scores": 100,
+  "anchors": [
+    "JaidedAI/EasyOCR",
+    "Lightning-AI/pytorch-lightning",
+    "OpenBB-finance/OpenBB",
+    "apache/airflow",
+    "bbfamily/abu",
+    "deepspeedai/DeepSpeed",
+    "eriklindernoren/ML-From-Scratch",
+    "explosion/spaCy",
+    "gradio-app/gradio",
+    "huggingface/datasets",
+    "huggingface/transformers",
+    "jina-ai/serve",
+    "onnx/onnx",
+    "pytorch/pytorch",
+    "ray-project/ray",
+    "recommenders-team/recommenders",
+    "sebastianruder/NLP-progress",
+    "serengil/deepface",
+    "streamlit/streamlit",
+    "ultralytics/yolov5"
+  ]
+}
