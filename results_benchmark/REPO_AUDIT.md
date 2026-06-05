@@ -1,6 +1,6 @@
 # Repository Audit — CAIS / MetaMatch / REDUX
 
-**Repository:** `/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant`  
+**Repository:** `mdk5293/Proxy-systems-for-Critical-AI-systems` (repo root)  
 **Audit date:** 2026-06-05  
 **Scope:** Read-only inventory of what the validation pass actually uses vs. historical sprawl.
 
@@ -20,7 +20,6 @@
 | `proxytool_redux/` and `projected_pairs/` gitignored but imported/cited                | **High** | Fresh clone may not fully reproduce REDUX scoring                                 |
 | 20 grid-history experiment folders unused by validation                                | Low      | Archive reference only; do not re-run                                             |
 | Root notebooks deleted; logic lives in `proxytool_redux/` (gitignored)                 | **High** | Document clone/setup in `REDUX_REPRO.md`                                          |
-| `ENCODING_FIXES.md` was missing (deleted in commit `827f04e`)                          | Medium   | **Recreated** 2026-06-05; links in `WORK_REVIEW.md` and `README.md` are now valid |
 
 
 **Bottom line:** For paper submission and reviewer reproduction, ship the **minimal paper package** below. Use `WORK_REVIEW.md` as the single source of truth for commands, tags, and cross-verification.
@@ -267,7 +266,7 @@ Live run outputs (`runs/manual-ml-py/`, `runs/_summaries/`, `runs/2026-05-*-batc
 For reviewer reproduction of the validation pass (not re-running MetaMatch grid):
 
 ```bash
-cd "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant"
+cd "$(git rev-parse --show-toplevel)"
 export GITHUB_TOKEN="$(gh auth token)"
 export PYTHONPATH=.
 
@@ -394,7 +393,6 @@ Listed in [Tools overlap → Validation tools](#validation-tools-8--actively-use
 | **4**    | Do **not** re-run MetaMatch grid or re-archive queryv2                 | G8 = no retune; frozen archives are inputs                                            |
 | **5**    | Tag grid-history experiment folders as archive-only in README          | Prevents accidental re-runs                                                           |
 | **6**    | Consider removing `_before_repro_run/` in a future cleanup             | Duplicates `archives/` symlinks (not done in this pass)                               |
-| **7**    | Track `ENCODING_FIXES.md` in git                                       | Was deleted in `827f04e`; recreated 2026-06-05; links in WORK_REVIEW/README now valid |
 
 
 ---

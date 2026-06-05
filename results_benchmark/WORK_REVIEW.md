@@ -1,6 +1,6 @@
 # CAIS / MetaMatch Validation — Work Review
 
-**Repository:** `/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant`  
+**Repository:** clone of `mdk5293/Proxy-systems-for-Critical-AI-systems` (repo root = working directory for all commands below)  
 **Master document:** `results_benchmark/WORK_REVIEW.md`  
 **Last updated:** 2026-06-05
 
@@ -102,7 +102,7 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 | **D** | Pilot proxy REDUX | `PYTHONPATH=. python3 tools/score_metamatch_proxies_redux.py --pilot-only --top-k 5 --max-commits 60 --fit-global` | `queryv2_redux/*.csv` (4 thin anchors) | 20 pair scores (4×5); 4 methods in pilot | **[Anchor/Query]** |
 | **D** | Full proxy REDUX | `PYTHONPATH=. python3 tools/score_metamatch_proxies_redux.py --top-k 5 --max-commits 50 --fit-global --metadata-only --output-dir results_benchmark/queryv2_redux` | 20 anchor CSVs, `rollup_summary.csv`, `run_manifest.json` | **100** metadata pair scores; thin-anchor means: jina **96.4%**, ray **92.3%**, airflow **95.4%**, OpenBB **93.8%** | **[Anchor/Query]** |
 | **E** | Testing case study | *(no command)* | `results_benchmark/testing_case_study_airflow.md` | Links `apache/airflow` top proxies + metadata REDUX to orchestration test dimensions | **[Analysis]** |
-| **F** | anchorsv2 overlap | `PYTHONPATH=. python3 tools/anchorsv2_overlap.py` | `results_benchmark/anchorsv2_overlap.csv` | **20** shared folder slugs; top-5 **Jaccard = 1.0** on all shared anchors | **[Anchor/Query]** |
+| **F** | anchorsv2 overlap | `PYTHONPATH=. python3 tools/anchorsv2_overlap.py` | `results_benchmark/anchorsv2_overlap.csv` | **20** shared folder slugs; mean top-5 **Jaccard = 0.96** (17/20 at 1.0) | **[Anchor/Query]** |
 | **F** | anchorsv2 REDUX bridge | `bash tools/run_anchorsv2_redux.sh all` | `results_benchmark/anchorsv2_redux/` | Same REDUX bridge for anchorsv2 archive (24 anchors + rollup) | **[Anchor/Query]** |
 | **G** | Decision gates | *(no command)* | `results_benchmark/PAPER_PACKAGE.md` | Gates G1–G7 **PASS**; G8 **no MetaMatch retune** | **[Analysis]** |
 
@@ -169,8 +169,9 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 
 ### anchorsv2 sensitivity
 
-- Top-5 proxy **Jaccard = 1.0** on all **20** shared folder slugs — `anchorsv2_overlap.csv`
-- REDUX bridge — `anchorsv2_redux/`
+- Top-5 proxy overlap on **20** shared folder slugs — `anchorsv2_overlap.csv`: mean **Jaccard = 0.96**; **17/20** at 1.0; partial drift on `explosion/spaCy`, `huggingface/datasets` (0.67), `jina-ai/serve` (0.80)
+- REDUX bridge — `anchorsv2_redux/` (**116** pair scores, 24 anchors)
+- **Assembly note:** four swapped anchors scored fresh; **17** shared slugs copied from `queryv2_redux/` (identical metadata means); **3** shared slugs rescored (`apache/airflow`, `jina-ai/serve`, `ray-project/ray`). Full independent rerun: `bash tools/run_anchorsv2_redux.sh full`
 
 ### MetaMatch retrieval winner (pre-existing)
 
@@ -214,14 +215,13 @@ From `projected_pairs/full_summary.json` (n = 30): Spearman **ρ = −0.21** (p 
 | Honest weak Spearman | `projected_pairs/full_summary.json`, `VALIDATION_MEMO.md` |
 | Discrimination | `metadata_discrimination_canonical.csv` |
 | All gates | `PAPER_PACKAGE.md` |
-| Encoding audit | `ENCODING_FIXES.md` |
 
 ---
 
 ## Repro commands
 
 ```bash
-cd "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant"
+cd "$(git rev-parse --show-toplevel)"
 
 export GITHUB_TOKEN="$(gh auth token)"
 export PYTHONPATH=.
@@ -291,7 +291,6 @@ Reused professor tools: `write_run_manifest.py`, `verify_repo_access.py`, `run_l
 | `testing_case_study_airflow.md` | Testing / QA bridge |
 | `VALIDATION_MEMO.md`, `PAPER_PACKAGE.md`, `README.md` | Analysis + directory map |
 | `WORK_REVIEW.md` | This document |
-| `ENCODING_FIXES.md` | UTF-8 cleanup log |
 | `archives/` | Historical CSVs with root symlinks |
 
 ---
@@ -302,7 +301,6 @@ Reused professor tools: `write_run_manifest.py`, `verify_repo_access.py`, `run_l
 - Frozen experiment **scores, ranks, and functional columns** in `runs/experiments/**/30_Matches.csv` were **not** modified.
 - Batch run artifacts under `runs/2026-05-*-batch/` received cosmetic Description fixes only (TACHES attribution, no score changes).
 - Notebook **outputs** were not stripped; no mojibake was found in `.ipynb` markdown/raw cell sources.
-- Full file list: `results_benchmark/ENCODING_FIXES.md`.
 
 **Mojibake scan** (expect 0 hits after this pass):
 

@@ -14,7 +14,7 @@
 | G4 | Spearman reported honestly | **PASS** | ρ≈-0.21 documented; rubric 0.30 not met |
 | G5 | queryv2 retrieval winner frozen | **PASS** | 0 magnets, 20/0/0 Good/OK/Weak |
 | G6 | queryv2 proxy REDUX bridge | **PASS** | 20 anchors × top-5 metadata REDUX; thin anchors (jina 96.4%, ray 92.3%, airflow 95.4%, OpenBB 93.8% means) — `queryv2_redux/rollup_summary.csv` |
-| G7 | anchorsv2 sensitivity | **PASS** | Jaccard 1.0 on 20 shared anchors; REDUX bridge in `anchorsv2_redux/` |
+| G7 | anchorsv2 sensitivity | **PASS** | Mean top-5 Jaccard **0.96** on 20 shared slugs (17/20 at 1.0); REDUX bridge in `anchorsv2_redux/` |
 | G8 | MetaMatch retune required? | **NO** | G6 passed; do not re-archive queryv2 |
 
 ## Tables for paper
@@ -34,4 +34,6 @@
 
 ## Appendix: anchorsv2
 
-Same penalty (300), min (700), cap (2/2), and query overrides as queryv2. Four anchor swaps in `recommended_anchors_top_v2.csv`. On 20 folder slugs present in both archives, top-5 proxy sets are **identical** (Jaccard = 1.0). The four swapped anchors use different folders and are reported separately in the anchor list—not as a higher Good count vs queryv2.
+Same penalty (300), min (700), cap (2/2), and query overrides as queryv2. Four anchor swaps in `recommended_anchors_top_v2.csv`. On **20** folder slugs present in both archives, mean top-5 proxy Jaccard is **0.96** (**17/20** at 1.0; partial drift on `explosion/spaCy` and `huggingface/datasets` at 0.67, `jina-ai/serve` at 0.80 — see `anchorsv2_overlap.csv`). The four swapped anchors use different folders and are reported separately—not as a higher Good count vs queryv2.
+
+**`anchorsv2_redux/` assembly:** four swapped anchors scored fresh; **17** shared slugs copied from `queryv2_redux/` (identical proxy URLs and metadata means); **3** shared slugs rescored (`apache/airflow`, `jina-ai/serve`, `ray-project/ray`). Full independent rerun: `bash tools/run_anchorsv2_redux.sh full`.

@@ -14,7 +14,7 @@ Magnets/Good-OK-Weak measure **GitHub retrieval hygiene**, not REDUX similarity.
 
 ## Proxy stability vs queryv2 (shared folder slugs)
 
-On the **20** folder slugs present in both archives, top-5 proxy sets match queryv2 (Jaccard = 1.0 on all rows). See `archives/metamatch_sensitivity/anchorsv2_overlap.csv` (symlink: `anchorsv2_overlap.csv`).
+On the **20** folder slugs present in both archives, mean top-5 Jaccard = **0.96** (**17/20** at 1.0). Partial proxy-set drift: `explosion/spaCy` and `huggingface/datasets` (0.67), `jina-ai/serve` (0.80). See `archives/metamatch_sensitivity/anchorsv2_overlap.csv` (symlink: `anchorsv2_overlap.csv`).
 
 Four **swapped** anchors use different folders and are scored separately in REDUX:
 

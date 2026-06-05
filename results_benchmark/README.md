@@ -2,7 +2,7 @@
 
 Organized benchmark outputs for the CAIS / MetaMatch paper package.
 
-**Start here:** [`WORK_REVIEW.md`](WORK_REVIEW.md) — master validation document (phases, tags, repro, cross-verification). UTF-8 cleanup log: [`ENCODING_FIXES.md`](ENCODING_FIXES.md).
+**Start here:** [`WORK_REVIEW.md`](WORK_REVIEW.md) — master validation document (phases, tags, repro, cross-verification).
 
 ## MetaMatch phase-2 (queryv2 + anchorsv2)
 
@@ -52,4 +52,3 @@ Loose root-level sweep and ablation CSVs were moved under `archives/` with symli
 - `VALIDATION_MEMO.md` — reviewer response backbone
 - `PAPER_PACKAGE.md` — gate checklist G1–G8
 - `testing_case_study_airflow.md` — queryv2 case study
-- `ENCODING_FIXES.md` — display-text UTF-8 fixes (2026-06-05)
