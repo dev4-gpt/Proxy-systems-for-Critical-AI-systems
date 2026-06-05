@@ -1,0 +1,6 @@
+anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
+explosion/spaCy,https://github.com/explosion/spaCy,huggingface/autotrain-advanced,https://github.com/huggingface/autotrain-advanced,1,879.21,83.38
+explosion/spaCy,https://github.com/explosion/spaCy,catalyst-team/catalyst,https://github.com/catalyst-team/catalyst,2,828.3,80.08
+explosion/spaCy,https://github.com/explosion/spaCy,NTMC-Community/MatchZoo,https://github.com/NTMC-Community/MatchZoo,3,827.66,75.86
+explosion/spaCy,https://github.com/explosion/spaCy,flairNLP/flair,https://github.com/flairNLP/flair,4,823.85,82.14
+explosion/spaCy,https://github.com/explosion/spaCy,huggingface/huggingface_hub,https://github.com/huggingface/huggingface_hub,5,813.19,80.94

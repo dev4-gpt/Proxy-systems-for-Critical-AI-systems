@@ -1,0 +1,6 @@
+anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
+eriklindernoren/ML-From-Scratch,https://github.com/eriklindernoren/ML-From-Scratch,mdbloice/Augmentor,https://github.com/mdbloice/Augmentor,1,906.05,94.26
+eriklindernoren/ML-From-Scratch,https://github.com/eriklindernoren/ML-From-Scratch,aleju/imgaug,https://github.com/aleju/imgaug,2,840.85,94.61
+eriklindernoren/ML-From-Scratch,https://github.com/eriklindernoren/ML-From-Scratch,aladdinpersson/Machine-Learning-Collection,https://github.com/aladdinpersson/Machine-Learning-Collection,3,777.88,95.73
+eriklindernoren/ML-From-Scratch,https://github.com/eriklindernoren/ML-From-Scratch,tflearn/tflearn,https://github.com/tflearn/tflearn,4,766.29,93.98
+eriklindernoren/ML-From-Scratch,https://github.com/eriklindernoren/ML-From-Scratch,annoviko/pyclustering,https://github.com/annoviko/pyclustering,5,753.81,94.15

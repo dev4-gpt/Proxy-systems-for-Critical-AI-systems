@@ -50,7 +50,7 @@ Sensitivity: `labeled/threshold45/` and `labeled/threshold55/`.
 **Response:**
 
 1. **MetaMatch queryv2** — retrieval hygiene (0 top-5 magnets, 20/0/0 Good/OK/Weak). Documented in `runs/experiments/documentation/WINNER.md` and `results_benchmark/queryv2_spot_check.md`.
-2. **REDUX on proxies** — `results_benchmark/queryv2_redux/` (anchor→top-k proxy similarity).
+2. **REDUX on proxies** — `results_benchmark/queryv2_redux/` and `results_benchmark/anchorsv2_redux/` (anchor→top-k proxy similarity).
 3. **Case study** — `results_benchmark/testing_case_study_airflow.md` (anchor → proxies → CAIS scenario mapping).
 
 Do **not** equate magnets/Good-OK-Weak with test adequacy.
@@ -113,6 +113,8 @@ From `continuous_scores_summary.csv`:
 | `run_manifest.json` | Repro SHA256 + auth snapshot |
 | `labeled_scored.json` | 10-pair REDUX scores |
 | `labeled/` | Threshold 50/45/55 + strict/lenient summaries |
-| `queryv2_redux/` | Proxy similarity (pilot + full) |
-| `anchorsv2_overlap.csv` | Anchor perturbation stability |
+| `queryv2_redux/` | Proxy similarity (queryv2 winner; pilot + full) |
+| `anchorsv2_redux/` | Proxy similarity (anchorsv2 sensitivity; 24 anchors) |
+| `anchorsv2_overlap.csv` | Anchor perturbation stability (→ `archives/metamatch_sensitivity/`) |
+| `README.md` | Directory map; historical CSVs under `archives/` |
 | `PAPER_PACKAGE.md` | Gate checklist + limitations |

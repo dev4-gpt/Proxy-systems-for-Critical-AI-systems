@@ -1,0 +1,6 @@
+anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct,code_centric_pct,dynamic_pct,cross_language_pct
+apache/airflow,https://github.com/apache/airflow,feast-dev/feast,https://github.com/feast-dev/feast,1,884.12,97.27,46.84,69.17,31.44
+apache/airflow,https://github.com/apache/airflow,dagster-io/dagster,https://github.com/dagster-io/dagster,2,875.81,97.5,52.62,40.0,46.12
+apache/airflow,https://github.com/apache/airflow,abhishek-ch/around-dataengineering,https://github.com/abhishek-ch/around-dataengineering,3,785.07,94.44,38.93,7.5,38.8
+apache/airflow,https://github.com/apache/airflow,san089/goodreads_etl_pipeline,https://github.com/san089/goodreads_etl_pipeline,4,774.15,96.13,39.57,7.5,52.04
+apache/airflow,https://github.com/apache/airflow,elyra-ai/elyra,https://github.com/elyra-ai/elyra,5,756.14,96.48,42.92,45.83,65.29

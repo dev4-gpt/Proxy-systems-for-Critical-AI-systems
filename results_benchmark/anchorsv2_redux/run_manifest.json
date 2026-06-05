@@ -1,0 +1,16 @@
+{
+  "archive": "/var/folders/fk/rq_1swks4wx8ftwh5hbfrpz00000gn/T/tmp.ZWglFpoMnu",
+  "pilot_only": false,
+  "top_k": 5,
+  "max_commits": 50,
+  "metadata_only": true,
+  "skip_existing": true,
+  "n_pair_scores": 17,
+  "anchors_scored_this_run": [
+    "mlflow/mlflow",
+    "pytorch/vision",
+    "scikit-learn/scikit-learn",
+    "treeverse/dvc"
+  ],
+  "rollup_anchors": 24
+}

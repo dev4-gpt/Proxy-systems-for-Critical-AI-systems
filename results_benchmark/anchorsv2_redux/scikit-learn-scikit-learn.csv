@@ -1,0 +1,6 @@
+anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
+scikit-learn/scikit-learn,https://github.com/scikit-learn/scikit-learn,scikit-learn-contrib/imbalanced-learn,https://github.com/scikit-learn-contrib/imbalanced-learn,1,1597.17,87.11
+scikit-learn/scikit-learn,https://github.com/scikit-learn/scikit-learn,probabl-ai/skore,https://github.com/probabl-ai/skore,2,906.86,90.7
+scikit-learn/scikit-learn,https://github.com/scikit-learn/scikit-learn,scikit-mobility/scikit-mobility,https://github.com/scikit-mobility/scikit-mobility,3,896.43,91.35
+scikit-learn/scikit-learn,https://github.com/scikit-learn/scikit-learn,fbdesignpro/sweetviz,https://github.com/fbdesignpro/sweetviz,4,824.26,86.65
+scikit-learn/scikit-learn,https://github.com/scikit-learn/scikit-learn,scikit-learn-contrib/metric-learn,https://github.com/scikit-learn-contrib/metric-learn,5,822.27,87.1

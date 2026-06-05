@@ -10,7 +10,7 @@
 | G4 | Spearman reported honestly | **PASS** | ρ≈-0.21 documented; rubric 0.30 not met |
 | G5 | queryv2 retrieval winner frozen | **PASS** | 0 magnets, 20/0/0 Good/OK/Weak |
 | G6 | queryv2 proxy REDUX bridge | **PASS** | 20 anchors × top-5 metadata REDUX; thin anchors (jina 96.4%, ray 92.3%, airflow 95.4%, OpenBB 93.8% means) — `queryv2_redux/rollup_summary.csv` |
-| G7 | anchorsv2 sensitivity | **PASS** | Jaccard 1.0 on 20 shared anchors (`anchorsv2_overlap.csv`) |
+| G7 | anchorsv2 sensitivity | **PASS** | Jaccard 1.0 on 20 shared anchors; REDUX bridge in `anchorsv2_redux/` |
 | G8 | MetaMatch retune required? | **NO** | G6 passed; do not re-archive queryv2 |
 
 ## Tables for paper
@@ -18,7 +18,7 @@
 1. **MetaMatch arc:** penalty30 → penalty300 → queryv2 (`runs/experiments/documentation/WINNER.md`)
 2. **Labeled ground truth:** `labeled/labeled_summary.csv` + `labeled_strict_summary.csv`
 3. **Method comparison:** `metadata_discrimination_canonical.csv`, `continuous_scores_summary.csv`
-4. **Proxy similarity:** `queryv2_redux/rollup_summary.csv`
+4. **Proxy similarity:** `queryv2_redux/rollup_summary.csv` and `anchorsv2_redux/rollup_summary.csv`
 5. **Anchor perturbation:** `anchorsv2_overlap.csv` + four swaps in `PHASE2_NOTES.md`
 
 ## Explicit limitations (include in paper)

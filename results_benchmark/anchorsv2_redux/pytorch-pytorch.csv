@@ -1,0 +1,6 @@
+anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
+pytorch/pytorch,https://github.com/pytorch/pytorch,chainer/chainer,https://github.com/chainer/chainer,1,1082.88,89.57
+pytorch/pytorch,https://github.com/pytorch/pytorch,norse/norse,https://github.com/norse/norse,2,1050,88.4
+pytorch/pytorch,https://github.com/pytorch/pytorch,pranftw/neograd,https://github.com/pranftw/neograd,3,1015.38,85.54
+pytorch/pytorch,https://github.com/pytorch/pytorch,leptonai/leptonai,https://github.com/leptonai/leptonai,4,999.12,89.47
+pytorch/pytorch,https://github.com/pytorch/pytorch,oreilly-japan/deep-learning-from-scratch-3,https://github.com/oreilly-japan/deep-learning-from-scratch-3,5,960,86.51

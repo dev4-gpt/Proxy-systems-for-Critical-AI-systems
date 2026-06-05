@@ -45,7 +45,7 @@ def main() -> int:
     parser.add_argument("--top-k", type=int, default=5)
     parser.add_argument(
         "--output",
-        default="results_benchmark/anchorsv2_overlap.csv",
+        default="results_benchmark/archives/metamatch_sensitivity/anchorsv2_overlap.csv",
     )
     args = parser.parse_args()
 
