@@ -20,7 +20,7 @@ This project implements **multi-signal similarity**, **explicit taxonomy alignme
 
 ## What this repository is
 
-This is an **executable extension of the paper**, not a one-page demo. The main artifact is **`proxytool.ipynb`**: one notebook that wires the full loop:
+This is an **executable extension of the paper**, not a one-page demo. The main artifact is **`proxytool_redux/proxytool.ipynb`** (canonical pipeline; legacy copies also live under `proxytool_redux/`): one notebook that wires the full loop:
 
 **config -> data pull -> features -> similarity -> validation -> plots -> test plans.**
 
@@ -30,7 +30,7 @@ Outputs include `results_plots/`, `validation_results.csv`, and (when you run th
 
 ## Paper figures -> code (Figures 2 & 3)
 
-### Figure 2 -- Six-step pipeline (end-to-end in `proxytool.ipynb`)
+### Figure 2 -- Six-step pipeline (end-to-end in `proxytool_redux/proxytool.ipynb`)
 
 | Step | What happens | Primary symbols / entry points |
 |------|----------------|--------------------------------|
@@ -138,7 +138,7 @@ What public metadata is actually measuring:
 
 | Artifact | Role |
 |----------|------|
-| `proxytool.ipynb` | Full pipeline: discovery -> evaluation -> test-plan output |
+| `proxytool_redux/proxytool.ipynb` | Full pipeline: discovery -> evaluation -> test-plan output |
 | `README.md` | Paper <-> code mapping (this file) |
 | `results_plots/` | Saved figures for comparisons and talks |
 | `validation_results.csv` | Summarized runs across domains / settings |
@@ -187,7 +187,7 @@ The foundation is intentionally honest: Git metadata captures development behavi
    ```bash
    pip install requests tqdm matplotlib ipython scipy sentence-transformers vaderSentiment
    ```
-3. Open and run **`proxytool.ipynb`**.
+3. Open and run **`proxytool_redux/proxytool.ipynb`**.
 
 If `sentence-transformers` is missing, optional embedding cells degrade gracefully.
 
@@ -197,7 +197,7 @@ If `sentence-transformers` is missing, optional embedding cells degrade graceful
 
 | Path | Purpose |
 |------|---------|
-| `proxytool.ipynb` | Canonical research pipeline |
+| `proxytool_redux/` | Canonical research notebooks (`proxytool.ipynb` and REDUX variants) |
 | `scripts/` | Python helpers (REDUX patches, projected-pair pipeline, repro benchmark) |
 | `assets/` | Paper-related PDFs, figures, harness PS1 |
 | `tools/` | MetaMatch Python utilities (`summarize_runs.py`, `compare_experiments.py`, grid runner) |

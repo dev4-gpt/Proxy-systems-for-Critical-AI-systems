@@ -1,6 +1,8 @@
 # CAIS validation memo
 
-Generated as part of the final validation plan (professor feedback + queryv2 / anchorsv2 MetaMatch results).
+Generated as part of the final validation plan (feedback + queryv2 / anchorsv2 MetaMatch results).
+
+**Master work review:** `WORK_REVIEW.md` — executive summary, phases A–G, repro commands, and source tags (`[Reproducible]`, `[Anchor/Query]`, `[Pre-existing]`, `[Analysis]`).
 
 ## Reviewer concern 1 — Ground truth
 

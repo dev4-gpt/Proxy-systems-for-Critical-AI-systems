@@ -1,5 +1,9 @@
 # Paper package and decision gate
 
+**Master work review:** `results_benchmark/WORK_REVIEW.md` (phase table, tag legend, cross-verification index).
+
+**Source tags:** `[Reproducible]` ground-truth tooling · `[Anchor/Query]` MetaMatch/queryv2 bridge · `[Pre-existing]` WINNER arc · `[Analysis]` this memo and gate docs.
+
 ## Gate results
 
 | Gate | Criterion | Result | Notes |

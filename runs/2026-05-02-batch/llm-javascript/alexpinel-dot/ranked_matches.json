@@ -503,7 +503,7 @@
     "SubdomainMatch": 1.0,
     "QueryCoverage": 0.3333,
     "SourceQueries": "d language:JavaScript stars:>=50",
-    "Description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES."
+    "Description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TACHES."
   },
   {
     "AnchorRepo": "alexpinel/Dot",
