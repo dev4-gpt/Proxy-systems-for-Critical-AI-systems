@@ -10,13 +10,13 @@ This document replaces a separate Word work-review table. Share the repository p
 
 ## 1. Title & purpose
 
-This validation pass integrates **professor-supplied ground-truth infrastructure** with **pre-existing MetaMatch Phase 2 results** (`penalty300_min700_cap22_queryv2` winner and `penalty300_min700_cap22_anchorsv2` sensitivity archive). It does **not** re-run the MetaMatch grid or re-archive queryv2. Instead, it **executes** the labeled-benchmark pipeline, **bridges** frozen retrieval outputs to REDUX proxy similarity, and **documents** honest statistics for paper gates.
+This validation pass integrates **supplied ground-truth infrastructure** with **pre-existing MetaMatch Phase 2 results** (`penalty300_min700_cap22_queryv2` winner and `penalty300_min700_cap22_anchorsv2` sensitivity archive). It does **not** re-run the MetaMatch grid or re-archive queryv2. Instead, it **executes** the labeled-benchmark pipeline, **bridges** frozen retrieval outputs to REDUX proxy similarity, and **documents** honest statistics for paper gates.
 
 The work addresses three reviewer concerns:
 
 | # | Concern | Response in this pass |
 |---|---------|------------------------|
-| **1 — Ground truth** | `30_Pairs.json` plausible pairs are script-discovered realism, not verified labels | Evidence-backed cohort in `configs/labeled_benchmark_pairs.json` → scored in `results_benchmark/labeled_scored.json` → metrics in `results_benchmark/labeled/` |
+| **1 — Ground truth** | `30_Pairs.json` plausible pairs are script-discovered realism, not verified labels | Evidence-backed cohort in `configs/labeled_benchmark_pairs.json` -> scored in `results_benchmark/labeled_scored.json` → metrics in `results_benchmark/labeled/` |
 | **2 — Testing / QA relevance** | Similarity must connect to test-relevant outcomes, not retrieval hygiene alone | queryv2 spot-check + REDUX proxy bridge (`queryv2_redux/`, `anchorsv2_redux/`) + airflow case study |
 | **3 — Statistics & method positioning** | Cross-method agreement and discrimination must be reported honestly | `VALIDATION_MEMO.md` synthesizes labeled metrics, discrimination tables, and Spearman ρ ≈ −0.21 (fails rubric 0.30) |
 
