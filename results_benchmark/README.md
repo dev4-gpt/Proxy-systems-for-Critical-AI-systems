@@ -2,7 +2,7 @@
 
 Organized benchmark outputs for the CAIS / MetaMatch paper package.
 
-**Start here:** [`WORK_REVIEW.md`](WORK_REVIEW.md) — master validation document (phases, tags, repro, cross-verification).
+**Start here:** [`WORK_REVIEW.md`](WORK_REVIEW.md) — master validation document (phases, tags, repro, cross-verification). **Where are the results?** → [`RESULTS_REVIEW.md`](RESULTS_REVIEW.md).
 
 ## MetaMatch phase-2 (queryv2 + anchorsv2)
 
@@ -48,6 +48,7 @@ Loose root-level sweep and ablation CSVs were moved under `archives/` with symli
 
 ## Narrative docs (`[Analysis]`)
 
+- `RESULTS_REVIEW.md` — professor-facing results navigator (paths + headline numbers)
 - `WORK_REVIEW.md` — **master** phase table, tag legend, repro commands
 - `VALIDATION_MEMO.md` — reviewer response backbone
 - `PAPER_PACKAGE.md` — gate checklist G1–G8
