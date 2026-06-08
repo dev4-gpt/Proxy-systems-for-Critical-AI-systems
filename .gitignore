@@ -48,6 +48,4 @@ results_benchmark/projected_pairs/
 
 proxytool_redux/
 REDUX_REPRO.md
-/scripts/
-!runs/experiments/scripts/
-!runs/experiments/scripts/**
+scripts/
