@@ -16,11 +16,20 @@ The discrepancies, gaps, and reproducibility issues this document originally fla
 |---|-------|--------|--------------|
 | 1 | Dual "lenient" metadata F1 (0.93 vs 1.00) | **RESOLVED** | `tools/run_labeled_benchmark.py` patched to exclude `target_uncertain` from P/R/F1 (matching `labeled_strict_metrics.py` and the documented cohort rule). Summaries were regenerated and independently re-derived offline (stdlib-only, no pandas/network) via `tools/recompute_labeled_metrics_stdlib.py` — byte-identical output. `labeled_summary.csv` ≡ `labeled_lenient_summary.csv`. **Consistent lenient metadata F1 = 1.00.** All docs re-cite this value. |
 | 2 | `related_mariadb_mysql` `score_error` "No module named 'proxytool_redux'" | **RESOLVED** (root cause) / live-refresh reproducible | Root cause = missing `PYTHONPATH=.` (the package imports fine from the repo root; it is not a true scoring failure). The on-disk `labeled_scored.json` no longer carries `score_error` and `score_source = live_redux` with verified values (metadata 54.36, code_centric 44.15, dynamic 7.5, cross_language 42.21); all other 9 pairs byte-identical. To independently re-verify in a normal (non-sandbox) shell: `export GITHUB_TOKEN="$(gh auth token)" && PYTHONPATH=. timeout 900 python3 tools/score_labeled_benchmark_redux.py --benchmark configs/labeled_benchmark_pairs.json --output results_benchmark/labeled_scored.json --live --max-commits 150`. |
-| 3 | Unauthenticated stat runs (403s) | **PARTIAL / DEFERRED** | Labeled cohort re-scored authenticated. `projected_pairs/full_summary.json` (n=30 Spearman) **deliberately not regenerated** — it is valid frozen tracked data and a full re-run is long/expensive in this environment; see [§9](#9-component-6--statistics-discrimination--cross-method-spearman) for the exact re-run command. |
+| 3 | Unauthenticated stat runs (403s) | **RESOLVED (authenticated re-run captured) — needs paper decision** | The authenticated projected-pair re-run was executed on 2026-06-19 (`export GITHUB_TOKEN="$(gh auth token)" && PYTHONPATH=. python3 scripts/projected_pair_pipeline.py --mode full --workers 1,2`, run outside the sandbox on the real network). Output saved to **`projected_pairs/full_summary_authenticated.json`** (telemetry `authenticated=true`, 49×200 / 5×403, api_non_200_ratio 0.093). The original unauthenticated **`projected_pairs/full_summary.json`** is **preserved unchanged** as the frozen, cited reference. **The authenticated numbers differ materially and flip the decision** (Spearman −0.21→**+0.777**, Pearson −0.35→**+0.776**, `go` false→**true**), driven by both authentication *and* a rubric/allocation change (the committed rubric now emits **n=25**: target_uncertain 10→5 + known_related 5, vs the frozen n=30). Because this overturns the headline "methods don't agree" negative finding, it is **flagged for the author's decision** before propagating into `PAPER_PACKAGE.md` / `VALIDATION_MEMO.md`. See [§9](#9-component-6--statistics-discrimination--cross-method-spearman). |
 | 4 | REDUX core gitignored + untracked | **RESOLVED** | `proxytool_redux/{_extracted/redux4_core.py,_extracted/__init__.py,benchmark.py,benchmark_metrics.py,bootstrap.py}`, `scripts/extract_redux4_core.py`, `scripts/run_repro_benchmark.py`, and `REDUX_REPRO.md` are now git-tracked. `.gitignore` reconciled (`projected_pairs/` un-ignored; only the 7 MB exploratory notebook stays out). Committed (not pushed). |
-| 5 | anchorsv2 not an independent rerun | **DEFERRED** | Full independent rerun is long-running/unreliable under the 10-min execution cap; existing valid bootstrap outputs preserved (not corrupted). Exact command to finish: `export GITHUB_TOKEN="$(gh auth token)" && bash tools/run_anchorsv2_redux.sh full`. See [§7](#7-component-4--queryv2--anchorsv2-redux-bridges). |
+| 5 | anchorsv2 not an independent rerun | **DEFERRED (re-attempted authenticated 2026-06-19, exceeded budget)** | Re-attempted outside the sandbox on the real network with authentication: `export GITHUB_TOKEN="$(gh auth token)" && PYTHONPATH=. timeout 1500 bash tools/run_anchorsv2_redux.sh full` (after clearing `results_benchmark/anchorsv2_redux/` so reused slugs are re-scored, not skipped). The run's **`--fit-global` step (per-repo feature extraction incl. commit embeddings for ~140 unique anchor+proxy URLs) alone exceeded the 25-min budget** and was killed by `timeout` before writing any per-anchor CSV. **No partial/corrupted output was produced** (the output dir was empty at kill time); the existing valid bootstrap outputs were **restored byte-for-byte from backup** and remain git-clean. The retrieval-side stability number was still re-verified: `tools/anchorsv2_overlap.py` re-derives `anchorsv2_overlap.csv` **byte-identical** (mean top-5 Jaccard 0.9567, 17/20 at 1.0). The REDUX metadata-mean rollup remains the bootstrap. See [§7](#7-component-4--queryv2--anchorsv2-redux-bridges). |
 
-**Reproducibility note:** `gh auth status` reports a keyring warning, but `gh auth token` returns a working token (verified HTTP 200, core limit 5000/5000). The live re-score above used `export GITHUB_TOKEN="$(gh auth token)"`.
+**Reproducibility note:** `gh auth status` reports a keyring warning, but `gh auth token` returns a working token (verified 2026-06-19 HTTP 200, core limit 5000/5000, ~4999 remaining). All network re-runs in the 2026-06-19 pass used `export GITHUB_TOKEN="$(gh auth token)"` and ran outside the sandbox (the in-sandbox allowlist blocks the GitHub REST API).
+
+### 0.1 — 2026-06-19 authenticated re-run pass (network outside sandbox)
+
+The two network-bound DEFERRED items were re-attempted with a verified GitHub token on the real network:
+
+1. **Token/API reachability — OK.** `curl /rate_limit` returned HTTP 200; authenticated core limit **5000**, ~4999 remaining; search limit 30/min.
+2. **Projected-pair authenticated re-run — DONE, captured to a new file, flagged.** Completed in ~87 s. New `projected_pairs/full_summary_authenticated.json`: n=25, **Spearman ρ=+0.7772 (p=4.87e-6)**, **Pearson r=+0.7757 (p=5.24e-6)**, paired-t 1.488 (p=0.150), TOST equivalent=false, **decision `go`=true**, telemetry `authenticated=true` (49×200 / 5×403). Frozen unauthenticated `full_summary.json` (n=30, ρ=−0.2107, `go`=false) **preserved unchanged**. The flip is consequential (see [§9](#9-component-6--statistics-discrimination--cross-method-spearman)) and is **flagged for the author's decision**; downstream paper docs were **not** edited to the new value.
+3. **Independent anchorsv2 REDUX rerun — still DEFERRED.** The `--fit-global` feature-extraction step alone exceeded the 25-min budget; killed by `timeout` with **no partial output**, existing bootstrap outputs restored byte-identical. Retrieval-side overlap (Jaccard 0.9567, 17/20) re-verified byte-identical offline.
+4. **Labeled MariaDB/MySQL `--live` confirmation — CONFIRMED.** Re-ran `tools/score_labeled_benchmark_redux.py --live --max-commits 150` (to a temp file for safe diffing): **10/10 pairs scored, zero `score_error`**, MariaDB↔MySQL byte-identical (metadata 54.36, code_centric 44.15, dynamic 7.5, cross_language 42.21, `score_source=live_redux`), all other 9 pairs unchanged. On-disk `labeled_scored.json` left untouched (already correct).
 
 ---
 
@@ -34,7 +43,7 @@ This repository implements and validates a **two-stage proxy-discovery system fo
 - **Labeled ground truth separates cleanly.** On the strict `known_match`-only cohort, metadata / code_centric / cross_language all reach **F1 = 1.0**; dynamic is weaker at **F1 = 0.80** — verified in `labeled/labeled_strict_summary.csv`.
 - **REDUX similarity bridges retrieval to similarity.** queryv2 produced **100** anchor→proxy metadata scores (20 anchors × top-5); anchorsv2 produced **116** scores (24 anchors) — verified in the rollup CSVs and run manifests.
 - **Anchor-list perturbation is stable.** Mean top-5 Jaccard = **0.957** on 20 shared slugs, **17/20** identical — verified in `archives/metamatch_sensitivity/anchorsv2_overlap.csv`.
-- **Honest weaknesses are documented, not hidden.** Cross-method Spearman ρ = **−0.21** (p = 0.26) **fails** the project's own 0.30 rubric; the methods are complementary views, not redundant confirmations.
+- **Honest weaknesses are documented, not hidden.** Cross-method Spearman ρ = **−0.21** (p = 0.26) on the frozen unauthenticated n=30 run **fails** the project's own 0.30 rubric; the methods are complementary views, not redundant confirmations. **Caveat (2026-06-19):** an authenticated re-run under the *current* rubric (n=25) yields ρ = **+0.78** (`go`=true) — this flips the finding and is captured in `projected_pairs/full_summary_authenticated.json`, but because the change confounds authentication with a rubric/allocation change it is **flagged for the author's decision** and has **not** been propagated into the paper docs (see [§0.1](#01--2026-06-19-authenticated-re-run-pass-network-outside-sandbox) and [§9](#9-component-6--statistics-discrimination--cross-method-spearman)).
 
 **The original most important caveat (now resolved):** the REDUX scoring engine that produces nearly every headline number (`proxytool_redux/_extracted/redux4_core.py`, `benchmark.py`, `benchmark_metrics.py`, `bootstrap.py`) was **git-ignored and not tracked**, so a fresh `git clone` could not re-run scoring. **As of the 2026-06-18 remediation pass these files are committed** (see [§0](#0-resolution-status-2026-06-18-remediation-pass) and [§12](#12-reproducibility-status)), and the one labeled pair that carried `"score_error": "No module named 'proxytool_redux'"` was re-scored authenticated with the error cleared.
 
@@ -219,14 +228,18 @@ Representative queryv2 thin-anchor metadata means (`queryv2_redux/rollup_summary
 
 **Important nuance — anchorsv2 is partly bootstrapped (verified in `anchorsv2_redux/run_manifest.json`):** `n_pair_scores` for the run is **17**, with `anchors_scored_this_run = [mlflow/mlflow, pytorch/vision, scikit-learn/scikit-learn, treeverse/dvc]`. The remaining 20 shared slugs are **copied from `queryv2_redux/`** (17 identical) or **rescored** (3: apache/airflow, jina-ai/serve, ray-project/ray). I confirmed the copy by spot-checking identical means (e.g. EasyOCR 95.09, Lightning 94.35 appear in both rollups) and confirmed the 3 rescores differ (airflow 95.36→96.36, ray 92.31→90.38). So the "116 anchorsv2 scores" is **17 freshly-scored + 3 rescored + 96 reused** — not 116 independent computations. The docs disclose this ("17 shared slugs bootstrapped"), but the paper must state it plainly.
 
-**Status (DEFERRED):** a full independent anchorsv2 rerun was attempted-but-deferred in the 2026-06-18 pass. It scores ~24 anchors × top-5 proxies live and runs far beyond this environment's 10-minute execution cap; rather than leave partial/corrupted output, the existing valid bootstrap outputs under `results_benchmark/anchorsv2_redux/` are preserved unchanged. To complete the independent replication (with authentication) run from the repo root:
+**Status (DEFERRED — re-attempted authenticated 2026-06-19, exceeded budget):** a full independent anchorsv2 rerun was attempted again on 2026-06-19 with a verified token on the real network (outside the sandbox), after clearing `results_benchmark/anchorsv2_redux/` so reused slugs would be re-scored rather than skipped:
 
 ```bash
 export GITHUB_TOKEN="$(gh auth token)"
-bash tools/run_anchorsv2_redux.sh full
+PYTHONPATH=. timeout 1500 bash tools/run_anchorsv2_redux.sh full
 ```
 
-Note `run_anchorsv2_redux.sh full` passes `--skip-existing`; for a *fully* independent recompute, clear or back up `results_benchmark/anchorsv2_redux/` first so reused slugs are re-scored rather than skipped.
+The token authenticated fine (core 4985/5000 at start) and the REDUX core loaded, but the `--fit-global` step — which extracts per-repo features (commit fetch + sentence-transformer commit embeddings on CPU) for **all ~140 unique anchor+proxy URLs** *before* any pair is scored — alone ran past the 25-minute budget. `timeout` killed it at 1500 s having written **zero** per-anchor CSVs, so there was **no partial/corrupted output**; the existing valid bootstrap outputs under `results_benchmark/anchorsv2_redux/` were **restored byte-for-byte from backup** (verified git-clean, rollup byte-identical). The REDUX metadata-mean rollup therefore remains the **17-fresh + 3-rescored + 96-reused bootstrap** described above — *not* an independent 24-anchor recompute.
+
+What *was* re-verified on 2026-06-19: the retrieval-side stability number is computed offline from the frozen MetaMatch archives (no REDUX, no network) and `tools/anchorsv2_overlap.py` re-derives `anchorsv2_overlap.csv` **byte-identical** — mean top-5 Jaccard **0.9567**, **17/20** at 1.0, drift `explosion/spaCy` 0.667, `huggingface/datasets` 0.667, `jina-ai/serve` 0.80. So the anchor-stability claim is independently re-confirmed; only the REDUX similarity-mean rollup remains a bootstrap.
+
+To finish the independent REDUX replication a future run needs either a longer time budget (the global feature-extraction fit on ~140 repos dominates) or a pre-warmed `.proxytool_cache/` so the fit is I/O-cheap.
 
 **Honest assessment:** The bridge is the right idea and the numbers are reproducible from the archives. The weaknesses are real: (1) thin anchor pools — several anchors have very few qualified proxies (jina pool 3, dvc 2), so a 5-deep top-k is padded; (2) `metadata_only` scoring means the bridges report only one of four methods; (3) the bootstrap above means anchorsv2 is a *consistency check*, not an independent replication.
 
@@ -305,16 +318,26 @@ Metadata cleanly separates similar from dissimilar cohorts (Test 2 functional-si
 | Decision `go`    | **false**                | agreement gates fail                                   |
 
 
-**Honest assessment:** This is the project's most important *negative* result and it is reported honestly throughout (`VALIDATION_MEMO.md`, G4). The four methods do **not** rank pairs the same way (ρ slightly negative). The correct framing — already used in the docs — is "complementary multi-view design," not "mutually-confirming." One subtlety to disclose: the `projected_pairs` run was executed **unauthenticated** (`telemetry.authenticated = false`, 30 of 79 requests returned HTTP 403), so the n=30 projected-pair statistics were gathered under GitHub rate-limiting.
-
-**Status (DEFERRED, by design):** `projected_pairs/full_summary.json` is valid, tracked, frozen data that survives a clone. A full authenticated regeneration scores 30 pairs live (commit fetches for ~60 repos) and is long/expensive under this environment's execution cap; blindly overwriting frozen valid output is riskier than keeping it. It is therefore **not** regenerated here. To refresh it authenticated before publication, run from the repo root:
+**Authenticated re-run (2026-06-19) — captured separately, decision needs author sign-off.** The deferred authenticated regeneration was executed on the real network and saved to a **new** file so the frozen reference above is not destroyed:
 
 ```bash
 export GITHUB_TOKEN="$(gh auth token)"
-PYTHONPATH=. python3 scripts/projected_pair_pipeline.py   # full mode; see script args for pilot/full
+PYTHONPATH=. python3 scripts/projected_pair_pipeline.py --mode full --workers 1,2   # outside the sandbox
 ```
 
-Then re-verify ρ and the rubric decision against the new `projected_pairs/full_summary.json`. The labeled cohort, by contrast, **was** re-scored authenticated in this pass (see §0).
+| Stat | Frozen `full_summary.json` (unauth, n=30) | Authenticated `full_summary_authenticated.json` (n=25) |
+| ---- | ----------------------------------------- | ------------------------------------------------------ |
+| Spearman ρ | −0.2107 (p=0.264) **FAILS** | **+0.7772 (p=4.87e-6) PASSES** |
+| Pearson r | −0.3507 (p=0.057) Fails | **+0.7757 (p=5.24e-6) Passes** |
+| Paired t | −0.114 (p=0.910) | 1.488 (p=0.150) |
+| TOST equivalent | true | false |
+| Decision `go` | **false** | **true** |
+| Telemetry authenticated | false (30/79 = 38% HTTP 403) | **true** (5/54 = 9% HTTP 403; api_non_200_ratio 0.093) |
+| n / allocation | 30 (uncertain 10) | 25 (uncertain 5 + known_related 5 in rubric; pipeline emits 25 rows) |
+
+**Two confounded causes** drive the flip, so the comparison is *not* like-for-like: (a) **authentication** removes the 403 starvation that previously returned empty/garbage uncertain-pair search results; and (b) the committed `configs/projected_pair_rubric.json` `thirty_pair_allocation` has since changed (`target_uncertain` 10→5, `known_related` 5 added), so the documented command now yields **n=25**, not the frozen n=30. The Spearman is dominated by the 20 static control pairs (metadata vs cross-language), so reducing/cleaning the noisy uncertain pairs pushes ρ strongly positive. The comparator is also heterogeneous (cross-language for controls, 1/search-rank for uncertain rows), which limits how much weight this single ρ should carry either way.
+
+**⚠ Author decision required:** the authenticated run **overturns the project's headline "methods don't agree (ρ negative)" finding**. This is too consequential to silently propagate, so `PAPER_PACKAGE.md`, `VALIDATION_MEMO.md`, `WORK_REVIEW.md`, etc. were **left citing the frozen ρ=−0.21**. Decide whether to (i) adopt the authenticated n=25 result as canonical (promote `full_summary_authenticated.json` → `full_summary.json` and rewrite the multi-view-agreement narrative to "methods agree, go=true"), or (ii) re-run with the original n=30 allocation for an apples-to-apples authenticated comparison before changing any paper claim. The labeled cohort, by contrast, was already authenticated (see §0).
 
 ---
 
@@ -400,7 +423,7 @@ Then re-verify ρ and the rubric decision against the new `projected_pairs/full_
 
 A fresh clone can now re-score with `PYTHONPATH=. python3 tools/score_labeled_benchmark_redux.py --live` (requires `GITHUB_TOKEN` for live pairs). The blanket `proxytool_redux/`, `scripts/`, `REDUX_REPRO.md`, and `results_benchmark/projected_pairs/` entries in `.gitignore` were reconciled so the gitignore matches what is actually tracked.
 
-**Original symptom now cleared:** `labeled_scored.json` → `related_mariadb_mysql` previously carried `"score_error": "No module named 'proxytool_redux'"` (a missing `PYTHONPATH=.`, not a true scoring failure). It was re-scored authenticated (`export GITHUB_TOKEN="$(gh auth token)"`); the error key is gone and verified live values are metadata 54.36, code_centric 44.15, dynamic 7.5, cross_language 42.21 (`score_source = live_redux`). All other 9 pairs are byte-identical to the prior file.
+**Original symptom now cleared (re-confirmed 2026-06-19):** `labeled_scored.json` → `related_mariadb_mysql` previously carried `"score_error": "No module named 'proxytool_redux'"` (a missing `PYTHONPATH=.`, not a true scoring failure). It was re-scored authenticated (`export GITHUB_TOKEN="$(gh auth token)"`); the error key is gone and verified live values are metadata 54.36, code_centric 44.15, dynamic 7.5, cross_language 42.21 (`score_source = live_redux`). All other 9 pairs are byte-identical to the prior file. **Re-verified 2026-06-19** by re-running `PYTHONPATH=. python3 tools/score_labeled_benchmark_redux.py --benchmark configs/labeled_benchmark_pairs.json --live --max-commits 150` on the real network (to a temp file for safe diffing): **10/10 pairs scored, no `score_error`, all values byte-identical** to the on-disk file, so `labeled_scored.json` was left untouched.
 
 **Repro fingerprints (`run_manifest.json`):** `benchmark_manifest_sha256 = c85d9d2011dfa748463a73e257391e5364cfb9dc53ceb8f2dff1e53ad569ae0e`; `hyperparams_sha256 = e5c736c70c35fccf94098b5f26b33ae96ae435b4a018fb6e386e46134b8066f4`. The manifest snapshot itself still records `github_token_present: false`/`gh_authenticated: false` (it was not regenerated, to preserve the cited fingerprints); note that `gh auth status` reports a keyring warning even though `gh auth token` yields a working token (verified core limit 5000/5000). Steps needing GitHub commit fetches should export `GITHUB_TOKEN="$(gh auth token)"` first.
 
@@ -426,7 +449,10 @@ A fresh clone can now re-score with `PYTHONPATH=. python3 tools/score_labeled_be
 | 13  | anchorsv2 17 fresh + bootstrap                     | `anchorsv2_redux/run_manifest.json`                                   | ✅ `n_pair_scores:17`  |
 | 14  | REDUX core now tracked                             | `git ls-files proxytool_redux/` → 7 files (core + runners)            | ✅ resolved            |
 | 15  | "Lenient" metadata F1 now single value (1.00)      | `labeled_summary.csv` ≡ `labeled_lenient_summary.csv`                 | ✅ resolved (D1)       |
-| 16  | MariaDB/MySQL `score_error` cleared (live rescore) | `labeled_scored.json` (no `score_error`; `score_source=live_redux`)   | ✅ resolved (D2)       |
+| 16  | MariaDB/MySQL `score_error` cleared (live rescore) | `labeled_scored.json` (no `score_error`; `score_source=live_redux`)   | ✅ resolved (D2); re-confirmed 2026-06-19 (10/10, byte-identical) |
+| 17  | Authenticated projected-pair re-run captured        | `projected_pairs/full_summary_authenticated.json` (`authenticated:true`) | ✅ ρ=+0.7772 / p=4.87e-6 (n=25; flips decision — author sign-off) |
+| 18  | Frozen unauth projected-pair reference preserved    | `projected_pairs/full_summary.json` (`authenticated:false`)           | ✅ unchanged ρ=−0.2107 |
+| 19  | anchorsv2 retrieval Jaccard re-derived offline      | `archives/metamatch_sensitivity/anchorsv2_overlap.csv`               | ✅ byte-identical 0.9567 / 17-of-20 (2026-06-19) |
 
 
 ---
@@ -489,11 +515,11 @@ The repo is large (4,670 git-tracked files) and carries substantial historical s
 ## 16. Gaps, weaknesses, and risks (honest)
 
 1. **~~Gitignored REDUX core (highest risk).~~ RESOLVED.** The scoring engine (`redux4_core.py`, `benchmark.py`, `benchmark_metrics.py`, `bootstrap.py`) is now git-tracked; a clean clone can re-score with `PYTHONPATH=.`. The D2 failure is fixed.
-2. **Cross-method Spearman fails the rubric.** ρ = −0.21 vs required 0.30. This is correctly disclosed but is a genuine limitation — the four methods do not corroborate each other on ranking.
-3. **anchorsv2 is partly bootstrapped (full rerun DEFERRED).** Only 17 of 24 anchors were freshly scored; 96 of 116 "scores" are reused from queryv2. It is a consistency check, not independent replication; the independent rerun command is in §7.
+2. **Cross-method Spearman — frozen unauth ρ=−0.21 fails the rubric; authenticated re-run flips it to +0.78 (decision pending).** The frozen unauthenticated n=30 run gives ρ=−0.21 (fails 0.30); the 2026-06-19 authenticated n=25 re-run gives ρ=+0.78 (`go`=true). The two are confounded by authentication *and* a rubric allocation change (n 30→25), so they are not apples-to-apples. **This needs the author's decision** (see §9) before the paper's "complementary, non-corroborating methods" framing is kept or reversed.
+3. **anchorsv2 is partly bootstrapped (full REDUX rerun still DEFERRED).** Only 17 of 24 anchors were freshly scored; 96 of 116 REDUX "scores" are reused from queryv2. The 2026-06-19 authenticated re-attempt exceeded the 25-min budget at the global feature-extraction fit and was killed with no partial output (bootstrap restored byte-identical). The retrieval-side Jaccard (0.9567, 17/20) *was* re-verified offline. The REDUX similarity rollup remains a consistency check, not independent replication; command + caveats in §7.
 4. **Tiny labeled cohort.** 10 pairs (5/2/2/1). Strict F1 = 1.0 is a clean *separation demonstration*, not a population-level accuracy estimate; one mis-score moves F1 ~0.1.
 5. **Thin anchor pools.** Several anchors have <5 qualified proxies; top-5 is padded, weakening per-anchor REDUX means (jina, ray, dvc).
-6. **Unauthenticated stat runs (partly addressed).** The labeled cohort was re-scored authenticated this pass. `projected_pairs/full_summary.json` (and `run_manifest.json`) still reflect the original unauthenticated snapshot; regenerating projected_pairs is DEFERRED (command in §9) to avoid overwriting valid frozen data.
+6. **Unauthenticated stat runs (now addressed; outcome pending decision).** The labeled cohort was re-scored authenticated, and on 2026-06-19 the projected-pair pipeline was also re-run authenticated → `projected_pairs/full_summary_authenticated.json` (telemetry `authenticated=true`). The frozen unauthenticated `full_summary.json` and `run_manifest.json` are preserved. The authenticated result materially changes the Spearman conclusion (§9) and awaits author sign-off before being promoted to canonical.
 7. **Retrieval tuning overfit risk.** queryv2 query overrides were tuned per-anchor on the same 20 anchors used for selection; anchorsv2 mitigates but does not eliminate this.
 8. **Doc sprawl.** 23 markdown files with overlapping gate tables invite drift (D1 is exactly this). `WORK_REVIEW.md` is the SoT but the others duplicate metrics.
 9. **dynamic method is weak.** F1 0.667 (lenient) / 0.80 (strict); it should be framed as secondary, not co-equal.
@@ -506,14 +532,14 @@ The repo is large (4,670 git-tracked files) and carries substantial historical s
 **P0 — Make it reproducible (blocks publication credibility):**
 
 1. **DONE.** REDUX core committed (`redux4_core.py`, `benchmark.py`, `benchmark_metrics.py`, `bootstrap.py` + `scripts/extract_redux4_core.py`, `run_repro_benchmark.py`, `REDUX_REPRO.md`). A fresh clone runs `PYTHONPATH=. python3 tools/labeled_strict_metrics.py` without `ModuleNotFoundError`.
-2. **PARTLY DONE / DEFERRED.** Labeled scoring re-run authenticated; `related_mariadb_mysql` `score_error` cleared. The projected-pair pipeline regeneration with `GITHUB_TOKEN` is DEFERRED (command in §9); `run_manifest.json` left as frozen fingerprint snapshot.
+2. **DONE (authenticated) — projected-pair decision pending.** Labeled scoring re-run authenticated; `related_mariadb_mysql` `score_error` cleared and re-confirmed 2026-06-19. The projected-pair pipeline was regenerated authenticated 2026-06-19 → `projected_pairs/full_summary_authenticated.json` (frozen `full_summary.json` preserved); the result flips the decision and awaits author sign-off (§9). `run_manifest.json` left as the frozen fingerprint snapshot.
 
 **P1 — Fix the two discrepancies (blocks paper accuracy):**
 3. **DONE.** D1 resolved by excluding `target_uncertain` per the stated rule → lenient metadata F1 = 1.0; `labeled_summary.csv` ≡ `labeled_lenient_summary.csv`; all docs re-cite consistently.
 4. **DONE.** D2 resolved — MariaDB/MySQL re-scored live + authenticated, `score_error` removed.
 
 **P2 — Strengthen the claims you already make:**
-5. **DEFERRED.** Run the **full independent** anchorsv2 REDUX (`export GITHUB_TOKEN="$(gh auth token)" && bash tools/run_anchorsv2_redux.sh full`) so anchorsv2 is a true replication, not a bootstrap; report whether the 96 reused means hold.
+5. **STILL DEFERRED (re-attempted 2026-06-19).** The **full independent** anchorsv2 REDUX rerun (`export GITHUB_TOKEN="$(gh auth token)" && PYTHONPATH=. timeout 1500 bash tools/run_anchorsv2_redux.sh full`, dir cleared first) was re-attempted authenticated on the real network but the global feature-extraction fit on ~140 repos exceeded the 25-min budget and was killed with no partial output; the bootstrap was restored byte-identical. Needs a longer budget or a pre-warmed `.proxytool_cache/`. The retrieval-side Jaccard was re-verified offline (0.9567, 17/20).
 6. Expand the labeled cohort from 10 → ~20–30 evidence-backed pairs (more mirrors + more hard negatives) to make F1 a meaningful estimate rather than a separation demo.
 7. Score the REDUX bridges on **all four methods**, not metadata-only, so retrieval→similarity is reported multi-view (matching the "complementary methods" framing).
 
