@@ -8,7 +8,7 @@
 
 ## Executive summary
 
-**You are not using everything in this repo.** The professor validation pass (phases A–G) needs roughly **22 artifact paths** and **8 tools**. Everything else — MetaMatch penalty grid history (20 non-primary experiment folders), REDUX coverage/temperature sweeps (88 archived CSVs), seven REDUX notebook iterations, overlapping narrative docs, and duplicate pre-archive snapshots — is supporting material or dead weight for the current paper package.
+**You are not using everything in this repo.** The labeled validation pass (phases A–G) needs roughly **22 artifact paths** and **8 tools**. Everything else — MetaMatch penalty grid history (20 non-primary experiment folders), REDUX coverage/temperature sweeps (88 archived CSVs), seven REDUX notebook iterations, overlapping narrative docs, and duplicate pre-archive snapshots — is supporting material or dead weight for the current paper package.
 
 
 | Finding                                                                                | Severity | Action                                                                            |
@@ -17,7 +17,7 @@
 | Four `results_benchmark/` docs repeat gates/metrics                                    | Medium   | Treat `WORK_REVIEW.md` as SoT; others are reviewer-facing slices                  |
 | `_before_repro_run/` duplicates `archives/`                                            | Low      | Safe to ignore or merge later                                                     |
 | Lenient labeled metrics computed twice                                                 | Low      | Both scripts intentional (strict vs lenient split)                                |
-| `proxytool_redux/` and `projected_pairs/` gitignored but imported/cited                | **High** | Fresh clone may not fully reproduce REDUX scoring                                 |
+| `proxytool_redux/` REDUX core now tracked; `projected_pairs/` un-ignored (tracked)     | Resolved | Fresh clone can re-score (`PYTHONPATH=.`); see `REDUX_REPRO.md`                    |
 | 20 grid-history experiment folders unused by validation                                | Low      | Archive reference only; do not re-run                                             |
 | Root notebooks deleted; logic lives in `proxytool_redux/` (gitignored)                 | **High** | Document clone/setup in `REDUX_REPRO.md`                                          |
 
@@ -82,7 +82,7 @@ Additional narrative (supporting, not redundant):
 | `summarize_runs.py`             | `_summaries/` aggregation                |
 
 
-**Overlap note:** `run_labeled_benchmark.py` and `labeled_strict_metrics.py` both compute lenient (`known_match` + `known_related`) metrics. This is intentional — `labeled_strict_metrics.py` adds the strict (`known_match`-only) cohort in the same pass. Not a bug; slightly redundant I/O.
+**Overlap note:** `run_labeled_benchmark.py` and `labeled_strict_metrics.py` both compute lenient (`known_match` + `known_related`) metrics, and both now exclude `target_uncertain` from P/R/F1, so `labeled_summary.csv` and `labeled_lenient_summary.csv` are identical. `labeled_strict_metrics.py` adds the strict (`known_match`-only) cohort in the same pass. Not a bug; slightly redundant I/O.
 
 Both labeled tools import `proxytool_redux.benchmark_metrics` (see gitignore gap below).
 
@@ -257,7 +257,7 @@ Live run outputs (`runs/manual-ml-py/`, `runs/_summaries/`, `runs/2026-05-*-batc
 | `runs/experiments/scripts/` | **Yes**             | Experiment-specific helpers (see `runs/experiments/scripts/README.md`) |
 
 
-**Convention drift:** Validation tooling landed in `tools/` (professor-supplied + new bridges). REDUX development scripts stayed in gitignored `scripts/`. A newcomer should look at `tools/` for repro commands and `REDUX_REPRO.md` for REDUX setup.
+**Convention drift:** Validation tooling landed in `tools/` (labeled ground-truth tooling + new bridges). REDUX development scripts stayed in gitignored `scripts/`. A newcomer should look at `tools/` for repro commands and `REDUX_REPRO.md` for REDUX setup.
 
 ---
 

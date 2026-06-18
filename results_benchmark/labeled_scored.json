@@ -115,10 +115,9 @@
       "pin_b": "refs/heads/trunk",
       "accessible_via_git_log": true,
       "metadata_score": 54.36,
-      "code_centric_score": 44.02,
+      "code_centric_score": 44.15,
       "dynamic_score": 7.5,
       "cross_language_score": 42.21,
-      "score_error": "No module named 'proxytool_redux'",
       "score_source": "live_redux",
       "redux_query_url": "https://github.com/MariaDB/server",
       "redux_target_url": "https://github.com/mysql/mysql-server"

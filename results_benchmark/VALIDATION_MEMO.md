@@ -19,14 +19,14 @@ Generated as part of the final validation plan (feedback + queryv2 / anchorsv2 M
 
 ### Labeled metrics @ threshold 50 (0–100 scale)
 
-**Lenient** (`known_match` + `known_related` vs `known_non_match`): see `labeled/labeled_summary.csv`.
+**Lenient** (`known_match` + `known_related` vs `known_non_match`; `target_uncertain` excluded from P/R/F1): see `labeled/labeled_summary.csv` (identical to `labeled/labeled_lenient_summary.csv`).
 
 | Method | F1 | Accuracy | Pos/neg mean gap |
 |--------|-----|----------|------------------|
-| metadata | 0.93 | 0.90 | 82.3 |
-| code_centric | 0.83 | 0.80 | 68.8 |
-| cross_language | 0.86 | 0.80 | 63.5 |
-| dynamic | 0.62 | 0.50 | 9.3 |
+| metadata | 1.00 | 1.00 | 82.3 |
+| code_centric | 0.83 | 0.78 | 68.8 |
+| cross_language | 0.92 | 0.89 | 63.5 |
+| dynamic | 0.67 | 0.56 | 9.3 |
 
 **Strict** (`known_match` only): see `labeled/labeled_strict_summary.csv`.
 

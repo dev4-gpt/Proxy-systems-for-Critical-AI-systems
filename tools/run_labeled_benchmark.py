@@ -24,6 +24,10 @@ from proxytool_redux.benchmark_metrics import (
 DEFAULT_METHODS = ["metadata", "code_centric", "dynamic", "cross_language"]
 POSITIVE_LABELS = {"known_match", "known_related"}
 NEGATIVE_LABELS = {"known_non_match"}
+# target_uncertain is a realism-only pair (configs/labeled_benchmark_pairs.json
+# labeling_notes) and is excluded from precision/recall/F1, matching
+# tools/labeled_strict_metrics.py and the documented cohort rule.
+EXCLUDE_FROM_METRICS = {"target_uncertain"}
 
 
 def load_pairs(path: Path) -> List[Dict[str, object]]:
@@ -61,6 +65,7 @@ def build_summary(rows: List[Dict[str, object]], methods: List[str], threshold: 
             {"label": row["label"], "score": row[f"{method}_score"]}
             for row in rows
             if row.get(f"{method}_score") not in (None, "")
+            and row.get("label") not in EXCLUDE_FROM_METRICS
         ]
         if not scored_rows:
             continue

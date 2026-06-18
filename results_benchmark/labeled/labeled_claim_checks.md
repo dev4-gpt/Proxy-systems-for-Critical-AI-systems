@@ -4,29 +4,29 @@ This file is generated from the labeled benchmark manifest and currently reports
 Use it as a paper-writing aid, not as a substitute for the full notebook analysis.
 
 ## metadata
-- Accuracy @ threshold 50.0: 0.900
-- Precision: 0.875
+- Accuracy @ threshold 50.0: 1.000
+- Precision: 1.000
 - Recall: 1.000
-- F1: 0.933
+- F1: 1.000
 - Positive/negative mean gap: 82.272
 
 ## code_centric
-- Accuracy @ threshold 50.0: 0.800
+- Accuracy @ threshold 50.0: 0.778
 - Precision: 1.000
 - Recall: 0.714
 - F1: 0.833
-- Positive/negative mean gap: 68.820
+- Positive/negative mean gap: 68.839
 
 ## dynamic
-- Accuracy @ threshold 50.0: 0.500
-- Precision: 0.667
+- Accuracy @ threshold 50.0: 0.556
+- Precision: 0.800
 - Recall: 0.571
-- F1: 0.615
+- F1: 0.667
 - Positive/negative mean gap: 9.286
 
 ## cross_language
-- Accuracy @ threshold 50.0: 0.800
-- Precision: 0.857
+- Accuracy @ threshold 50.0: 0.889
+- Precision: 1.000
 - Recall: 0.857
-- F1: 0.857
+- F1: 0.923
 - Positive/negative mean gap: 63.501

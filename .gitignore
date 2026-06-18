@@ -44,8 +44,11 @@ linkedin_post.txt
 apply_guard.py
 NextCompareReqs.pdf
 notebook_deep_analysis.json
-results_benchmark/projected_pairs/
 
-proxytool_redux/
-REDUX_REPRO.md
-scripts/
+# REDUX 4 scoring core, repro runbook, and scripts are tracked so a fresh clone
+# can re-score (see REDUX_REPRO.md). Only the large exploratory notebook copy
+# inside the package stays out of git; regenerate redux4_core.py with
+# scripts/extract_redux4_core.py from proxytool_REDUX_4.ipynb.
+proxytool_redux/proxytool.ipynb
+
+# projected_pairs/ outputs are tracked (Spearman/Pearson stats survive a clone).

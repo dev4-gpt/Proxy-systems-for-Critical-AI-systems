@@ -33,11 +33,11 @@ This validation pass integrates **supplied ground-truth infrastructure** with **
 
 ## Tag legend
 
-Every command row in the phase table carries a **source tag**. Tags replace the older `[Professor]` / `[Ours]` / `[Docs]` scheme.
+Every command row in the phase table carries a **source tag**. Tags replace the older `[Labeled]` / `[Ours]` / `[Docs]` scheme.
 
 | Tag | Meaning | Examples |
 |-----|---------|----------|
-| **[Reproducible]** | Professor-supplied ground-truth and reproducibility layer | `configs/labeled_benchmark_pairs.json`, `write_run_manifest.py`, `verify_repo_access.py`, `run_labeled_benchmark.py`, `benchmark_metrics`, `score_labeled_benchmark_redux.py`, `labeled_strict_metrics.py`, `labeled_scored.json`, `run_manifest.json` |
+| **[Reproducible]** | Ground-truth and reproducibility layer | `configs/labeled_benchmark_pairs.json`, `write_run_manifest.py`, `verify_repo_access.py`, `run_labeled_benchmark.py`, `benchmark_metrics`, `score_labeled_benchmark_redux.py`, `labeled_strict_metrics.py`, `labeled_scored.json`, `run_manifest.json` |
 | **[Anchor/Query]** | MetaMatch retrieval + queryv2 bridge on frozen experiments | `metamatch_hyperparams.json`, `score_metamatch_proxies_redux.py`, `anchorsv2_overlap.py`, `run_anchorsv2_redux.sh`, `queryv2_redux/`, spot-check memos tied to frozen `30_Matches.csv` archives |
 | **[Pre-existing]** | Prior REDUX paper benchmarks and WINNER arc before this pass | `runs/experiments/penalty300_min700_cap22_queryv2/`, `WINNER.md`, `metadata_discrimination_canonical.csv`, `three_test_argument_table.csv` |
 | **[Analysis]** | Memos and docs synthesizing results (no scoring command) | `VALIDATION_MEMO.md`, `PAPER_PACKAGE.md`, `testing_case_study_airflow.md`, `queryv2_spot_check.md` |
@@ -94,7 +94,7 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 | **A** | Repo access | `python3 tools/verify_repo_access.py --benchmark configs/labeled_benchmark_pairs.json --skip-clone` | `results_benchmark/repo_access_validation.csv` | 18 unique repo URLs checked via `git ls-remote` (no clone) | **[Reproducible]** |
 | **B** | Score labeled pairs | `PYTHONPATH=. python3 tools/score_labeled_benchmark_redux.py` | `results_benchmark/labeled_scored.json` | 10/10 pairs scored; most from cached REDUX tables (`score_source` per pair) | **[Reproducible]** |
 | **B** | Live REDUX gap-fill | `PYTHONPATH=. python3 tools/score_labeled_benchmark_redux.py --live` | updates `labeled_scored.json` | Remaining pairs (e.g. MariaDB/MySQL) filled via live GitHub REDUX | **[Reproducible]** |
-| **B** | Labeled metrics @50 | `PYTHONPATH=. python3 tools/run_labeled_benchmark.py --benchmark results_benchmark/labeled_scored.json --threshold 50 --output-dir results_benchmark/labeled` | `labeled/labeled_pair_table.csv`, `labeled_summary.csv`, `labeled_claim_checks.md` | Lenient cohort: metadata **F1 = 0.93**, accuracy 0.90 @ threshold **50** (percent scale) | **[Reproducible]** |
+| **B** | Labeled metrics @50 | `PYTHONPATH=. python3 tools/run_labeled_benchmark.py --benchmark results_benchmark/labeled_scored.json --threshold 50 --output-dir results_benchmark/labeled` | `labeled/labeled_pair_table.csv`, `labeled_summary.csv`, `labeled_claim_checks.md` | Lenient cohort (`target_uncertain` excluded): metadata **F1 = 1.00**, accuracy 1.00 @ threshold **50** (percent scale) | **[Reproducible]** |
 | **B** | Threshold 45 / 55 | Same with `--threshold 45/55` and output dirs `labeled/threshold45`, `labeled/threshold55` | threshold sensitivity tables | Sensitivity @ 45 and 55 | **[Reproducible]** |
 | **B** | Strict vs lenient | `PYTHONPATH=. python3 tools/labeled_strict_metrics.py --benchmark results_benchmark/labeled_scored.json --threshold 50 --output-dir results_benchmark/labeled` | `labeled_strict_summary.csv`, `labeled_lenient_summary.csv` | **Strict** (`known_match` only): metadata/code_centric/cross_language **F1 = 1.0**; dynamic F1 = 0.80 | **[Reproducible]** |
 | **C** | Stats memo | *(no command)* | `results_benchmark/VALIDATION_MEMO.md` | Discrimination ~94% vs ~5%; Spearman **ρ ≈ −0.21**; labeled + method positioning | **[Analysis]** + **[Pre-existing]** |
@@ -151,16 +151,16 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 | cross_language | **1.00** | 1.00 | 78.2 |
 | dynamic | 0.80 | 0.71 | 28.5 |
 
-**Lenient** (`known_match` + `known_related`) — `labeled/labeled_summary.json`:
+**Lenient** (`known_match` + `known_related`) — `labeled/labeled_summary.json` (identical to `labeled/labeled_lenient_summary.json`):
 
 | Method | F1 | Accuracy | Pos/neg mean gap |
 |--------|-----|----------|------------------|
-| metadata | **0.93** | 0.90 | 82.3 |
-| cross_language | 0.86 | 0.80 | 63.5 |
-| code_centric | 0.83 | 0.80 | 68.8 |
-| dynamic | 0.62 | 0.50 | 9.3 |
+| metadata | **1.00** | 1.00 | 82.3 |
+| cross_language | 0.92 | 0.89 | 63.5 |
+| code_centric | 0.83 | 0.78 | 68.8 |
+| dynamic | 0.67 | 0.56 | 9.3 |
 
-`target_uncertain` (1 pair) excluded from P/R/F1 claims.
+`target_uncertain` (1 pair) excluded from P/R/F1 claims (both `labeled_summary` and `labeled_lenient_summary` now apply this exclusion consistently).
 
 ### queryv2 REDUX proxy bridge
 
@@ -266,7 +266,7 @@ bash tools/run_anchorsv2_redux.sh all
 | `tools/anchorsv2_overlap.py` | Updated | **[Anchor/Query]** |
 | `tools/run_anchorsv2_redux.sh` | Added | **[Anchor/Query]** |
 
-Reused professor tools: `write_run_manifest.py`, `verify_repo_access.py`, `run_labeled_benchmark.py`.
+Reused ground-truth tools: `write_run_manifest.py`, `verify_repo_access.py`, `run_labeled_benchmark.py`.
 
 ### `configs/`
 

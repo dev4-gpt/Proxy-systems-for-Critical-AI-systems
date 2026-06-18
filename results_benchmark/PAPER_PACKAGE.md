@@ -9,7 +9,7 @@
 | Gate | Criterion | Result | Notes |
 |------|-----------|--------|-------|
 | G1 | Labeled strict `known_match` separates @ threshold 50 | **PASS** | metadata/code_centric/cross_language F1=1.0 (`labeled_strict_summary.csv`) |
-| G2 | Labeled lenient includes related pairs | **PASS** | metadata F1=0.93; dynamic weaker (F1=0.62) |
+| G2 | Labeled lenient includes related pairs | **PASS** | metadata F1=1.00 (`target_uncertain` excluded per cohort rule); dynamic weaker (F1=0.67) |
 | G3 | Do not claim plausible `30_Pairs` as ground truth | **PASS** | Use `labeled_scored.json` + limitations below |
 | G4 | Spearman reported honestly | **PASS** | ρ≈-0.21 documented; rubric 0.30 not met |
 | G5 | queryv2 retrieval winner frozen | **PASS** | 0 magnets, 20/0/0 Good/OK/Weak |

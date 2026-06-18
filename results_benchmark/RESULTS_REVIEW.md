@@ -2,7 +2,7 @@
 
 navigator for **output files and headline numbers** after the validation pass. This is not a second master document — for commands, tags, and repro see [`WORK_REVIEW.md`](WORK_REVIEW.md).
 
-**Integration in one line:** frozen **queryv2** MetaMatch retrieval (our Phase 2 winner) + professor **labeled ground-truth** eval + **REDUX** proxy bridges, documented under `results_benchmark/`.
+**Integration in one line:** frozen **queryv2** MetaMatch retrieval (our Phase 2 winner) + **labeled ground-truth** eval + **REDUX** proxy bridges, documented under `results_benchmark/`.
 
 ---
 
@@ -34,7 +34,7 @@ For methodology and statistics in prose: [`VALIDATION_MEMO.md`](VALIDATION_MEMO.
 | Threshold 45 / 55 sensitivity | [`labeled/threshold45/`](labeled/threshold45/), [`labeled/threshold55/`](labeled/threshold55/) |
 | Repo access | [`repo_access_validation.csv`](repo_access_validation.csv) |
 
-**Headlines @ threshold 50:** strict F1 = **1.0** (metadata, code_centric, cross_language); lenient metadata F1 ≈ **0.93**; dynamic weaker (≈ **0.62** lenient). Details: [`WORK_REVIEW.md` § Key results summary](WORK_REVIEW.md#key-results-summary).
+**Headlines @ threshold 50:** strict F1 = **1.0** (metadata, code_centric, cross_language); lenient metadata F1 = **1.00** (`target_uncertain` excluded from P/R/F1 per cohort rule); dynamic weaker (**0.67** lenient). Details: [`WORK_REVIEW.md` § Key results summary](WORK_REVIEW.md#key-results-summary).
 
 ---
 
