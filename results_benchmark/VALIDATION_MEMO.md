@@ -74,17 +74,23 @@ From `metadata_discrimination_canonical.csv` (Test 2 similar + 30-pair similar v
 
 Metadata **separates** cohorts even when cross-method rank agreement is weak.
 
-### Cross-method agreement (honest)
+### Cross-method agreement (authenticated, canonical)
 
-From `projected_pairs/full_summary.json` (projected-pair workflow, n=30):
+From the **canonical authenticated** run `projected_pairs/full_summary_authenticated_n30.json` (projected-pair workflow, n=30, original 10/10/10 allocation, telemetry `authenticated=true`):
 
 | Stat | Value | vs rubric `minimum_spearman: 0.30` |
 |------|-------|-------------------------------------|
-| Spearman ρ | **-0.21** | **Fails** |
-| p-value | 0.26 | Not significant |
-| Pearson r | -0.35 (p≈0.06) | Fails |
+| Spearman ρ | **+0.69** (p=2.34e-5) | **Passes** |
+| Pearson r | **+0.66** (p=6.25e-5) | Passes |
+| Paired t | 2.574 (p=0.015) | n/a |
+| Decision `go` | **true** | agreement gates pass |
+| API non-200 ratio | 0.093 (9.3% 403) | healthy (authenticated) |
 
-**Interpretation:** Methods measure different facets (metadata fingerprints vs clone vs dynamic vs cross-language). Report multi-view design; do **not** claim strong rank correlation across methods.
+The authenticated n=25 current-rubric run (`full_summary_authenticated.json`) is consistent: ρ=**+0.78** (p=4.87e-6), Pearson r=**+0.78**, **go=true** — same sign, also passes.
+
+**Honest methods note:** The original frozen run `projected_pairs/full_summary.json` reported Spearman ρ=**−0.21** (p=0.26, Pearson −0.35), `go=false`. That negative result was an **artifact of unauthenticated GitHub rate-limiting**: 38% of requests returned HTTP 403 (`remaining_min_seen=0`), starving the `target_uncertain` GitHub-Search rows and injecting noise that dragged the rank correlation negative. Holding the allocation fixed at n=30 and changing **only** authentication moves ρ from −0.21 to +0.69 (fails→passes), so authentication — not the rubric/n change — is the driver. `full_summary.json` is **retained unchanged as the superseded unauthenticated artifact** for transparency; it is **not** deleted.
+
+**Interpretation:** With rate-limiting removed, the four methods **agree** on pair ranking (ρ≈+0.69–0.78, `go=true`). The methods remain complementary multi-view signals (metadata fingerprints vs clone vs dynamic vs cross-language), but the corrected canonical evidence supports — rather than refutes — cross-method rank correlation.
 
 ### Mirror vs non-mirror continuous scores
 
@@ -113,6 +119,9 @@ From `continuous_scores_summary.csv`:
 | Path | Contents |
 |------|----------|
 | `run_manifest.json` | Repro SHA256 + auth snapshot |
+| `projected_pairs/full_summary_authenticated_n30.json` | **Canonical** cross-method stats (authenticated, n=30): ρ=+0.69, go=true |
+| `projected_pairs/full_summary_authenticated.json` | Authenticated n=25 (current rubric): ρ=+0.78, go=true |
+| `projected_pairs/full_summary.json` | Superseded **unauthenticated** artifact (ρ=−0.21, 38% 403) — retained for transparency |
 | `labeled_scored.json` | 10-pair REDUX scores |
 | `labeled/` | Threshold 50/45/55 + strict/lenient summaries |
 | `queryv2_redux/` | Proxy similarity (queryv2 winner; pilot + full) |

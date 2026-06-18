@@ -14,7 +14,7 @@ navigator for **output files and headline numbers** after the validation pass. T
 | 2 | [`labeled/labeled_strict_summary.csv`](labeled/labeled_strict_summary.csv) + [`labeled/labeled_summary.csv`](labeled/labeled_summary.csv) | Ground-truth metrics (strict + lenient) |
 | 3 | [`../runs/experiments/documentation/WINNER.md`](../runs/experiments/documentation/WINNER.md) | MetaMatch retrieval winner (0 magnets, 20/0/0) |
 | 4 | [`queryv2_redux/rollup_summary.csv`](queryv2_redux/rollup_summary.csv) + [`anchorsv2_redux/rollup_summary.csv`](anchorsv2_redux/rollup_summary.csv) | REDUX similarity on retrieved proxies |
-| 5 | [`projected_pairs/full_summary.json`](projected_pairs/full_summary.json) | Cross-method Spearman (ρ ≈ −0.21) |
+| 5 | [`projected_pairs/full_summary_authenticated_n30.json`](projected_pairs/full_summary_authenticated_n30.json) | Canonical cross-method Spearman (authenticated, n=30: ρ ≈ +0.69, go=true) |
 
 For methodology and statistics in prose: [`VALIDATION_MEMO.md`](VALIDATION_MEMO.md). For which repo paths matter vs historical sprawl: [`REPO_AUDIT.md`](REPO_AUDIT.md).
 
@@ -82,11 +82,13 @@ For methodology and statistics in prose: [`VALIDATION_MEMO.md`](VALIDATION_MEMO.
 | What | Path |
 |------|------|
 | Similar vs dissimilar metadata | [`metadata_discrimination_canonical.csv`](metadata_discrimination_canonical.csv) |
-| Spearman / Pearson (n=30) | [`projected_pairs/full_summary.json`](projected_pairs/full_summary.json) |
+| Spearman / Pearson — **canonical authenticated** (n=30) | [`projected_pairs/full_summary_authenticated_n30.json`](projected_pairs/full_summary_authenticated_n30.json) |
+| Spearman / Pearson — authenticated current rubric (n=25) | [`projected_pairs/full_summary_authenticated.json`](projected_pairs/full_summary_authenticated.json) |
+| Spearman / Pearson — superseded **unauthenticated** (n=30) | [`projected_pairs/full_summary.json`](projected_pairs/full_summary.json) |
 | REDUX cache (Test 2+3, 30-pair) | [`three_test_argument_table.csv`](three_test_argument_table.csv) |
 | Continuous scores | [`continuous_scores_summary.csv`](continuous_scores_summary.csv) |
 
-**Headlines:** similar mean ≈ **94.4%** vs dissimilar ≈ **4.7%**; Spearman **ρ ≈ −0.21** (below rubric 0.30 — reported honestly in [`VALIDATION_MEMO.md`](VALIDATION_MEMO.md)).
+**Headlines:** similar mean ≈ **94.4%** vs dissimilar ≈ **4.7%**; canonical authenticated cross-method Spearman **ρ ≈ +0.69** (n=30, go=true — passes rubric 0.30; authenticated n=25 is consistent at ρ ≈ +0.78). The earlier ρ ≈ −0.21 (`full_summary.json`) was an **unauthenticated** GitHub rate-limiting artifact (38% HTTP 403), retained for transparency — see [`VALIDATION_MEMO.md`](VALIDATION_MEMO.md).
 
 ---
 
