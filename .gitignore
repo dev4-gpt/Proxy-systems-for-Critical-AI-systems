@@ -1,17 +1,24 @@
-# Ignore local secrets and caches
-# Token files
+# Secrets and credentials (never commit)
 .env
 token.txt
 
-# Notebook checkpoints and cache
-.ipynb_checkpoints/
+# Large API cache (regenerated locally; warm cache speeds re-runs)
 .proxytool_cache/
 
-# Editor and local-only artifacts
-.cursor/
-.git-backups/
+# Python / notebook artifacts
 __pycache__/
 *.pyc
+.ipynb_checkpoints/
+
+# Editor and local tooling
+.cursor/
+.git-backups/
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+*.log
 
 # Redundant local exports / duplicates
 proxytool4.ipynb
@@ -20,35 +27,31 @@ proxytool.py.txt
 changes.ipynb
 TestHarness_NEEDSTOKEN.ps1
 
-# Results and large generated outputs (local / regenerated)
-results_plots/
-analysis/
-
-# MetaMatch: live run outputs (regenerated every pipeline run; commit snapshots under runs/experiments/)
-runs/manual-ml-py/
-runs/_summaries/
-
-# Local-only notes and drafts (never commit — if Git still tracks them, run:
-#   git rm -r --cached analysis/ INSTRUCTIONS.md linkedin_post.txt
+# Local-only notes and drafts
 INSTRUCTIONS.md
 linkedin_post.txt
 
-# Logs and system files
-*.log
-.DS_Store
+# Regenerated plots and ad-hoc analysis (not needed for repro)
+results_plots/
+analysis/
 
-# Keep repository metadata tracked
-!.gitignore
+# MetaMatch live run outputs (snapshots live under runs/experiments/)
+runs/manual-ml-py/
+runs/_summaries/
 
-.gitattributes
-apply_guard.py
-NextCompareReqs.pdf
-notebook_deep_analysis.json
+# Root-level document exports (assets/ papers remain tracked)
+/*.docx
+!work-p2.docx
+/*.pdf
 
-# REDUX 4 scoring core, repro runbook, and scripts are tracked so a fresh clone
-# can re-score (see REDUX_REPRO.md). Only the large exploratory notebook copy
-# inside the package stays out of git; regenerate redux4_core.py with
-# scripts/extract_redux4_core.py from proxytool_REDUX_4.ipynb.
+# REDUX: track core + repro scripts (see REDUX_REPRO.md). Exclude only the
+# large exploratory notebook copy inside the package; regenerate redux4_core.py
+# with scripts/extract_redux4_core.py from proxytool_REDUX_4.ipynb.
 proxytool_redux/proxytool.ipynb
 
-# projected_pairs/ outputs are tracked (Spearman/Pearson stats survive a clone).
+# projected_pairs/ and scripts/ are tracked (Spearman/Pearson stats + repro harness).
+# results_benchmark/ canonical outputs (labeled/, anchorsv2_redux/, queryv2_redux/,
+# projected_pairs/, archives/) are tracked.
+
+# Partial / in-progress independent anchorsv2 rerun (non-canonical workspace)
+results_benchmark/anchorsv2_redux_independent/
