@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-pytorch/vision,https://github.com/pytorch/vision,PeterL1n/BackgroundMattingV2,https://github.com/PeterL1n/BackgroundMattingV2,1,1100.36,91.8
-pytorch/vision,https://github.com/pytorch/vision,roboflow/rf-detr,https://github.com/roboflow/rf-detr,2,908.45,94.59
-pytorch/vision,https://github.com/pytorch/vision,scikit-image/scikit-image,https://github.com/scikit-image/scikit-image,3,871.75,94.48
-pytorch/vision,https://github.com/pytorch/vision,graphdeco-inria/gaussian-splatting,https://github.com/graphdeco-inria/gaussian-splatting,4,848.38,93.09
-pytorch/vision,https://github.com/pytorch/vision,STVIR/pysot,https://github.com/STVIR/pysot,5,805.68,93.06
+pytorch/vision,https://github.com/pytorch/vision,PeterL1n/BackgroundMattingV2,https://github.com/PeterL1n/BackgroundMattingV2,1,1100.36,94.1
+pytorch/vision,https://github.com/pytorch/vision,roboflow/rf-detr,https://github.com/roboflow/rf-detr,2,908.45,96.06
+pytorch/vision,https://github.com/pytorch/vision,scikit-image/scikit-image,https://github.com/scikit-image/scikit-image,3,871.75,95.97
+pytorch/vision,https://github.com/pytorch/vision,graphdeco-inria/gaussian-splatting,https://github.com/graphdeco-inria/gaussian-splatting,4,848.38,94.79
+pytorch/vision,https://github.com/pytorch/vision,STVIR/pysot,https://github.com/STVIR/pysot,5,805.68,94.98

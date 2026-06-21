@@ -110,7 +110,7 @@ From `continuous_scores_summary.csv`:
 | **queryv2** | 20 | **0** | **20/0/0** | **Primary winner** |
 | anchorsv2 | 24 (4 swaps) | 0 | 24 Good | Anchor-list sensitivity |
 
-**anchorsv2:** Same penalty/query; 4 anchor swaps (sklearn, mlflow, dvc, vision). On 20 shared folder slugs, mean top-5 Jaccard = **0.96** (**17/20** at 1.0; `explosion/spaCy` and `huggingface/datasets` at 0.67, `jina-ai/serve` at 0.80) — `results_benchmark/anchorsv2_overlap.csv`. REDUX bridge in `anchorsv2_redux/` (116 pair scores; 4 swapped anchors scored fresh, 17 shared slugs bootstrapped from `queryv2_redux/`, 3 shared slugs rescored). Do not compare “24 Good” vs “20 Good” as a head-to-head win.
+**anchorsv2:** Same penalty/query; 4 anchor swaps (sklearn, mlflow, dvc, vision). On 20 shared folder slugs, mean top-5 Jaccard = **0.96** (**17/20** at 1.0; `explosion/spaCy` and `huggingface/datasets` at 0.67, `jina-ai/serve` at 0.80) — `results_benchmark/anchorsv2_overlap.csv`. REDUX bridge in `anchorsv2_redux/` (116 pair scores) — now a **full independent 24-anchor rerun** (all 24 anchors freshly scored; replaces the earlier 17-fresh / 3-rescored / 96-reused bootstrap; overall metadata mean 92.82 → 94.04, largest per-anchor shifts `huggingface/transformers` +7.59, `ultralytics/yolov5` +4.36, `mlflow/mlflow` +4.00). Do not compare “24 Good” vs “20 Good” as a head-to-head win.
 
 ---
 

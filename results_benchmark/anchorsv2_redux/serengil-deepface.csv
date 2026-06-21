@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-serengil/deepface,https://github.com/serengil/deepface,RangiLyu/nanodet,https://github.com/RangiLyu/nanodet,1,754.57,97.37
-serengil/deepface,https://github.com/serengil/deepface,Lasagne/Lasagne,https://github.com/Lasagne/Lasagne,2,752.5,96.93
-serengil/deepface,https://github.com/serengil/deepface,deepinsight/insightface,https://github.com/deepinsight/insightface,3,747.84,96.77
-serengil/deepface,https://github.com/serengil/deepface,wujiyang/Face_Pytorch,https://github.com/wujiyang/Face_Pytorch,4,739.14,97.19
-serengil/deepface,https://github.com/serengil/deepface,Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB,https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB,5,732.85,96.65
+serengil/deepface,https://github.com/serengil/deepface,RangiLyu/nanodet,https://github.com/RangiLyu/nanodet,1,754.57,97.9
+serengil/deepface,https://github.com/serengil/deepface,Lasagne/Lasagne,https://github.com/Lasagne/Lasagne,2,752.5,97.57
+serengil/deepface,https://github.com/serengil/deepface,deepinsight/insightface,https://github.com/deepinsight/insightface,3,747.84,97.46
+serengil/deepface,https://github.com/serengil/deepface,wujiyang/Face_Pytorch,https://github.com/wujiyang/Face_Pytorch,4,739.14,97.74
+serengil/deepface,https://github.com/serengil/deepface,Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB,https://github.com/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB,5,732.85,97.29

@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,InterDigitalInc/CompressAI,https://github.com/InterDigitalInc/CompressAI,1,875.13,93.41
-deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,alibaba/EasyParallelLibrary,https://github.com/alibaba/EasyParallelLibrary,2,875,92.71
-deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,qualcomm/aimet,https://github.com/qualcomm/aimet,3,797.88,95.18
-deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,tensorflow/compression,https://github.com/tensorflow/compression,4,771.5,92.58
-deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,tensorflow/model-optimization,https://github.com/tensorflow/model-optimization,5,762.3,92.02
+deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,InterDigitalInc/CompressAI,https://github.com/InterDigitalInc/CompressAI,1,875.13,93.89
+deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,alibaba/EasyParallelLibrary,https://github.com/alibaba/EasyParallelLibrary,2,875,93.43
+deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,qualcomm/aimet,https://github.com/qualcomm/aimet,3,797.88,95.64
+deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,tensorflow/compression,https://github.com/tensorflow/compression,4,771.5,93.24
+deepspeedai/DeepSpeed,https://github.com/deepspeedai/DeepSpeed,tensorflow/model-optimization,https://github.com/tensorflow/model-optimization,5,762.3,92.8

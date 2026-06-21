@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-bbfamily/abu,https://github.com/bbfamily/abu,zvtvz/zvt,https://github.com/zvtvz/zvt,1,908.27,96.83
-bbfamily/abu,https://github.com/bbfamily/abu,shashankvemuri/Finance,https://github.com/shashankvemuri/Finance,2,907.85,96.81
-bbfamily/abu,https://github.com/bbfamily/abu,ranaroussi/quantstats,https://github.com/ranaroussi/quantstats,3,883.7,96.94
-bbfamily/abu,https://github.com/bbfamily/abu,coding-kitties/investing-algorithm-framework,https://github.com/coding-kitties/investing-algorithm-framework,4,846.05,95.1
-bbfamily/abu,https://github.com/bbfamily/abu,asavinov/intelligent-trading-bot,https://github.com/asavinov/intelligent-trading-bot,5,808.41,94.41
+bbfamily/abu,https://github.com/bbfamily/abu,zvtvz/zvt,https://github.com/zvtvz/zvt,1,908.27,97.18
+bbfamily/abu,https://github.com/bbfamily/abu,shashankvemuri/Finance,https://github.com/shashankvemuri/Finance,2,907.85,97.2
+bbfamily/abu,https://github.com/bbfamily/abu,ranaroussi/quantstats,https://github.com/ranaroussi/quantstats,3,883.7,97.28
+bbfamily/abu,https://github.com/bbfamily/abu,coding-kitties/investing-algorithm-framework,https://github.com/coding-kitties/investing-algorithm-framework,4,846.05,95.72
+bbfamily/abu,https://github.com/bbfamily/abu,asavinov/intelligent-trading-bot,https://github.com/asavinov/intelligent-trading-bot,5,808.41,94.69

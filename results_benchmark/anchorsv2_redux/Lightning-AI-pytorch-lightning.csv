@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,kornia/kornia,https://github.com/kornia/kornia,1,901.7,95.21
-Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,stanfordnlp/stanza,https://github.com/stanfordnlp/stanza,2,863.94,94.46
-Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,unit8co/darts,https://github.com/unit8co/darts,3,855.99,94.97
-Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,google-deepmind/sonnet,https://github.com/google-deepmind/sonnet,4,850.88,93.41
-Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,lucidrains/denoising-diffusion-pytorch,https://github.com/lucidrains/denoising-diffusion-pytorch,5,839.97,93.69
+Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,kornia/kornia,https://github.com/kornia/kornia,1,901.7,96.36
+Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,stanfordnlp/stanza,https://github.com/stanfordnlp/stanza,2,863.94,95.75
+Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,unit8co/darts,https://github.com/unit8co/darts,3,855.99,96.14
+Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,google-deepmind/sonnet,https://github.com/google-deepmind/sonnet,4,850.88,95.04
+Lightning-AI/pytorch-lightning,https://github.com/Lightning-AI/pytorch-lightning,lucidrains/denoising-diffusion-pytorch,https://github.com/lucidrains/denoising-diffusion-pytorch,5,839.97,95.6

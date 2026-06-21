@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-ultralytics/yolov5,https://github.com/ultralytics/yolov5,Megvii-BaseDetection/YOLOX,https://github.com/Megvii-BaseDetection/YOLOX,1,1010.31,85.65
-ultralytics/yolov5,https://github.com/ultralytics/yolov5,tinyvision/DAMO-YOLO,https://github.com/tinyvision/DAMO-YOLO,2,982.53,86.16
-ultralytics/yolov5,https://github.com/ultralytics/yolov5,ayooshkathuria/pytorch-yolo-v3,https://github.com/ayooshkathuria/pytorch-yolo-v3,3,943.55,86.02
-ultralytics/yolov5,https://github.com/ultralytics/yolov5,open-mmlab/mmyolo,https://github.com/open-mmlab/mmyolo,4,893.11,85.7
-ultralytics/yolov5,https://github.com/ultralytics/yolov5,PeterH0323/Smart_Construction,https://github.com/PeterH0323/Smart_Construction,5,882.49,85.53
+ultralytics/yolov5,https://github.com/ultralytics/yolov5,ayooshkathuria/pytorch-yolo-v3,https://github.com/ayooshkathuria/pytorch-yolo-v3,1,943.55,90.26
+ultralytics/yolov5,https://github.com/ultralytics/yolov5,Megvii-BaseDetection/YOLOX,https://github.com/Megvii-BaseDetection/YOLOX,2,920,90.13
+ultralytics/yolov5,https://github.com/ultralytics/yolov5,open-mmlab/mmyolo,https://github.com/open-mmlab/mmyolo,3,893.11,90.08
+ultralytics/yolov5,https://github.com/ultralytics/yolov5,tinyvision/DAMO-YOLO,https://github.com/tinyvision/DAMO-YOLO,4,892.22,90.46
+ultralytics/yolov5,https://github.com/ultralytics/yolov5,PeterH0323/Smart_Construction,https://github.com/PeterH0323/Smart_Construction,5,882.49,89.92

@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,jfkirk/tensorrec,https://github.com/jfkirk/tensorrec,1,848.05,97.23
-recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,wzhe06/Reco-papers,https://github.com/wzhe06/Reco-papers,2,841.16,97.54
-recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,ylongqi/openrec,https://github.com/ylongqi/openrec,3,836.72,97.78
-recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,maciejkula/spotlight,https://github.com/maciejkula/spotlight,4,828.95,97.66
-recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,RUCAIBox/RecBole,https://github.com/RUCAIBox/RecBole,5,822.76,97.44
+recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,jfkirk/tensorrec,https://github.com/jfkirk/tensorrec,1,848.05,97.44
+recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,wzhe06/Reco-papers,https://github.com/wzhe06/Reco-papers,2,841.16,97.74
+recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,ylongqi/openrec,https://github.com/ylongqi/openrec,3,836.72,97.95
+recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,maciejkula/spotlight,https://github.com/maciejkula/spotlight,4,828.95,97.84
+recommenders-team/recommenders,https://github.com/recommenders-team/recommenders,RUCAIBox/RecBole,https://github.com/RUCAIBox/RecBole,5,822.76,97.64

@@ -1,6 +1,6 @@
-anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct,code_centric_pct,dynamic_pct,cross_language_pct
-ray-project/ray,https://github.com/ray-project/ray,torchpipe/torchpipe,https://github.com/torchpipe/torchpipe,1,773.08,90.1,44.66,15.0,52.16
-ray-project/ray,https://github.com/ray-project/ray,ELS-RD/transformer-deploy,https://github.com/ELS-RD/transformer-deploy,2,769.61,86.58,41.58,22.8,57.39
-ray-project/ray,https://github.com/ray-project/ray,curiousily/Deploy-BERT-for-Sentiment-Analysis-with-FastAPI,https://github.com/curiousily/Deploy-BERT-for-Sentiment-Analysis-with-FastAPI,3,750,89.71,38.98,0.0,31.93
-ray-project/ray,https://github.com/ray-project/ray,run-llama/llama_deploy,https://github.com/run-llama/llama_deploy,4,735.02,89.27,40.51,22.2,45.66
-ray-project/ray,https://github.com/ray-project/ray,NVIDIA/TensorRT-LLM,https://github.com/NVIDIA/TensorRT-LLM,5,719.89,96.25,42.01,100.0,59.62
+anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
+ray-project/ray,https://github.com/ray-project/ray,torchpipe/torchpipe,https://github.com/torchpipe/torchpipe,1,773.08,91.33
+ray-project/ray,https://github.com/ray-project/ray,ELS-RD/transformer-deploy,https://github.com/ELS-RD/transformer-deploy,2,769.61,88.7
+ray-project/ray,https://github.com/ray-project/ray,curiousily/Deploy-BERT-for-Sentiment-Analysis-with-FastAPI,https://github.com/curiousily/Deploy-BERT-for-Sentiment-Analysis-with-FastAPI,3,750,92.36
+ray-project/ray,https://github.com/ray-project/ray,run-llama/llama_deploy,https://github.com/run-llama/llama_deploy,4,735.02,90.64
+ray-project/ray,https://github.com/ray-project/ray,NVIDIA/TensorRT-LLM,https://github.com/NVIDIA/TensorRT-LLM,5,719.89,96.13

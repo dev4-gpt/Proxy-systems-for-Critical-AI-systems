@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,jasonwu0731/trade-dst,https://github.com/jasonwu0731/trade-dst,1,920.52,90.73
-sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,budzianowski/multiwoz,https://github.com/budzianowski/multiwoz,2,899.34,93.68
-sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,nltk/nltk,https://github.com/nltk/nltk,3,867.55,92.11
-sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,Maluuba/nlg-eval,https://github.com/Maluuba/nlg-eval,4,865.47,91.36
-sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,hankcs/HanLP,https://github.com/hankcs/HanLP,5,817.26,91.28
+sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,jasonwu0731/trade-dst,https://github.com/jasonwu0731/trade-dst,1,920.52,91.23
+sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,budzianowski/multiwoz,https://github.com/budzianowski/multiwoz,2,899.34,93.93
+sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,nltk/nltk,https://github.com/nltk/nltk,3,867.55,92.49
+sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,Maluuba/nlg-eval,https://github.com/Maluuba/nlg-eval,4,865.47,91.82
+sebastianruder/NLP-progress,https://github.com/sebastianruder/NLP-progress,hankcs/HanLP,https://github.com/hankcs/HanLP,5,817.26,91.62

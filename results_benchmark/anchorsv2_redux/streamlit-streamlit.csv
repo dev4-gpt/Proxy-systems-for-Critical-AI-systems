@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-streamlit/streamlit,https://github.com/streamlit/streamlit,rio-labs/rio,https://github.com/rio-labs/rio,1,1002.21,96.73
-streamlit/streamlit,https://github.com/streamlit/streamlit,probabl-ai/skore,https://github.com/probabl-ai/skore,2,973.31,97.29
-streamlit/streamlit,https://github.com/streamlit/streamlit,scikit-learn-contrib/imbalanced-learn,https://github.com/scikit-learn-contrib/imbalanced-learn,3,961.95,96.97
-streamlit/streamlit,https://github.com/streamlit/streamlit,python-visualization/folium,https://github.com/python-visualization/folium,4,886.16,97.16
-streamlit/streamlit,https://github.com/streamlit/streamlit,ndleah/python-mini-project,https://github.com/ndleah/python-mini-project,5,871.87,96.65
+streamlit/streamlit,https://github.com/streamlit/streamlit,rio-labs/rio,https://github.com/rio-labs/rio,1,1002.21,98.36
+streamlit/streamlit,https://github.com/streamlit/streamlit,probabl-ai/skore,https://github.com/probabl-ai/skore,2,973.31,98.63
+streamlit/streamlit,https://github.com/streamlit/streamlit,scikit-learn-contrib/imbalanced-learn,https://github.com/scikit-learn-contrib/imbalanced-learn,3,961.95,98.5
+streamlit/streamlit,https://github.com/streamlit/streamlit,python-visualization/folium,https://github.com/python-visualization/folium,4,886.16,98.4
+streamlit/streamlit,https://github.com/streamlit/streamlit,ndleah/python-mini-project,https://github.com/ndleah/python-mini-project,5,871.87,98.44

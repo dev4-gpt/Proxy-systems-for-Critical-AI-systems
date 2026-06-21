@@ -27,4 +27,4 @@ Four **swapped** anchors use different folders and are scored separately in REDU
 
 ## REDUX proxy similarity
 
-Per-anchor CSVs, rollup, and run manifest: `results_benchmark/anchorsv2_redux/` via `tools/score_metamatch_proxies_redux.py` or `tools/run_anchorsv2_redux.sh`.
+Per-anchor CSVs, rollup, and run manifest: `results_benchmark/anchorsv2_redux/` via `tools/score_metamatch_proxies_redux.py` or `tools/run_anchorsv2_redux.sh`. This rollup is a **full independent 24-anchor rerun** (all 24 anchors freshly scored from the frozen archive; `run_manifest.json` shows `n_pair_scores: 116`, all 24 anchors scored), not a bootstrap.

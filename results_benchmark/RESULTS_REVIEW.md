@@ -73,7 +73,7 @@ For methodology and statistics in prose: [`VALIDATION_MEMO.md`](VALIDATION_MEMO.
 | Per-anchor CSVs | [`anchorsv2_redux/`](anchorsv2_redux/) |
 | Frozen retrieval archive | `runs/experiments/penalty300_min700_cap22_anchorsv2/manual-ml-py/` |
 
-**Headlines:** mean top-5 Jaccard **0.96** on 20 shared slugs (**17/20** at 1.0); **116** REDUX pair scores. Assembly: 4 swapped anchors scored fresh; 17 shared slugs from `queryv2_redux/`; 3 rescored — see [`PAPER_PACKAGE.md` appendix](PAPER_PACKAGE.md#appendix-anchorsv2).
+**Headlines:** mean top-5 Jaccard **0.96** on 20 shared slugs (**17/20** at 1.0); **116** REDUX pair scores. The REDUX rollup is now a **full independent 24-anchor rerun** (all 24 anchors freshly scored; replaces the earlier 17-fresh / 3-rescored / 96-reused bootstrap; overall metadata mean 92.82 → 94.04) — see [`PAPER_PACKAGE.md` appendix](PAPER_PACKAGE.md#appendix-anchorsv2).
 
 ---
 

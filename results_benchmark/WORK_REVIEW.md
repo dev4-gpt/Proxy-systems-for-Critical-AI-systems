@@ -172,7 +172,7 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 
 - Top-5 proxy overlap on **20** shared folder slugs — `anchorsv2_overlap.csv`: mean **Jaccard = 0.96**; **17/20** at 1.0; partial drift on `explosion/spaCy`, `huggingface/datasets` (0.67), `jina-ai/serve` (0.80)
 - REDUX bridge — `anchorsv2_redux/` (**116** pair scores, 24 anchors)
-- **Assembly note:** four swapped anchors scored fresh; **17** shared slugs copied from `queryv2_redux/` (identical metadata means); **3** shared slugs rescored (`apache/airflow`, `jina-ai/serve`, `ray-project/ray`). Full independent rerun: `bash tools/run_anchorsv2_redux.sh full`
+- **Assembly note:** this is now a **full independent 24-anchor REDUX rerun** — all 24 anchors were freshly scored from the `penalty300_min700_cap22_anchorsv2` archive (`run_manifest.json`: `n_pair_scores: 116`, all 24 anchors in `anchors_scored_this_run`). It **replaces the earlier bootstrap** (17 fresh / 3 rescored / 96 reused from `queryv2_redux/`). Metadata-mean shifts vs the bootstrap are modest (overall mean 92.82 → 94.04); the largest are on the previously-reused/rescored anchors (`huggingface/transformers` +7.59, `ultralytics/yolov5` +4.36, `mlflow/mlflow` +4.00, `explosion/spaCy` +3.32). Reproduce: `bash tools/run_anchorsv2_redux.sh full`
 
 ### MetaMatch retrieval winner (pre-existing)
 

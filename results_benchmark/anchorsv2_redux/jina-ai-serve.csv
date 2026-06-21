@@ -1,5 +1,5 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-jina-ai/serve,https://github.com/jina-ai/serve,bentoml/BentoML,https://github.com/bentoml/BentoML,1,782.86,96.62
-jina-ai/serve,https://github.com/jina-ai/serve,hongbo-miao/hongbomiao.com,https://github.com/hongbo-miao/hongbomiao.com,2,711.63,96.06
-jina-ai/serve,https://github.com/jina-ai/serve,DaoCloud/DaoCloud-docs,https://github.com/DaoCloud/DaoCloud-docs,3,702.86,96.63
-jina-ai/serve,https://github.com/jina-ai/serve,Netflix/metaflow,https://github.com/Netflix/metaflow,4,693.63,96.8
+jina-ai/serve,https://github.com/jina-ai/serve,bentoml/BentoML,https://github.com/bentoml/BentoML,1,782.86,96.63
+jina-ai/serve,https://github.com/jina-ai/serve,hongbo-miao/hongbomiao.com,https://github.com/hongbo-miao/hongbomiao.com,2,711.63,96.07
+jina-ai/serve,https://github.com/jina-ai/serve,DaoCloud/DaoCloud-docs,https://github.com/DaoCloud/DaoCloud-docs,3,702.86,96.64
+jina-ai/serve,https://github.com/jina-ai/serve,Netflix/metaflow,https://github.com/Netflix/metaflow,4,693.63,96.81

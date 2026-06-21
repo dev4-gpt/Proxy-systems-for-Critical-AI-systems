@@ -1,6 +1,6 @@
 anchor_repo,anchor_url,candidate_repo,candidate_url,rank,metamatch_score,metadata_pct
-huggingface/transformers,https://github.com/huggingface/transformers,GradientHQ/parallax,https://github.com/GradientHQ/parallax,1,817.24,76.55
-huggingface/transformers,https://github.com/huggingface/transformers,hiyouga/EasyR1,https://github.com/hiyouga/EasyR1,2,799.29,75.25
-huggingface/transformers,https://github.com/huggingface/transformers,speechbrain/speechbrain,https://github.com/speechbrain/speechbrain,3,777.8,76.29
-huggingface/transformers,https://github.com/huggingface/transformers,Tencent/AngelSlim,https://github.com/Tencent/AngelSlim,4,766.67,83.28
-huggingface/transformers,https://github.com/huggingface/transformers,OpenBMB/UltraRAG,https://github.com/OpenBMB/UltraRAG,5,759.6,73.19
+huggingface/transformers,https://github.com/huggingface/transformers,GradientHQ/parallax,https://github.com/GradientHQ/parallax,1,817.24,84.58
+huggingface/transformers,https://github.com/huggingface/transformers,hiyouga/EasyR1,https://github.com/hiyouga/EasyR1,2,799.29,84.0
+huggingface/transformers,https://github.com/huggingface/transformers,speechbrain/speechbrain,https://github.com/speechbrain/speechbrain,3,777.8,84.26
+huggingface/transformers,https://github.com/huggingface/transformers,Tencent/AngelSlim,https://github.com/Tencent/AngelSlim,4,766.67,88.15
+huggingface/transformers,https://github.com/huggingface/transformers,OpenBMB/UltraRAG,https://github.com/OpenBMB/UltraRAG,5,759.6,81.52
