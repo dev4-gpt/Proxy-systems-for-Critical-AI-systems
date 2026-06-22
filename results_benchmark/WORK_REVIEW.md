@@ -70,6 +70,8 @@ flowchart TB
     DISC --> VM
 ```
 
+
+
 ---
 
 ## Executive summary
@@ -85,6 +87,9 @@ flowchart LR
     F["Labeled 10-pair cohort"] --> D
     E --> G["Gates G1–G8 PASS<br/>PAPER_PACKAGE.md"]
 ```
+
+
+
 
 | Goal                           | Outcome                                                                                                                                                                                           |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -357,7 +362,7 @@ bash tools/run_anchorsv2_redux.sh all
 
 ## File inventory — validation pass
 
-### `tools/` 
+### `tools/`
 
 
 | Path                                     | Status  | Source             |
