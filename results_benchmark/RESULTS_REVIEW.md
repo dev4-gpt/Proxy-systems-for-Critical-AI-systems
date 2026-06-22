@@ -34,7 +34,7 @@ For methodology and statistics in prose: [VALIDATION_MEMO.md](VALIDATION_MEMO.md
 | Threshold 45 / 55 sensitivity           | [labeled/threshold45/](labeled/threshold45/), [labeled/threshold55/](labeled/threshold55/)                          |
 | Repo access                             | [repo_access_validation.csv](repo_access_validation.csv)                                                            |
 
-**Headlines @ threshold 50:** strict F1 = **1.0** (metadata, code_centric, cross_language); lenient metadata F1 = **1.00** (`target_uncertain` excluded from P/R/F1 per cohort rule); dynamic weaker (**0.67** lenient). Details: [WORK_REVIEW.md § Key results summary](WORK_REVIEW.md#key-results-summary).
+**Headlines @ threshold 50:** strict F1 = **1.0** (metadata, code_centric, cross_language); lenient metadata F1 = **1.00** (`target_uncertain` excluded from P/R/F1 per cohort rule); dynamic weaker (**0.67** lenient). Details: [WORK_REVIEW.md](WORK_REVIEW.md).
 
 ---
 
@@ -121,4 +121,4 @@ Full layout: [README.md](README.md).
 
 **Review only:** all paths above are in-repo; no re-scoring required to verify claims.
 
-**Re-run from scratch:** commands in [WORK_REVIEW.md § Repro commands](WORK_REVIEW.md#repro-commands). Optional full REDUX setup: [../REDUX_REPRO.md](../REDUX_REPRO.md).
+**Re-run from scratch:** commands in [WORK_REVIEW.md](WORK_REVIEW.md). Optional full REDUX setup: [../REDUX_REPRO.md](../REDUX_REPRO.md).
