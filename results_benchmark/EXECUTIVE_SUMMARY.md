@@ -1,4 +1,4 @@
-# Proxy Discovery for Critical AI Systems — Grant Summary
+# Proxy Discovery for Critical AI Systems Summary
 
 *High-level summary of work delivered under this grant. Full technical audit: [MASTER_EVALUATION.md](MASTER_EVALUATION.md).*
 
@@ -16,18 +16,20 @@ This project replaces the common practice of selecting a proxy by intuition with
 
 *Verified metrics — suitable for slides and outreach. Full sources in [MASTER_EVALUATION.md](MASTER_EVALUATION.md).*
 
-| | | |
-| --- | --- | --- |
-| **11** | CAIS domains covered | autonomous driving, medical AI, robotics, financial risk, cybersecurity, and others |
-| **20** | anchor systems evaluated | all 20 produced fully qualified proxy shortlists (20/0/0 Good/OK/Weak) |
-| **0** | non-discriminating results | down from 30 at baseline after systematic retrieval tuning |
-| **216** | anchor–proxy similarity scores | 100 (queryv2) + 116 (anchorsv2 stability run) |
-| **4** | independent similarity signals | metadata, code structure, dynamic behavior, cross-language |
-| **F1 = 1.0** | classification on known matches | perfect separation on 3 of 4 signals (strict labeled test) |
-| **94% vs 5%** | similar vs unrelated systems | ~90-point score gap between true matches and hard negatives |
-| **96%** | result stability | top-5 overlap when the anchor list is perturbed (17/20 identical) |
-| **24** | retrieval configurations tested | grid search frozen to a single validated winner |
-| **IEEE 2026** | peer-reviewed publication | methodology operationalized as a running system |
+
+|               |                                 |                                                                                     |
+| ------------- | ------------------------------- | ----------------------------------------------------------------------------------- |
+| **11**        | CAIS domains covered            | autonomous driving, medical AI, robotics, financial risk, cybersecurity, and others |
+| **20**        | anchor systems evaluated        | all 20 produced fully qualified proxy shortlists (20/0/0 Good/OK/Weak)              |
+| **0**         | non-discriminating results      | down from 30 at baseline after systematic retrieval tuning                          |
+| **216**       | anchor–proxy similarity scores  | 100 (queryv2) + 116 (anchorsv2 stability run)                                       |
+| **4**         | independent similarity signals  | metadata, code structure, dynamic behavior, cross-language                          |
+| **F1 = 1.0**  | classification on known matches | perfect separation on 3 of 4 signals (strict labeled test)                          |
+| **94% vs 5%** | similar vs unrelated systems    | ~90-point score gap between true matches and hard negatives                         |
+| **96%**       | result stability                | top-5 overlap when the anchor list is perturbed (17/20 identical)                   |
+| **24**        | retrieval configurations tested | grid search frozen to a single validated winner                                     |
+| **IEEE 2026** | peer-reviewed publication       | methodology operationalized as a running system                                     |
+
 
 **Retrieval improvement.** Systematic grid search across 24 configurations reduced non-discriminating results from **30 → 0** — the final winner is frozen and validated, not a one-off run.
 
@@ -65,6 +67,8 @@ flowchart TD
     D --> E["Ranked proxy recommendation<br/>+ test-planning input"]
 ```
 
+
+
 **Stage 1 — MetaMatch (retrieval).** Searches public repositories and returns a ranked shortlist of candidate proxies for the anchor. It is tuned to suppress non-discriminating results — for example, broadly popular projects that surface for almost any query without being genuinely relevant.
 
 **Stage 2 — REDUX similarity engine (scoring).** Scores each candidate against the anchor on a 0–100 scale using four complementary signals, so that a strong match must hold up from multiple independent perspectives:
@@ -82,22 +86,26 @@ flowchart TD
 
 All figures are drawn from the verified evaluation. See **Headline numbers** above for the outreach summary.
 
-| Dimension | Result | Interpretation |
-| --- | --- | --- |
-| Retrieval quality | **20/20** anchors fully qualified, **0** junk results | Retrieval returns relevant candidates rather than noise. |
-| Classification accuracy | **F1 = 1.0** on 3/4 signals (strict known-match test) | Every true match identified, every non-match rejected on the strict set. |
-| Score separation | **94.4%** similar vs **4.7%** unrelated (~**90-pt** gap) | Wide, consistent margin between matches and non-matches. |
-| Stability | **96%** top-5 overlap (**17/20** identical slugs) | Results are robust to the specific choice of inputs. |
-| Scale | **216** scored pairs across **24** grid experiments | End-to-end pipeline exercised at non-trivial scale. |
+
+| Dimension               | Result                                                   | Interpretation                                                           |
+| ----------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Retrieval quality       | **20/20** anchors fully qualified, **0** junk results    | Retrieval returns relevant candidates rather than noise.                 |
+| Classification accuracy | **F1 = 1.0** on 3/4 signals (strict known-match test)    | Every true match identified, every non-match rejected on the strict set. |
+| Score separation        | **94.4%** similar vs **4.7%** unrelated (~**90-pt** gap) | Wide, consistent margin between matches and non-matches.                 |
+| Stability               | **96%** top-5 overlap (**17/20** identical slugs)        | Results are robust to the specific choice of inputs.                     |
+| Scale                   | **216** scored pairs across **24** grid experiments      | End-to-end pipeline exercised at non-trivial scale.                      |
+
 
 **Worked example.** For `apache/airflow` (a widely used data-pipeline system), the pipeline ranked `feast` and `dagster` as top proxies at approximately **96/100**, then carried those recommendations forward into test-scenario planning — demonstrating the full path from retrieval through similarity scoring to test-relevant output.
 
-| | Manual proxy selection | This system |
-| --- | --- | --- |
-| Basis | Intuition, popularity, surface resemblance | Measured similarity across four independent signals |
-| Evidence | Informal assertion | Validated scores against labeled known matches |
-| Reproducibility | Ad hoc, not repeatable | Frozen configs, committed outputs, documented pipeline |
-| Review readiness | Unlikely to withstand safety review | Defensible, explainable scores with audit trail |
+
+|                  | Manual proxy selection                     | This system                                            |
+| ---------------- | ------------------------------------------ | ------------------------------------------------------ |
+| Basis            | Intuition, popularity, surface resemblance | Measured similarity across four independent signals    |
+| Evidence         | Informal assertion                         | Validated scores against labeled known matches         |
+| Reproducibility  | Ad hoc, not repeatable                     | Frozen configs, committed outputs, documented pipeline |
+| Review readiness | Unlikely to withstand safety review        | Defensible, explainable scores with audit trail        |
+
 
 ---
 
@@ -144,11 +152,13 @@ Teams operating under source constraints can **justify proxy selection with meas
 
 *Slide-ready summary for grant reporting.*
 
-| | |
-| --- | --- |
-| **Delivered** | Pipeline · validation package · IEEE 2026 publication |
-| **Proven** | 20/20 retrieval · F1 = 1.0 · 94% vs 5% separation |
-| **Next** | Expanded validation · regulated domains · unified multi-view score |
+
+|               |                                                                    |
+| ------------- | ------------------------------------------------------------------ |
+| **Delivered** | Pipeline · validation package · IEEE 2026 publication              |
+| **Proven**    | 20/20 retrieval · F1 = 1.0 · 94% vs 5% separation                  |
+| **Next**      | Expanded validation · regulated domains · unified multi-view score |
+
 
 ---
 

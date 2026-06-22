@@ -5,12 +5,12 @@ Archive: `runs/experiments/penalty300_min700_cap22_queryv2/manual-ml-py/`
 Thin-anchor retrieval pools (final-30 unique count from experiment scorecard):
 
 
-| Anchor                | Final30 unique | Top-5 proxies (Rank 1–5)                                                                                 | Notes                                          |
-| --------------------- | -------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| jina-ai/serve         | 3              | bentoml/BentoML, Netflix/metaflow, hongbo-miao/hongbomiao.com, DaoCloud/DaoCloud-docs, PrefectHQ/fastmcp | Small pool; top picks are serving/LLM adjacent |
-| ray-project/ray       | 6              | (see `ray-project-ray/30_Matches.csv`)                                                                   | Thin; verify distributed-ML adjacency          |
-| apache/airflow        | 9              | feast-dev/feast, dagster-io/dagster, …                                                                   | Workflow/orchestration neighbors               |
-| OpenBB-finance/OpenBB | 11             | ValueCell-ai/valuecell, brokermr810/QuantDinger, …                                                       | Quant/finance tooling neighbors                |
+| Anchor                | Final30 unique | Top-5 proxies (Rank 1–5)                                                                                                                                  | Notes                                          |
+| --------------------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| jina-ai/serve         | 3              | bentoml/BentoML, Netflix/metaflow, hongbo-miao/hongbomiao.com, DaoCloud/DaoCloud-docs, PrefectHQ/fastmcp                                                  | Small pool; top picks are serving/LLM adjacent |
+| ray-project/ray       | 6              | torchpipe/torchpipe, ELS-RD/transformer-deploy, curiousily/Deploy-BERT-for-Sentiment-Analysis-with-FastAPI, run-llama/llama_deploy, NVIDIA/TensorRT-LLM | Thin; verify distributed-ML adjacency          |
+| apache/airflow        | 9              | feast-dev/feast, dagster-io/dagster, …                                                                                                                    | Workflow/orchestration neighbors               |
+| OpenBB-finance/OpenBB | 11             | ValueCell-ai/valuecell, brokermr810/QuantDinger, …                                                                                                        | Quant/finance tooling neighbors                |
 
 
 ## Retrieval hygiene (queryv2 winner)
