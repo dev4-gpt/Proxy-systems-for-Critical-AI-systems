@@ -5,12 +5,86 @@
 
 This file is the single source of truth for what was run, reused, tagged, and verified in the validation pass. Share the repository path and this document so reviewers can reproduce commands and cross-check claims without a separate Word table.
 
+```mermaid
+flowchart TB
+    subgraph INPUT["Inputs"]
+        CAIS["CAIS anchor repo<br/>(e.g. apache/airflow)"]
+        COHORT["configs/labeled_benchmark_pairs.json<br/>10 labeled pairs"]
+        HYPER["metamatch_hyperparams.json<br/>penalty=300, min=700, cap=22"]
+    end
+
+    subgraph STAGE1["Stage 1 — MetaMatch retrieval (GitHub search + ranking)"]
+        GRID["runs/experiments/<br/>penalty grid sweep"]
+        QV2["Winner archive<br/>runs/experiments/penalty300_min700_cap22_queryv2/"]
+        AV2["Sensitivity archive<br/>runs/experiments/penalty300_min700_cap22_anchorsv2/"]
+        WINNER["runs/experiments/documentation/WINNER.md<br/>0 magnets · 20/0/0 Good/OK/Weak"]
+    end
+
+    subgraph STAGE2["Stage 2 — REDUX 4 scoring engine"]
+        ENGINE["proxytool_redux/_extracted/redux4_core.py<br/>★ core scoring library"]
+        PKG["proxytool_redux/<br/>benchmark.py · benchmark_metrics.py · bootstrap.py"]
+        METHODS["4 signals:<br/>metadata · code_centric · dynamic · cross_language"]
+    end
+
+    subgraph OUTPUTS["results_benchmark/ outputs"]
+        LABELED["labeled/<br/>F1 · P/R · accuracy<br/>strict F1=1.0 · lenient metadata F1=1.00"]
+        QREDUX["queryv2_redux/<br/>100 pair scores · 20 anchors"]
+        AREDUX["anchorsv2_redux/<br/>116 pair scores · 24 anchors"]
+        STATS["projected_pairs/<br/>Spearman ρ=+0.69 (canonical)"]
+        DISC["metadata_discrimination_canonical.csv<br/>94.4% vs 4.7%"]
+        OVERLAP["anchorsv2_overlap.csv<br/>Jaccard 0.96 · 17/20 identical"]
+    end
+
+    subgraph DOCS["Review docs (results_benchmark/)"]
+        WR["WORK_REVIEW.md<br/>master · what ran"]
+        RR["RESULTS_REVIEW.md<br/>navigator · where to look"]
+        PP["PAPER_PACKAGE.md<br/>gates G1–G8 PASS"]
+        VM["VALIDATION_MEMO.md<br/>reviewer concerns"]
+    end
+
+    CAIS --> GRID
+    HYPER --> GRID
+    GRID --> QV2
+    GRID --> AV2
+    QV2 --> WINNER
+
+    QV2 -->|"top-5 proxies per anchor"| ENGINE
+    AV2 -->|"top-5 proxies per anchor"| ENGINE
+    COHORT -->|"10 pairs scored live"| ENGINE
+    PKG --> ENGINE
+    ENGINE --> METHODS
+
+    METHODS --> LABELED
+    METHODS --> QREDUX
+    METHODS --> AREDUX
+    METHODS --> STATS
+    METHODS --> DISC
+
+    QV2 --> OVERLAP
+    AV2 --> OVERLAP
+
+    LABELED --> WR
+    QREDUX --> RR
+    AREDUX --> RR
+    STATS --> PP
+    DISC --> VM
+```
+
 ---
 
 ## Executive summary
 
 This validation pass integrates **supplied ground-truth infrastructure** with **pre-existing MetaMatch Phase 2 results** (`penalty300_min700_cap22_queryv2` winner and `penalty300_min700_cap22_anchorsv2` sensitivity archive). It does **not** re-run the MetaMatch grid or re-archive queryv2. Instead, it **executes** the labeled-benchmark pipeline, **bridges** frozen retrieval outputs to REDUX proxy similarity, and **documents** honest statistics for paper gates.
 
+```mermaid
+flowchart LR
+    A["CAIS anchor"] --> B["MetaMatch<br/>queryv2 winner"]
+    B --> C["Top-5 proxies<br/>retrieved"]
+    C --> D["REDUX 4 engine<br/>proxytool_redux/_extracted/redux4_core.py"]
+    D --> E["Similarity scores<br/>results_benchmark/"]
+    F["Labeled 10-pair cohort"] --> D
+    E --> G["Gates G1–G8 PASS<br/>PAPER_PACKAGE.md"]
+```
 
 | Goal                           | Outcome                                                                                                                                                                                           |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
