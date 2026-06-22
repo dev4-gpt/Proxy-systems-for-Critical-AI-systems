@@ -1,25 +1,24 @@
 # Repository Audit — CAIS / MetaMatch / REDUX
 
 **Repository:** `mdk5293/Proxy-systems-for-Critical-AI-systems` (repo root)  
-**Audit date:** 2026-06-05  
 **Scope:** Read-only inventory of what the validation pass actually uses vs. historical sprawl.
 
 ---
 
 ## Executive summary
 
-**You are not using everything in this repo.** The labeled validation pass (phases A–G) needs roughly **22 artifact paths** and **8 tools**. Everything else — MetaMatch penalty grid history (20 non-primary experiment folders), REDUX coverage/temperature sweeps (88 archived CSVs), seven REDUX notebook iterations, overlapping narrative docs, and duplicate pre-archive snapshots — is supporting material or dead weight for the current paper package.
+**We are not using everything in this repo.** The labeled validation pass (phases A–G) needs roughly **22 artifact paths** and **8 tools**. Everything else from MetaMatch penalty grid history (20 non-primary experiment folders), REDUX coverage/temperature sweeps (88 archived CSVs), seven REDUX notebook iterations, overlapping narrative docs, and duplicate pre-archive snapshots, is supporting material or dead weight for the current paper package.
 
 
-| Finding                                                                                | Severity | Action                                                                            |
-| -------------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------- |
-| Validation is self-contained under `results_benchmark/` + 2 frozen experiment archives | Low      | Keep; cite `WORK_REVIEW.md` as master                                             |
-| Four `results_benchmark/` docs repeat gates/metrics                                    | Medium   | Treat `WORK_REVIEW.md` as SoT; others are reviewer-facing slices                  |
-| `_before_repro_run/` duplicates `archives/`                                            | Low      | Safe to ignore or merge later                                                     |
-| Lenient labeled metrics computed twice                                                 | Low      | Both scripts intentional (strict vs lenient split)                                |
-| `proxytool_redux/` REDUX core now tracked; `projected_pairs/` un-ignored (tracked)     | Resolved | Fresh clone can re-score (`PYTHONPATH=.`); see `REDUX_REPRO.md`                    |
-| 20 grid-history experiment folders unused by validation                                | Low      | Archive reference only; do not re-run                                             |
-| Root notebooks deleted; logic lives in `proxytool_redux/` (gitignored)                 | **High** | Document clone/setup in `REDUX_REPRO.md`                                          |
+| Finding                                                                                | Severity | Action                                                           |
+| -------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------------------- |
+| Validation is self-contained under `results_benchmark/` + 2 frozen experiment archives | Low      | Keep; cite `WORK_REVIEW.md` as master                            |
+| Four `results_benchmark/` docs repeat gates/metrics                                    | Medium   | Treat `WORK_REVIEW.md` as SoT; others are reviewer-facing slices |
+| `_before_repro_run/` duplicates `archives/`                                            | Low      | Safe to ignore or merge later                                    |
+| Lenient labeled metrics computed twice                                                 | Low      | Both scripts intentional (strict vs lenient split)               |
+| `proxytool_redux/` REDUX core now tracked; `projected_pairs/` un-ignored (tracked)     | Resolved | Fresh clone can re-score (`PYTHONPATH=.`); see `REDUX_REPRO.md`  |
+| 20 grid-history experiment folders unused by validation                                | Low      | Archive reference only; do not re-run                            |
+| Root notebooks deleted; logic lives in `proxytool_redux/` (gitignored)                 | **High** | Document clone/setup in `REDUX_REPRO.md`                         |
 
 
 **Bottom line:** For paper submission and reviewer reproduction, ship the **minimal paper package** below. Use `WORK_REVIEW.md` as the single source of truth for commands, tags, and cross-verification.
@@ -129,20 +128,6 @@ Both labeled tools import `proxytool_redux.benchmark_metrics` (see gitignore gap
 
 Safe to ignore; kept as pre-reorganization backup.
 
-### Gitignored but cited
-
-
-| Path                                 | In `.gitignore` | Cited by                                            |
-| ------------------------------------ | --------------- | --------------------------------------------------- |
-| `proxytool_redux/`                   | Yes             | All REDUX scoring tools, `run_labeled_benchmark.py` |
-| `results_benchmark/projected_pairs/` | Yes             | Spearman ρ in VALIDATION_MEMO, G4                   |
-| `scripts/`                           | Yes             | `projected_pair_pipeline.py`, REDUX extraction      |
-| `results_plots/` (46 PNGs)           | Yes             | Not in validation pass                              |
-| `analysis/`                          | Yes             | Publication comparison notes                        |
-
-
-**Repro gap:** A fresh `git clone` gets validation CSVs/JSON but may lack REDUX core and projected-pair stats unless `proxytool_redux/` and `projected_pairs/` are restored per `REDUX_REPRO.md`.
-
 ---
 
 ## Notebook duplication
@@ -161,10 +146,6 @@ Root-level notebooks were removed (~117k lines in recent commit). REDUX logic no
 | `proxytool_final.ipynb`         | Consolidated draft         |
 
 
-Extracted Python lives in `proxytool_redux/_extracted/redux4_core.py` via `scripts/extract_redux4_core.py`. **Only REDUX 4 core is imported at runtime.** The other six notebooks are iteration history — not needed for validation repro if `_extracted/` is present.
-
-`.gitignore` also excludes legacy root exports: `proxytool4.ipynb`, `changes.ipynb`, `proxytool copy.ipynb.txt`.
-
 ---
 
 ## Pipeline duplication
@@ -177,7 +158,7 @@ Extracted Python lives in `proxytool_redux/_extracted/redux4_core.py` via `scrip
 | `Get-AnchorMatches.ps1`            | Per-anchor MetaMatch retrieval | **Primary**                         |
 | `Get-AnchorCandidates.ps1`         | Candidate discovery            | Active                              |
 | `Run-MetaMatchPipeline.ps1`        | Batch pipeline orchestrator    | **Primary**                         |
-| `Run-MetaMatchPipeline_old.ps1`    | Prior pipeline version         | **Duplicate** — historical          |
+| `Run-MetaMatchPipeline_old.ps1`    | Prior pipeline version         | **Duplicate** historical            |
 | `Run-AnchorPipelineBatch.ps1`      | Batch variant                  | Overlaps with Run-MetaMatchPipeline |
 | `Run-RecommendedAnchorMatches.ps1` | Runs all anchors from CSV      | Overlaps with batch pipeline        |
 | `Apply-MetaMatch2Updates.ps1`      | One-time migration script      | Historical                          |
@@ -241,20 +222,20 @@ Validation does **not** re-run any PowerShell pipeline. Frozen outputs under `ru
 
 ### Grid history only (20 folders — safe to ignore for paper)
 
-`penalty55_`*, `penalty75_*`, `penalty100_*`, `penalty110_*`, `penalty150_*`, `penalty175_*`, `penalty200_*`, `penalty250_*`, `penalty275_*` — various penalty/min/cap combinations explored during Phase 2 grid. Documented in `runs/experiments/documentation/WINNER.md` and `anchor_comparison_by_experiment.csv`. **None are inputs to the validation pass.**
+`penalty55_`*, `penalty75_`*, `penalty100_*`, `penalty110_*`, `penalty150_*`, `penalty175_*`, `penalty200_*`, `penalty250_*`, `penalty275_*` — various penalty/min/cap combinations explored during Phase 2 grid. Documented in `runs/experiments/documentation/WINNER.md` and `anchor_comparison_by_experiment.csv`. **None are inputs to the validation pass.**
 
-Live run outputs (`runs/manual-ml-py/`, `runs/_summaries/`, `runs/2026-05-*-batch/`) are gitignored and regenerated by pipeline runs.
+Live run outputs (`runs/manual-ml-py/`, `runs/_summaries/`, `runs/2026-05-*-batch/`) are regenerated by pipeline runs.
 
 ---
 
 ## Scripts vs tools
 
 
-| Directory                   | Tracked in git      | Purpose                                                                |
-| --------------------------- | ------------------- | ---------------------------------------------------------------------- |
-| `tools/` (18 files)         | **Yes**             | MetaMatch grid management + validation pass                            |
-| `scripts/` (7 files)        | **No** (gitignored) | REDUX notebook extraction, projected-pair pipeline, repro harness      |
-| `runs/experiments/scripts/` | **Yes**             | Experiment-specific helpers (see `runs/experiments/scripts/README.md`) |
+| Directory                   | Tracked in git | Purpose                                                                |
+| --------------------------- | -------------- | ---------------------------------------------------------------------- |
+| `tools/` (18 files)         | **Yes**        | MetaMatch grid management + validation pass                            |
+| `scripts/` (7 files)        | **Yes**        | REDUX notebook extraction, projected-pair pipeline, repro harness      |
+| `runs/experiments/scripts/` | **Yes**        | Experiment-specific helpers (see `runs/experiments/scripts/README.md`) |
 
 
 **Convention drift:** Validation tooling landed in `tools/` (labeled ground-truth tooling + new bridges). REDUX development scripts stayed in gitignored `scripts/`. A newcomer should look at `tools/` for repro commands and `REDUX_REPRO.md` for REDUX setup.
@@ -364,12 +345,12 @@ Listed in [Tools overlap → Validation tools](#validation-tools-8--actively-use
 
 | Path / category                                                                           | Why                                                 |
 | ----------------------------------------------------------------------------------------- | --------------------------------------------------- |
-| `runs/experiments/penalty{55,75,100,110,150,175,200,250,275}_`* (20 folders)              | Grid history; winner already selected               |
+| `runs/experiments/penalty{55,75,100,110,150,175,200,250,275}`_* (20 folders)              | Grid history; winner already selected               |
 | `results_benchmark/archives/redux4_sweep/` (~40 CSVs)                                     | REDUX tuning sweep; not cited in validation         |
 | `results_benchmark/_before_repro_run/`                                                    | Pre-archive duplicate of 3 CSVs                     |
 | `results_benchmark/archives/custom_30_pairs/`                                             | Superseded by labeled cohort                        |
-| `results_plots/` (46 PNGs)                                                                | Local plots; gitignored                             |
-| `analysis/`                                                                               | Publication comparison draft; gitignored            |
+| `results_plots/` (46 PNGs)                                                                | Local plots                                         |
+| `analysis/`                                                                               | Publication comparison draft                        |
 | `Run-MetaMatchPipeline_old.ps1`                                                           | Superseded pipeline                                 |
 | `configs/30_Pairs_*.json`, `projected_pair_rubric_old.json`, `tmp_rubric_low_volume.json` | Config variants                                     |
 | Root `30_Pairs.json`                                                                      | Plausible cohort — **not ground truth**             |
@@ -378,21 +359,6 @@ Listed in [Tools overlap → Validation tools](#validation-tools-8--actively-use
 | `*.log`, `repro_run.log`, `anchorsv2_redux_run.log`                                       | Execution logs                                      |
 | `work-review.docx`, `work-p2.docx`                                                        | Word exports; superseded by WORK_REVIEW.md          |
 | `.proxytool_cache/` (542 entries)                                                         | GitHub API cache                                    |
-
-
----
-
-## Top actions
-
-
-| Priority | Action                                                                 | Rationale                                                                             |
-| -------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| **1**    | Keep `WORK_REVIEW.md` as single source of truth                        | Stops doc drift across 4 overlapping memos                                            |
-| **2**    | Ensure `proxytool_redux/` + `projected_pairs/` are restorable on clone | Validation imports and G4 cite them; both gitignored                                  |
-| **3**    | Ship minimal paper package (22 paths) to reviewers                     | Everything else is optional context                                                   |
-| **4**    | Do **not** re-run MetaMatch grid or re-archive queryv2                 | G8 = no retune; frozen archives are inputs                                            |
-| **5**    | Tag grid-history experiment folders as archive-only in README          | Prevents accidental re-runs                                                           |
-| **6**    | Consider removing `_before_repro_run/` in a future cleanup             | Duplicates `archives/` symlinks (not done in this pass)                               |
 
 
 ---

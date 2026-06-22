@@ -31,13 +31,9 @@ TestHarness_NEEDSTOKEN.ps1
 INSTRUCTIONS.md
 linkedin_post.txt
 
-# Regenerated plots and ad-hoc analysis (not needed for repro)
-results_plots/
-analysis/
-
 # MetaMatch live run outputs (snapshots live under runs/experiments/)
-runs/manual-ml-py/
-runs/_summaries/
+#runs/manual-ml-py/
+#runs/_summaries/
 
 # Root-level document exports (assets/ papers remain tracked)
 /*.docx
@@ -47,7 +43,7 @@ runs/_summaries/
 # REDUX: track core + repro scripts (see REDUX_REPRO.md). Exclude only the
 # large exploratory notebook copy inside the package; regenerate redux4_core.py
 # with scripts/extract_redux4_core.py from proxytool_REDUX_4.ipynb.
-proxytool_redux/proxytool.ipynb
+
 
 # projected_pairs/ and scripts/ are tracked (Spearman/Pearson stats + repro harness).
 # results_benchmark/ canonical outputs (labeled/, anchorsv2_redux/, queryv2_redux/,

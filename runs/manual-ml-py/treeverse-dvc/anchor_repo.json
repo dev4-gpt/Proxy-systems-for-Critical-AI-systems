@@ -1,0 +1,22 @@
+{
+  "FullName": "treeverse/dvc",
+  "Name": "dvc",
+  "Url": "https://github.com/treeverse/dvc",
+  "Description": "🦉 Data Versioning and ML Experiments",
+  "Topics": [
+    "ai",
+    "data-science",
+    "data-version-control",
+    "developer-tools",
+    "machine-learning",
+    "reproducibility",
+    "unstructured-data"
+  ],
+  "Language": "Python",
+  "Stars": 15628,
+  "Fork": false,
+  "Archived": false,
+  "CreatedAt": "2017-03-04T08:16:33Z",
+  "UpdatedAt": "2026-05-27T02:51:53Z",
+  "Owner": "treeverse"
+}

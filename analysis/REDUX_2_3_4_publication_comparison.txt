@@ -1,0 +1,231 @@
+REDUX_2 vs REDUX_3 vs REDUX_4
+Code/Hyperparameter/Result Comparative Report (Publication-Style)
+
+Scope:
+- /Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/proxytool_REDUX_2.ipynb
+- /Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/proxytool_REDUX_3.ipynb
+- /Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/proxytool_REDUX_4.ipynb
+
+Focus:
+- Core scoring code paths and hyperparameters
+- Table outputs: Known Similar, Known Dissimilar, Custom 30 (weighted/family)
+- Diagnostics and score-separation behavior
+- Causal mapping: which code/math changes drove which result shifts
+
+===============================================================================
+1) Executive Summary
+===============================================================================
+
+1. REDUX_2 established strong control-pair discrimination:
+   - Known Similar metadata remained high
+   - Known Dissimilar metadata became very low
+   - But plausible/custom-30 metadata could still be permissive depending on branch
+
+2. REDUX_3 introduced the right optimization framework:
+   - domain-aware hard negatives
+   - window weighting
+   - tunable coverage penalty
+   - interpolated CAIS weights
+   This improved calibration power, but multiple execution paths created contradictory plausible-pair outputs.
+
+3. REDUX_4 added canonical execution/export intent:
+   - one canonical block
+   - canonical output files
+   This improves reproducibility if canonical flow is followed, though legacy exploratory cells still exist.
+
+Main interpretation:
+- Control-pair discrimination improved and remained strong.
+- Plausible-pair reasonableness improves only when canonical retrieval-mode path is used consistently.
+
+===============================================================================
+2) Function-Level Code Comparison (Core Cells)
+===============================================================================
+
+TABLE A. `build_custom_30_table(...)` evolution
+
+| Aspect | REDUX_2 | REDUX_3 | REDUX_4 |
+|---|---|---|---|
+| reporting_mode default | contrastive | REDUX3_DEFAULT_REPORTING_RETRIEVAL (rank_pct) | rank_pct in canonical plausible block |
+| metadata_windows default | [50,150] | REDUX3_METADATA_WINDOWS | REDUX3_METADATA_WINDOWS |
+| metadata_window_weights | none | REDUX3_WINDOW_WEIGHTS {50:0.65,150:0.35} | same |
+| metadata_weights fallback | CAIS_WEIGHTS_STRICT | CAIS_WEIGHTS_REDUX3_BLEND | CAIS_WEIGHTS_REDUX3_BLEND in canonical block |
+| coverage_penalty_lambda | implicit via _family_cosine_score default (0.15) | explicit arg (default REDUX3_COVERAGE_PENALTY_LAMBDA=0.20) | same |
+| domain hard negatives toggle | no | use_domain_hard_negatives=True | same in canonical block |
+| canonical intent | A/B demonstration | retrieval vs strict discrimination profiles | single authoritative plausible output path |
+
+
+TABLE B. `_method_score_percent_for_target(...)` evolution
+
+| Aspect | REDUX_2 | REDUX_3 | REDUX_4 |
+|---|---|---|---|
+| default reporting mode | rank_pct in strict patch path | REDUX3_DEFAULT_REPORTING_BENCHMARK (contrastive) | benchmark remains contrastive in canonical policy |
+| hard negatives | static default + optional extras | domain-aware pool by default (toggle available) | same |
+| window weighting | equal averaging across windows | weighted aggregation supported | same |
+| coverage penalty pass-through | not configurable end-to-end | configurable arg passed to _metadata_similarity/_family_cosine_score | same |
+| metadata_extra_candidates | supported | supported | supported |
+
+
+TABLE C. `_metadata_similarity(...)` and `_family_cosine_score(...)`
+
+| Aspect | REDUX_2 | REDUX_3 | REDUX_4 |
+|---|---|---|---|
+| family coverage penalty lambda default | 0.15 | 0.20 | 0.20 |
+| window aggregation math | mean over windows | weighted mean sum(score*w)/sum(w) | same |
+| scoring_mode support | weighted_cosine + family_cosine | same | same |
+| normalization handling | global_minmax path | same | same |
+| explainability payload | last_family_detail | retained | retained |
+
+===============================================================================
+3) Hyperparameter Delta Table
+===============================================================================
+
+TABLE D. Most relevant hyperparameters and values
+
+| Hyperparameter / Policy | REDUX_2 | REDUX_3 | REDUX_4 canonical |
+|---|---|---|---|
+| REDUX3_COVERAGE_PENALTY_LAMBDA | n/a | 0.20 | 0.20 |
+| windows | [50,150] | [50,150] | [50,150] |
+| window weights | not explicit (equal) | {50:0.65,150:0.35} | {50:0.65,150:0.35} |
+| domain hard negatives | no | yes (default) | yes (canonical plausible path) |
+| benchmark reporting mode | contrastive/rank_pct depending cell | contrastive default constant | contrastive in benchmark step |
+| plausible reporting mode | mixed branch-dependent | rank_pct default in build_custom_30_table | rank_pct in canonical custom_30 |
+| CAIS default profile for plausible path | strict-heavy/mixed branches | blend (0.7 strict + 0.3 mimic) | blend canonical |
+
+===============================================================================
+4) Result Tables (Observed Outputs in Notebooks)
+===============================================================================
+
+NOTE:
+- Values below are those observed in audited notebook outputs.
+- Where notebooks contain multiple branches, values are labeled accordingly.
+
+TABLE E. Known Similar / Known Dissimilar averages
+
+| Metric | REDUX_2 | REDUX_3 | REDUX_4 (canonical context) |
+|---|---:|---:|---:|
+| Known Similar avg Metadata | 84.7 | 85.7 | high/strong in canonical benchmark outputs |
+| Known Dissimilar avg Metadata | 3.8 | 3.5 | low with strong diagnostics (FPR-like near 0 in canonical diagnostics) |
+| Known Dissimilar avg Code centric | 19.5 | 19.0 | similar band |
+| Known Dissimilar avg Dynamic | 42.1 | 42.1 | similar band |
+| Known Dissimilar avg Cross language | 23.9 | 23.9 | similar band |
+
+
+TABLE F. Separation diagnostics (metadata)
+
+| Diagnostic | REDUX_2 | REDUX_3 | REDUX_4 canonical diagnostics output |
+|---|---:|---:|---:|
+| similar_mean_metadata | 84.72 | 85.70 | 86.111 |
+| dissimilar_mean_metadata | 3.76 | 3.49 | 4.343 |
+| gap (similar - dissimilar) | 80.96 | 82.21 | 81.768 |
+| dissimilar_above_similar_median_rate | 0.0 | 0.0 | 0.0-consistent regime |
+
+Interpretation:
+- REDUX_3 showed slightly stronger reported control separation than REDUX_2.
+- REDUX_4 maintains strong separation in canonical diagnostics.
+
+
+TABLE G. Custom 30 plausible behavior (metadata averages; branch-sensitive)
+
+| Notebook / Branch | Weighted metadata avg | Family metadata avg | Interpretation |
+|---|---:|---:|---|
+| REDUX_2 mode-summary branch | 85.9 | 88.2 | permissive/high plausible metadata |
+| REDUX_3 mode-summary branch | 62.8 | 53.9 | closer to code-dependent methods |
+| REDUX_3 strict custom block | n/a | 91.94 | high due to strict/contrastive branch context |
+| REDUX_4 canonical plausible export path | canonical output file generated | canonical output file generated | intended authoritative path for publication |
+
+Key point:
+- Plausible-pair metrics are the most execution-path-sensitive region.
+- This is exactly why REDUX_4 canonicalization was introduced.
+
+===============================================================================
+5) Change -> Effect Causality (Research Explanation)
+===============================================================================
+
+1) Hard-negative calibration (largest effect)
+   - Expanding and structuring negatives reduced false-high metadata on dissimilar controls.
+   - Mechanism: contrastive baseline and/or percentile ranking relative to candidate pool.
+   - Result: Known Dissimilar metadata collapsed to low single digits and stayed there.
+
+2) Reporting mode choice by use-case
+   - contrastive = stronger discrimination framing
+   - rank_pct = retrieval/ranking stability framing
+   - Same underlying similarities can look very different depending on reporting transform.
+   - This explains why plausible custom-30 can appear "reasonable" in one branch and inflated in another.
+
+3) Window weighting + coverage penalty
+   - Recency weighting ({50:0.65,150:0.35}) and lambda=0.20 reduce stale-history and low-coverage confidence.
+   - Effect is generally secondary to negative-pool/reporting-mode choices, but improves robustness.
+
+4) Blended CAIS weights
+   - Interpolating strict and mimic profiles reduced dependence on one extreme profile.
+   - Improved ability to tune plausible behavior without sacrificing control separation.
+
+5) Canonical execution discipline
+   - REDUX_4’s canonical run block/file outputs are essential for reproducibility.
+   - Without strict run discipline, mixed historical outputs can produce contradictory conclusions.
+
+===============================================================================
+6) Publication-Ready Interpretation
+===============================================================================
+
+Recommended claim:
+"Across REDUX iterations, metadata discrimination on control pairs improved and remained strong.
+The principal remaining challenge was plausible-pair calibration consistency, which is primarily a
+run-policy/reporting-mode issue rather than a missing algorithmic component. REDUX_4 resolves this by
+defining a canonical execution path and canonical artifacts."
+
+Recommended artifacts for paper appendix:
+1) Known-pair canonical summary CSVs (benchmark)
+2) custom_30_pairs_canonical.csv
+3) metadata_discrimination_canonical.csv
+4) This comparison report
+
+===============================================================================
+7) Practical Guidance for Your Team
+===============================================================================
+
+If the objective is:
+- "Maximum discrimination test": use benchmark/contrastive policy.
+- "Plausible retrieval reasonableness": use canonical custom-30 retrieval (rank_pct) policy.
+- "Publication numbers": run REDUX_4 canonical block only and report canonical CSVs only.
+
+Do not mix:
+- old exploratory custom-30 outputs,
+- strict custom branches,
+- and canonical retrieval outputs
+in the same headline result table.
+
+===============================================================================
+END OF REPORT
+===============================================================================
+
+SO IS THIS EXPLANATION BELOW ENOUGH TO EXPLAIN TO MY PROFESSOR?- good morning, I've pushed the REDUX_2, REDUX_3, and REDUX_4. 
+FOR CAIS_WEIGHTS_1:
+-the metadata family cosine score drops from 88.2 to 53.9 and 53.3. 
+-metadata weighted cosine score drops from 85.9 to 62.8 and 62.5.
+FOR CAIS_WEIGHT_MIMIC with Global min-max:
+-REDUX_2 to 4: 84.5, 58.3, 53.6
+
+DEF BUILD_CUSTOM_30_TABLE:
+-reporting_mode :contrastive (REDUX_2) vs rank_pct (3 and 4)
+-added use_domain_hard_negatives to expand the pool (domain-aware negatives as a toggle-T/F) in REDUX_3 and 4. 
+-metadata_window_weights added in REDUX_3 and 4: {50: 0.65, 150: 0.35}
+-coverage penalty tuning: 0.15 (_family_cosine_score, REDUX_2) vs 0.20 for REDUX_3 and 4
+
+def _metadata_similarity:
+-family coverage penalty higher in REDUX_3,4: 0.20 vs 0.15 in REDUX_2
+-windows aggregate: mean over windows for REDUX_2 VS weighted mean sum(score*w)/sum(w) for REDUX_3 and 4
+-didn't change the normalization handling (global_minmax), explainability payload (last_family_detail) for all methods
+
+def _method_score_percent_for_target:
+-default reporting mode = rank_pct (REDUX_2) vs contrastive (REDUX_3,4)
+-hard negatives: static (optional) vs domain aware pool (with toggle) for REDUX_3,4
+
+build_custom_30_table:
+-METADATA_WEIGHTS: CAIS_WEIGHTS_STRICT for REDUX_2 vs CAIS_WEIGHTS_REDUX3_BLEND for REDUX_3,4
+(70% from CAIS_WEIGHTS_STRICT + 30% from CAIS_WEIGHTS_MIMIC + 0% from CAIS_WEIGHTS_1)
+- known_similar = 84.7 vs 85.7 vs 86.1%
+- known_dissimilar = 3.8 vs 3.5 vs 4.3%
+- custom_30 weighted cosine = 85.2 vs 63.6 vs 55.8% 
+- custom_30 family cosine = 89.5 vs 88.9 vs 92.5
+These changes impacted  the final score.

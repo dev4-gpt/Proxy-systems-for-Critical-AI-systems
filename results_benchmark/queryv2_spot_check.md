@@ -9,8 +9,8 @@ Thin-anchor retrieval pools (final-30 unique count from experiment scorecard):
 | --------------------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | jina-ai/serve         | 3              | bentoml/BentoML, Netflix/metaflow, hongbo-miao/hongbomiao.com, DaoCloud/DaoCloud-docs, PrefectHQ/fastmcp                                                  | Small pool; top picks are serving/LLM adjacent |
 | ray-project/ray       | 6              | torchpipe/torchpipe, ELS-RD/transformer-deploy, curiousily/Deploy-BERT-for-Sentiment-Analysis-with-FastAPI, run-llama/llama_deploy, NVIDIA/TensorRT-LLM | Thin; verify distributed-ML adjacency          |
-| apache/airflow        | 9              | feast-dev/feast, dagster-io/dagster, …                                                                                                                    | Workflow/orchestration neighbors               |
-| OpenBB-finance/OpenBB | 11             | ValueCell-ai/valuecell, brokermr810/QuantDinger, …                                                                                                        | Quant/finance tooling neighbors                |
+| apache/airflow        | 9              | feast-dev/feast, dagster-io/dagster, abhishek-ch/around-dataengineering, san089/goodreads_etl_pipeline, elyra-ai/elyra                                    | Workflow/orchestration neighbors               |
+| OpenBB-finance/OpenBB | 11             | ValueCell-ai/valuecell, brokermr810/QuantDinger, quantsbin/Quantsbin, Michalos88/Quant-Projects, binance/binance-skills-hub                               | Quant/finance tooling neighbors                |
 
 
 ## Retrieval hygiene (queryv2 winner)

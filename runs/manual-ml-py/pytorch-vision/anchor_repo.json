@@ -1,0 +1,17 @@
+{
+  "FullName": "pytorch/vision",
+  "Name": "vision",
+  "Url": "https://github.com/pytorch/vision",
+  "Description": "Datasets, Transforms and Models specific to Computer Vision",
+  "Topics": [
+    "computer-vision",
+    "machine-learning"
+  ],
+  "Language": "Python",
+  "Stars": 17697,
+  "Fork": false,
+  "Archived": false,
+  "CreatedAt": "2016-11-09T23:11:43Z",
+  "UpdatedAt": "2026-05-26T15:13:34Z",
+  "Owner": "pytorch"
+}
