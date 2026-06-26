@@ -5,7 +5,21 @@ Executable research code aligned with:
 **Mark Kennedy, Joanna F. DeFranco & Philip A. Laplante**,  
 *"Discovering Proxy Systems to Test Critical AI Systems: A Metadata-Driven Software Similarity Approach"* (IEEE Computer, 2026).
 
-This README is the long-form map from **paper -> implementation**.
+---
+
+## Validation results (start here)
+
+Frozen headline artifacts and gates G1–G8 for the MetaMatch + REDUX validation pass:
+
+| Path | Role |
+|------|------|
+| [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/) | **Canonical bundle** — gates, labeled metrics, retrieval winner, REDUX bridges, Spearman |
+| [`results_benchmark/WORK_REVIEW.md`](results_benchmark/WORK_REVIEW.md) | Master validation document (phases A–G, repro commands) |
+| [`results_benchmark/RESULTS_REVIEW.md`](results_benchmark/RESULTS_REVIEW.md) | Output-file navigator |
+| [`results_benchmark/PAPER_PACKAGE.md`](results_benchmark/PAPER_PACKAGE.md) | Gate checklist G1–G8 |
+
+This README below is the long-form map from **paper → implementation** (REDUX notebook, CAIS domains, MetaMatch pipeline).
+
 ---
 
 ## Why this exists

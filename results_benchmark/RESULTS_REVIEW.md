@@ -1,5 +1,7 @@
 # Results review — where to look
 
+> **Canonical bundle:** [`../CANONICAL_RESULTS/`](../CANONICAL_RESULTS/) — frozen headline artifacts (start here for a five-minute review).
+
 A navigator for **output files and headline numbers** after the validation pass. This is not a second master document — for commands, tags, and repro see [WORK_REVIEW.md](WORK_REVIEW.md).
 
 **Integration in one line:** frozen **queryv2** MetaMatch retrieval (our Phase 2 winner) + **labeled ground-truth** eval + **REDUX** proxy bridges, documented under `results_benchmark/`.

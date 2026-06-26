@@ -17,6 +17,7 @@
 | G6   | queryv2 proxy REDUX bridge                            | **PASS** | 20 anchors × top-5 metadata REDUX; thin anchors (jina 96.4%, ray 92.3%, airflow 95.4%, OpenBB 93.8% means) — `queryv2_redux/rollup_summary.csv`                                                                               |
 | G7   | anchorsv2 sensitivity                                 | **PASS** | Mean top-5 Jaccard **0.96** on 20 shared slugs (17/20 at 1.0); REDUX bridge in `anchorsv2_redux/`                                                                                                                             |
 | G8   | MetaMatch retune required?                            | **NO**   | G6 passed; do not re-archive queryv2                                                                                                                                                                                          |
+| G9   | Downstream usefulness (informational)                 | **INFO** | Triage/search/scenario metrics in `downstream_validation/` — supports proxy triage story; not a pass/fail gate                                                                                                               |
 
 
 ## Tables for paper

@@ -322,7 +322,7 @@ These paths are sufficient to support paper claims G1–G8 without re-running th
 9. `results_benchmark/anchorsv2_overlap.csv`
 10. `results_benchmark/metadata_discrimination_canonical.csv`
 11. `results_benchmark/three_test_argument_table.csv`
-12. `results_benchmark/projected_pairs/full_summary.json`
+12. `results_benchmark/projected_pairs/full_summary_authenticated_n30.json`
 
 ### Narrative / gates (5)
 

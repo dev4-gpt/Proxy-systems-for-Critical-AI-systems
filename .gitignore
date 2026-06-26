@@ -37,8 +37,10 @@ linkedin_post.txt
 
 # Root-level document exports (assets/ papers remain tracked)
 /*.docx
-!work-p2.docx
 /*.pdf
+
+# Off-repo tarballs (grid history archived locally)
+# archives/off_repo/
 
 # REDUX: track core + repro scripts (see REDUX_REPRO.md). Exclude only the
 # large exploratory notebook copy inside the package; regenerate redux4_core.py
@@ -50,3 +52,20 @@ linkedin_post.txt
 # projected_pairs/, archives/) are tracked.
 
 # Partial / in-progress independent anchorsv2 rerun (non-canonical workspace)
+
+# InsForge & AI agent skills
+.insforge
+.agent
+.agents
+.augment
+.claude
+.cline
+.github/copilot*
+.kilocode
+.qoder
+.qwen
+.roo
+.trae
+.windsurf
+
+reference/insforge/

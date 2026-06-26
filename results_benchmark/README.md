@@ -2,6 +2,8 @@
 
 Organized benchmark outputs for the CAIS / MetaMatch paper package.
 
+**Canonical bundle:** [`../CANONICAL_RESULTS/`](../CANONICAL_RESULTS/) — frozen headline artifacts (G1–G8).
+
 **Start here:** [`WORK_REVIEW.md`](WORK_REVIEW.md) — master validation document (phases, tags, repro, cross-verification). **Where are the results?** → [`RESULTS_REVIEW.md`](RESULTS_REVIEW.md).
 
 ## MetaMatch phase-2 (queryv2 + anchorsv2)
@@ -28,19 +30,29 @@ bash tools/run_anchorsv2_redux.sh all   # pilot then full
 
 | Path | Role |
 |------|------|
-| `labeled_scored.json` | 10-pair REDUX scores |
-| `labeled/` | Threshold 50/45/55 summaries + claim checks |
+| `labeled_scored.json` | 10-pair REDUX scores (v1 frozen) |
+| `labeled/` | Threshold 50/45/55 summaries + claim checks (v1) |
+| `labeled_scored_v2.json` | 24-pair expanded cohort |
+| `labeled_v2/` | v2 strict/lenient metrics + bootstrap CIs |
+| `configs/labeled_benchmark_pairs_v2.json` | v2 seed manifest |
 | `run_manifest.json` | Repro SHA256 + GitHub auth snapshot |
+
+## Downstream validation
+
+| Path | Role |
+|------|------|
+| `downstream_validation/SUMMARY.md` | Triage, search effort, scenario coverage |
+| `downstream_validation/triage_metrics.csv` | Proxy triage efficiency |
+| `downstream_validation/search_effort.csv` | Candidate search effort |
+| `downstream_validation/scenario_coverage.csv` | Testing-relevance dimensions |
 
 ## Historical / auxiliary CSVs (`archives/`)
 
-Loose root-level sweep and ablation CSVs were moved under `archives/` with symlinks at former paths where tools/docs still reference them:
+Loose root-level sweep and ablation CSVs live under `archives/` with symlinks at former paths where tools/docs still reference them. Grid history (`redux4_sweep/`, `custom_30_pairs/`, penalty-grid experiment folders) was tarball'd to `archives/off_repo/metamatch_grid_history.tar.gz` (gitignored); see `REMOVABLE_HISTORY.md`.
 
 | Subfolder | Contents |
 |-----------|----------|
-| `redux4_sweep/` | Coverage/temperature grid sweep outputs |
 | `known_mirror/` | Mirror benchmark candidate rows and summaries |
-| `custom_30_pairs/` | 30-pair scoring variants |
 | `continuous_scores/` | Mirror vs non-mirror continuous score tables |
 | `metadata_diagnostics/` | Discrimination / permissiveness diagnostics |
 | `legacy_tables/` | table1–3, three_test_argument_table |
@@ -48,6 +60,7 @@ Loose root-level sweep and ablation CSVs were moved under `archives/` with symli
 
 ## Narrative docs (`[Analysis]`)
 
+- `REMOVABLE_HISTORY.md` — cleanup inventory (Tier A–D)
 - `RESULTS_REVIEW.md` — results navigator (paths + headline numbers)
 - `WORK_REVIEW.md` — **master** phase table, tag legend, repro commands
 - `VALIDATION_MEMO.md` — reviewer response backbone

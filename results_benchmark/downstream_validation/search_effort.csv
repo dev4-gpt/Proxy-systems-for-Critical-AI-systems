@@ -1,0 +1,4 @@
+anchor_slug,baseline_unfiltered_qualified,metamatch_only_top5,metamatch_redux_filtered,median_repos_to_high_similarity
+apache-airflow,9,5,5,5
+ray-project-ray,6,5,5,5
+huggingface-transformers,18,5,5,5

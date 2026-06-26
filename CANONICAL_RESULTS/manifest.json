@@ -1,0 +1,42 @@
+{
+  "git_commit": "267bd072d795716cd88f2cf6580977b09d400dfc",
+  "files": {
+    "README.md": {
+      "sha256": "46a9b3a85a42ab74412ecdea0529f02ddd7158cb56aaa1282b479c71d1d6a3d9"
+    },
+    "anchorsv2_overlap.csv": {
+      "sha256": "f0389cc115079bd996993b635b0c779c59af50fc280c16f933a32f7878439573",
+      "target": "../results_benchmark/anchorsv2_overlap.csv"
+    },
+    "cross_method_auth_n30.json": {
+      "sha256": "b0f72a3cab1110e6f02c944b398ff93fcfa08fa58b9cdfa773aa79edea52f539",
+      "target": "../results_benchmark/projected_pairs/full_summary_authenticated_n30.json"
+    },
+    "gates.json": {
+      "sha256": "36c4b8fb2e762c9af08dbe75a7b0951a1cae82b333da10e41d1bc1f0cd3a0066"
+    },
+    "labeled_scored.json": {
+      "sha256": "57ad2916ce877f0e06d4e3f586001da86f2c27c365a629ae5230d378d385b5e2",
+      "target": "../results_benchmark/labeled_scored.json"
+    },
+    "labeled_strict_summary.csv": {
+      "sha256": "dc23b9a39fd87aa45ea459e56aaaa9a0a352be8765159a582d9e2e0502d3e9f9",
+      "target": "../results_benchmark/labeled/labeled_strict_summary.csv"
+    },
+    "labeled_summary.csv": {
+      "sha256": "82d26873a6ac9f96281af61614c599baa654c316b33e54800b121c17ddbecd94",
+      "target": "../results_benchmark/labeled/labeled_summary.csv"
+    },
+    "metadata_discrimination.csv": {
+      "sha256": "e098525f7627aad26107dddefdf0860401e2db1341600933465406dd14f13fdb",
+      "target": "../results_benchmark/metadata_discrimination_canonical.csv"
+    },
+    "queryv2_redux_rollup.csv": {
+      "sha256": "04e8078b8c271fc107d6335b189879cb68f6c63aaae6a57d08f0ba03d3f1b403",
+      "target": "../results_benchmark/queryv2_redux/rollup_summary.csv"
+    },
+    "retrieval_winner.json": {
+      "sha256": "7d27cf06252d4c24a65b63430268bbfe194cba29566efcfdbb9140f809f93c32"
+    }
+  }
+}

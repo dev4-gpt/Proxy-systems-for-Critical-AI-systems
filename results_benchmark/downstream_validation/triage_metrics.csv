@@ -1,0 +1,4 @@
+anchor_slug,raw_qualified_pool,metamatch_top5,redux_pass_top5,pct_reduction_vs_pool,pct_reduction_vs_top5
+apache-airflow,9,5,5,44.44,0.0
+ray-project-ray,6,5,5,16.67,0.0
+huggingface-transformers,18,5,5,72.22,0.0

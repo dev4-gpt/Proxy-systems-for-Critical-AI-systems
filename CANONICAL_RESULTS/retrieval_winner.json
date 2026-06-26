@@ -1,0 +1,18 @@
+{
+  "experiment_id": "penalty300_min700_cap22_queryv2",
+  "archive": "runs/experiments/penalty300_min700_cap22_queryv2/",
+  "hyperparams": {
+    "penalty": 300,
+    "minimum_score": 700,
+    "max_per_owner": 2,
+    "max_per_owner_per_subdomain": 2
+  },
+  "scorecard": {
+    "anchors": 20,
+    "top5_magnets": 0,
+    "good": 20,
+    "ok": 0,
+    "weak": 0
+  },
+  "source": "runs/experiments/documentation/WINNER.md"
+}

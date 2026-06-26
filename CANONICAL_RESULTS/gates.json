@@ -1,0 +1,52 @@
+{
+  "source": "results_benchmark/PAPER_PACKAGE.md",
+  "gates": {
+    "G1": {
+      "criterion": "Labeled strict known_match separates @ threshold 50",
+      "result": "PASS",
+      "artifact": "labeled_strict_summary.csv"
+    },
+    "G2": {
+      "criterion": "Labeled lenient includes related pairs",
+      "result": "PASS",
+      "artifact": "labeled_summary.csv",
+      "notes": "metadata F1=1.00; target_uncertain excluded from P/R/F1"
+    },
+    "G3": {
+      "criterion": "Do not claim plausible 30_Pairs as ground truth",
+      "result": "PASS",
+      "artifact": "labeled_scored.json"
+    },
+    "G4": {
+      "criterion": "Cross-method agreement (authenticated, canonical n=30)",
+      "result": "PASS",
+      "artifact": "cross_method_auth_n30.json",
+      "spearman_rho": 0.6913,
+      "pearson_r": 0.6643
+    },
+    "G5": {
+      "criterion": "queryv2 retrieval winner frozen",
+      "result": "PASS",
+      "artifact": "retrieval_winner.json",
+      "top5_magnets": 0,
+      "good_ok_weak": "20/0/0"
+    },
+    "G6": {
+      "criterion": "queryv2 proxy REDUX bridge",
+      "result": "PASS",
+      "artifact": "queryv2_redux_rollup.csv",
+      "n_scores": 100
+    },
+    "G7": {
+      "criterion": "anchorsv2 sensitivity",
+      "result": "PASS",
+      "artifact": "anchorsv2_overlap.csv",
+      "mean_jaccard": 0.96
+    },
+    "G8": {
+      "criterion": "MetaMatch retune required",
+      "result": "NO",
+      "notes": "G6 passed; do not re-archive queryv2"
+    }
+  }
+}

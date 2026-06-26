@@ -1,7 +1,0 @@
-{
-  "experiment_id": "penalty250_min700_cap22",
-  "description": "penalty=250, minScore=700, maxOwner=2, maxOwnerSub=2",
-  "archived_at": "2026-05-25T23:36:21.631827+00:00",
-  "source_summaries": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/_summaries",
-  "source_manual_ml_py": "/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant/runs/manual-ml-py"
-}

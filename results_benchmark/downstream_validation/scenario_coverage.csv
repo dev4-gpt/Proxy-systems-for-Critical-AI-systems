@@ -1,0 +1,4 @@
+anchor_slug,top3_proxies,nist_dimensions_covered_top3,nist_dimensions_covered_baseline_bottom2,dimensions_top3
+apache-airflow,feast-dev/feast;dagster-io/dagster;abhishek-ch/around-dataengineering,6,1,connector_failure_handling;data_pipeline_reliability;etl_integration_hygiene;offline_online_consistency;orchestration_dependency_graphs;retry_semantics
+ray-project-ray,torchpipe/torchpipe;ELS-RD/transformer-deploy;curiousily/Deploy-BERT-for-Sentiment-Analysis-with-FastAPI,2,1,gpu_utilization;pipeline_parallelism
+huggingface-transformers,GradientHQ/parallax;hiyouga/EasyR1;speechbrain/speechbrain,4,1,distributed_training;model_hub_compatibility;multimodal_training;parameter_sharding
