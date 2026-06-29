@@ -9,14 +9,29 @@ Executable research code aligned with:
 
 ## Validation results (start here)
 
-Frozen headline artifacts and gates G1–G8 for the MetaMatch + REDUX validation pass:
+Two-stage **CAIS proxy-discovery** validated in `results_benchmark/` (frozen headlines in [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/)):
+
+| Stage | What | Where |
+|-------|------|-------|
+| **1 — MetaMatch retrieval** | GitHub search + ranking; **queryv2** winner frozen | `runs/experiments/penalty300_min700_cap22_queryv2/` — **0** magnets, **20/0/0** Good/OK/Weak |
+| **2 — REDUX 4 similarity** | Four methods (metadata, code_centric, dynamic, cross_language) | Core: `proxytool_redux/_extracted/redux4_core.py` |
+| **Validation** | Labeled ground truth, proxy bridges, gates G1–G9 | `results_benchmark/` |
+
+**Primary labeled metrics (v2, 24 pairs):** strict metadata F1 = **0.909**; lenient metadata F1 = **0.941**; code/cross_language strict F1 = **1.0**; dynamic strict = **0.842**. v1 (10-pair) frozen in `CANONICAL_RESULTS/` as comparison (strict F1 = 1.0). Cross-method Spearman ρ = **+0.69** (authenticated n=30). Downstream G9: **24 anchors** (20 queryv2 + 4 anchorsv2 additions).
+
+**Doc navigator** (each file has a distinct role — start at `CANONICAL_RESULTS/`, then `RESULTS_REVIEW.md`):
 
 | Path | Role |
 |------|------|
-| [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/) | **Canonical bundle** — gates, labeled metrics, retrieval winner, REDUX bridges, Spearman |
-| [`results_benchmark/WORK_REVIEW.md`](results_benchmark/WORK_REVIEW.md) | Master validation document (phases A–G, repro commands) |
-| [`results_benchmark/RESULTS_REVIEW.md`](results_benchmark/RESULTS_REVIEW.md) | Output-file navigator |
-| [`results_benchmark/PAPER_PACKAGE.md`](results_benchmark/PAPER_PACKAGE.md) | Gate checklist G1–G8 |
+| [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/) | Frozen headline bundle (gates, v2 metrics, bridges, Spearman, G9) |
+| [`results_benchmark/RESULTS_REVIEW.md`](results_benchmark/RESULTS_REVIEW.md) | **Navigator** — five files to open in order + headline numbers |
+| [`results_benchmark/PAPER_PACKAGE.md`](results_benchmark/PAPER_PACKAGE.md) | Gate checklist G1–G8 pass/fail (+ G9 informational) |
+| [`results_benchmark/VALIDATION_MEMO.md`](results_benchmark/VALIDATION_MEMO.md) | Stats prose, reviewer concerns |
+| [`results_benchmark/WORK_REVIEW.md`](results_benchmark/WORK_REVIEW.md) | Master — phases A–I, repro commands |
+| [`results_benchmark/REPO_AUDIT.md`](results_benchmark/REPO_AUDIT.md) | What matters vs archived junk |
+| [`results_benchmark/MASTER_EVALUATION.md`](results_benchmark/MASTER_EVALUATION.md) | Deep independent audit |
+| [`results_benchmark/README.md`](results_benchmark/README.md) | Directory map |
+| Spot checks + case study | `queryv2_spot_check.md`, `anchorsv2_spot_check.md`, `testing_case_study_airflow.md` |
 
 This README below is the long-form map from **paper → implementation** (REDUX notebook, CAIS domains, MetaMatch pipeline).
 
