@@ -42,7 +42,7 @@ linkedin_post.txt
 # Off-repo tarballs (grid history archived locally)
 # archives/off_repo/
 
-# REDUX: track core + repro scripts (see REDUX_REPRO.md). Exclude only the
+# REDUX: track core + repro scripts (see proxytool_redux/REDUX_REPRO.md). Exclude only the
 # large exploratory notebook copy inside the package; regenerate redux4_core.py
 # with scripts/extract_redux4_core.py from proxytool_REDUX_4.ipynb.
 
