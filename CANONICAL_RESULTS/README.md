@@ -83,7 +83,7 @@ bash tools/run_anchorsv2_redux.sh all
 PYTHONPATH=. python3 tools/compute_downstream_validation.py
 ```
 
-See [`REDUX_REPRO.md`](../REDUX_REPRO.md) for REDUX setup.
+See [`REDUX_REPRO.md`](../proxytool_redux/REDUX_REPRO.md) for REDUX setup.
 
 ## Related
 
