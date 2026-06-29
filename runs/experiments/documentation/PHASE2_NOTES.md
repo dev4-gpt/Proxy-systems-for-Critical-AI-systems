@@ -34,6 +34,6 @@ Same penalty/query settings. Archive: `penalty300_min700_cap22_anchorsv2/`.
 
 ## Open work
 
-REDUX / full similarity not run on these archives yet. See `REDUX_REPRO.md` and `proxytool_REDUX_4_REPRO.ipynb`.
+REDUX / full similarity not run on these archives yet. See `../../../proxytool_redux/REDUX_REPRO.md` and `legacy_notebooks/proxytool_REDUX_4_REPRO.ipynb`.
 
 Applied defaults: `metamatch_hyperparams.json`, `WINNER.md`.

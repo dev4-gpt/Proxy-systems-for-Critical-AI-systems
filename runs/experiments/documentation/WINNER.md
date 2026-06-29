@@ -47,4 +47,4 @@ Use: **`penalty300_min700_cap22_queryv2`** (new grid winner)
 
 ## Next step
 
-Run REDUX similarity on `penalty300_min700_cap22_queryv2` (see `REDUX_REPRO.md`).
+Run REDUX similarity on `penalty300_min700_cap22_queryv2` (see `../../../proxytool_redux/REDUX_REPRO.md`).
