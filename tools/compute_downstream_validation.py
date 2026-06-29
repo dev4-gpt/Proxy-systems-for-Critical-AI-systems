@@ -4,19 +4,30 @@
 from __future__ import annotations
 
 import csv
-import json
 from pathlib import Path
 from typing import Dict, List, Tuple
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE = REPO_ROOT / "runs/experiments/penalty300_min700_cap22_queryv2/manual-ml-py"
-REDUX_DIR = REPO_ROOT / "results_benchmark/queryv2_redux"
+QUERYV2_ARCHIVE = REPO_ROOT / "runs/experiments/penalty300_min700_cap22_queryv2/manual-ml-py"
+ANCHORSV2_ARCHIVE = REPO_ROOT / "runs/experiments/penalty300_min700_cap22_anchorsv2/manual-ml-py"
+QUERYV2_REDUX = REPO_ROOT / "results_benchmark/queryv2_redux"
+ANCHORSV2_REDUX = REPO_ROOT / "results_benchmark/anchorsv2_redux"
 OUT_DIR = REPO_ROOT / "results_benchmark/downstream_validation"
 THRESHOLD = 50.0
 
-ANCHORS = {
+# ponytail: anchorsv2-only additions — not in queryv2 archive; use anchorsv2 archive + redux.
+ANCHORSV2_ONLY = frozenset(
+    {
+        "mlflow-mlflow",
+        "pytorch-vision",
+        "scikit-learn-scikit-learn",
+        "treeverse-dvc",
+    }
+)
+
+# ponytail: explicit CAIS scenario rubric only for anchors with narrative case studies.
+SCENARIO_MAP: Dict[str, Dict[str, object]] = {
     "apache-airflow": {
-        "slug": "apache/airflow",
         "scenarios": {
             "feast-dev/feast": ["data_pipeline_reliability", "offline_online_consistency"],
             "dagster-io/dagster": ["orchestration_dependency_graphs", "retry_semantics"],
@@ -25,7 +36,6 @@ ANCHORS = {
         "baseline_bottom": ["elyra-ai/elyra", "san089/goodreads_etl_pipeline"],
     },
     "ray-project-ray": {
-        "slug": "ray-project/ray",
         "scenarios": {
             "NVIDIA/TensorRT-LLM": ["distributed_inference", "model_serving_latency"],
             "torchpipe/torchpipe": ["pipeline_parallelism", "gpu_utilization"],
@@ -34,7 +44,6 @@ ANCHORS = {
         "baseline_bottom": ["OpenBMB/UltraRAG", "hiyouga/EasyR1"],
     },
     "huggingface-transformers": {
-        "slug": "huggingface/transformers",
         "scenarios": {
             "speechbrain/speechbrain": ["model_hub_compatibility", "multimodal_training"],
             "Tencent/AngelSlim": ["model_compression", "inference_efficiency"],
@@ -44,30 +53,44 @@ ANCHORS = {
     },
 }
 
-NIST_DIMS = [
-    "environment",
-    "purpose",
-    "operational",
-    "algorithm",
-    "language",
-]
+
+def discover_anchors() -> List[str]:
+    queryv2 = sorted(p.name for p in QUERYV2_ARCHIVE.iterdir() if p.is_dir())
+    return sorted(set(queryv2) | ANCHORSV2_ONLY)
 
 
-def _read_ranked(slug: str) -> List[Dict[str, str]]:
-    path = ARCHIVE / slug / "ranked_matches.csv"
+def _sources(slug: str) -> Tuple[Path, Path]:
+    if slug in ANCHORSV2_ONLY:
+        return ANCHORSV2_ARCHIVE, ANCHORSV2_REDUX
+    return QUERYV2_ARCHIVE, QUERYV2_REDUX
+
+
+def _resolve_redux_path(slug: str, redux_dir: Path) -> Path:
+    direct = redux_dir / f"{slug}.csv"
+    if direct.exists():
+        return direct
+    for path in redux_dir.glob("*.csv"):
+        if path.name == "rollup_summary.csv":
+            continue
+        if path.stem.lower() == slug.lower():
+            return path
+    raise FileNotFoundError(f"No REDUX CSV for anchor slug {slug!r}")
+
+
+def _read_ranked(slug: str, archive: Path) -> List[Dict[str, str]]:
+    path = archive / slug / "ranked_matches.csv"
     with path.open(newline="", encoding="utf-8") as fh:
         return list(csv.DictReader(fh))
 
 
-def _read_redux(slug: str) -> List[Dict[str, str]]:
-    path = REDUX_DIR / f"{slug}.csv"
-    with path.open(newline="", encoding="utf-8") as fh:
+def _read_redux(slug: str, redux_dir: Path) -> List[Dict[str, str]]:
+    with _resolve_redux_path(slug, redux_dir).open(newline="", encoding="utf-8") as fh:
         return list(csv.DictReader(fh))
 
 
-def triage_and_search(slug: str) -> Tuple[Dict[str, object], Dict[str, object]]:
-    ranked = _read_ranked(slug)
-    redux = _read_redux(slug)
+def triage_and_search(slug: str, archive: Path, redux_dir: Path) -> Tuple[Dict[str, object], Dict[str, object]]:
+    ranked = _read_ranked(slug, archive)
+    redux = _read_redux(slug, redux_dir)
     qualified = [r for r in ranked if str(r.get("Qualified", "")).lower() == "true"]
     pool_size = len(qualified)
     top5 = redux[:5]
@@ -90,25 +113,53 @@ def triage_and_search(slug: str) -> Tuple[Dict[str, object], Dict[str, object]]:
     return triage, search
 
 
-def scenario_coverage(slug: str, meta: Dict[str, object]) -> Dict[str, object]:
-    redux = _read_redux(slug)
-    cfg = ANCHORS[slug]
+def scenario_coverage_cais(slug: str, cfg: Dict[str, object], redux_dir: Path) -> Dict[str, object]:
+    redux = _read_redux(slug, redux_dir)
     top3 = [r["candidate_repo"] for r in redux[:3]]
-    bottom = cfg["baseline_bottom"]
+    bottom = cfg["baseline_bottom"]  # type: ignore[index]
+    scenarios = cfg["scenarios"]  # type: ignore[index]
     top_dims: set[str] = set()
     for repo in top3:
-        for dim in cfg["scenarios"].get(repo, []):
+        for dim in scenarios.get(repo, []):  # type: ignore[union-attr]
             top_dims.add(dim)
-    bottom_dims: set[str] = set()
-    for repo in bottom:
-        bottom_dims.add("generic_repo_activity")
+    bottom_dims = {"generic_repo_activity"} if bottom else set()
     return {
         "anchor_slug": slug,
+        "mapping_mode": "cais_explicit",
         "top3_proxies": ";".join(top3),
         "nist_dimensions_covered_top3": len(top_dims),
         "nist_dimensions_covered_baseline_bottom2": len(bottom_dims),
         "dimensions_top3": ";".join(sorted(top_dims)),
     }
+
+
+def scenario_coverage_heuristic(slug: str, redux_dir: Path) -> Dict[str, object]:
+    redux = _read_redux(slug, redux_dir)
+    top3 = redux[:3]
+    bottom2 = redux[3:5] if len(redux) >= 5 else redux[-2:]
+    top_pass = sum(1 for r in top3 if float(r["metadata_pct"]) >= THRESHOLD)
+    bottom_pass = sum(1 for r in bottom2 if float(r["metadata_pct"]) >= THRESHOLD)
+    if top_pass == len(top3) and top3:
+        dims = "metadata_stand_in_adequacy"
+    elif top_pass:
+        dims = f"partial_metadata_adequacy_{top_pass}_of_{len(top3)}"
+    else:
+        dims = "none_at_threshold"
+    return {
+        "anchor_slug": slug,
+        "mapping_mode": "metadata_heuristic",
+        "top3_proxies": ";".join(r["candidate_repo"] for r in top3),
+        "nist_dimensions_covered_top3": top_pass,
+        "nist_dimensions_covered_baseline_bottom2": bottom_pass,
+        "dimensions_top3": dims,
+    }
+
+
+def scenario_coverage(slug: str, redux_dir: Path) -> Dict[str, object]:
+    cfg = SCENARIO_MAP.get(slug)
+    if cfg:
+        return scenario_coverage_cais(slug, cfg, redux_dir)
+    return scenario_coverage_heuristic(slug, redux_dir)
 
 
 def write_csv(path: Path, rows: List[Dict[str, object]]) -> None:
@@ -122,25 +173,31 @@ def write_csv(path: Path, rows: List[Dict[str, object]]) -> None:
 
 
 def main() -> int:
+    anchors = discover_anchors()
     triage_rows: List[Dict[str, object]] = []
     search_rows: List[Dict[str, object]] = []
     scenario_rows: List[Dict[str, object]] = []
 
-    for slug in ANCHORS:
-        triage, search = triage_and_search(slug)
+    anchorsv2_only_n = sum(1 for s in anchors if s in ANCHORSV2_ONLY)
+    for slug in anchors:
+        archive, redux_dir = _sources(slug)
+        triage, search = triage_and_search(slug, archive, redux_dir)
         triage_rows.append(triage)
         search_rows.append(search)
-        scenario_rows.append(scenario_coverage(slug, ANCHORS[slug]))
+        scenario_rows.append(scenario_coverage(slug, redux_dir))
 
     write_csv(OUT_DIR / "triage_metrics.csv", triage_rows)
     write_csv(OUT_DIR / "search_effort.csv", search_rows)
     write_csv(OUT_DIR / "scenario_coverage.csv", scenario_rows)
 
+    cais_n = sum(1 for r in scenario_rows if r["mapping_mode"] == "cais_explicit")
+    heuristic_n = len(scenario_rows) - cais_n
     summary = [
         "# Downstream validation summary",
         "",
-        "Quantified proxy triage, candidate search effort, and testing-relevance coverage",
-        "for three queryv2 anchors using frozen MetaMatch + REDUX outputs.",
+        f"Quantified proxy triage, candidate search effort, and testing-relevance coverage",
+        f"for **{len(anchors)}** anchors (20 queryv2 + {anchorsv2_only_n} anchorsv2-only additions)",
+        f"using frozen MetaMatch + REDUX outputs.",
         "",
         "## Proxy triage efficiency",
         "",
@@ -156,7 +213,7 @@ def main() -> int:
             "",
             "## Candidate search effort",
             "",
-            "Median repos a reviewer inspects to reach high-similarity proxy (REDUX metadata ≥ 50):",
+            "Repos a reviewer inspects to reach high-similarity proxy (REDUX metadata ≥ 50):",
             "",
         ]
     )
@@ -170,8 +227,11 @@ def main() -> int:
             "",
             "## Testing relevance (scenario coverage)",
             "",
-            "Top-3 REDUX proxies mapped to CAIS test-scenario dimensions vs bottom-ranked baseline.",
-            "See `scenario_coverage.csv` and `testing_case_study_airflow.md` for narrative.",
+            f"- **CAIS explicit rubric:** {cais_n} anchors (`apache-airflow`, `ray-project-ray`, `huggingface-transformers`).",
+            f"- **Metadata heuristic:** {heuristic_n} anchors — top-3/bottom-2 of REDUX top-5 scored at ≥50 threshold;",
+            "  no hand-authored CAIS scenario map (see `scenario_coverage.csv` `mapping_mode` column).",
+            "",
+            "Narrative case study: `testing_case_study_airflow.md`.",
             "",
             "## Gate G9 (informational)",
             "",
@@ -180,7 +240,7 @@ def main() -> int:
         ]
     )
     (OUT_DIR / "SUMMARY.md").write_text("\n".join(summary) + "\n", encoding="utf-8")
-    print(f"Wrote downstream validation to {OUT_DIR}")
+    print(f"Wrote downstream validation for {len(anchors)} anchors to {OUT_DIR}")
     return 0
 
 

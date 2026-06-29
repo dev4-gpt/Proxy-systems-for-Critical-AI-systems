@@ -110,7 +110,7 @@ def main() -> int:
     else:
         lines.append(
             "Run REDUX similarity on the winning archive when proxy lists are stable "
-            "(see REDUX_REPRO.md)."
+            "(see proxytool_redux/REDUX_REPRO.md)."
         )
 
     out = EXP_ROOT / "WINNER.md"
