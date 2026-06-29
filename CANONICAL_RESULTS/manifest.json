@@ -1,8 +1,8 @@
 {
-  "git_commit": "267bd072d795716cd88f2cf6580977b09d400dfc",
+  "git_commit": "22f18b1a5c3b4b41c80a0074f7627a20596d0897",
   "files": {
     "README.md": {
-      "sha256": "46a9b3a85a42ab74412ecdea0529f02ddd7158cb56aaa1282b479c71d1d6a3d9"
+      "sha256": "4b3537b12806a4d4b79f19516435f3afc14c28aecf7c147d7c501fc16554aeea"
     },
     "anchorsv2_overlap.csv": {
       "sha256": "f0389cc115079bd996993b635b0c779c59af50fc280c16f933a32f7878439573",
@@ -12,12 +12,32 @@
       "sha256": "b0f72a3cab1110e6f02c944b398ff93fcfa08fa58b9cdfa773aa79edea52f539",
       "target": "../results_benchmark/projected_pairs/full_summary_authenticated_n30.json"
     },
+    "downstream_validation/SUMMARY.md": {
+      "sha256": "810af2c03fdf6cc51d9a87d13d00de98efb98658232d811a168bf261d23ec337",
+      "target": "../../results_benchmark/downstream_validation/SUMMARY.md"
+    },
+    "downstream_validation/scenario_coverage.csv": {
+      "sha256": "60d5e976135507c120f53ded0eabe2a25988f30eab356cae10b7c11e45d21814",
+      "target": "../../results_benchmark/downstream_validation/scenario_coverage.csv"
+    },
+    "downstream_validation/search_effort.csv": {
+      "sha256": "7d6cb1f71a312356946f926ac3b9ebb317c985a72d1072993d6691d5bf6dcc92",
+      "target": "../../results_benchmark/downstream_validation/search_effort.csv"
+    },
+    "downstream_validation/triage_metrics.csv": {
+      "sha256": "0b16ecd338fb6765e92440f32162df0ce6040701c9c8c1b4524c8000d6ccb6c6",
+      "target": "../../results_benchmark/downstream_validation/triage_metrics.csv"
+    },
     "gates.json": {
-      "sha256": "36c4b8fb2e762c9af08dbe75a7b0951a1cae82b333da10e41d1bc1f0cd3a0066"
+      "sha256": "c4e353f226391502773fe98bae79146e631b8b3142d96bca9d65c7502fb21aa7"
     },
     "labeled_scored.json": {
       "sha256": "57ad2916ce877f0e06d4e3f586001da86f2c27c365a629ae5230d378d385b5e2",
       "target": "../results_benchmark/labeled_scored.json"
+    },
+    "labeled_scored_v2.json": {
+      "sha256": "032da8d04b700a6bb5b7cde4b08d1ab97bcf8347c4ae1f7c7338ba9a533a77b2",
+      "target": "../results_benchmark/labeled_scored_v2.json"
     },
     "labeled_strict_summary.csv": {
       "sha256": "dc23b9a39fd87aa45ea459e56aaaa9a0a352be8765159a582d9e2e0502d3e9f9",
@@ -26,6 +46,22 @@
     "labeled_summary.csv": {
       "sha256": "82d26873a6ac9f96281af61614c599baa654c316b33e54800b121c17ddbecd94",
       "target": "../results_benchmark/labeled/labeled_summary.csv"
+    },
+    "labeled_v2/bootstrap_ci.csv": {
+      "sha256": "43db322d322d059588e77f4e0e9a3943ece37f1c5d3930b33620fb2130c6597c",
+      "target": "../../results_benchmark/labeled_v2/bootstrap_ci.csv"
+    },
+    "labeled_v2/labeled_lenient_summary.csv": {
+      "sha256": "27780023101eea859ab1a25cfd6eb12844a93c74b645bbbcc182ecb5e09f1902",
+      "target": "../../results_benchmark/labeled_v2/labeled_lenient_summary.csv"
+    },
+    "labeled_v2/labeled_strict_summary.csv": {
+      "sha256": "1fa7aa5eb755ef333ce367c434c502ea5f8629dca42c063471ac2917f9b5dd8c",
+      "target": "../../results_benchmark/labeled_v2/labeled_strict_summary.csv"
+    },
+    "labeled_v2/labeled_summary.csv": {
+      "sha256": "27780023101eea859ab1a25cfd6eb12844a93c74b645bbbcc182ecb5e09f1902",
+      "target": "../../results_benchmark/labeled_v2/labeled_summary.csv"
     },
     "metadata_discrimination.csv": {
       "sha256": "e098525f7627aad26107dddefdf0860401e2db1341600933465406dd14f13fdb",
@@ -37,6 +73,9 @@
     },
     "retrieval_winner.json": {
       "sha256": "7d27cf06252d4c24a65b63430268bbfe194cba29566efcfdbb9140f809f93c32"
+    },
+    "manifest.json": {
+      "sha256": "6b774733f0c3f5c9598d1d20ef9af174fff74dc0286882daa2fdb2f57b4cbaae"
     }
   }
 }

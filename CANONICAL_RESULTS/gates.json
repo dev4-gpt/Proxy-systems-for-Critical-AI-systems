@@ -4,18 +4,19 @@
     "G1": {
       "criterion": "Labeled strict known_match separates @ threshold 50",
       "result": "PASS",
-      "artifact": "labeled_strict_summary.csv"
+      "artifact": "labeled_v2/labeled_strict_summary.csv",
+      "notes": "v2 (22-pair metric cohort): strict metadata F1=0.909; v1 (10-pair demo): strict metadata F1=1.0 at labeled_strict_summary.csv"
     },
     "G2": {
       "criterion": "Labeled lenient includes related pairs",
       "result": "PASS",
-      "artifact": "labeled_summary.csv",
-      "notes": "metadata F1=1.00; target_uncertain excluded from P/R/F1"
+      "artifact": "labeled_v2/labeled_summary.csv",
+      "notes": "v2: lenient metadata F1=0.941; target_uncertain excluded from P/R/F1; bootstrap CIs in labeled_v2/bootstrap_ci.csv; v1 frozen at labeled_summary.csv (lenient metadata F1=1.00)"
     },
     "G3": {
       "criterion": "Do not claim plausible 30_Pairs as ground truth",
       "result": "PASS",
-      "artifact": "labeled_scored.json"
+      "artifact": "labeled_scored_v2.json"
     },
     "G4": {
       "criterion": "Cross-method agreement (authenticated, canonical n=30)",
@@ -47,6 +48,12 @@
       "criterion": "MetaMatch retune required",
       "result": "NO",
       "notes": "G6 passed; do not re-archive queryv2"
+    },
+    "G9": {
+      "criterion": "Downstream usefulness (informational)",
+      "result": "INFO",
+      "artifact": "downstream_validation/SUMMARY.md",
+      "notes": "24 anchors; proxy triage, search effort, scenario coverage; not a pass/fail gate"
     }
   }
 }
