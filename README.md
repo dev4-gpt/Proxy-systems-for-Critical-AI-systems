@@ -7,33 +7,92 @@ Executable research code aligned with:
 
 ---
 
-## Validation results (start here)
+## What this repository is
 
-Two-stage **CAIS proxy-discovery** validated in `results_benchmark/` (frozen headlines in [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/)):
+Research code for **CAIS proxy discovery**: given a Critical AI System anchor you cannot fully inspect, find and score **open-source proxy repositories** that plausibly stand in for safety-oriented testing. The repo holds:
+
+- **MetaMatch** — GitHub retrieval and ranking (Stage 1)
+- **REDUX 4** — four-method similarity scoring (Stage 2)
+- A **completed validation pass** (labeled ground truth, proxy bridges, gates G1–G9) under `results_benchmark/`, frozen for review in [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/)
+- The original **paper pipeline notebook** (`proxytool_redux/proxytool.ipynb`) for Figures 2–3 and domain sweeps
+
+---
+
+## Two-stage pipeline
 
 | Stage | What | Where |
 |-------|------|-------|
 | **1 — MetaMatch retrieval** | GitHub search + ranking; **queryv2** winner frozen | `runs/experiments/penalty300_min700_cap22_queryv2/` — **0** magnets, **20/0/0** Good/OK/Weak |
-| **2 — REDUX 4 similarity** | Four methods (metadata, code_centric, dynamic, cross_language) | Core: `proxytool_redux/_extracted/redux4_core.py` |
-| **Validation** | Labeled ground truth, proxy bridges, gates G1–G9 | `results_benchmark/` |
+| **2 — REDUX 4 similarity** | metadata, code_centric, dynamic, cross_language | Core: [`proxytool_redux/_extracted/redux4_core.py`](proxytool_redux/_extracted/redux4_core.py) |
+| **Validation** | Labeled ground truth, retrieval→REDUX bridges, gates G1–G9 | [`results_benchmark/`](results_benchmark/) |
 
-**Primary labeled metrics (v2, 24 pairs):** strict metadata F1 = **0.909**; lenient metadata F1 = **0.941**; code/cross_language strict F1 = **1.0**; dynamic strict = **0.842**. v1 (10-pair) frozen in `CANONICAL_RESULTS/` as comparison (strict F1 = 1.0). Cross-method Spearman ρ = **+0.69** (authenticated n=30). Downstream G9: **24 anchors** (20 queryv2 + 4 anchorsv2 additions).
+**Primary labeled metrics (v2, 24 pairs):** strict metadata F1 = **0.909**; lenient metadata F1 = **0.941**; code/cross_language strict F1 = **1.0**; dynamic strict = **0.842**. v1 (10-pair) frozen as comparison (strict F1 = 1.0). Cross-method Spearman ρ = **+0.69** (authenticated n=30). Downstream G9: **24 anchors** (20 queryv2 + **4 anchorsv2 additions**, not swaps).
 
-**Doc navigator** (each file has a distinct role — start at `CANONICAL_RESULTS/`, then `RESULTS_REVIEW.md`):
+---
+
+## Consolidation (what changed)
+
+Four pillars from the repo cleanup pass:
+
+1. **Frozen headline bundle** — [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/) symlinks primary artifacts (gates, v2 metrics, bridges, Spearman, G9) with SHA256 manifest.
+2. **Validation package** — [`results_benchmark/`](results_benchmark/) holds outputs + master docs; v2 is primary, v1 frozen for comparison.
+3. **Extracted scoring core** — REDUX 4 logic in tracked `proxytool_redux/_extracted/redux4_core.py`; notebook iterations archived under [`legacy_notebooks/`](legacy_notebooks/) (see [`proxytool_redux/REDUX_REPRO.md`](proxytool_redux/REDUX_REPRO.md)).
+4. **Repo hygiene** — Tier A/B cleanup done; grid history (`redux4_sweep/`, `custom_30_pairs/`, penalty-grid folders) tarball'd to [`archives/off_repo/metamatch_grid_history.tar.gz`](archives/off_repo/README.md) (gitignored locally).
+
+Pre-consolidation narrative (SharePoint baseline + before/after): [`results_benchmark/CAIS_REVIEW_REFERENCE.md`](results_benchmark/CAIS_REVIEW_REFERENCE.md) — not a duplicate of that doc elsewhere.
+
+---
+
+## Where to start
+
+1. [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/) — five-minute proof bundle (G1–G9 headlines)
+2. [`results_benchmark/RESULTS_REVIEW.md`](results_benchmark/RESULTS_REVIEW.md) — navigator (which file to open next)
+3. [`results_benchmark/WORK_REVIEW.md`](results_benchmark/WORK_REVIEW.md) — master repro (phases A–I, commands)
 
 | Path | Role |
 |------|------|
-| [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/) | Frozen headline bundle (gates, v2 metrics, bridges, Spearman, G9) |
-| [`results_benchmark/RESULTS_REVIEW.md`](results_benchmark/RESULTS_REVIEW.md) | **Navigator** — five files to open in order + headline numbers |
-| [`results_benchmark/PAPER_PACKAGE.md`](results_benchmark/PAPER_PACKAGE.md) | Gate checklist G1–G8 pass/fail (+ G9 informational) |
+| [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/) | Frozen headline bundle |
+| [`results_benchmark/RESULTS_REVIEW.md`](results_benchmark/RESULTS_REVIEW.md) | Navigator — files in order + headline numbers |
+| [`results_benchmark/PAPER_PACKAGE.md`](results_benchmark/PAPER_PACKAGE.md) | Gate checklist G1–G8 (+ G9 informational) |
 | [`results_benchmark/VALIDATION_MEMO.md`](results_benchmark/VALIDATION_MEMO.md) | Stats prose, reviewer concerns |
 | [`results_benchmark/WORK_REVIEW.md`](results_benchmark/WORK_REVIEW.md) | Master — phases A–I, repro commands |
 | [`results_benchmark/REPO_AUDIT.md`](results_benchmark/REPO_AUDIT.md) | What matters vs archived junk |
-| [`results_benchmark/MASTER_EVALUATION.md`](results_benchmark/MASTER_EVALUATION.md) | Deep independent audit |
-| [`results_benchmark/README.md`](results_benchmark/README.md) | Directory map |
-| Spot checks + case study | `queryv2_spot_check.md`, `anchorsv2_spot_check.md`, `testing_case_study_airflow.md` |
+| [`results_benchmark/README.md`](results_benchmark/README.md) | Directory map + doc roles |
 
-This README below is the long-form map from **paper → implementation** (REDUX notebook, CAIS domains, MetaMatch pipeline).
+---
+
+## Repository layout (key folders)
+
+| Path | Purpose |
+|------|---------|
+| [`CANONICAL_RESULTS/`](CANONICAL_RESULTS/) | Frozen validation headlines (start here) |
+| [`results_benchmark/`](results_benchmark/) | Validation outputs + narrative docs |
+| [`proxytool_redux/`](proxytool_redux/) | REDUX 4 core (`_extracted/redux4_core.py`), `benchmark.py`, [`REDUX_REPRO.md`](proxytool_redux/REDUX_REPRO.md) |
+| [`legacy_notebooks/`](legacy_notebooks/) | Archived REDUX notebook iterations |
+| [`runs/experiments/`](runs/experiments/) | Frozen MetaMatch archives (winner: `penalty300_min700_cap22_queryv2`) |
+| [`tools/`](tools/) | Validation repro scripts (labeled cohort, bridges, downstream) |
+| [`scripts/`](scripts/) | REDUX extraction + repro harness |
+| [`configs/`](configs/) | Labeled pair manifests (v2 primary), rubrics, hyperparams |
+| [`archives/off_repo/`](archives/off_repo/) | Grid-history tarball (local; gitignored) |
+
+---
+
+## Reproduce the validation pass
+
+Full command sequence: [`results_benchmark/WORK_REVIEW.md`](results_benchmark/WORK_REVIEW.md) and [`CANONICAL_RESULTS/README.md`](CANONICAL_RESULTS/README.md). REDUX setup: [`proxytool_redux/REDUX_REPRO.md`](proxytool_redux/REDUX_REPRO.md) (lives under `proxytool_redux/`, not repo root).
+
+```bash
+cd "$(git rev-parse --show-toplevel)"
+export GITHUB_TOKEN="$(gh auth token)"
+export PYTHONPATH=.
+# See WORK_REVIEW.md for phases A–I
+```
+
+---
+
+## Paper → code (Figures 2 & 3)
+
+The sections below map the IEEE paper to the **original notebook pipeline** (`proxytool.ipynb`). The **validation pass** uses the extracted REDUX core above, not a full notebook re-run.
 
 ---
 
@@ -47,19 +106,15 @@ This project implements **multi-signal similarity**, **explicit taxonomy alignme
 
 ---
 
-## What this repository is
+## Notebook pipeline (`proxytool.ipynb`)
 
-This is an **executable extension of the paper**, not a one-page demo. The main artifact is **`proxytool_redux/proxytool.ipynb`** (canonical pipeline; legacy copies also live under `proxytool_redux/`): one notebook that wires the full loop:
+The paper's **six-step loop** lives in **`proxytool_redux/proxytool.ipynb`** (plus REDUX variants under `proxytool_redux/` and `legacy_notebooks/`):
 
-**config -> data pull -> features -> similarity -> validation -> plots -> test plans.**
+**config → data pull → features → similarity → validation → plots → test plans.**
 
-Outputs include `results_plots/`, `validation_results.csv`, and (when you run those cells) structured proxy test plans.
+Outputs include `results_plots/`, `validation_results.csv`, and structured proxy test plans. The **validation pass** scores via `proxytool_redux/_extracted/redux4_core.py` and `tools/` scripts instead.
 
----
-
-## Paper figures -> code (Figures 2 & 3)
-
-### Figure 2 -- Six-step pipeline (end-to-end in `proxytool_redux/proxytool.ipynb`)
+### Figure 2 — Six-step pipeline (end-to-end in `proxytool_redux/proxytool.ipynb`)
 
 | Step | What happens | Primary symbols / entry points |
 |------|----------------|--------------------------------|
@@ -222,21 +277,16 @@ If `sentence-transformers` is missing, optional embedding cells degrade graceful
 
 ---
 
-## Repository layout
+## Additional paths
 
 | Path | Purpose |
 |------|---------|
-| `proxytool_redux/` | Canonical research notebooks (`proxytool.ipynb` and REDUX variants) |
-| `scripts/` | Python helpers (REDUX patches, projected-pair pipeline, repro benchmark) |
-| `assets/` | Paper-related PDFs, figures, harness PS1 |
-| `tools/` | MetaMatch Python utilities (`summarize_runs.py`, `compare_experiments.py`, grid runner) |
-| `runs/experiments/` | Committed frozen MetaMatch archives + comparison CSVs |
-| `runs/experiments/scripts/` | Bash experiment runners (invoke from repo root) |
-| `runs/manual-ml-py/`, `runs/_summaries/` | Live pipeline outputs (gitignored) |
-| `results_plots/` | Curated or regenerated plots (may be gitignored locally) |
-| `validation_results.csv` | Tabular evaluation summaries |
+| `assets/` | Paper PDFs, figures, harness PS1 |
+| `runs/manual-ml-py/`, `runs/_summaries/` | Live MetaMatch outputs (gitignored) |
+| `results_plots/`, `validation_results.csv` | Notebook run artifacts (may be gitignored locally) |
+| `analysis/` | Optional PDF gap notes from `scripts/proxy_doc_analyzer.py` |
 
-**MetaMatch winner:** `penalty300_min700_cap22_queryv2` (`metamatch_hyperparams.json`, `runs/experiments/WINNER.md`).
+**MetaMatch winner:** `penalty300_min700_cap22_queryv2` — see [`metamatch_hyperparams.json`](metamatch_hyperparams.json) and [`runs/experiments/documentation/WINNER.md`](runs/experiments/documentation/WINNER.md).
 
 ```powershell
 pwsh ./Run-MetaMatchPipeline.ps1 -SummarizeOnly   # re-summarize live runs only
