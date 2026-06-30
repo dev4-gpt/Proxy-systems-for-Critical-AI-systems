@@ -23,17 +23,17 @@ Archive: `penalty300_min700_cap22_queryv2/`.
 
 ## Alternate anchor set
 
-`recommended_anchors_top_v2.csv` — four swaps vs original list:
+`recommended_anchors_top_v2.csv` — **four additions** to the original 20-anchor list (24 anchors total):
 
-- NLP-progress → scikit-learn
-- ML-From-Scratch → mlflow
-- recommenders → treeverse/dvc
-- pytorch-lightning → pytorch/vision
+- scikit-learn (added)
+- mlflow (added)
+- treeverse/dvc (added)
+- pytorch/vision (added)
 
 Same penalty/query settings. Archive: `penalty300_min700_cap22_anchorsv2/`.
 
-## Open work
+## REDUX bridges (completed)
 
-REDUX / full similarity not run on these archives yet. See `../../../proxytool_redux/REDUX_REPRO.md` and `legacy_notebooks/proxytool_REDUX_4_REPRO.ipynb`.
+REDUX similarity on both archives lives in `results_benchmark/queryv2_redux/` (20 anchors) and `results_benchmark/anchorsv2_redux/` (24 anchors). Repro: [`../../../proxytool_redux/REDUX_REPRO.md`](../../../proxytool_redux/REDUX_REPRO.md) and `tools/score_metamatch_proxies_redux.py`.
 
 Applied defaults: `metamatch_hyperparams.json`, `WINNER.md`.

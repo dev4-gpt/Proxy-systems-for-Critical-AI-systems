@@ -27,12 +27,12 @@ Suffix `_nofallback` = `AllowFallbackFill` disabled.
 | done | `penalty55_min700_cap21` | 55 | 700 | 2 | 1 | on | Improved Weak 8→5 |
 | done | `penalty75_min700_cap21` | 75 | 700 | 2 | 1 | on | Higher penalty |
 | done | `penalty100_min700_cap21` | 100 | 700 | 2 | 1 | on | Early grid champion |
-| **winner** | `penalty300_min700_cap22_queryv2` | 300 | 700 | 2 | 2 | on | See [WINNER.md](WINNER.md) |
+| **winner** | `penalty300_min700_cap22_queryv2` | 300 | 700 | 2 | 2 | on | See [WINNER.md](documentation/WINNER.md) |
 | done | `penalty55_min750_cap21` | 55 | 750 | 2 | 1 | on | No gain vs 55 |
 | done | `penalty55_min700_cap11` | 55 | 700 | 1 | 1 | on | No gain vs 55 |
 | done | `penalty55_min700_cap21_nofallback` | 55 | 700 | 2 | 1 | off | Minor Lightning drop only |
 
-See [EXPERIMENT_LOG.md](EXPERIMENT_LOG.md) for run dates and outcomes. Phase 2 query tuning: [PHASE2_NOTES.md](PHASE2_NOTES.md).
+See [WINNER.md](documentation/WINNER.md) for scorecard and outcomes. Phase 2 query tuning: [PHASE2_NOTES.md](documentation/PHASE2_NOTES.md). Grid log docs (`EXPERIMENT_LOG.md`, `GRID_PHASE2_STATUS.md`) were archived in `archives/off_repo/metamatch_grid_history.tar.gz`.
 
 ## Commands (from repo root)
 
@@ -75,7 +75,7 @@ Presets: `penalty75`, `penalty100`, `min750`, `cap11`, `nofallback`.
 
 ## Phase-2 grid (penalty 110–200 × min 700/750/800 × caps)
 
-60 combinations (grid stopped early; see [GRID_PHASE2_STATUS.md](GRID_PHASE2_STATUS.md)). Historical baseline: **`penalty100_min700_cap21`**. **Current winner:** **`penalty300_min700_cap22_queryv2`** ([WINNER.md](WINNER.md), `metamatch_hyperparams.json`).
+60 combinations (grid stopped early; winner arc in [WINNER.md](documentation/WINNER.md)). Historical baseline: **`penalty100_min700_cap21`**. **Current winner:** **`penalty300_min700_cap22_queryv2`** ([WINNER.md](documentation/WINNER.md), `metamatch_hyperparams.json`).
 
 ```bash
 python3 tools/run_metamatch_grid.py          # all 60 runs (~50+ hours)

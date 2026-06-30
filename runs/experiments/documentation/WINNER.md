@@ -45,6 +45,6 @@ Use: **`penalty300_min700_cap22_queryv2`** (new grid winner)
 - MaxPerOwnerPerSubdomain: 2
 - AllowFallbackFill: true
 
-## Next step
+## REDUX bridges
 
-Run REDUX similarity on `penalty300_min700_cap22_queryv2` (see `../../../proxytool_redux/REDUX_REPRO.md`).
+Completed in `results_benchmark/queryv2_redux/` and `results_benchmark/anchorsv2_redux/`. Repro: [`../../../proxytool_redux/REDUX_REPRO.md`](../../../proxytool_redux/REDUX_REPRO.md) and [`../../../results_benchmark/WORK_REVIEW.md`](../../../results_benchmark/WORK_REVIEW.md) phases F–G.
