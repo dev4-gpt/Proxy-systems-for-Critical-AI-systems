@@ -9,7 +9,8 @@ This file is the single source of truth for what was run, reused, tagged, and ve
 flowchart TB
     subgraph INPUT["Inputs"]
         CAIS["CAIS anchor repo<br/>(e.g. apache/airflow)"]
-        COHORT["configs/labeled_benchmark_pairs.json<br/>10 labeled pairs"]
+        COHORT["configs/labeled_benchmark_pairs_v2.json<br/>24 pairs (v2 primary)"]
+        COHORTV1["configs/labeled_benchmark_pairs.json<br/>10 pairs (v1 frozen)"]
         HYPER["metamatch_hyperparams.json<br/>penalty=300, min=700, cap=22"]
     end
 
@@ -27,7 +28,8 @@ flowchart TB
     end
 
     subgraph OUTPUTS["results_benchmark/ outputs"]
-        LABELED["labeled/<br/>F1 · P/R · accuracy<br/>strict F1=1.0 · lenient metadata F1=1.00"]
+        LABELED["labeled_v2/<br/>strict metadata F1=0.909<br/>lenient metadata F1=0.941"]
+        LABELEDV1["labeled/<br/>v1 frozen demo<br/>strict metadata F1=1.0"]
         QREDUX["queryv2_redux/<br/>100 pair scores · 20 anchors"]
         AREDUX["anchorsv2_redux/<br/>116 pair scores · 24 anchors"]
         STATS["projected_pairs/<br/>Spearman ρ=+0.69 (canonical)"]
@@ -38,7 +40,8 @@ flowchart TB
     subgraph DOCS["Review docs (results_benchmark/)"]
         WR["WORK_REVIEW.md<br/>master · what ran"]
         RR["RESULTS_REVIEW.md<br/>navigator · where to look"]
-        PP["PAPER_PACKAGE.md<br/>gates G1–G8 PASS"]
+        DOWN["downstream_validation/<br/>24 anchors · G9 INFO"]
+        PP["PAPER_PACKAGE.md<br/>gates G1–G8 PASS · G9 INFO"]
         VM["VALIDATION_MEMO.md<br/>reviewer concerns"]
     end
 
@@ -50,11 +53,13 @@ flowchart TB
 
     QV2 -->|"top-5 proxies per anchor"| ENGINE
     AV2 -->|"top-5 proxies per anchor"| ENGINE
-    COHORT -->|"10 pairs scored live"| ENGINE
+    COHORT -->|"24 pairs scored"| ENGINE
+    COHORTV1 -->|"10-pair v1 demo"| ENGINE
     PKG --> ENGINE
     ENGINE --> METHODS
 
     METHODS --> LABELED
+    METHODS --> LABELEDV1
     METHODS --> QREDUX
     METHODS --> AREDUX
     METHODS --> STATS
@@ -68,6 +73,8 @@ flowchart TB
     AREDUX --> RR
     STATS --> PP
     DISC --> VM
+    QREDUX --> DOWN
+    AREDUX --> DOWN
 ```
 
 
@@ -84,7 +91,8 @@ flowchart LR
     B --> C["Top-5 proxies<br/>retrieved"]
     C --> D["REDUX 4 engine<br/>proxytool_redux/_extracted/redux4_core.py"]
     D --> E["Similarity scores<br/>results_benchmark/"]
-    F["Labeled 10-pair cohort"] --> D
+    F["Labeled 24-pair cohort (v2)"] --> D
+    F1["Labeled 10-pair cohort (v1 frozen)"] --> D
     E --> G["Gates G1–G8 PASS<br/>PAPER_PACKAGE.md"]
 ```
 
@@ -93,21 +101,23 @@ flowchart LR
 
 | Goal                           | Outcome                                                                                                                                                                                           |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Evidence-backed labeled cohort | 10 pairs in `configs/labeled_benchmark_pairs.json` → scored in `labeled_scored.json` → metrics in `labeled/`                                                                                      |
+| Evidence-backed labeled cohort | **v2:** 24 pairs in `configs/labeled_benchmark_pairs_v2.json` → `labeled_scored_v2.json` → `labeled_v2/` (22-pair metric cohort). **v1 frozen:** 10 pairs in `labeled/` |
 | Retrieval → similarity bridge  | 100 metadata proxy scores in `queryv2_redux/`; anchorsv2 overlap + REDUX in `anchorsv2_redux/`                                                                                                    |
 | Honest statistics              | Metadata discrimination ~94% vs ~5%; cross-method Spearman **ρ ≈ +0.69** (authenticated n=30, canonical, passes rubric 0.30; the earlier ρ ≈ −0.21 was an unauthenticated rate-limiting artifact) |
-| Paper gates                    | G1–G8 **PASS** (G4 passes on authenticated data); G8 **no MetaMatch retune** (`PAPER_PACKAGE.md`)                                                                                                 |
+| Paper gates                    | G1–G8 **PASS** (G4 passes on authenticated data); G8 **no MetaMatch retune**; G9 **INFO** (downstream validation, 24 anchors) (`PAPER_PACKAGE.md`)                                                                                                 |
 
 
 
 | #                                       | Concern                                                                            | Response in this pass                                                                                                                                                                                                                          |
 | --------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **1 — Ground truth**                    | `30_Pairs.json` plausible pairs are script-discovered realism, not verified labels | Evidence-backed cohort in `configs/labeled_benchmark_pairs.json` -> scored in `results_benchmark/labeled_scored.json` -> metrics in `results_benchmark/labeled/`                                                                               |
+| **1 — Ground truth**                    | `30_Pairs.json` plausible pairs are script-discovered realism, not verified labels | Evidence-backed cohort: **v2 primary** (`configs/labeled_benchmark_pairs_v2.json` → `labeled_scored_v2.json` → `labeled_v2/`); **v1 frozen** (`labeled/`)                                                                               |
 | **2 — Testing / QA relevance**          | Similarity must connect to test-relevant outcomes, not retrieval hygiene alone     | queryv2 spot-check + REDUX proxy bridge (`queryv2_redux/`, `anchorsv2_redux/`) + airflow case study                                                                                                                                            |
 | **3 — Statistics & method positioning** | Cross-method agreement and discrimination must be reported honestly                | `VALIDATION_MEMO.md` synthesizes labeled metrics, discrimination tables, and canonical authenticated Spearman ρ ≈ +0.69 (n=30, passes rubric 0.30); the earlier ρ ≈ −0.21 is documented as a superseded unauthenticated rate-limiting artifact |
 
 
-**What was executed:** repro manifest, repo access check, labeled REDUX scoring, threshold/strict metrics, queryv2 + anchorsv2 proxy REDUX bridges, overlap analysis.
+**What was executed:** repro manifest, repo access check, labeled REDUX scoring (v1 + v2), threshold/strict metrics, bootstrap CIs (v2), queryv2 + anchorsv2 proxy REDUX bridges, overlap analysis, downstream validation (24 anchors).
+
+**Cleanup (completed):** Tier A duplicates removed; Tier B grid history tarball'd to `archives/off_repo/metamatch_grid_history.tar.gz` (`redux4_sweep/`, `custom_30_pairs/`, penalty-grid folders removed from tree). See `REMOVABLE_HISTORY.md`.
 
 **What was reused (read-only):** frozen `runs/experiments/penalty300_min700_cap22_queryv2/`, historical REDUX CSVs (`three_test_argument_table.csv`, `metadata_discrimination_canonical.csv`), the projected-pair stats (canonical authenticated `projected_pairs/full_summary_authenticated_n30.json`; superseded unauthenticated `projected_pairs/full_summary.json` kept for transparency), WINNER arc docs.
 
@@ -152,9 +162,9 @@ Every command row in the phase table carries a **source tag**.
 | Path                                                                    | Role                                                                                           |
 | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `runs/experiments/penalty300_min700_cap22_queryv2/`                     | MetaMatch winner: 0 top-5 magnets, 20/0/0 Good/OK/Weak                                         |
-| `runs/experiments/penalty300_min700_cap22_anchorsv2/`                   | Anchor-list sensitivity (24 anchors, 4 swaps)                                                  |
+| `runs/experiments/penalty300_min700_cap22_anchorsv2/`                   | Anchor-list sensitivity (24 anchors, 4 additions)                                                  |
 | `runs/experiments/documentation/WINNER.md`                              | Experiment scorecard and recommended defaults                                                  |
-| `runs/experiments/documentation/PHASE2_NOTES.md`                        | Phase 2 narrative and anchor swaps                                                             |
+| `runs/experiments/documentation/PHASE2_NOTES.md`                        | Phase 2 narrative and anchor additions                                                         |
 | `results_benchmark/metadata_discrimination_canonical.csv`               | Similar vs dissimilar discrimination (symlink → `archives/`)                                   |
 | `results_benchmark/three_test_argument_table.csv`                       | REDUX cache for labeled scoring (symlink → `archives/`)                                        |
 | `results_benchmark/projected_pairs/full_summary_authenticated_n30.json` | **Canonical** cross-method Spearman / Pearson (authenticated, n=30): ρ=+0.69, go=true          |
@@ -164,7 +174,7 @@ Every command row in the phase table carries a **source tag**.
 
 ---
 
-## Phase table — A through G
+## Phase table — A through I
 
 All commands assume **repo root** as working directory.
 
@@ -186,7 +196,7 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 | **B** | Live REDUX gap-fill    | `PYTHONPATH=. python3 tools/score_labeled_benchmark_redux.py --live`                                                                                               | updates `labeled_scored.json`                                                      | Remaining pairs (e.g. MariaDB/MySQL) filled via live GitHub REDUX                                                        | **[Reproducible]**                  |
 | **B** | Labeled metrics @50    | `PYTHONPATH=. python3 tools/run_labeled_benchmark.py --benchmark results_benchmark/labeled_scored.json --threshold 50 --output-dir results_benchmark/labeled`      | `labeled/labeled_pair_table.csv`, `labeled_summary.csv`, `labeled_claim_checks.md` | Lenient cohort (`target_uncertain` excluded): metadata **F1 = 1.00**, accuracy 1.00 @ threshold **50** (percent scale)   | **[Reproducible]**                  |
 | **B** | Threshold 45 / 55      | Same with `--threshold 45/55` and output dirs `labeled/threshold45`, `labeled/threshold55`                                                                         | threshold sensitivity tables                                                       | Sensitivity @ 45 and 55                                                                                                  | **[Reproducible]**                  |
-| **B** | Strict vs lenient      | `PYTHONPATH=. python3 tools/labeled_strict_metrics.py --benchmark results_benchmark/labeled_scored.json --threshold 50 --output-dir results_benchmark/labeled`     | `labeled_strict_summary.csv`, `labeled_lenient_summary.csv`                        | **Strict** (`known_match` only): metadata/code_centric/cross_language **F1 = 1.0**; dynamic F1 = 0.80                    | **[Reproducible]**                  |
+| **B** | Strict vs lenient      | `PYTHONPATH=. python3 tools/labeled_strict_metrics.py --benchmark results_benchmark/labeled_scored.json --threshold 50 --output-dir results_benchmark/labeled`     | `labeled_strict_summary.csv`, `labeled_summary.csv` (lenient)                        | **Strict** (`known_match` only): metadata/code_centric/cross_language **F1 = 1.0**; dynamic F1 = 0.80                    | **[Reproducible]**                  |
 | **C** | Stats memo             | *(no command)*                                                                                                                                                     | `results_benchmark/VALIDATION_MEMO.md`                                             | Discrimination ~94% vs ~5%; canonical authenticated Spearman **ρ ≈ +0.69** (n=30, go=true); labeled + method positioning | **[Analysis]** + **[Pre-existing]** |
 | **D** | Spot-check retrieval   | *(read-only inspection)*                                                                                                                                           | `results_benchmark/queryv2_spot_check.md`                                          | Top-5 proxies for jina, ray, airflow, OpenBB in frozen `30_Matches.csv` archives                                         | **[Analysis]** + **[Pre-existing]** |
 | **D** | Pilot proxy REDUX      | `PYTHONPATH=. python3 tools/score_metamatch_proxies_redux.py --pilot-only --top-k 5 --max-commits 60 --fit-global`                                                 | `queryv2_redux/*.csv` (4 thin anchors)                                             | 20 pair scores (4×5); 4 methods in pilot                                                                                 | **[Anchor/Query]**                  |
@@ -194,7 +204,10 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 | **E** | Testing case study     | *(no command)*                                                                                                                                                     | `results_benchmark/testing_case_study_airflow.md`                                  | Links `apache/airflow` top proxies + metadata REDUX to orchestration test dimensions                                     | **[Analysis]**                      |
 | **F** | anchorsv2 overlap      | `PYTHONPATH=. python3 tools/anchorsv2_overlap.py`                                                                                                                  | `results_benchmark/anchorsv2_overlap.csv`                                          | **20** shared folder slugs; mean top-5 **Jaccard = 0.96** (17/20 at 1.0)                                                 | **[Anchor/Query]**                  |
 | **F** | anchorsv2 REDUX bridge | `bash tools/run_anchorsv2_redux.sh all`                                                                                                                            | `results_benchmark/anchorsv2_redux/`                                               | Same REDUX bridge for anchorsv2 archive (24 anchors + rollup)                                                            | **[Anchor/Query]**                  |
-| **G** | Decision gates         | *(no command)*                                                                                                                                                     | `results_benchmark/PAPER_PACKAGE.md`                                               | Gates G1–G8 **PASS** (G4 passes on authenticated data); G8 **no MetaMatch retune**                                       | **[Analysis]**                      |
+| **G** | Decision gates         | *(no command)*                                                                                                                                                     | `results_benchmark/PAPER_PACKAGE.md`                                               | Gates G1–G8 **PASS** (G4 passes on authenticated data); G8 **no MetaMatch retune**; G9 **INFO**                                       | **[Analysis]**                      |
+| **H** | v2 labeled cohort      | `PYTHONPATH=. python3 tools/score_labeled_benchmark_redux.py --benchmark configs/labeled_benchmark_pairs_v2.json --output results_benchmark/labeled_scored_v2.json` | `labeled_scored_v2.json`, `labeled_v2/`                                            | 24 pairs scored; **strict metadata F1 = 0.909**; **lenient metadata F1 = 0.941** (22-pair metric cohort)                              | **[Reproducible]**                  |
+| **H** | v2 bootstrap CIs       | `PYTHONPATH=. python3 tools/labeled_bootstrap_ci.py`                                                                                                               | `labeled_v2/bootstrap_ci.csv`                                                      | Strict metadata F1 mean 0.704 (95% CI 0.50–0.875, n=2000 bootstrap)                                                                    | **[Reproducible]**                  |
+| **I** | Downstream validation  | `PYTHONPATH=. python3 tools/compute_downstream_validation.py`                                                                                                      | `downstream_validation/` (24 anchors)                                              | Triage, search effort, scenario coverage; G9 informational                                                                             | **[Analysis]** + **[Anchor/Query]** |
 
 
 ---
@@ -204,10 +217,11 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 
 | Category            | Run in this pass                                                        | Reused read-only                                                                                                                                                    |
 | ------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ground truth        | `labeled_scored.json`, `labeled/` metrics, `repo_access_validation.csv` | Seed `labeled_benchmark_pairs.json` (content static)                                                                                                                |
+| Ground truth        | `labeled_scored.json`, `labeled/` metrics; **v2:** `labeled_scored_v2.json`, `labeled_v2/` | Seed manifests (content static)                                                                                                                |
 | MetaMatch retrieval | —                                                                       | `penalty300_min700_cap22_queryv2/`, `penalty300_min700_cap22_anchorsv2/`                                                                                            |
 | REDUX bridges       | `queryv2_redux/`, `anchorsv2_redux/`, overlap CSV                       | Cached rows in `three_test_argument_table.csv` for labeled scoring                                                                                                  |
-| Statistics          | Strict/lenient summaries, threshold sweeps                              | `metadata_discrimination_canonical.csv`, `projected_pairs/full_summary_authenticated_n30.json` (canonical), `projected_pairs/full_summary.json` (superseded unauth) |
+| Statistics          | Strict/lenient summaries, threshold sweeps, bootstrap CIs (v2)          | `metadata_discrimination_canonical.csv`, `projected_pairs/full_summary_authenticated_n30.json` (canonical), `projected_pairs/full_summary.json` (superseded unauth) |
+| Downstream          | `downstream_validation/` (24 anchors)                                 | Frozen queryv2 + anchorsv2 archives                                                                                                                                |
 | Narrative           | Spot-check, case study, gate memo updates                               | `WINNER.md`, `PHASE2_NOTES.md`                                                                                                                                      |
 
 
@@ -218,8 +232,10 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 
 | File                                    | Role                                                      | `generated_at_utc`?                               | Source                                  |
 | --------------------------------------- | --------------------------------------------------------- | ------------------------------------------------- | --------------------------------------- |
-| `configs/labeled_benchmark_pairs.json`  | Seed manifest — 10 pairs, empty score fields by design    | **No** — fingerprinted via SHA256 in run manifest | **[Reproducible]**                      |
-| `results_benchmark/labeled_scored.json` | Scored manifest — 0–100 method scores + `score_source`    | **No**                                            | **[Reproducible]**                      |
+| `configs/labeled_benchmark_pairs_v2.json` | v2 seed manifest — 24 pairs (primary)                     | **No**                                            | **[Reproducible]**                      |
+| `configs/labeled_benchmark_pairs.json`  | v1 seed manifest — 10 pairs (frozen demo)               | **No** — fingerprinted via SHA256 in run manifest | **[Reproducible]**                      |
+| `results_benchmark/labeled_scored_v2.json` | v2 scored manifest                                   | **No**                                            | **[Reproducible]**                      |
+| `results_benchmark/labeled_scored.json` | v1 scored manifest — 0–100 method scores + `score_source` | **No**                                        | **[Reproducible]**                      |
 | `metamatch_hyperparams.json`            | Winner config — penalty 300, min 700, cap 2/2             | **No**                                            | **[Anchor/Query]** / pinned by manifest |
 | `results_benchmark/run_manifest.json`   | Repro snapshot — auth state, SHA256 of seed + hyperparams | **Yes** — timestamp lives **only here**           | **[Reproducible]**                      |
 
@@ -235,7 +251,31 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 
 ## Key results summary
 
-### Labeled ground truth @ threshold 50 (0–100 scale)
+### v2 labeled ground truth @ threshold 50 (primary, 22-pair metric cohort)
+
+**Strict** (`known_match` only) — `labeled_v2/labeled_strict_summary.csv`:
+
+| Method         | F1       | Accuracy | Pos/neg mean gap |
+| -------------- | -------- | -------- | ---------------- |
+| metadata       | **0.909** | 0.875    | 73.0             |
+| code_centric   | **1.00** | 1.00     | 79.0             |
+| cross_language | **1.00** | 1.00     | 76.5             |
+| dynamic        | 0.842    | 0.812    | 46.7             |
+
+**Lenient** (`known_match` + `known_related`) — `labeled_v2/labeled_summary.csv`:
+
+| Method         | F1       | Accuracy | Pos/neg mean gap |
+| -------------- | -------- | -------- | ---------------- |
+| metadata       | **0.941** | 0.909    | 68.9             |
+| cross_language | 0.933    | 0.909    | 57.7             |
+| code_centric   | 0.769    | 0.727    | 51.4             |
+| dynamic        | 0.692    | 0.636    | 29.2             |
+
+Bootstrap CIs: `labeled_v2/bootstrap_ci.csv` (strict metadata F1 mean 0.704, 95% CI 0.50–0.875).
+
+`target_uncertain` pairs excluded from P/R/F1 claims (same rule as v1).
+
+### v1 labeled ground truth @ threshold 50 (frozen 10-pair separation demo)
 
 **Strict** (`known_match` only) — `labeled/labeled_strict_summary.csv`:
 
@@ -248,7 +288,7 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 | dynamic        | 0.80     | 0.71     | 28.5             |
 
 
-**Lenient** (`known_match` + `known_related`) — `results_benchmark/labeled/labeled_summary.json` (identical to `labeled/labeled_lenient_summary.json`):
+**Lenient** (`known_match` + `known_related`) — `results_benchmark/labeled/labeled_summary.json`:
 
 
 | Method         | F1       | Accuracy | Pos/neg mean gap |
@@ -259,7 +299,7 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 | dynamic        | 0.67     | 0.56     | 9.3              |
 
 
-`target_uncertain` (1 pair) excluded from P/R/F1 claims (both `labeled_summary` and `labeled_lenient_summary` now apply this exclusion consistently).
+`target_uncertain` (1 pair) excluded from P/R/F1 claims per cohort rule.
 
 ### queryv2 REDUX proxy bridge
 
@@ -289,6 +329,7 @@ Smoke / manifest steps do not require a token but should be re-run after auth is
 | G6 — queryv2 proxy REDUX bridge                        | **PASS**                                                                                       |
 | G7 — anchorsv2 sensitivity                             | **PASS**                                                                                       |
 | G8 — MetaMatch retune required?                        | **NO**                                                                                         |
+| G9 — Downstream usefulness (informational)             | **INFO** (24 anchors; `downstream_validation/`)                                                |
 
 
 ### Cross-method Spearman (authenticated, canonical)
@@ -304,9 +345,9 @@ From the canonical authenticated run `projected_pairs/full_summary_authenticated
 
 | Claim                                                   | Verify in                                                                               |
 | ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| Labeled cohort scored                                   | `labeled_scored.json`                                                                   |
-| Seed not overwritten                                    | `configs/labeled_benchmark_pairs.json` (empty score fields)                             |
-| Strict / lenient metrics                                | `labeled/labeled_strict_summary.csv`, `labeled/labeled_summary.json`                    |
+| v2 labeled cohort (primary)                             | `labeled_scored_v2.json`, `labeled_v2/labeled_strict_summary.csv`, `labeled_v2/bootstrap_ci.csv` |
+| v1 labeled cohort (frozen demo)                         | `labeled_scored.json`, `labeled/labeled_strict_summary.csv`, `labeled/labeled_summary.json`    |
+| Downstream validation (G9)                              | `downstream_validation/SUMMARY.md`, `triage_metrics.csv`                                       |
 | Threshold sensitivity                                   | `labeled/threshold45/`, `labeled/threshold55/`                                          |
 | Repo reachability                                       | `repo_access_validation.csv`                                                            |
 | Repro fingerprints                                      | `run_manifest.json`                                                                     |
@@ -336,7 +377,7 @@ export PYTHONPATH=.
 python3 tools/write_run_manifest.py --output results_benchmark/run_manifest.json
 python3 tools/verify_repo_access.py --benchmark configs/labeled_benchmark_pairs.json --skip-clone
 
-# B — labeled cohort
+# B — v1 labeled cohort (10-pair frozen demo)
 PYTHONPATH=. python3 tools/score_labeled_benchmark_redux.py
 PYTHONPATH=. python3 tools/score_labeled_benchmark_redux.py --live   # gap-fill only if needed
 PYTHONPATH=. python3 tools/run_labeled_benchmark.py \
@@ -346,6 +387,18 @@ PYTHONPATH=. python3 tools/labeled_strict_metrics.py \
   --benchmark results_benchmark/labeled_scored.json \
   --threshold 50 --output-dir results_benchmark/labeled
 
+# B2 — v2 labeled cohort (24 pairs, primary paper metrics)
+PYTHONPATH=. python3 tools/score_labeled_benchmark_redux.py \
+  --benchmark configs/labeled_benchmark_pairs_v2.json \
+  --output results_benchmark/labeled_scored_v2.json
+PYTHONPATH=. python3 tools/run_labeled_benchmark.py \
+  --benchmark results_benchmark/labeled_scored_v2.json \
+  --threshold 50 --output-dir results_benchmark/labeled_v2
+PYTHONPATH=. python3 tools/labeled_strict_metrics.py \
+  --benchmark results_benchmark/labeled_scored_v2.json \
+  --threshold 50 --output-dir results_benchmark/labeled_v2
+PYTHONPATH=. python3 tools/labeled_bootstrap_ci.py
+
 # D — queryv2 proxy REDUX (reads frozen archive; does not re-run MetaMatch)
 PYTHONPATH=. python3 tools/score_metamatch_proxies_redux.py \
   --top-k 5 --max-commits 50 --fit-global --metadata-only \
@@ -354,6 +407,9 @@ PYTHONPATH=. python3 tools/score_metamatch_proxies_redux.py \
 # F — anchorsv2 overlap + REDUX bridge
 PYTHONPATH=. python3 tools/anchorsv2_overlap.py
 bash tools/run_anchorsv2_redux.sh all
+
+# I — downstream validation (G9)
+PYTHONPATH=. python3 tools/compute_downstream_validation.py
 ```
 
 **Note:** Threshold is **50** on a 0–100 percent scale. Script default `0.5` is incorrect for this benchmark.
@@ -381,7 +437,8 @@ Reused ground-truth tools: `write_run_manifest.py`, `verify_repo_access.py`, `ru
 
 | Path                                   | Role            | Source             |
 | -------------------------------------- | --------------- | ------------------ |
-| `configs/labeled_benchmark_pairs.json` | Seed manifest   | **[Reproducible]** |
+| `configs/labeled_benchmark_pairs_v2.json` | v2 seed manifest (24 pairs) | **[Reproducible]** |
+| `configs/labeled_benchmark_pairs.json` | v1 seed manifest (10 pairs) | **[Reproducible]** |
 | `configs/projected_pair_rubric.json`   | Spearman rubric | **[Reproducible]** |
 
 
@@ -390,8 +447,11 @@ Reused ground-truth tools: `write_run_manifest.py`, `verify_repo_access.py`, `ru
 
 | Path                                                  | Role                                                          |
 | ----------------------------------------------------- | ------------------------------------------------------------- |
-| `labeled_scored.json`                                 | Scored labeled cohort                                         |
-| `labeled/`                                            | Threshold 50 + strict/lenient                                 |
+| `labeled_scored_v2.json`                              | v2 scored labeled cohort (24 pairs)                           |
+| `labeled_v2/`                                         | v2 strict/lenient + bootstrap CIs                             |
+| `labeled_scored.json`                                 | v1 scored labeled cohort (10 pairs, frozen)                   |
+| `labeled/`                                            | v1 threshold 50 + strict/lenient                              |
+| `downstream_validation/`                              | G9 triage/search/scenario metrics (24 anchors)                |
 | `labeled/threshold45/`, `labeled/threshold55/`        | Sensitivity                                                   |
 | `repo_access_validation.csv`                          | Git reachability                                              |
 | `run_manifest.json`                                   | Repro snapshot                                                |
@@ -402,7 +462,7 @@ Reused ground-truth tools: `write_run_manifest.py`, `verify_repo_access.py`, `ru
 | `testing_case_study_airflow.md`                       | Testing / QA bridge                                           |
 | `VALIDATION_MEMO.md`, `PAPER_PACKAGE.md`, `README.md` | Analysis + directory map                                      |
 | `WORK_REVIEW.md`                                      | This document                                                 |
-| `archives/`                                           | Historical CSVs with root symlinks                            |
+| `archives/`                                           | Historical CSVs with root symlinks; grid history tarball at `archives/off_repo/metamatch_grid_history.tar.gz` |
 
 
 ---
@@ -423,11 +483,11 @@ Reused ground-truth tools: `write_run_manifest.py`, `verify_repo_access.py`, `ru
 | `PAPER_PACKAGE.md`                         | Gate checklist G1–G8                                |
 | `results_benchmark/README.md`              | Directory layout and repro entry points             |
 | `runs/experiments/documentation/WINNER.md` | MetaMatch winner scorecard                          |
-| `REDUX_REPRO.md`                           | REDUX reproduction notes (repo root)                |
+| `proxytool_redux/REDUX_REPRO.md`           | REDUX reproduction notes                            |
 
 
 ---
 
 ## Closing note
 
-This validation pass **executes** ground-truth tooling and **bridges** it to the frozen MetaMatch winner (`queryv2`) and anchorsv2 sensitivity archive. The retrieval win lives under `runs/experiments/` and was not re-archived. For paper claims: cite **strict** metrics for mirror ground truth, **lenient** metrics when including related pairs, **proxy REDUX** for similarity-on-retrieved-neighbors, and the **canonical authenticated Spearman** (ρ ≈ +0.69 at n=30, go=true) for cross-method positioning — noting that the earlier ρ ≈ −0.21 was an unauthenticated GitHub rate-limiting artifact, retained for transparency.
+This validation pass **executes** ground-truth tooling and **bridges** it to the frozen MetaMatch winner (`queryv2`) and anchorsv2 sensitivity archive. The retrieval win lives under `runs/experiments/` and was not re-archived. For paper claims: cite **v2** strict/lenient metrics as the primary labeled evaluation (`labeled_v2/`; strict metadata F1 = 0.909, not 1.0); retain **v1** as a clean 10-pair separation demo. Report **proxy REDUX** for similarity-on-retrieved-neighbors, the **canonical authenticated Spearman** (ρ ≈ +0.69 at n=30, go=true) for cross-method positioning, and **downstream validation** (G9, 24 anchors) for triage usefulness — noting that the earlier ρ ≈ −0.21 was an unauthenticated GitHub rate-limiting artifact, retained for transparency.

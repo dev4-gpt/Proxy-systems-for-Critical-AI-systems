@@ -1,10 +1,30 @@
 # results_benchmark layout
 
-Organized benchmark outputs for the CAIS / MetaMatch paper package.
+Organized benchmark outputs for the **two-stage CAIS proxy-discovery** validation pass:
 
-**Canonical bundle:** [`../CANONICAL_RESULTS/`](../CANONICAL_RESULTS/) — frozen headline artifacts (G1–G8).
+1. **Stage 1 — MetaMatch retrieval** (`queryv2` winner, frozen in `runs/experiments/`) — 0 magnets, 20/0/0 Good/OK/Weak.
+2. **Stage 2 — REDUX 4** — four methods via `proxytool_redux/_extracted/redux4_core.py`; labeled eval + proxy bridges live here.
 
-**Start here:** [`WORK_REVIEW.md`](WORK_REVIEW.md) — master validation document (phases, tags, repro, cross-verification). **Where are the results?** → [`RESULTS_REVIEW.md`](RESULTS_REVIEW.md).
+**Canonical bundle:** [`../CANONICAL_RESULTS/`](../CANONICAL_RESULTS/) — frozen headline artifacts (G1–G9). **Start here**, then [`RESULTS_REVIEW.md`](RESULTS_REVIEW.md) (navigator).
+
+**Master doc:** [`WORK_REVIEW.md`](WORK_REVIEW.md) — phases A–I, tags, repro. **Deep audit:** [`MASTER_EVALUATION.md`](MASTER_EVALUATION.md). **Repo inventory:** [`REPO_AUDIT.md`](REPO_AUDIT.md).
+
+## How to read this folder
+
+Use [`RESULTS_REVIEW.md`](RESULTS_REVIEW.md) for the five-minute review path (file order + headline numbers). Do not duplicate that flow here — this table is for **doc roles** only.
+
+| Document | Role |
+|----------|------|
+| [`RESULTS_REVIEW.md`](RESULTS_REVIEW.md) | **Navigator** — which output to open, in order |
+| [`WORK_REVIEW.md`](WORK_REVIEW.md) | **Master** — what ran, phases A–I, repro commands |
+| [`PAPER_PACKAGE.md`](PAPER_PACKAGE.md) | Gate checklist G1–G8 (+ G9 informational) |
+| [`VALIDATION_MEMO.md`](VALIDATION_MEMO.md) | Stats prose, reviewer concerns |
+| [`REPO_AUDIT.md`](REPO_AUDIT.md) | What matters vs archived junk |
+| [`MASTER_EVALUATION.md`](MASTER_EVALUATION.md) | Deep independent audit |
+| [`CAIS_REVIEW_REFERENCE.md`](CAIS_REVIEW_REFERENCE.md) | Pre-consolidation baseline + post-consolidation deltas |
+| [`REMOVABLE_HISTORY.md`](REMOVABLE_HISTORY.md) | Cleanup inventory (Tier A/B done) |
+| [`README.md`](README.md) | This directory map |
+| Spot checks + case study | [`queryv2_spot_check.md`](queryv2_spot_check.md), [`anchorsv2_spot_check.md`](anchorsv2_spot_check.md), [`testing_case_study_airflow.md`](testing_case_study_airflow.md) |
 
 ## MetaMatch phase-2 (queryv2 + anchorsv2)
 
@@ -12,7 +32,7 @@ Organized benchmark outputs for the CAIS / MetaMatch paper package.
 |------|------|
 | `queryv2_spot_check.md` | Read-only retrieval notes for winner archive |
 | `queryv2_redux/` | REDUX anchor→top-5 proxy scores (20 anchors); `rollup_summary.csv`, `run_manifest.json` |
-| `anchorsv2_spot_check.md` | Anchor-list sensitivity run (24 anchors, 4 swaps) |
+| `anchorsv2_spot_check.md` | Anchor-list sensitivity run (24 anchors, 4 additions) |
 | `anchorsv2_redux/` | Same REDUX bridge for `penalty300_min700_cap22_anchorsv2` |
 | `anchorsv2_overlap.csv` → `archives/metamatch_sensitivity/` | Top-5 Jaccard vs queryv2 on shared slugs |
 
@@ -58,11 +78,6 @@ Loose root-level sweep and ablation CSVs live under `archives/` with symlinks at
 | `legacy_tables/` | table1–3, three_test_argument_table |
 | `metamatch_sensitivity/` | anchorsv2_overlap.csv |
 
-## Narrative docs (`[Analysis]`)
+## Narrative docs
 
-- `REMOVABLE_HISTORY.md` — cleanup inventory (Tier A–D)
-- `RESULTS_REVIEW.md` — results navigator (paths + headline numbers)
-- `WORK_REVIEW.md` — **master** phase table, tag legend, repro commands
-- `VALIDATION_MEMO.md` — reviewer response backbone
-- `PAPER_PACKAGE.md` — gate checklist G1–G8
-- `testing_case_study_airflow.md` — queryv2 case study
+See **How to read this folder** above for doc roles. Full review path: [`RESULTS_REVIEW.md`](RESULTS_REVIEW.md).

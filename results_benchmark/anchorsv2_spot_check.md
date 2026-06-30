@@ -2,7 +2,7 @@
 
 Archive: `runs/experiments/penalty300_min700_cap22_anchorsv2/manual-ml-py/`
 
-Same penalty (300), min (700), cap (2/2), and query overrides as **queryv2**. Four anchor swaps vs `recommended_anchors_top.csv` → `recommended_anchors_top_v2.csv` (sklearn, mlflow, dvc, vision replace prior anchors).
+Same penalty (300), min (700), cap (2/2), and query overrides as **queryv2**. **24 anchors total** — the queryv2 20 plus **four additions** in `recommended_anchors_top_v2.csv`: `scikit-learn/scikit-learn`, `mlflow/mlflow`, `treeverse/dvc`, `pytorch/vision`.
 
 ## Retrieval hygiene (anchorsv2 sensitivity run)
 
@@ -16,11 +16,11 @@ Magnets/Good-OK-Weak measure **GitHub retrieval hygiene**, not REDUX similarity.
 
 On the **20** folder slugs present in both archives, mean top-5 Jaccard = **0.96** (**17/20** at 1.0). Partial proxy-set drift: `explosion/spaCy` and `huggingface/datasets` (0.67), `jina-ai/serve` (0.80). See `archives/metamatch_sensitivity/anchorsv2_overlap.csv` (symlink: `anchorsv2_overlap.csv`).
 
-Four **swapped** anchors use different folders and are scored separately in REDUX:
+Four **added** anchors use different folders and are scored separately in REDUX:
 
-| Swapped anchor | Folder slug | Notes |
-|----------------|-------------|-------|
-| scikit-learn/scikit-learn | scikit-learn-scikit-learn | Replaces prior sklearn-family anchor |
+| Added anchor | Folder slug | Notes |
+|--------------|-------------|-------|
+| scikit-learn/scikit-learn | scikit-learn-scikit-learn | ML / sklearn ecosystem neighbors |
 | mlflow/mlflow | mlflow-mlflow | MLOps / experiment tracking neighbors |
 | treeverse/dvc | treeverse-dvc | Thin pool (2 qualified in final 30) |
 | pytorch/vision | pytorch-vision | CV / detection neighbors |

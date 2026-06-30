@@ -1,5 +1,7 @@
 # Proxy Discovery for Critical AI Systems Summary
 
+> **Current state:** [`WORK_REVIEW.md`](WORK_REVIEW.md) and [`../CANONICAL_RESULTS/`](../CANONICAL_RESULTS/) — cite v2 labeled metrics (strict metadata F1 = 0.909) for paper claims.
+
 *High-level summary of work delivered under this grant. Full technical audit: [MASTER_EVALUATION.md](MASTER_EVALUATION.md).*
 
 ---
@@ -24,7 +26,8 @@ This project replaces the common practice of selecting a proxy by intuition with
 | **0**         | non-discriminating results      | down from 30 at baseline after systematic retrieval tuning                          |
 | **216**       | anchor–proxy similarity scores  | 100 (queryv2) + 116 (anchorsv2 stability run)                                       |
 | **4**         | independent similarity signals  | metadata, code structure, dynamic behavior, cross-language                          |
-| **F1 = 1.0**  | classification on known matches | perfect separation on 3 of 4 signals (strict labeled test)                          |
+| **F1 = 0.91** | classification on known matches (v2 primary) | strict metadata F1 on 22-pair metric cohort; v1 10-pair demo still shows perfect separation |
+| **F1 = 1.0**  | v1 separation demo              | perfect separation on 3 of 4 signals (10-pair strict test)                          |
 | **94% vs 5%** | similar vs unrelated systems    | ~90-point score gap between true matches and hard negatives                         |
 | **96%**       | result stability                | top-5 overlap when the anchor list is perturbed (17/20 identical)                   |
 | **24**        | retrieval configurations tested | grid search frozen to a single validated winner                                     |

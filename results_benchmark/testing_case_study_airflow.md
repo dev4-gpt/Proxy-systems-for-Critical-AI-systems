@@ -47,5 +47,6 @@ Per README / `CAIS_TEST_SCENARIOS` in REDUX notebook, we map proxies to **orches
 ## Separation from retrieval metrics
 
 - Magnets / Good-OK-Weak prove **GitHub search hygiene** only.
-- This case study is the minimum bridge from similarity -> **test-relevant** outcomes
+- This case study is the minimum bridge from similarity -> **test-relevant** outcomes.
 
+**All 24 anchors:** quantitative triage, search effort, and scenario coverage in [`downstream_validation/SUMMARY.md`](downstream_validation/SUMMARY.md) (G9 informational — 20 queryv2 + 4 anchorsv2 additions: `mlflow-mlflow`, `pytorch-vision`, `scikit-learn-scikit-learn`, `treeverse-dvc`).

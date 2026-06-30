@@ -1,10 +1,10 @@
 # Results review — where to look
 
-> **Canonical bundle:** [`../CANONICAL_RESULTS/`](../CANONICAL_RESULTS/) — frozen headline artifacts (start here for a five-minute review).
+> **Canonical bundle:** [`../CANONICAL_RESULTS/`](../CANONICAL_RESULTS/) — frozen headline artifacts (**start here** for a five-minute review).
+
+**Two-stage CAIS proxy-discovery:** Stage 1 MetaMatch retrieval (`queryv2` winner — 0 magnets, 20/0/0) frozen in `runs/experiments/` → Stage 2 REDUX 4 (`proxytool_redux/_extracted/redux4_core.py`) scored labeled pairs and retrieved proxies → validation outputs documented here.
 
 A navigator for **output files and headline numbers** after the validation pass. This is not a second master document — for commands, tags, and repro see [WORK_REVIEW.md](WORK_REVIEW.md).
-
-**Integration in one line:** frozen **queryv2** MetaMatch retrieval (our Phase 2 winner) + **labeled ground-truth** eval + **REDUX** proxy bridges, documented under `results_benchmark/`.
 
 ---
 
@@ -12,11 +12,13 @@ A navigator for **output files and headline numbers** after the validation pass.
 
 | #   | Open                                                                                                                                             | You get                                                                    |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
-| 1   | [PAPER_PACKAGE.md](PAPER_PACKAGE.md)                                                                                                             | Pass/fail gates G1–G8                                                      |
-| 2   | [labeled/labeled_strict_summary.csv](labeled/labeled_strict_summary.csv) + [labeled/labeled_summary.csv](labeled/labeled_summary.csv)            | Ground-truth metrics (strict + lenient)                                    |
+| 1   | [PAPER_PACKAGE.md](PAPER_PACKAGE.md)                                                                                                             | Pass/fail gates G1–G8 + G9 (informational)                                 |
+| 2   | [labeled_v2/labeled_strict_summary.csv](labeled_v2/labeled_strict_summary.csv) + [labeled_v2/labeled_summary.csv](labeled_v2/labeled_summary.csv) | **v2 primary** ground-truth metrics (strict metadata F1 = 0.909)           |
+| 2b  | [labeled/labeled_strict_summary.csv](labeled/labeled_strict_summary.csv) + [labeled/labeled_summary.csv](labeled/labeled_summary.csv)              | v1 frozen 10-pair separation demo                                          |
 | 3   | [../runs/experiments/documentation/WINNER.md](../runs/experiments/documentation/WINNER.md)                                                       | MetaMatch retrieval winner (0 magnets, 20/0/0)                             |
 | 4   | [queryv2_redux/rollup_summary.csv](queryv2_redux/rollup_summary.csv) + [anchorsv2_redux/rollup_summary.csv](anchorsv2_redux/rollup_summary.csv)  | REDUX similarity on retrieved proxies                                      |
 | 5   | [projected_pairs/full_summary_authenticated_n30.json](projected_pairs/full_summary_authenticated_n30.json)                                       | Canonical cross-method Spearman (authenticated, n=30: ρ ≈ +0.69, go=true) |
+| 6   | [downstream_validation/SUMMARY.md](downstream_validation/SUMMARY.md)                                                                             | G9 proxy triage, search effort, scenario coverage (24 anchors)             |
 
 For methodology and statistics in prose: [VALIDATION_MEMO.md](VALIDATION_MEMO.md). For which repo paths matter vs historical sprawl: [REPO_AUDIT.md](REPO_AUDIT.md).
 
@@ -25,6 +27,21 @@ For methodology and statistics in prose: [VALIDATION_MEMO.md](VALIDATION_MEMO.md
 ## By research question
 
 ### 1. Ground truth — do methods separate real mirrors from non-matches?
+
+**Primary (v2):**
+
+| What                                    | Path                                                                                                                |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Cohort definition (24 pairs)            | [../configs/labeled_benchmark_pairs_v2.json](../configs/labeled_benchmark_pairs_v2.json)                            |
+| Per-pair REDUX scores                   | [labeled_scored_v2.json](labeled_scored_v2.json)                                                                    |
+| **Strict** metrics (`known_match` only) | [labeled_v2/labeled_strict_summary.csv](labeled_v2/labeled_strict_summary.csv)                                      |
+| **Lenient** metrics (+ related pairs)   | [labeled_v2/labeled_summary.csv](labeled_v2/labeled_summary.csv)                                                    |
+| Bootstrap CIs                           | [labeled_v2/bootstrap_ci.csv](labeled_v2/bootstrap_ci.csv)                                                          |
+| Per-pair table                          | [labeled_v2/labeled_pair_table.csv](labeled_v2/labeled_pair_table.csv)                                              |
+
+**Headlines @ threshold 50 (v2, 22-pair metric cohort):** strict metadata F1 = **0.909**; lenient metadata F1 = **0.941** (`target_uncertain` excluded). code_centric/cross_language strict F1 = 1.0; dynamic weaker (strict 0.842).
+
+**v1 frozen (10-pair separation demo):**
 
 | What                                    | Path                                                                                                                |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
@@ -36,7 +53,7 @@ For methodology and statistics in prose: [VALIDATION_MEMO.md](VALIDATION_MEMO.md
 | Threshold 45 / 55 sensitivity           | [labeled/threshold45/](labeled/threshold45/), [labeled/threshold55/](labeled/threshold55/)                          |
 | Repo access                             | [repo_access_validation.csv](repo_access_validation.csv)                                                            |
 
-**Headlines @ threshold 50:** strict F1 = **1.0** (metadata, code_centric, cross_language); lenient metadata F1 = **1.00** (`target_uncertain` excluded from P/R/F1 per cohort rule); dynamic weaker (**0.67** lenient). Details: [WORK_REVIEW.md](WORK_REVIEW.md).
+**v1 headlines @ threshold 50:** strict F1 = **1.0** (metadata, code_centric, cross_language); lenient metadata F1 = **1.00**. Details: [WORK_REVIEW.md](WORK_REVIEW.md).
 
 ---
 
@@ -70,7 +87,7 @@ For methodology and statistics in prose: [VALIDATION_MEMO.md](VALIDATION_MEMO.md
 | What                             | Path                                                                                        |
 | -------------------------------- | ------------------------------------------------------------------------------------------- |
 | Top-5 overlap table              | [anchorsv2_overlap.csv](anchorsv2_overlap.csv) (→ `archives/metamatch_sensitivity/`)        |
-| Spot-check (24 anchors, 4 swaps) | [anchorsv2_spot_check.md](anchorsv2_spot_check.md)                                          |
+| Spot-check (24 anchors, 4 additions) | [anchorsv2_spot_check.md](anchorsv2_spot_check.md)                                          |
 | **REDUX summary (24 anchors)**   | [anchorsv2_redux/rollup_summary.csv](anchorsv2_redux/rollup_summary.csv)                    |
 | Per-anchor CSVs                  | [anchorsv2_redux/](anchorsv2_redux/)                                                        |
 | Frozen retrieval archive         | `runs/experiments/penalty300_min700_cap22_anchorsv2/manual-ml-py/`                          |
@@ -94,11 +111,15 @@ For methodology and statistics in prose: [VALIDATION_MEMO.md](VALIDATION_MEMO.md
 
 ---
 
-### 6. Testing / CAIS relevance (case study)
+### 6. Testing / CAIS relevance (case study + downstream)
 
 | What                                      | Path                                                               |
 | ----------------------------------------- | ------------------------------------------------------------------ |
 | Airflow anchor → proxies → test scenarios | [testing_case_study_airflow.md](testing_case_study_airflow.md)     |
+| **Downstream validation (G9, 24 anchors)** | [downstream_validation/SUMMARY.md](downstream_validation/SUMMARY.md) |
+| Triage efficiency                         | [downstream_validation/triage_metrics.csv](downstream_validation/triage_metrics.csv) |
+| Search effort                             | [downstream_validation/search_effort.csv](downstream_validation/search_effort.csv) |
+| Scenario coverage                         | [downstream_validation/scenario_coverage.csv](downstream_validation/scenario_coverage.csv) |
 
 Magnets / Good-OK-Weak are **retrieval hygiene only**, not test adequacy — see limitations in [PAPER_PACKAGE.md](PAPER_PACKAGE.md).
 
@@ -109,7 +130,9 @@ Magnets / Good-OK-Weak are **retrieval hygiene only**, not test adequacy — see
 | Area              | Paths                                                                        |
 | ----------------- | ---------------------------------------------------------------------------- |
 | Gates & narrative | `PAPER_PACKAGE.md`, `VALIDATION_MEMO.md`, `WORK_REVIEW.md`, `REPO_AUDIT.md` |
-| Labeled eval      | `labeled_scored.json`, `labeled/`                                            |
+| Labeled eval (v2 primary) | `labeled_scored_v2.json`, `labeled_v2/`                                    |
+| Labeled eval (v1 frozen)  | `labeled_scored.json`, `labeled/`                                            |
+| Downstream (G9)           | `downstream_validation/`                                                     |
 | queryv2 REDUX     | `queryv2_redux/`, `queryv2_spot_check.md`                                    |
 | anchorsv2         | `anchorsv2_redux/`, `anchorsv2_spot_check.md`, `anchorsv2_overlap.csv`       |
 | Repro snapshot    | `run_manifest.json`                                                          |
@@ -123,4 +146,4 @@ Full layout: [README.md](README.md).
 
 **Review only:** all paths above are in-repo; no re-scoring required to verify claims.
 
-**Re-run from scratch:** commands in [WORK_REVIEW.md](WORK_REVIEW.md). Optional full REDUX setup: [../REDUX_REPRO.md](../REDUX_REPRO.md).
+**Re-run from scratch:** commands in [WORK_REVIEW.md](WORK_REVIEW.md). Optional full REDUX setup: [../proxytool_redux/REDUX_REPRO.md](../proxytool_redux/REDUX_REPRO.md).

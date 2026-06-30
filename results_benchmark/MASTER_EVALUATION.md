@@ -1,5 +1,7 @@
 # MASTER EVALUATION — CAIS / MetaMatch / REDUX
 
+> **Current state:** [`WORK_REVIEW.md`](WORK_REVIEW.md) and [`../CANONICAL_RESULTS/`](../CANONICAL_RESULTS/) — v2 labeled cohort (24 pairs) is primary; v1 frozen; downstream validation (24 anchors) complete; Tier A/B cleanup executed.
+
 **Repository:** `mdk5293/Proxy-systems-for-Critical-AI-systems` (local working copy)
 **Repo root:** `/Users/aryamandev/Library/Mobile Documents/com~apple~CloudDocs/Research Assistant`
 **Evaluation date:** 2026-06-18
@@ -17,8 +19,12 @@ The discrepancies, gaps, and reproducibility issues this document originally fla
 | 1 | Dual "lenient" metadata F1 (0.93 vs 1.00) | **RESOLVED** | `tools/run_labeled_benchmark.py` patched to exclude `target_uncertain` from P/R/F1 (matching `labeled_strict_metrics.py` and the documented cohort rule). Summaries were regenerated and independently re-derived offline (stdlib-only, no pandas/network) via `tools/recompute_labeled_metrics_stdlib.py` — byte-identical output. `labeled_summary.csv` ≡ `labeled_lenient_summary.csv`. **Consistent lenient metadata F1 = 1.00.** All docs re-cite this value. |
 | 2 | `related_mariadb_mysql` `score_error` "No module named 'proxytool_redux'" | **RESOLVED** (root cause) / live-refresh reproducible | Root cause = missing `PYTHONPATH=.` (the package imports fine from the repo root; it is not a true scoring failure). The on-disk `labeled_scored.json` no longer carries `score_error` and `score_source = live_redux` with verified values (metadata 54.36, code_centric 44.15, dynamic 7.5, cross_language 42.21); all other 9 pairs byte-identical. To independently re-verify in a normal (non-sandbox) shell: `export GITHUB_TOKEN="$(gh auth token)" && PYTHONPATH=. timeout 900 python3 tools/score_labeled_benchmark_redux.py --benchmark configs/labeled_benchmark_pairs.json --output results_benchmark/labeled_scored.json --live --max-commits 150`. |
 | 3 | Unauthenticated stat runs (403s) | **RESOLVED — authenticated n=30 ADOPTED as canonical (2026-06-19)** | The authenticated projected-pair re-run was executed on 2026-06-19 (`export GITHUB_TOKEN="$(gh auth token)" && PYTHONPATH=. python3 scripts/projected_pair_pipeline.py --mode full --workers 1,2`, run outside the sandbox on the real network). The author **approved adopting the authenticated cross-method result as canonical**. The canonical figure is **`projected_pairs/full_summary_authenticated_n30.json`** (n=30, original 10/10/10 allocation, apples-to-apples with the frozen baseline): Spearman ρ=**+0.6913** (p=2.34e-5), Pearson r=**+0.6643** (p=6.25e-5), **`go`=true**, telemetry `authenticated=true` (49×200 / 5×403 = 9.3%). The current-rubric n=25 run (`full_summary_authenticated.json`, ρ=**+0.7772**, `go`=true) is consistent (same sign, passes). The original unauthenticated **`projected_pairs/full_summary.json`** (ρ=−0.2107, `go`=false, 38% 403) is **preserved unchanged and relabeled as the superseded unauthenticated artifact** for transparency — not deleted. **Authentication — not the rubric/n change — drove the flip** (holding n=30 fixed, removing the 38% 403 starvation moves ρ from −0.21 to +0.69). All paper docs (`PAPER_PACKAGE.md`, `VALIDATION_MEMO.md`, `WORK_REVIEW.md`, `RESULTS_REVIEW.md`) now cite the canonical authenticated value. See [§9](#9-component-6--statistics-discrimination--cross-method-spearman). |
-| 4 | REDUX core gitignored + untracked | **RESOLVED** | `proxytool_redux/{_extracted/redux4_core.py,_extracted/__init__.py,benchmark.py,benchmark_metrics.py,bootstrap.py}`, `scripts/extract_redux4_core.py`, `scripts/run_repro_benchmark.py`, and `REDUX_REPRO.md` are now git-tracked. `.gitignore` reconciled (`projected_pairs/` un-ignored; only the 7 MB exploratory notebook stays out). Committed (not pushed). |
+| 4 | REDUX core gitignored + untracked | **RESOLVED** | `proxytool_redux/{_extracted/redux4_core.py,_extracted/__init__.py,benchmark.py,benchmark_metrics.py,bootstrap.py,REDUX_REPRO.md}`, `scripts/extract_redux4_core.py`, `scripts/run_repro_benchmark.py` are now git-tracked. `.gitignore` reconciled (`projected_pairs/` un-ignored; only the 7 MB exploratory notebook stays out). Committed (not pushed). |
 | 5 | anchorsv2 not an independent rerun | **RESOLVED (full independent 24-anchor rerun, 2026-06-20; promoted 2026-06-21)** | The independent rerun was completed authenticated on the real network (outside the sandbox) with a warm `.proxytool_cache/`: `python3 tools/score_metamatch_proxies_redux.py --archive runs/experiments/penalty300_min700_cap22_anchorsv2 --output-dir results_benchmark/anchorsv2_redux_independent --top-k 5 --max-commits 50 --fit-global --metadata-only --skip-existing`. It scored **all 24 anchors fresh** (`run_manifest.json`: `archive: runs/experiments/penalty300_min700_cap22_anchorsv2`, `n_pair_scores: 116`, all 24 anchors in `anchors_scored_this_run`) — a true independent replication, **not** the prior bootstrap. The independent rollup was **promoted into `results_benchmark/anchorsv2_redux/`** (path kept stable for doc references); the temp `_independent` dir was removed after promotion. Per-anchor metadata-mean shifts vs the bootstrap are modest (overall mean 92.82 → 94.04; largest `huggingface/transformers` +7.59, `ultralytics/yolov5` +4.36, `mlflow/mlflow` +4.00, `explosion/spaCy` +3.32). Retrieval-side overlap is unchanged (`anchorsv2_overlap.csv` byte-identical, mean top-5 Jaccard 0.9567, 17/20 at 1.0) and now matches the independent top-5 sets exactly. See [§7](#7-component-4--queryv2--anchorsv2-redux-bridges). |
+
+| 6 | v2 labeled cohort expansion | **DONE (2026-06)** | Expanded from 10 → 24 pairs (`configs/labeled_benchmark_pairs_v2.json` → `labeled_scored_v2.json` → `labeled_v2/`). Primary metrics: strict metadata F1 = **0.909**, lenient metadata F1 = **0.941** (22-pair metric cohort; `target_uncertain` excluded). Bootstrap CIs in `labeled_v2/bootstrap_ci.csv`. v1 retained as frozen separation demo. |
+| 7 | Downstream validation (G9) | **DONE** | `downstream_validation/` — triage, search effort, scenario coverage for 24 anchors via `tools/compute_downstream_validation.py`. Informational gate only. |
+| 8 | Repo cleanup (Tier A/B) | **DONE** | Tier A duplicates removed; Tier B grid history tarball'd to `archives/off_repo/metamatch_grid_history.tar.gz` (`redux4_sweep/`, `custom_30_pairs/`, `_before_repro_run/` removed from tree). See `REMOVABLE_HISTORY.md`. |
 
 **Reproducibility note:** `gh auth status` reports a keyring warning, but `gh auth token` returns a working token (verified 2026-06-19 HTTP 200, core limit 5000/5000, ~4999 remaining). All network re-runs in the 2026-06-19 pass used `export GITHUB_TOKEN="$(gh auth token)"` and ran outside the sandbox (the in-sandbox allowlist blocks the GitHub REST API).
 
@@ -40,8 +46,8 @@ This repository implements and validates a **two-stage proxy-discovery system fo
 
 **State of the work (verified):**
 
-- **MetaMatch retrieval is complete and frozen.** The Phase-2 grid winner `penalty300_min700_cap22_queryv2` achieves **0 top-5 magnets** and **20/0/0** Good/OK/Weak across 20 anchors — verified in `runs/experiments/documentation/WINNER.md` and `EXPERIMENT_LOG.md`.
-- **Labeled ground truth separates cleanly.** On the strict `known_match`-only cohort, metadata / code_centric / cross_language all reach **F1 = 1.0**; dynamic is weaker at **F1 = 0.80** — verified in `labeled/labeled_strict_summary.csv`.
+- **MetaMatch retrieval is complete and frozen.** The Phase-2 grid winner `penalty300_min700_cap22_queryv2` achieves **0 top-5 magnets** and **20/0/0** Good/OK/Weak across 20 anchors — verified in `runs/experiments/documentation/WINNER.md` (grid history archived in `archives/off_repo/metamatch_grid_history.tar.gz`).
+- **Labeled ground truth separates cleanly (v2 primary).** On the 24-pair v2 cohort (22-pair metric cohort), strict metadata F1 = **0.909**, lenient metadata F1 = **0.941**; code_centric/cross_language strict F1 = **1.0**; dynamic strict = **0.842** — verified in `labeled_v2/`. v1 (10-pair) frozen demo: strict metadata F1 = **1.0** — `labeled/labeled_strict_summary.csv`.
 - **REDUX similarity bridges retrieval to similarity.** queryv2 produced **100** anchor→proxy metadata scores (20 anchors × top-5); anchorsv2 produced **116** scores (24 anchors) — verified in the rollup CSVs and run manifests.
 - **Anchor-list perturbation is stable.** Mean top-5 Jaccard = **0.957** on 20 shared slugs, **17/20** identical — verified in `archives/metamatch_sensitivity/anchorsv2_overlap.csv`.
 - **Cross-method agreement holds once rate-limiting is removed (canonical).** The canonical authenticated n=30 run (`full_summary_authenticated_n30.json`, original 10/10/10 allocation) gives Spearman ρ = **+0.69** (p = 2.34e-5), Pearson r = **+0.66** (p = 6.25e-5), **`go`=true** — clearing the project's 0.30 rubric. The current-rubric n=25 authenticated run (`full_summary_authenticated.json`, ρ = **+0.78**, `go`=true) is consistent. The frozen unauthenticated n=30 run (ρ = **−0.21**, `go`=false) was **403-starved** (38% HTTP 403); holding the allocation fixed and flipping only authentication moves ρ from −0.21 to +0.69, so **authentication — not the rubric/n change — drove the flip**, and the original negative ρ is an artifact of unauthenticated rate-limiting. The author has **adopted the authenticated n=30 result as canonical** and the paper docs now cite it; the unauthenticated file is retained, relabeled, for transparency (see [§0.1](#01--2026-06-19-authenticated-re-run-pass-network-outside-sandbox) and [§9](#9-component-6--statistics-discrimination--cross-method-spearman)).
@@ -63,8 +69,8 @@ This repository implements and validates a **two-stage proxy-discovery system fo
 | `proxytool_redux/benchmark_metrics.py`                | P/R/F1/separation metrics imported by labeled tools                                             | **Yes**                                                                    |
 | `runs/experiments/`                                   | Frozen MetaMatch grid archive (24 experiment folders + docs)                                    | Yes (snapshots)                                                            |
 | `runs/experiments/penalty300_min700_cap22_queryv2/`   | **MetaMatch winner** — 20 anchors, frozen `30_Matches.csv` per anchor                           | Yes                                                                        |
-| `runs/experiments/penalty300_min700_cap22_anchorsv2/` | Anchor-list sensitivity archive (24 anchors, 4 swaps)                                           | Yes                                                                        |
-| `runs/experiments/documentation/`                     | `WINNER.md`, `PHASE2_NOTES.md`, `CAP_ANALYSIS.md`, `EXPERIMENT_LOG.md`, `GRID_PHASE2_STATUS.md` | Yes                                                                        |
+| `runs/experiments/penalty300_min700_cap22_anchorsv2/` | Anchor-list sensitivity archive (24 anchors, 4 additions)                                           | Yes                                                                        |
+| `runs/experiments/documentation/`                     | `WINNER.md`, `PHASE2_NOTES.md`, `CAP_ANALYSIS.md` (`EXPERIMENT_LOG.md`, `GRID_PHASE2_STATUS.md` archived in tarball) | Yes                                                                        |
 | `runs/2026-05-0{1,2,3}-`*                             | Live batch run outputs (airflow + domain×language batches)                                      | No (gitignored live outputs)                                               |
 | `results_benchmark/`                                  | **Validation package** — labeled eval, REDUX bridges, stats, narrative                          | Mostly yes                                                                 |
 | `results_benchmark/labeled/`                          | Strict/lenient/threshold metric summaries                                                       | Yes                                                                        |
@@ -144,9 +150,9 @@ In plain terms: **MetaMatch retrieval and the REDUX engine form the base**; the 
 
 - Frozen winner: `runs/experiments/penalty300_min700_cap22_queryv2/manual-ml-py/<anchor>/30_Matches.csv`
 - Scorecard: `runs/experiments/documentation/WINNER.md`
-- Grid log: `runs/experiments/documentation/EXPERIMENT_LOG.md`, `experiment_comparison_summary.csv`
+- Grid log: `experiment_comparison_summary.csv` (detailed grid log archived in `archives/off_repo/metamatch_grid_history.tar.gz`)
 
-**Key results (verified against `WINNER.md` + `EXPERIMENT_LOG.md`):**
+**Key results (verified against `WINNER.md`):**
 
 
 | Experiment                            | Penalty | Top-5 magnets | Weak  | Good   | OK    | Role                  |
@@ -155,7 +161,7 @@ In plain terms: **MetaMatch retrieval and the REDUX engine form the base**; the 
 | `penalty100_min700_cap21`             | 100     | 18            | 2     | 14     | 4     | Prior baseline        |
 | `penalty300_min700_cap22`             | 300     | 5             | 0     | 20     | 0     | Hyperparam step       |
 | `**penalty300_min700_cap22_queryv2`** | **300** | **0**         | **0** | **20** | **0** | **Winner**            |
-| `penalty300_min700_cap22_anchorsv2`   | 300     | 0             | 0     | 24     | 0     | Sensitivity (4 swaps) |
+| `penalty300_min700_cap22_anchorsv2`   | 300     | 0             | 0     | 24     | 0     | Sensitivity (4 additions) |
 
 
 The monotone trend (magnets 30 → 18 → 5 → 0 as penalty rises) is internally consistent across all 24 grid folders in the scorecard. `CAP_ANALYSIS.md` confirms per-owner caps did **not** move Good/OK/Weak at penalty=110 (only a 1-repo Streamlit difference), justifying the fixed cap 2/2.
@@ -166,7 +172,7 @@ The monotone trend (magnets 30 → 18 → 5 → 0 as penalty rises) is internall
 
 ## 5. Component 2 — anchorsv2 sensitivity
 
-**Purpose:** Test whether the retrieval result is robust to changing the anchor set. anchorsv2 swaps four anchors vs the original list (per `PHASE2_NOTES.md`): NLP-progress→scikit-learn, ML-From-Scratch→mlflow, recommenders→treeverse/dvc, pytorch-lightning→pytorch/vision.
+**Purpose:** Test whether the retrieval result is robust to expanding the anchor set. anchorsv2 adds four anchors beyond queryv2 (per `PHASE2_NOTES.md`): `scikit-learn/scikit-learn`, `mlflow/mlflow`, `treeverse/dvc`, `pytorch/vision` — **24 anchors total**.
 
 **Inputs:** `recommended_anchors_top_v2.csv`; same penalty/min/cap/query settings as queryv2.
 
@@ -185,7 +191,7 @@ The monotone trend (magnets 30 → 18 → 5 → 0 as penalty rises) is internall
 
 All three documented drift cases match the data exactly. Retrieval hygiene on the new anchors holds (24/0/0 Good/OK/Weak; 0 magnets — `anchorsv2_spot_check.md`).
 
-**Honest assessment:** Stability is genuinely high. Two caveats worth stating in the paper: (1) the comparison is only over the **20 shared slugs**; the 4 swapped anchors are intentionally different and are *not* part of the Jaccard number, so "robustness" is demonstrated for the unchanged anchors, not the swapped ones; (2) the docs correctly forbid reading "24 Good vs 20 Good" as a head-to-head win (different denominators).
+**Honest assessment:** Stability is genuinely high. Two caveats worth stating in the paper: (1) the Jaccard comparison is only over the **20 shared slugs**; the 4 added anchors are intentionally different folders and are *not* part of the Jaccard number, so "robustness" is demonstrated for the unchanged anchors, not the additions; (2) the docs correctly forbid reading "24 Good vs 20 Good" as a head-to-head win (different denominators).
 
 ---
 
@@ -204,7 +210,7 @@ All three documented drift cases match the data exactly. Retrieval hygiene on th
   - `cross_language` — language-mix similarity.
 - **Reporting modes:** `contrastive` (sigmoid of score minus median of domain hard-negatives, temperature 6.0 — see `scoring.contrastive_adjust`) for benchmarks; `rank_pct` for retrieval.
 
-**Benchmark entry point:** `run_all_benchmarks()` in `benchmark.py` produces `three_test_argument_table.csv` (Test 2 functional-similar + Test 3 dissimilar), `custom_30_pairs_canonical.csv`, and `metadata_discrimination_canonical.csv`. The REPRO notebook variant is `proxytool_REDUX_4_REPRO.ipynb` (5 cells; documented in `REDUX_REPRO.md`).
+**Benchmark entry point:** `run_all_benchmarks()` in `benchmark.py` produces `three_test_argument_table.csv` (Test 2 functional-similar + Test 3 dissimilar), `custom_30_pairs_canonical.csv`, and `metadata_discrimination_canonical.csv`. The REPRO notebook variant is `legacy_notebooks/proxytool_REDUX_4_REPRO.ipynb` (5 cells; documented in `../proxytool_redux/REDUX_REPRO.md`).
 
 **Honest assessment:** This is the technical heart of the project and is well-engineered (clean separation of metrics, normalizers, reporting modes; a small pure-numeric `scoring.py` that is the only fully git-tracked piece). **It was the largest reproducibility liability** — the 180 KB core, the benchmark runner, and `benchmark_metrics.py` were untracked — but these are now committed (see §0 and §12). The `metadata` method also carries the most weight in every downstream claim, while `dynamic` is consistently the weakest signal (F1 0.667–0.80, lenient–strict) — the paper should avoid implying the four methods are equally trustworthy.
 
@@ -264,7 +270,7 @@ The retrieval-side stability number is unchanged: `anchorsv2_overlap.csv` is byt
 | `target_uncertain` | 1     | MONAI↔tensorflow (realism only — *should be excluded from P/R/F1*)            |
 
 
-**Outputs:** `labeled/labeled_strict_summary.csv`, `labeled/labeled_summary.csv`, `labeled/labeled_lenient_summary.csv`, per-pair `labeled/labeled_pair_table.csv`, threshold sweeps `labeled/threshold45/`, `labeled/threshold55/`.
+**Outputs (v1 frozen):** `labeled/labeled_strict_summary.csv`, `labeled/labeled_summary.csv`, per-pair `labeled/labeled_pair_table.csv`, threshold sweeps `labeled/threshold45/`, `labeled/threshold55/`. (Historical duplicate `labeled_lenient_summary.*` was removed — lenient metrics live in `labeled_summary.*`.)
 
 **Key results — STRICT (`known_match` only, threshold 50), verified in `labeled_strict_summary.csv`:**
 
@@ -290,7 +296,24 @@ The retrieval-side stability number is unchanged: `anchorsv2_overlap.csv` is byt
 
 **(RESOLVED — was D1.)** Both lenient files now exclude the realism-only `target_uncertain` pair per the documented cohort rule, so `labeled_summary.csv` and `labeled_lenient_summary.csv` agree exactly. The single consistent **lenient metadata F1 = 1.00**. The earlier 0.93 figure came from silently counting `target_uncertain`'s metadata 58.33 as a false positive, which contradicted the stated exclusion rule; `tools/run_labeled_benchmark.py` was fixed to drop `target_uncertain` from the metric cohort.
 
-**Honest assessment:** Strict separation is excellent and the right headline. The cohort is small (5/2/2/1 = 10 pairs), so a single mis-score swings F1 by ~0.1; the paper should report this as a *proof-of-concept separation*, not a population estimate. dynamic is genuinely weak and should be framed as a secondary signal.
+**Honest assessment (v1):** Strict separation is excellent on the 10-pair demo. **v2 primary** (`labeled_v2/`, 24 pairs, 22 in metric cohort) gives honest population-style metrics: strict metadata F1 = **0.909**, lenient metadata F1 = **0.941**; bootstrap strict metadata F1 mean 0.704 (95% CI 0.50–0.875). dynamic remains weak and should be framed as secondary.
+
+### 8.1 — v2 labeled cohort expansion (primary, 2026-06)
+
+**Inputs:** `configs/labeled_benchmark_pairs_v2.json` → `labeled_scored_v2.json` (24 pairs).
+
+**Outputs:** `labeled_v2/labeled_strict_summary.csv`, `labeled_v2/labeled_summary.csv`, `labeled_v2/bootstrap_ci.csv`, `labeled_v2/labeled_pair_table.csv`.
+
+**Key results @ threshold 50 (22-pair metric cohort, `target_uncertain` excluded):**
+
+| Method | Strict F1 | Lenient F1 |
+|--------|-----------|------------|
+| metadata | **0.909** | **0.941** |
+| code_centric | 1.00 | 0.769 |
+| cross_language | 1.00 | 0.933 |
+| dynamic | 0.842 | 0.692 |
+
+Canonical bundle: `CANONICAL_RESULTS/labeled_v2/`.
 
 ---
 
@@ -379,21 +402,30 @@ PYTHONPATH=. python3 scripts/projected_pair_pipeline.py --mode full --workers 1,
 | Claim                         | Value     | Source file                                |
 | ----------------------------- | --------- | ------------------------------------------ |
 | queryv2 top-5 magnets         | 0         | `runs/experiments/documentation/WINNER.md` |
-| queryv2 Good/OK/Weak          | 20/0/0    | `WINNER.md`, `EXPERIMENT_LOG.md`           |
+| queryv2 Good/OK/Weak          | 20/0/0    | `WINNER.md`           |
 | anchorsv2 Good/OK/Weak        | 24/0/0    | `anchorsv2_spot_check.md`, `WINNER.md`     |
-| Magnet trend (penalty 30→300) | 30→18→5→0 | `EXPERIMENT_LOG.md`                        |
+| Magnet trend (penalty 30→300) | 30→18→5→0 | `WINNER.md`, `experiment_comparison_summary.csv` |
 
 
 ### 11.2 Labeled ground truth (threshold 50)
 
+**v2 primary (22-pair metric cohort)** — `labeled_v2/`:
 
-| Method         | Strict F1 | Lenient F1 (`labeled_summary.csv`, `target_uncertain` excluded) | Source                                                              |
-| -------------- | --------- | --------------------------------------------------------------- | ------------------------------------------------------------------- |
-| metadata       | 1.00      | 1.00                                                            | `labeled/labeled_strict_summary.csv`, `labeled/labeled_summary.csv` |
-| code_centric   | 1.00      | 0.833                                                           | same                                                                |
-| cross_language | 1.00      | 0.923                                                           | same                                                                |
-| dynamic        | 0.80      | 0.667                                                           | same                                                                |
+| Method         | Strict F1 | Lenient F1 | Source |
+| -------------- | --------- | ---------- | ------ |
+| metadata       | **0.909** | **0.941**  | `labeled_v2/labeled_strict_summary.csv`, `labeled_v2/labeled_summary.csv` |
+| code_centric   | 1.00      | 0.769      | same |
+| cross_language | 1.00      | 0.933      | same |
+| dynamic        | 0.842     | 0.692      | same |
 
+**v1 frozen (10-pair demo):**
+
+| Method         | Strict F1 | Lenient F1 | Source |
+| -------------- | --------- | ---------- | ------ |
+| metadata       | 1.00      | 1.00       | `labeled/labeled_strict_summary.csv`, `labeled/labeled_summary.csv` |
+| code_centric   | 1.00      | 0.833      | same |
+| cross_language | 1.00      | 0.923      | same |
+| dynamic        | 0.80      | 0.667      | same |
 
 ### 11.3 REDUX bridges
 
@@ -402,7 +434,7 @@ PYTHONPATH=. python3 scripts/projected_pair_pipeline.py --mode full --workers 1,
 | ------------------------------- | ---------------------- | ------------------------------------------------------- |
 | queryv2 pair scores             | 100 (20×5)             | `queryv2_redux/rollup_summary.csv`, `run_manifest.json` |
 | anchorsv2 pair scores           | 116 (24 anchors)       | `anchorsv2_redux/rollup_summary.csv`                    |
-| anchorsv2 scored fresh this run | 17 (4 swapped anchors) | `anchorsv2_redux/run_manifest.json`                     |
+| anchorsv2 all scored this run   | 24 (full independent rerun) | `anchorsv2_redux/run_manifest.json`                     |
 | airflow metadata mean           | 95.36                  | `queryv2_redux/rollup_summary.csv`                      |
 
 
@@ -438,7 +470,7 @@ PYTHONPATH=. python3 scripts/projected_pair_pipeline.py --mode full --workers 1,
 | `proxytool_redux/__init__.py`, `scoring.py` | Yes      | (already tracked)                                           |
 | `scripts/extract_redux4_core.py`            | **Yes**  | regenerates `redux4_core.py` deterministically              |
 | `scripts/run_repro_benchmark.py`            | **Yes**  | runs `run_all_benchmarks()`                                 |
-| `REDUX_REPRO.md`                            | **Yes**  | reproduction runbook                                        |
+| `proxytool_redux/REDUX_REPRO.md`            | **Yes**  | reproduction runbook                                        |
 | `proxytool_redux/proxytool.ipynb` (7 MB)    | No       | intentionally excluded (large); not needed to re-score      |
 
 
@@ -505,10 +537,9 @@ The repo is large (4,670 git-tracked files) and carries substantial historical s
 **Historical / archive-only (keep, but mark as not-for-repro):**
 
 - 20 grid-history experiment folders under `runs/experiments/penalty{30,55,75,100,110,150,175,200,250,275}_`* (winner already selected)
-- `results_benchmark/archives/redux4_sweep/` (~40 coverage/temperature CSVs), `archives/custom_30_pairs/`
-- `results_benchmark/_before_repro_run/` (3 CSVs duplicating `archives/` targets)
+- `results_benchmark/archives/redux4_sweep/`, `archives/custom_30_pairs/`, `_before_repro_run/` — **removed from tree**; archived in `archives/off_repo/metamatch_grid_history.tar.gz`
 - 6 of 7 root REDUX notebooks (`proxytool*.ipynb` ≈ 5 MB each; only REDUX 4 is live)
-- `Run-MetaMatchPipeline_old.ps1`, `configs/30_Pairs_*.json`, `configs/*_old.json`, `tmp_rubric_low_volume.json`
+- `Run-MetaMatchPipeline_old.ps1` — **removed** (superseded)
 - `runs/2026-05-0{1,2,3}-*` live batch outputs (gitignored)
 
 **Gitignored but cited (RESOLVED 2026-06-18):**
@@ -526,7 +557,7 @@ The repo is large (4,670 git-tracked files) and carries substantial historical s
 | 2 ✅DONE | Reconciled `.gitignore` with reality for `projected_pairs/` and `scripts/` (un-ignored; now match what is tracked)                                                                                                                                     | Silent drift removed                                            |
 | 3 ✅DONE | Resolved discrepancy D1 (single "lenient" definition, `target_uncertain` excluded) and regenerated the affected tables                                                                                                                                 | One consistent lenient F1 (1.00)                                |
 | 4        | Move 6 stale root notebooks (~30 MB) to an `archive/notebooks/` folder or Git LFS                                                                                                                                                                      | Repo bloat; only REDUX 4 is live                                |
-| 5        | Remove `results_benchmark/_before_repro_run/` after confirming it duplicates `archives/`                                                                                                                                                               | Pure duplicate snapshot                                         |
+| 5        | Remove `results_benchmark/_before_repro_run/` after confirming it duplicates `archives/`                                                                                                                                                               | **DONE** — removed; tarball'd                                        |
 | 6        | Add a one-line "archive-only, do not re-run" banner to the 20 grid-history folders                                                                                                                                                                     | Prevents accidental re-runs (G8 = no retune)                    |
 | 7 ✅DONE | Re-scored `related_mariadb_mysql` with REDUX present + token (authenticated live run)                                                                                                                                                                  | `score_error` artifact removed                                  |
 
@@ -538,7 +569,7 @@ The repo is large (4,670 git-tracked files) and carries substantial historical s
 1. **~~Gitignored REDUX core (highest risk).~~ RESOLVED.** The scoring engine (`redux4_core.py`, `benchmark.py`, `benchmark_metrics.py`, `bootstrap.py`) is now git-tracked; a clean clone can re-score with `PYTHONPATH=.`. The D2 failure is fixed.
 2. **Cross-method Spearman — RESOLVED; authenticated n=30 adopted as canonical (ρ=+0.69, go=true).** The frozen unauthenticated n=30 run gave ρ=−0.21 (failed 0.30) but was 403-starved (38% HTTP 403). The authenticated n=30 run at the *same* 10/10/10 allocation gives ρ=+0.6913 (`go`=true), and the authenticated n=25 current-rubric run gives ρ=+0.7772 (`go`=true) — both pass, same sign. Holding n=30 fixed, only authentication changes between the −0.21 and +0.69 runs, so authentication (not the rubric/n change) is the driver. The author adopted the authenticated n=30 figure as canonical and all paper docs now cite it; the unauthenticated artifact is retained, relabeled, for transparency (see §9).
 3. **anchorsv2 full REDUX rerun — RESOLVED.** All 24 anchors / 116 pair scores were computed independently from the frozen archive (manifest archive = the real `penalty300_min700_cap22_anchorsv2`, `n_pair_scores: 116`, all 24 anchors scored this run); the independent rollup replaced the prior bootstrap in `anchorsv2_redux/` (overall metadata mean 92.82 → 94.04). The retrieval-side Jaccard (0.9567, 17/20) is unchanged. The REDUX similarity rollup is now an independent replication, not a consistency check; details + per-anchor deltas in §7.
-4. **Tiny labeled cohort.** 10 pairs (5/2/2/1). Strict F1 = 1.0 is a clean *separation demonstration*, not a population-level accuracy estimate; one mis-score moves F1 ~0.1.
+4. **Labeled cohort expanded (v2).** v1 had 10 pairs (5/2/2/1) — strict F1 = 1.0 was a clean separation demo. **v2 primary:** 24 pairs, 22 in metric cohort; strict metadata F1 = **0.909** (honest, not 1.0); bootstrap strict metadata F1 mean 0.704 (95% CI 0.50–0.875).
 5. **Thin anchor pools.** Several anchors have <5 qualified proxies; top-5 is padded, weakening per-anchor REDUX means (jina, ray, dvc).
 6. **Unauthenticated stat runs (RESOLVED — authenticated adopted as canonical).** The labeled cohort was re-scored authenticated, and on 2026-06-19 the projected-pair pipeline was re-run authenticated → canonical `projected_pairs/full_summary_authenticated_n30.json` (ρ=+0.69, go=true; telemetry `authenticated=true`) plus the consistent n=25 `full_summary_authenticated.json`. The frozen unauthenticated `full_summary.json` and `run_manifest.json` are preserved (relabeled). The author adopted the authenticated result as canonical and the paper docs cite it (§9).
 7. **Retrieval tuning overfit risk.** queryv2 query overrides were tuned per-anchor on the same 20 anchors used for selection; anchorsv2 mitigates but does not eliminate this.
@@ -552,7 +583,7 @@ The repo is large (4,670 git-tracked files) and carries substantial historical s
 
 **P0 — Make it reproducible (blocks publication credibility):**
 
-1. **DONE.** REDUX core committed (`redux4_core.py`, `benchmark.py`, `benchmark_metrics.py`, `bootstrap.py` + `scripts/extract_redux4_core.py`, `run_repro_benchmark.py`, `REDUX_REPRO.md`). A fresh clone runs `PYTHONPATH=. python3 tools/labeled_strict_metrics.py` without `ModuleNotFoundError`.
+1. **DONE.** REDUX core committed (`redux4_core.py`, `benchmark.py`, `benchmark_metrics.py`, `bootstrap.py` + `scripts/extract_redux4_core.py`, `run_repro_benchmark.py`, `proxytool_redux/REDUX_REPRO.md`). A fresh clone runs `PYTHONPATH=. python3 tools/labeled_strict_metrics.py` without `ModuleNotFoundError`.
 2. **DONE (authenticated) — projected-pair canonical adopted.** Labeled scoring re-run authenticated; `related_mariadb_mysql` `score_error` cleared and re-confirmed 2026-06-19. The projected-pair pipeline was regenerated authenticated 2026-06-19 → canonical `projected_pairs/full_summary_authenticated_n30.json` (ρ=+0.69, go=true) + consistent n=25 `full_summary_authenticated.json`; frozen unauthenticated `full_summary.json` preserved/relabeled. The author adopted the authenticated result as canonical and all paper docs now cite it (§9). `run_manifest.json` left as the frozen fingerprint snapshot.
 
 **P1 — Fix the two discrepancies (blocks paper accuracy):**
@@ -561,7 +592,7 @@ The repo is large (4,670 git-tracked files) and carries substantial historical s
 
 **P2 — Strengthen the claims you already make:**
 5. **RESOLVED (completed 2026-06-20, promoted 2026-06-21).** The **full independent** anchorsv2 REDUX rerun completed authenticated on the real network with a warm `.proxytool_cache/` (`PYTHONPATH=. python3 tools/score_metamatch_proxies_redux.py --archive runs/experiments/penalty300_min700_cap22_anchorsv2 --output-dir results_benchmark/anchorsv2_redux_independent --top-k 5 --max-commits 50 --fit-global --metadata-only --skip-existing`), scoring all 24 anchors / 116 pair scores. The independent rollup was promoted into `anchorsv2_redux/` (overall metadata mean 92.82 → 94.04) and the temp dir removed. The retrieval-side Jaccard is unchanged (0.9567, 17/20).
-6. Expand the labeled cohort from 10 → ~20–30 evidence-backed pairs (more mirrors + more hard negatives) to make F1 a meaningful estimate rather than a separation demo.
+6. **DONE — v2 labeled cohort expanded.** 24 evidence-backed pairs in `labeled_v2/` with bootstrap CIs; cite v2 as primary, v1 as frozen demo.
 7. Score the REDUX bridges on **all four methods**, not metadata-only, so retrieval→similarity is reported multi-view (matching the "complementary methods" framing).
 
 **P3 — Hygiene & paper packaging:**
@@ -582,7 +613,7 @@ The repo is large (4,670 git-tracked files) and carries substantial historical s
 | `results_benchmark/REPO_AUDIT.md`          | Used-vs-sprawl inventory                     |
 | `results_benchmark/RESULTS_REVIEW.md`      | Output-file navigator                        |
 | `runs/experiments/documentation/WINNER.md` | MetaMatch scorecard                          |
-| `REDUX_REPRO.md`                           | REDUX 4 reproduction runbook (now tracked)   |
+| `proxytool_redux/REDUX_REPRO.md`           | REDUX 4 reproduction runbook (now tracked)   |
 
 
 *This document was produced by reading and re-deriving every cited number from the files listed. Where a value could not be independently confirmed (e.g. the MariaDB/MySQL scores behind a `score_error`), it is flagged as unverified rather than asserted.*

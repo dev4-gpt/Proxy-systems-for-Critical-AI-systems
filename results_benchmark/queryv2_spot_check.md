@@ -1,6 +1,6 @@
 # queryv2 spot-check (read-only)
 
-Archive: `runs/experiments/penalty300_min700_cap22_queryv2/manual-ml-py/`
+**Stage 1 — MetaMatch retrieval winner.** Frozen archive: `runs/experiments/penalty300_min700_cap22_queryv2/manual-ml-py/`. Headline: **0** top-5 magnets, **20/0/0** Good/OK/Weak. Stage 2 REDUX bridge: `results_benchmark/queryv2_redux/`.
 
 Thin-anchor retrieval pools (final-30 unique count from experiment scorecard):
 
@@ -23,4 +23,4 @@ Magnets/Good-OK-Weak measure **GitHub retrieval hygiene**, not REDUX similarity 
 
 ## Next validation
 
-REDUX scores for anchor -> proxy pairs are written under `results_benchmark/queryv2_redux/` by `tools/score_metamatch_proxies_redux.py`.
+REDUX scores for anchor -> proxy pairs are written under `results_benchmark/queryv2_redux/` by `tools/score_metamatch_proxies_redux.py`. Downstream triage/search/scenario metrics for all **24 anchors** (20 queryv2 + 4 anchorsv2 additions): `results_benchmark/downstream_validation/`.

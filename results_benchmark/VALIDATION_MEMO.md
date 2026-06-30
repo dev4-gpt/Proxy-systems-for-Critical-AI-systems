@@ -1,5 +1,7 @@
 # CAIS validation memo
 
+> **Current state:** [`WORK_REVIEW.md`](WORK_REVIEW.md) and [`../CANONICAL_RESULTS/`](../CANONICAL_RESULTS/) — **v2 labeled cohort (24 pairs) primary**; v1 frozen 10-pair demo. Two-stage validation: MetaMatch `queryv2` → REDUX 4.
+
 Generated as part of the final validation plan (feedback + queryv2 / anchorsv2 MetaMatch results).
 
 **Master work review:** `WORK_REVIEW.md` — executive summary, phases A–G, repro commands, and source tags (`[Reproducible]`, `[Anchor/Query]`, `[Pre-existing]`, `[Analysis]`).
@@ -8,10 +10,10 @@ Generated as part of the final validation plan (feedback + queryv2 / anchorsv2 M
 
 **Problem/Question asked:** `30_Pairs.json` plausible pairs are script-discovered; they must not be claimed as ground truth.
 
-**Response:** Evidence-backed cohort in `configs/labeled_benchmark_pairs.json`, scored in `results_benchmark/labeled_scored.json`, metrics in `results_benchmark/labeled/`.
+**Response:** Evidence-backed cohort — **v2 primary:** `configs/labeled_benchmark_pairs_v2.json` → `labeled_scored_v2.json` → `labeled_v2/`. **v1 frozen:** `configs/labeled_benchmark_pairs.json` → `labeled_scored.json` → `labeled/`.
 
 
-| Cohort                 | Pairs                                                | Role                                          |
+| Cohort (v1)            | Pairs                                                | Role                                          |
 | ---------------------- | ---------------------------------------------------- | --------------------------------------------- |
 | `known_match` (5)      | Official/read-only mirrors                           | Strict ground truth                           |
 | `known_related` (2)    | Fork/lineage (MariaDB/MySQL, LibreOffice/OpenOffice) | Lenient positive                              |
@@ -21,7 +23,20 @@ Generated as part of the final validation plan (feedback + queryv2 / anchorsv2 M
 
 ### Labeled metrics @ threshold 50 (0–100 scale)
 
-**Lenient** (`known_match` + `known_related` vs `known_non_match`; `target_uncertain` excluded from P/R/F1): see `labeled/labeled_summary.csv` (identical to `labeled/labeled_lenient_summary.csv`).
+**v2 primary (22-pair metric cohort)** — `labeled_v2/labeled_strict_summary.csv` / `labeled_v2/labeled_summary.csv`:
+
+| Method         | Strict F1 | Lenient F1 |
+| -------------- | --------- | ---------- |
+| metadata       | **0.909** | **0.941**  |
+| code_centric   | 1.00      | 0.769      |
+| cross_language | 1.00      | 0.933      |
+| dynamic        | 0.842     | 0.692      |
+
+Bootstrap CIs: `labeled_v2/bootstrap_ci.csv` (strict metadata F1 mean 0.704, 95% CI 0.50–0.875).
+
+**v1 frozen (10-pair separation demo)**
+
+**Lenient** (`known_match` + `known_related` vs `known_non_match`; `target_uncertain` excluded from P/R/F1): see `labeled/labeled_summary.csv`.
 
 
 | Method         | F1   | Accuracy | Pos/neg mean gap |
@@ -60,6 +75,7 @@ Sensitivity: `labeled/threshold45/` and `labeled/threshold55/`.
 1. **MetaMatch queryv2** — retrieval hygiene (0 top-5 magnets, 20/0/0 Good/OK/Weak). Documented in `runs/experiments/documentation/WINNER.md` and `results_benchmark/queryv2_spot_check.md`.
 2. **REDUX on proxies** — `results_benchmark/queryv2_redux/` and `results_benchmark/anchorsv2_redux/` (anchor→top-k proxy similarity).
 3. **Case study** — `results_benchmark/testing_case_study_airflow.md` (anchor → proxies → CAIS scenario mapping).
+4. **Downstream validation (G9)** — `results_benchmark/downstream_validation/` (24 anchors: triage efficiency, search effort, scenario coverage).
 
 Do **not** equate magnets/Good-OK-Weak with test adequacy.
 
@@ -119,10 +135,10 @@ From `continuous_scores_summary.csv`:
 | penalty30        | 20           | 30           | 10/2/8       | Baseline                |
 | penalty300 cap22 | 20           | 5            | 20/0/0       | Hyperparam step         |
 | **queryv2**      | 20           | **0**        | **20/0/0**   | **Primary winner**      |
-| anchorsv2        | 24 (4 swaps) | 0            | 24 Good      | Anchor-list sensitivity |
+| anchorsv2        | 24 (4 additions) | 0            | 24 Good      | Anchor-list sensitivity |
 
 
-**anchorsv2:** Same penalty/query; 4 anchor swaps (sklearn, mlflow, dvc, vision). On 20 shared folder slugs, mean top-5 Jaccard = **0.96** (**17/20** at 1.0; `explosion/spaCy` and `huggingface/datasets` at 0.67, `jina-ai/serve` at 0.80) — `results_benchmark/anchorsv2_overlap.csv`. REDUX bridge in `anchorsv2_redux/` (116 pair scores) — now a **full independent 24-anchor rerun** (all 24 anchors freshly scored; replaces the earlier 17-fresh / 3-rescored / 96-reused bootstrap; overall metadata mean 92.82 → 94.04, largest per-anchor shifts `huggingface/transformers` +7.59, `ultralytics/yolov5` +4.36, `mlflow/mlflow` +4.00). Do not compare 24 Good vs 20 Good as a head-to-head win.
+**anchorsv2:** Same penalty/query; **four additions** beyond queryv2 (`mlflow/mlflow`, `pytorch/vision`, `scikit-learn/scikit-learn`, `treeverse/dvc`). On 20 shared folder slugs, mean top-5 Jaccard = **0.96** (**17/20** at 1.0; `explosion/spaCy` and `huggingface/datasets` at 0.67, `jina-ai/serve` at 0.80) — `results_benchmark/anchorsv2_overlap.csv`. REDUX bridge in `anchorsv2_redux/` (116 pair scores) — now a **full independent 24-anchor rerun** (all 24 anchors freshly scored; replaces the earlier 17-fresh / 3-rescored / 96-reused bootstrap; overall metadata mean 92.82 → 94.04, largest per-anchor shifts `huggingface/transformers` +7.59, `ultralytics/yolov5` +4.36, `mlflow/mlflow` +4.00). Do not compare 24 Good vs 20 Good as a head-to-head win.
 
 ---
 
